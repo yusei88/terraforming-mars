@@ -243,6 +243,10 @@ export abstract class Card implements ICard {
   public get tilesBuilt(): ReadonlyArray<TileType> {
     return this.properties.tilesBuilt;
   }
+  /** Global parameter steps this card lets its owner ignore in requirements, if any. */
+  public get globalParameterRequirementBonus(): GlobalParameterRequirementBonus | undefined {
+    return this.properties.globalParameterRequirementBonus;
+  }
   public canPlay(player: IPlayer, canAffordOptions?: CanAffordOptions): boolean {
     if (!this.properties.compiledRequirements.satisfies(player, this)) {
       return false;

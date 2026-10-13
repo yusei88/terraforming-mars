@@ -19,6 +19,7 @@ import {RouteError} from './RouteError';
 import {readBody} from './readBody';
 import {stringToNumber} from '../database/utils';
 import {prepareHumanDecision} from '../ai/humanDecisionTrace';
+import {observeInput, observeRevert} from '../extensions/inputObservers';
 
 export const playerInputMetrics = {
   responseInterval: new prometheus.Histogram({
@@ -70,12 +71,14 @@ export class PlayerInput extends Handler {
   }
 
   private async performUndo(_req: Request, res: Response, ctx: Context, player: IPlayer): Promise<void> {
+    const reverted = observeRevert(player, 'undo');
     /**
      * The `lastSaveId` property is incremented during every `takeAction`.
      * The first save being decremented is the increment during `takeAction` call
      * The second save being decremented is the action that was taken
      */
     const lastSaveId = player.game.lastSaveId - 2;
+    let restored: IPlayer | undefined;
     try {
       const game = await ctx.gameLoader.restoreGameAt(player.game.id, lastSaveId);
       if (game === undefined) {
@@ -83,10 +86,12 @@ export class PlayerInput extends Handler {
       } else {
         // pull most recent player instance
         player = game.getPlayerById(player.id);
+        restored = player;
       }
     } catch (err) {
       console.error(err);
     }
+    reverted(restored);
     responses.writeJson(res, ctx, Server.getPlayerModel(player));
   }
 
@@ -113,8 +118,15 @@ export class PlayerInput extends Handler {
       } else {
         // Snapshot before processing: afterwards hand and offer have already changed
         const humanDecision = prepareHumanDecision(player, entity, responseInterval);
-        player.process(entity);
+        const observed = observeInput(player, entity, responseInterval);
+        try {
+          player.process(entity);
+        } catch (e) {
+          observed({accepted: false, error: e instanceof Error ? e.message : String(e)});
+          throw e;
+        }
         humanDecision?.();
+        observed({accepted: true});
         responses.writeJson(res, ctx, Server.getPlayerModel(player));
       }
     } catch (e) {

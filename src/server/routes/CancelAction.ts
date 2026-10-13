@@ -7,6 +7,7 @@ import {Response} from '../Response';
 import {RouteError} from './RouteError';
 import {Game} from '../Game';
 import {cancellableActionStart} from '../actionStart';
+import {observeRevert} from '../extensions/inputObservers';
 
 /**
  * Cancels the active player's current action and returns to its start (actionStart.ts) –
@@ -32,12 +33,14 @@ export class CancelAction extends Handler {
     if (start === undefined) {
       throw RouteError.badRequest('This action can no longer be cancelled');
     }
+    const reverted = observeRevert(player, 'cancel-action');
     // Restoring brings the player back to the action menu (deserialize → takeAction)
     const restored = Game.deserialize(start);
     restored.undoCount = game.undoCount + 1;
     const restoredPlayer = restored.getPlayerById(player.id);
     restored.log('${0} cancelled the action', (b) => b.player(restoredPlayer));
     await ctx.gameLoader.add(restored);
+    reverted(restoredPlayer);
     responses.writeJson(res, ctx, Server.getPlayerModel(restoredPlayer));
   }
 }
