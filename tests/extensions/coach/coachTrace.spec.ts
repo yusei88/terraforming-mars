@@ -36,7 +36,7 @@ describe('coach trace', () => {
   });
 
   function events(game: IGame) {
-    return sink.read(game.id, 'trace') as Array<CoachDecisionEvent | CoachRejectedInputEvent | CoachRevertEvent>;
+    return sink.read(game.id, 'trace').records as Array<CoachDecisionEvent | CoachRejectedInputEvent | CoachRevertEvent>;
   }
 
   function actionMenuWithPowerPlant() {
@@ -80,7 +80,7 @@ describe('coach trace', () => {
     expect(decision.before.branch).eq(0);
 
     // The snapshot before the answer still has Power Plant in hand; the one after has it in play.
-    const states = sink.read(game.id, 'states') as Array<CoachStateRecord>;
+    const states = sink.read(game.id, 'states').records as Array<CoachStateRecord>;
     expect(states).has.length(2);
     const beforeState = tracer.stateOf(game.id, player.color, decision.before.fingerprint)!;
     const afterState = tracer.stateOf(game.id, player.color, decision.after.fingerprint)!;

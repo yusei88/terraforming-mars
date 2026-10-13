@@ -30,7 +30,7 @@ import {VictoryPointsBreakdown} from '@/common/game/VictoryPointsBreakdown';
 import {catalogCard, catalogVersion} from './cardCatalog';
 import {toCardInstances} from './cardInstances';
 import {toChoice} from './choices';
-import {fingerprintOf} from './fingerprint';
+import {advisoryFingerprintOf, fingerprintOf} from './fingerprint';
 
 // Expansions whose cards the schema handles like base cards (tags, costs, resources, choices).
 const SUPPORTED_EXPANSIONS: ReadonlySet<string> = new Set(['corpera', 'prelude']);
@@ -322,9 +322,11 @@ export function projectCoachState(player: IPlayer, now: Date = new Date()): Coac
     undoCount: view.game.undoCount,
   };
   const fingerprint = fingerprintOf({game: gameState, me, opponents, choices});
+  const advisoryFingerprint = advisoryFingerprintOf({game: gameState, me, opponents, choices, warnings});
   return {
     schemaVersion: COACH_STATE_SCHEMA,
     fingerprint,
+    advisoryFingerprint,
     stateKey: `${fingerprint.slice(0, 16)}:u${version.undoCount}:s${version.gameStep}:a${version.gameAge}`,
     version,
     catalogVersion: catalogVersion(),

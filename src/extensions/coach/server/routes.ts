@@ -8,6 +8,7 @@ import {IPlayer} from '@/server/IPlayer';
 import {projectCoachState} from './projectCoachState';
 import {getCatalogJson, catalogVersion} from './cardCatalog';
 import {getCoachTracer} from './coachTrace';
+import {EVENT_POSITIONS, EventPosition} from '../common/CoachTrace';
 
 export const COACH_PATHS = {
   STATE: 'api/coach/state',
@@ -89,8 +90,14 @@ export class ApiCoachCatalog extends Handler {
 }
 
 /**
- * `GET api/coach/decisions?id=<playerId>[&fingerprint=<hash>]`: the player's own trace events, or one
- * recorded snapshot of that player. Other players' events and snapshots are never returned.
+ * `GET api/coach/decisions?id=<playerId>`: the player's own trace events (each with its `series`), the
+ * trust in the history (`history`) and the trace storage health. Variants:
+ *
+ * - `&seq=<n>&position=before|after|from|to|observed`: the snapshot of one of the player's events at its
+ *   place in history (CoachHistorySnapshot).
+ * - `&fingerprint=<sha256>`: the first snapshot with this content (Phase 1; does not say when).
+ *
+ * Other players' events and snapshots are never returned. Reading never writes to the history.
  */
 export class ApiCoachDecisions extends CoachPlayerHandler {
   public static readonly INSTANCE = new ApiCoachDecisions();
@@ -102,7 +109,8 @@ export class ApiCoachDecisions extends CoachPlayerHandler {
     const player = await this.player(ctx);
     const tracer = getCoachTracer();
     noStore(res);
-    const fingerprint = ctx.url.searchParams.get('fingerprint');
+    const params = ctx.url.searchParams;
+    const fingerprint = params.get('fingerprint');
     if (fingerprint !== null) {
       if (!/^[0-9a-f]{64}$/.test(fingerprint)) {
         throw RouteError.badRequest('invalid fingerprint');
@@ -114,9 +122,36 @@ export class ApiCoachDecisions extends CoachPlayerHandler {
       responses.writeJson(res, ctx, state);
       return;
     }
+    const seqParam = params.get('seq');
+    if (seqParam !== null) {
+      const position = params.get('position') ?? '';
+      if (!/^[1-9][0-9]{0,8}$/.test(seqParam) || !(EVENT_POSITIONS as ReadonlyArray<string>).includes(position)) {
+        throw RouteError.badRequest('invalid seq or position');
+      }
+      const snapshot = tracer?.historySnapshot(player.game.id, player.color, Number(seqParam), position as EventPosition);
+      if (snapshot === undefined) {
+        throw RouteError.notFound();
+      }
+      responses.writeJson(res, ctx, snapshot);
+      return;
+    }
+    if (tracer === undefined) {
+      responses.writeJson(res, ctx, {tracing: false, history: {status: 'disabled', reason: 'COACH_TRACE_DIR is not set'}, events: []});
+      return;
+    }
+    let history;
+    try {
+      const assessment = tracer.assess(player, projectCoachState(player));
+      history = {status: assessment.status, reason: assessment.reason, lastConfirmedSeq: assessment.lastConfirmed?.seq};
+    } catch (error) {
+      console.error('Coach history check failed', error);
+      history = {status: 'uncertain', reason: 'the current state could not be read'};
+    }
     responses.writeJson(res, ctx, {
-      tracing: tracer !== undefined,
-      events: tracer?.eventsOf(player.game.id, player.color) ?? [],
+      tracing: true,
+      history,
+      health: tracer.health(),
+      events: tracer.eventsOf(player.game.id, player.color),
     });
   }
 }

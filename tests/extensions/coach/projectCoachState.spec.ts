@@ -20,6 +20,7 @@ import {addCity, addGreenery, addOcean, finishGeneration} from '../../TestingUti
 import {answer, expectNoSecretIds} from './coachTestUtils';
 import {TileType} from '../../../src/common/TileType';
 import * as titles from '../../../src/common/inputs/SelectInitialCards';
+import {advisoryFingerprintOf, fingerprintOf} from '../../../src/extensions/coach/server/fingerprint';
 
 function find(choice: CoachChoice | undefined, predicate: (c: CoachChoice) => boolean): CoachChoice | undefined {
   if (choice === undefined) {
@@ -268,6 +269,53 @@ describe('coach projectCoachState', () => {
     expect(second.fingerprint).eq(first.fingerprint);
     expect(second.stateKey).eq(first.stateKey);
     expect(second.capturedAt).not.eq(first.capturedAt);
+  });
+
+  // H07, H08
+  describe('fingerprints', () => {
+    it('keeps the content fingerprint when only a warning changes', () => {
+      const [, player] = soloInActionPhase();
+      const catapult = new EarthCatapult();
+      player.playedCards.push(catapult);
+      const before = projectCoachState(player);
+      catapult.addWarning('maxtemp');
+      const warned = projectCoachState(player);
+      expect(warned.fingerprint).eq(before.fingerprint);
+      expect(warned.advisoryFingerprint).not.eq(before.advisoryFingerprint);
+      catapult.clearWarnings();
+      expect(projectCoachState(player).advisoryFingerprint).eq(before.advisoryFingerprint);
+    });
+
+    it('changes both when resources, hand or choices change; not on repeated reads', () => {
+      const [, player] = soloInActionPhase();
+      player.megaCredits = 10;
+      const first = projectCoachState(player, new Date(1));
+      const again = projectCoachState(player, new Date(2));
+      expect([again.fingerprint, again.advisoryFingerprint]).deep.eq([first.fingerprint, first.advisoryFingerprint]);
+
+      player.megaCredits = 11;
+      const richer = projectCoachState(player);
+      expect(richer.fingerprint).not.eq(first.fingerprint);
+      expect(richer.advisoryFingerprint).not.eq(first.advisoryFingerprint);
+
+      player.cardsInHand.push(new Algae());
+      const withCard = projectCoachState(player);
+      expect(withCard.fingerprint).not.eq(richer.fingerprint);
+
+      player.takeAction();
+      const withChoices = projectCoachState(player);
+      expect(withChoices.fingerprint).not.eq(withCard.fingerprint);
+      expect(withChoices.advisoryFingerprint).not.eq(withCard.advisoryFingerprint);
+    });
+
+    it('can be recomputed from the snapshot (contract)', () => {
+      const [, player] = soloInActionPhase();
+      player.takeAction();
+      const state = projectCoachState(player);
+      const {game, me, opponents, choices, warnings} = state;
+      expect(state.fingerprint).eq(fingerprintOf({game, me, opponents, choices}));
+      expect(state.advisoryFingerprint).eq(advisoryFingerprintOf({game, me, opponents, choices, warnings}));
+    });
   });
 
   it('matches the model the player page shows', () => {

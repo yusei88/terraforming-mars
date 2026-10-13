@@ -277,8 +277,21 @@ export type CoachChoices =
 
 export type CoachStateV1 = {
   schemaVersion: typeof COACH_STATE_SCHEMA,
-  /** Hash of the observable content (no time, no version counters, no timers). */
+  /**
+   * Hash of the game content (no time, version counters, timers, warnings or cancel option).
+   *
+   * Stable across restarts: use it to key facts derived from the position (strategy calculations).
+   */
   fingerprint: string,
+  /**
+   * Hash of everything a piece of advice depends on: the content plus warnings and whether the action
+   * can still be cancelled. No time, version counters or timers.
+   *
+   * May change while `fingerprint` stays equal (a warning appears or disappears, e.g. after a restart).
+   * Recompute advice about the current choices when it changes. Added in Phase 1.5 (absent in older
+   * snapshots).
+   */
+  advisoryFingerprint: string,
   /** Position in history: equal content reached through an undo gets a different `stateKey`. */
   stateKey: string,
   version: CoachStateVersion,

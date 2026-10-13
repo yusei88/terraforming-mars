@@ -135,7 +135,7 @@ describe('coach routes', () => {
       setCoachTracer(undefined);
       scaffolding.url = `/api/coach/decisions?id=${alice.id}`;
       await scaffolding.get(ApiCoachDecisions.INSTANCE, res);
-      expect(JSON.parse(res.content)).deep.eq({tracing: false, events: []});
+      expect(JSON.parse(res.content)).deep.eq({tracing: false, history: {status: 'disabled', reason: 'COACH_TRACE_DIR is not set'}, events: []});
     });
 
     it('returns only the requesting player\'s events and snapshots', async () => {
