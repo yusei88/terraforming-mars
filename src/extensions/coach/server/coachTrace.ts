@@ -37,8 +37,10 @@ export type SeriesEvent = CoachTraceEvent & {series: EventSeries};
 
 /** Tracer health as reported by the decisions API. No paths, no ids. */
 export type CoachTraceHealth = TraceHealth & {
-  /** Events not written because a snapshot they refer to could not be stored. */
+  /** Events not written because a snapshot they refer to could not be stored, or the history could not be read. */
   eventsDropped: number,
+  /** Times a game's existing history could not be read before writing (its events are then not written). */
+  historyReadFailures: number,
 };
 
 function isEvent(value: unknown): value is CoachTraceEvent {
@@ -59,19 +61,35 @@ function stateKeyOf(color: Color, state: Pick<CoachStateV1, 'fingerprint' | 'adv
 export class CoachTracer {
   private readonly cursors = new Map<GameId, Cursor>();
   private dropped = 0;
+  private readFailures = 0;
 
   constructor(private readonly sink: TraceSink, private readonly clock: () => Date = () => new Date()) {}
 
-  private readEvents(gameId: GameId): Array<CoachTraceEvent> {
-    return this.sink.read(gameId, 'trace').records.filter(isEvent).sort((a, b) => a.seq - b.seq);
+  /** Events of the game, oldest first; `error` when the trace could not be read (events then unknown). */
+  private readEvents(gameId: GameId): {events: Array<CoachTraceEvent>, error?: string} {
+    const result = this.sink.read(gameId, 'trace');
+    const events = result.records.filter(isEvent).sort((a, b) => a.seq - b.seq);
+    return result.error === undefined ? {events} : {events, error: result.error};
   }
 
-  private cursor(gameId: GameId): Cursor {
+  /**
+   * The write position of the game, read from the files once per process.
+   *
+   * Undefined when the files cannot be read: writing on top of an unknown history could reuse `seq`
+   * numbers, so nothing is written for that game until they can be read again.
+   */
+  private cursor(gameId: GameId): Cursor | undefined {
     let cursor = this.cursors.get(gameId);
     if (cursor === undefined) {
       // After a server restart, continue the numbering and branches of the existing file.
-      const events = this.readEvents(gameId);
-      const states = this.sink.read(gameId, 'states').records as Array<Partial<CoachStateRecord>>;
+      const read = this.readEvents(gameId);
+      const statesRead = this.sink.read(gameId, 'states');
+      if (read.error !== undefined || statesRead.error !== undefined) {
+        this.readFailures++;
+        return undefined;
+      }
+      const events = read.events;
+      const states = statesRead.records as Array<Partial<CoachStateRecord>>;
       cursor = {
         seq: events.reduce((max, event) => Math.max(max, event.seq), 0),
         branch: events.reduce((max, event) => Math.max(max, ...this.refsOf(event).map((ref) => ref.branch)), 0),
@@ -183,6 +201,10 @@ export class CoachTracer {
       const offered = before.choices.status === 'awaiting-input' ? before.choices.root : undefined;
       return (outcome) => {
         const cursor = this.cursor(gameId);
+        if (cursor === undefined) {
+          this.dropped++;
+          return;
+        }
         this.checkIntegrity(gameId, player, before, cursor);
         const decidedAt = this.clock();
         const who = {color: player.color, name: player.name};
@@ -217,6 +239,10 @@ export class CoachTracer {
       const from = projectCoachState(player, this.clock());
       return (restored) => {
         const cursor = this.cursor(gameId);
+        if (cursor === undefined) {
+          this.dropped++;
+          return;
+        }
         this.checkIntegrity(gameId, player, from, cursor);
         const who = {color: player.color, name: player.name};
         if (restored === undefined) {
@@ -238,13 +264,22 @@ export class CoachTracer {
     },
   };
 
-  /** Events of one player (by colour), oldest first, with their series. Other players' events are left out. */
-  public eventsOf(gameId: GameId, color: Color): Array<SeriesEvent> {
-    const events = this.readEvents(gameId);
+  /**
+   * Events of one player (by colour), oldest first, with their series. Other players' events are left out.
+   *
+   * `error` is set when the trace could not be read; `events` is then empty and says nothing.
+   */
+  public eventsOf(gameId: GameId, color: Color): {events: Array<SeriesEvent>, error?: string} {
+    const {events, error} = this.readEvents(gameId);
+    if (error !== undefined) {
+      return {events: [], error};
+    }
     const series = annotateSeries(events);
-    return events
-      .filter((event) => event.player.color === color)
-      .map((event) => ({...event, series: series.get(event.seq) ?? 'current'}));
+    return {
+      events: events
+        .filter((event) => event.player.color === color)
+        .map((event) => ({...event, series: series.get(event.seq) ?? 'current'})),
+    };
   }
 
   /**
@@ -254,13 +289,21 @@ export class CoachTracer {
    * Use `historySnapshot` for a place in history.
    */
   public stateOf(gameId: GameId, color: Color, fingerprint: string): CoachStateV1 | undefined {
-    const records = this.sink.readMatching(gameId, 'states', fingerprint) as Array<CoachStateRecord>;
+    const records = this.sink.readMatching(gameId, 'states', fingerprint).records as Array<CoachStateRecord>;
     return records.find((record) => record.color === color && record.fingerprint === fingerprint)?.state;
   }
 
-  /** The snapshot of one event of `color` at `position`, with the event's own place in history. */
+  /**
+   * The snapshot of one event of `color` at `position`, with the event's own place in history.
+   *
+   * A reference with an advisory fingerprint matches only the snapshot with exactly that fingerprint;
+   * only Phase 1 references (none) fall back to a content-only match.
+   */
   public historySnapshot(gameId: GameId, color: Color, seq: number, position: EventPosition): CoachHistorySnapshot | undefined {
-    const events = this.readEvents(gameId);
+    const {events, error} = this.readEvents(gameId);
+    if (error !== undefined) {
+      return undefined;
+    }
     const event = events.find((e) => e.seq === seq);
     if (event === undefined || event.player.color !== color) {
       return undefined;
@@ -269,10 +312,15 @@ export class CoachTracer {
     if (ref === undefined) {
       return undefined;
     }
-    const records = (this.sink.readMatching(gameId, 'states', ref.fingerprint) as Array<CoachStateRecord>)
+    const statesRead = this.sink.readMatching(gameId, 'states', ref.fingerprint);
+    if (statesRead.error !== undefined) {
+      return undefined;
+    }
+    const records = (statesRead.records as Array<CoachStateRecord>)
       .filter((record) => record.color === color && record.fingerprint === ref.fingerprint);
-    const exact = ref.advisoryFingerprint === undefined ? undefined : records.find((record) => record.advisoryFingerprint === ref.advisoryFingerprint);
-    const record = exact ?? records[0];
+    const legacy = ref.advisoryFingerprint === undefined;
+    const exact = legacy ? undefined : records.find((record) => record.advisoryFingerprint === ref.advisoryFingerprint);
+    const record = legacy ? records[0] : exact;
     if (record === undefined) {
       return undefined;
     }
@@ -298,19 +346,31 @@ export class CoachTracer {
     }
   }
 
-  /** Read-only comparison of the recorded history with the game as `player` sees it now. */
+  /**
+   * Read-only comparison of the recorded history with the game as `player` sees it now.
+   *
+   * A history that cannot be read is never `valid`: it is `uncertain`.
+   */
   public assess(player: IPlayer, state: CoachStateV1): IntegrityAssessment {
-    const events = this.readEvents(player.game.id);
+    const {events, error} = this.readEvents(player.game.id);
+    if (error !== undefined) {
+      return {status: 'uncertain', reason: `the history could not be read (${error})`};
+    }
     return assessIntegrity(events, {color: player.color, fingerprint: state.fingerprint, version: state.version});
   }
 
-  /** The last confirmed progress of the game (for diagnostics). */
+  /** The last confirmed progress of the game (for diagnostics); undefined also when unreadable. */
   public lastConfirmed(gameId: GameId) {
-    return confirmedPoints(this.readEvents(gameId)).latest;
+    const {events, error} = this.readEvents(gameId);
+    return error === undefined ? confirmedPoints(events).latest : undefined;
   }
 
   public health(): CoachTraceHealth {
-    return {...this.sink.health(), eventsDropped: this.dropped};
+    const health = {...this.sink.health(), eventsDropped: this.dropped, historyReadFailures: this.readFailures};
+    if (this.readFailures > 0 && health.status === 'ok') {
+      health.status = 'degraded';
+    }
+    return health;
   }
 }
 

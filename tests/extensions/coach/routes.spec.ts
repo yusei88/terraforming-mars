@@ -159,7 +159,7 @@ describe('coach routes', () => {
       expect(JSON.parse(res.content).me.color).eq(alice.color);
 
       // Bob's snapshot is not reachable with Alice's id, even with its fingerprint.
-      const bobEvent = tracer.eventsOf(game.id, bob.color)[0];
+      const bobEvent = tracer.eventsOf(game.id, bob.color).events[0];
       if (bobEvent.type !== 'rejected') {
         throw new Error('unexpected event');
       }

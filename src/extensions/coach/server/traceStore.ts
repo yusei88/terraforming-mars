@@ -43,7 +43,7 @@ export type TraceSink = {
    *
    * For finding snapshots by fingerprint in large files without parsing every snapshot.
    */
-  readMatching(gameId: GameId, file: TraceFile, text: string): Array<unknown>,
+  readMatching(gameId: GameId, file: TraceFile, text: string): ReadResult,
   health(): TraceHealth,
 };
 
@@ -221,8 +221,8 @@ class SecureFileSink implements TraceSink {
     return this.parse(gameId, kind, undefined);
   }
 
-  public readMatching(gameId: GameId, kind: TraceFile, text: string): Array<unknown> {
-    return this.parse(gameId, kind, text).records;
+  public readMatching(gameId: GameId, kind: TraceFile, text: string): ReadResult {
+    return this.parse(gameId, kind, text);
   }
 
   private parse(gameId: GameId, kind: TraceFile, filter: string | undefined): ReadResult {
@@ -294,15 +294,32 @@ export function fileSink(directory: string, testing?: FileSinkTesting): TraceSin
   return new SecureFileSink(directory, testing);
 }
 
-/** Sink keeping lines in memory; `failNext` makes the next writes of a file fail. */
-export function memorySink(): TraceSink & {lines: Map<string, Array<object>>, failNext(file: TraceFile, code: string, times?: number): void} {
+/** In-memory sink for tests, with failure injection. */
+export type MemorySink = TraceSink & {
+  lines: Map<string, Array<object>>,
+  /** Makes the next `times` writes of `file` fail with `code`. */
+  failNext(file: TraceFile, code: string, times?: number): void,
+  /** Makes every read of `file` fail with `code` (undefined: reads work again). */
+  failReads(file: TraceFile, code: string | undefined): void,
+};
+
+/** Sink keeping lines in memory. */
+export function memorySink(): MemorySink {
   const lines = new Map<string, Array<object>>();
+  const readFailures = new Map<TraceFile, string>();
   const pending = new Map<TraceFile, {code: string, times: number}>();
   const failures = new Map<string, number>();
   return {
     lines,
     failNext(file, code, times = 1) {
       pending.set(file, {code, times});
+    },
+    failReads(file, code) {
+      if (code === undefined) {
+        readFailures.delete(file);
+      } else {
+        readFailures.set(file, code);
+      }
     },
     append(gameId, file, record) {
       const failure = pending.get(file);
@@ -316,10 +333,18 @@ export function memorySink(): TraceSink & {lines: Map<string, Array<object>>, fa
       return {ok: true};
     },
     read(gameId, file) {
+      const failure = readFailures.get(file);
+      if (failure !== undefined) {
+        return {records: [], corruptLines: 0, error: failure};
+      }
       return {records: lines.get(`${gameId}.${file}`) ?? [], corruptLines: 0};
     },
     readMatching(gameId, file, text) {
-      return (lines.get(`${gameId}.${file}`) ?? []).filter((record) => JSON.stringify(record).includes(text));
+      const failure = readFailures.get(file);
+      if (failure !== undefined) {
+        return {records: [], corruptLines: 0, error: failure};
+      }
+      return {records: (lines.get(`${gameId}.${file}`) ?? []).filter((record) => JSON.stringify(record).includes(text)), corruptLines: 0};
     },
     health() {
       return {
