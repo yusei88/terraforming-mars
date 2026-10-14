@@ -147,11 +147,11 @@ export class ApiCoachDecisions extends CoachPlayerHandler {
       console.error('Coach history check failed', error);
       history = {status: 'uncertain', reason: 'the current state could not be read'};
     }
-    responses.writeJson(res, ctx, {
-      tracing: true,
-      history,
-      health: tracer.health(),
-      events: tracer.eventsOf(player.game.id, player.color),
-    });
+    const {events, error} = tracer.eventsOf(player.game.id, player.color);
+    const body: Record<string, unknown> = {tracing: true, history, health: tracer.health(), events};
+    if (error !== undefined) {
+      body.historyReadError = error;
+    }
+    responses.writeJson(res, ctx, body);
   }
 }

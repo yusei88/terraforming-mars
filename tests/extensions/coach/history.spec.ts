@@ -141,7 +141,7 @@ describe('coach history', () => {
     expect(integrity.observed.branch).eq(1);
     expect((trace[3] as CoachDecisionEvent).before.branch).eq(1);
     // The lost move is no longer part of the line of play.
-    const series = after.tracer.eventsOf(game.id, player.color).map((e) => [e.seq, e.series]);
+    const series = after.tracer.eventsOf(game.id, player.color).events.map((e) => [e.seq, e.series]);
     expect(series).deep.eq([[1, 'current'], [2, 'superseded'], [3, 'current'], [4, 'current']]);
     // Once recorded, the same mismatch is not reported again.
     expect(after.tracer.assess(after.player, projectCoachState(after.player)).status).eq('valid');
@@ -189,7 +189,7 @@ describe('coach history', () => {
       player: {color: player.color, name: player.name}, before: legacyRef, response: {type: 'option'}, error: 'old', decidedAt: '2026-10-13T00:00:00.000Z'});
 
     const tracer = new CoachTracer(sink);
-    expect(tracer.eventsOf(game.id, player.color).map((e) => [e.seq, e.series])).deep.eq([[1, 'current']]);
+    expect(tracer.eventsOf(game.id, player.color).events.map((e) => [e.seq, e.series])).deep.eq([[1, 'current']]);
     const snapshot = tracer.historySnapshot(game.id, player.color, 1, 'before')!;
     expect(snapshot.precision).eq('legacy-content-only');
     expect(snapshot.reference.advisoryFingerprint).is.undefined;
@@ -200,6 +200,53 @@ describe('coach history', () => {
     expect(trace.map((e) => e.seq)).deep.eq([1, 2]);
     expect((trace[1] as {before: {advisoryFingerprint?: string}}).before.advisoryFingerprint).eq(state.advisoryFingerprint);
     expect(tracer.historySnapshot(game.id, player.color, 2, 'before')!.precision).eq('exact');
+  });
+
+  // P2-17 (G0): an unreadable history is never valid, and nothing is written on top of it
+  it('treats an unreadable history as uncertain and writes nothing', () => {
+    const player = TestPlayer.BLUE.newPlayer();
+    const game = Game.newInstance('game-p217', [player], player, 'spectator-p217');
+    const tracer = new CoachTracer(sink);
+    act(tracer, player, initialAnswer(player));
+    expect(events(sink, game)).has.length(1);
+
+    sink.failReads('trace', 'EIO');
+    const restarted = new CoachTracer(sink);
+    const assessment = restarted.assess(player, projectCoachState(player));
+    expect(assessment.status).eq('uncertain');
+    expect(assessment.reason).contains('EIO');
+    expect(restarted.eventsOf(game.id, player.color)).deep.eq({events: [], error: 'EIO'});
+    expect(restarted.historySnapshot(game.id, player.color, 1, 'after')).is.undefined;
+    expect(restarted.lastConfirmed(game.id)).is.undefined;
+
+    restarted.observer.beforeInput(player, {type: 'option'}, 0)!({accepted: false, error: 'x'});
+    sink.failReads('trace', undefined);
+    expect(events(sink, game).map((e) => e.seq)).deep.eq([1]);
+    expect(restarted.health().historyReadFailures).eq(1);
+    expect(restarted.health().status).eq('degraded');
+
+    // Readable again: numbering continues from the file, no reuse of seq 1.
+    restarted.observer.beforeInput(player, {type: 'option'}, 0)!({accepted: false, error: 'y'});
+    expect(events(sink, game).map((e) => e.seq)).deep.eq([1, 2]);
+  });
+
+  // P2-18 (G0): a new-style reference never falls back to another snapshot with the same content
+  it('does not fall back when the advisory fingerprint does not match', () => {
+    const player = TestPlayer.BLUE.newPlayer();
+    const game = Game.newInstance('game-p218', [player], player, 'spectator-p218');
+    const tracer = new CoachTracer(sink);
+    act(tracer, player, initialAnswer(player));
+    const decision = events(sink, game)[0] as CoachDecisionEvent;
+    expect(tracer.historySnapshot(game.id, player.color, 1, 'after')?.precision).eq('exact');
+
+    // Same content, other warnings: only this record remains for the fingerprint.
+    const lines = sink.lines.get(`${game.id}.states`) as Array<CoachStateRecord>;
+    for (const record of lines) {
+      if (record.fingerprint === decision.after.fingerprint) {
+        record.advisoryFingerprint = 'f'.repeat(64);
+      }
+    }
+    expect(tracer.historySnapshot(game.id, player.color, 1, 'after')).is.undefined;
   });
 
   describe('through the routes', () => {

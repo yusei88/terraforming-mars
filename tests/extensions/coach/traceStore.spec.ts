@@ -54,7 +54,7 @@ describe('coach traceStore', () => {
     expect(sink.read(GAME, 'trace')).deep.eq({records: [{a: 1}], corruptLines: 0});
     expect(sink.health().status).eq('ok');
     sink.append(GAME, 'states', {fingerprint: 'ff00'});
-    expect(sink.readMatching(GAME, 'states', 'ff00')).deep.eq([{fingerprint: 'ff00'}]);
+    expect(sink.readMatching(GAME, 'states', 'ff00')).deep.eq({records: [{fingerprint: 'ff00'}], corruptLines: 0});
   });
 
   // H02
