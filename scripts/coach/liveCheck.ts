@@ -6,12 +6,16 @@
 //
 //   npx tsx scripts/coach/liveCheck.ts --base http://localhost:8081 --out evidence.json p<id1> [p<id2> …]
 //
+// With --analysis it also checks /api/coach/analysis at every step (current state, legal-now cards offered
+// by the game, no ids, no secret cards of others) and reports its latency.
+//
 // With --read-only it never answers (safe on a game someone is playing): it only reads and compares,
 // every --interval milliseconds, --steps times.
 //
 // Player ids are secrets: the evidence file replaces them with placeholders.
 import * as fs from 'fs';
-import {CoachStateV1} from '../../src/extensions/coach/common/CoachState';
+import {CoachChoice, CoachStateV1} from '../../src/extensions/coach/common/CoachState';
+import {CoachAnalysisV1} from '../../src/extensions/coach/common/CoachAnalysis';
 import {PlayerViewModel} from '../../src/common/models/PlayerModel';
 import {answer} from './autopilot';
 
@@ -32,6 +36,11 @@ const out = option('--out', '');
 const maxSteps = Number(option('--steps', '400'));
 const undoAt = Number(option('--undo-at', '-1'));
 const interval = Number(option('--interval', '3000'));
+const analysisIndex = args.indexOf('--analysis');
+const withAnalysis = analysisIndex >= 0;
+if (withAnalysis) {
+  args.splice(analysisIndex, 1);
+}
 const readOnlyIndex = args.indexOf('--read-only');
 const readOnly = readOnlyIndex >= 0;
 if (readOnly) {
@@ -40,6 +49,7 @@ if (readOnly) {
 const playerIds = args;
 
 const checks: Array<Check> = [];
+const analysisLatencies: Array<number> = [];
 const fingerprints: Array<string> = [];
 const latencies: Array<number> = [];
 let decisions = 0;
@@ -116,6 +126,38 @@ async function main() {
       fingerprints.push(state.fingerprint);
       check(`${label}: repeated reads give the same fingerprint`, state.fingerprint === again.fingerprint);
       const view = (await get<PlayerViewModel>(`/api/player?id=${id}`)).body;
+      if (withAnalysis) {
+        const started = performance.now();
+        const analysis = await get<CoachAnalysisV1>(`/api/coach/analysis?id=${id}&horizon=3`);
+        analysisLatencies.push(performance.now() - started);
+        check(`${label}: analysis answers`, analysis.status === 200, String(analysis.status));
+        if (analysis.status === 200) {
+          const body = analysis.body;
+          check(`${label}: analysis is of the current state`, body.source.fingerprint === state.fingerprint);
+          const offered = new Set<string>();
+          const walk = (choice: CoachChoice) => {
+            if (choice.inputType === 'projectCard') {
+              (choice.cards ?? []).forEach((c) => offered.add(c.name));
+            }
+            (choice.options ?? []).forEach(walk);
+          };
+          if (state.choices.status === 'awaiting-input') {
+            walk(state.choices.root);
+          }
+          for (const plan of body.candidates) {
+            for (const card of plan.cards.filter((c) => c.availability === 'legal-now')) {
+              check(`${label}: ${card.name} legal-now only when offered by the game`, offered.has(card.name));
+            }
+          }
+          const text = JSON.stringify(body);
+          check(`${label}: no ids in the analysis`, playerIds.every((p) => !text.includes(p)) && !text.includes(view.game.spectatorId));
+          for (const otherId of playerIds.filter((p) => p !== id)) {
+            const other = (await get<PlayerViewModel>(`/api/player?id=${otherId}`)).body;
+            const leaked = other.cardsInHand.map((c) => c.name).filter((name) => text.includes(`"${name}"`) && !state.me.hand.some((c) => c.name === name));
+            check(`${label}: no secret card of another player in the analysis`, leaked.length === 0, leaked.join(', '));
+          }
+        }
+      }
       compare(label, state, view);
       const json = JSON.stringify(state);
       check(`${label}: no ids in the snapshot`, playerIds.every((p) => !json.includes(p)) && !json.includes(view.game.spectatorId));
@@ -192,6 +234,10 @@ async function main() {
     failed: failed.length,
     failures: failed.slice(0, 50),
     httpLatencyMs: {reads: sorted.length, p50: sorted[Math.floor(sorted.length / 2)], p95, max: sorted.at(-1)},
+    analysisLatencyMs: withAnalysis ? (() => {
+      const a = [...analysisLatencies].sort((x, y) => x - y);
+      return {reads: a.length, p50: a[Math.floor(a.length / 2)], p95: a[Math.ceil(0.95 * a.length) - 1], max: a.at(-1)};
+    })() : undefined,
     traceEvents: history.events.reduce((counts: Record<string, number>, e) => ({...counts, [e.type]: (counts[e.type] ?? 0) + 1}), {}),
     finalPhase: final.game.phase,
     finalGeneration: final.game.generation,

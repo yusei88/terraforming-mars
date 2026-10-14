@@ -8,12 +8,14 @@ import {IPlayer} from '@/server/IPlayer';
 import {projectCoachState} from './projectCoachState';
 import {getCatalogJson, catalogVersion} from './cardCatalog';
 import {getCoachTracer} from './coachTrace';
+import {cachedAnalysis} from './analysis/engine';
 import {EVENT_POSITIONS, EventPosition} from '../common/CoachTrace';
 
 export const COACH_PATHS = {
   STATE: 'api/coach/state',
   CATALOG: 'api/coach/catalog',
   DECISIONS: 'api/coach/decisions',
+  ANALYSIS: 'api/coach/analysis',
 } as const;
 
 /**
@@ -64,6 +66,35 @@ export class ApiCoachState extends CoachPlayerHandler {
     }
     noStore(res);
     responses.writeJson(res, ctx, state);
+  }
+}
+
+/**
+ * `GET api/coach/analysis?id=<playerId>[&horizon=0..3]`: CoachAnalysisV1 of that player (horizon 3 by
+ * default). Read-only; a failure of the analysis is answered with 500 and never touches the game.
+ */
+export class ApiCoachAnalysis extends CoachPlayerHandler {
+  public static readonly INSTANCE = new ApiCoachAnalysis();
+  private constructor() {
+    super();
+  }
+
+  public override async get(_req: Request, res: Response, ctx: Context): Promise<void> {
+    const player = await this.player(ctx);
+    const horizonParam = ctx.url.searchParams.get('horizon') ?? '3';
+    if (!/^[0-3]$/.test(horizonParam)) {
+      throw RouteError.badRequest('horizon must be 0, 1, 2 or 3');
+    }
+    let analysis;
+    try {
+      analysis = cachedAnalysis(projectCoachState(player), Number(horizonParam), player.id);
+    } catch (error) {
+      console.error('Coach analysis failed', error);
+      throw RouteError.internalServerError('coach analysis unavailable');
+    }
+    noStore(res);
+    // A copy: the response writer may add fields, and the cached result must stay as it was.
+    responses.writeJson(res, ctx, {...analysis});
   }
 }
 

@@ -35,7 +35,7 @@ describe('coach routes', () => {
   }
 
   it('registers its routes and observer through the extension', () => {
-    expect(extension.routes?.map(([path]) => path)).deep.eq(['api/coach/state', 'api/coach/catalog', 'api/coach/decisions']);
+    expect(extension.routes?.map(([path]) => path)).deep.eq(['api/coach/state', 'api/coach/catalog', 'api/coach/decisions', 'api/coach/analysis']);
     expect(extension.inputObserver?.name).eq('coach-trace');
   });
 

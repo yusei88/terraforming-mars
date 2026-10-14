@@ -1,7 +1,7 @@
-// Strategy coach, Phase 1: read-only game state for analysis and a history of human decisions.
-// See docs/coach/phase1-design.md.
+// Strategy coach: read-only game state, a history of human decisions (Phase 1, 1.5) and the analysis of
+// combos, requirements and forecasts (Phase 2). See docs/coach/.
 import {ServerExtension} from '@/server/extensions/ServerExtension';
-import {ApiCoachCatalog, ApiCoachDecisions, ApiCoachState, COACH_PATHS} from './server/routes';
+import {ApiCoachAnalysis, ApiCoachCatalog, ApiCoachDecisions, ApiCoachState, COACH_PATHS} from './server/routes';
 import {coachTraceObserver} from './server/coachTrace';
 
 export const extension: ServerExtension = {
@@ -10,6 +10,7 @@ export const extension: ServerExtension = {
     [COACH_PATHS.STATE, ApiCoachState.INSTANCE],
     [COACH_PATHS.CATALOG, ApiCoachCatalog.INSTANCE],
     [COACH_PATHS.DECISIONS, ApiCoachDecisions.INSTANCE],
+    [COACH_PATHS.ANALYSIS, ApiCoachAnalysis.INSTANCE],
   ],
   inputObserver: coachTraceObserver,
 };
