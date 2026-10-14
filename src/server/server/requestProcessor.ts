@@ -59,6 +59,7 @@ import {getHerokuIpAddress} from './heroku';
 import * as responses from './responses';
 import {EndGameLog} from '../routes/EndGameLog';
 import {UrlParams} from '../routes/UrlParams';
+import {addInputObserver} from '../extensions/inputObservers';
 
 const metrics = {
   request_count: new prometheus.Counter({
@@ -171,6 +172,9 @@ const handlers: Map<string, IHandler> = new Map(
 for (const extension of SERVER_EXTENSIONS) {
   for (const [route, handler] of extension.routes ?? []) {
     handlers.set(route, handler);
+  }
+  if (extension.inputObserver !== undefined) {
+    addInputObserver(extension.inputObserver);
   }
 }
 
