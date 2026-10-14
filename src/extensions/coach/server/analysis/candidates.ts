@@ -5,12 +5,14 @@ import {
 import {EffectAtom} from '../../common/CoachMechanics';
 import {CardName} from '@/common/cards/CardName';
 import {CardType} from '@/common/cards/CardType';
+import {Resource} from '@/common/Resource';
 import {catalogCard} from '../cardCatalog';
 import {mechanicsOf} from './mechanicsCatalog';
 import {analyzeRequirements} from './requirements';
 import {discountOn} from './discounts';
 import {affordability} from './payments';
 import {buildSynergyGraph} from './synergyGraph';
+import {forecastPlan, PRODUCTION_MINIMUM, productionShortfalls} from './forecast';
 
 // Candidate plans (Gate C): short lines of play of 1–3 unplayed cards linked by graph edges, each with what
 // is legal now, what blocks the rest, what it costs, and a question for the player. Plans of different
@@ -159,6 +161,8 @@ function evaluate(state: CoachStateV1, chain: ReadonlyArray<PoolCard>, graph: Sy
   const assumptions: Array<string> = [];
   let play: number | 'unknown' = 0;
   let purchase = 0;
+  // Production as it will be when each card is played (earlier cards of the plan included).
+  const production: Record<Resource, number> = {...state.me.production};
   chain.forEach((card, index) => {
     const reasons: Array<string> = [];
     const earlier = names.slice(0, index);
@@ -191,6 +195,21 @@ function evaluate(state: CoachStateV1, chain: ReadonlyArray<PoolCard>, graph: Sy
         }
       }
     });
+    // A production decrease needs that production (Production.canAdjust).
+    const atoms = atomsOf(card.name);
+    for (const shortfall of productionShortfalls(production, atoms)) {
+      blockers.push({
+        card: card.name, kind: 'production', observed: shortfall.have, target: PRODUCTION_MINIMUM[shortfall.resource] - shortfall.change,
+        comparator: '>=', gap: PRODUCTION_MINIMUM[shortfall.resource] - shortfall.change - shortfall.have, status: 'unmet',
+        assumptions: [`${card.name} lowers ${shortfall.resource} production by ${-shortfall.change}`],
+        evidence: [{kind: 'state', fieldPath: `me.production.${shortfall.resource}`, stateFingerprint: state.fingerprint}, {kind: 'catalog', fieldPath: 'effects.onPlay.production', cardName: card.name}],
+      });
+    }
+    for (const atom of atoms) {
+      if (atom.source === 'onPlay' && atom.kind === 'production') {
+        production[atom.resource] += atom.amount;
+      }
+    }
     // Cost after the discounts of earlier cards of the plan (never below 0).
     let cost: number | 'unknown' = card.instance.calculatedCost ?? 'unknown';
     if (typeof cost === 'number') {
@@ -269,14 +288,35 @@ function compare(a: CandidatePlan, b: CandidatePlan): number {
     a.id.localeCompare(b.id);
 }
 
-/** Enumerates candidate plans for the player of `state`, within `limits`. Pure and deterministic. */
-export function buildCandidates(state: CoachStateV1, limits: CandidateLimits = DEFAULT_LIMITS, graph: SynergyGraph = buildSynergyGraph(state)): CandidateSet {
+/**
+ * Enumerates candidate plans for the player of `state`, within `limits`. Pure and deterministic.
+ *
+ * With `horizon` (0–3 production phases), each returned plan carries its forecast.
+ */
+export function buildCandidates(state: CoachStateV1, limits: CandidateLimits = DEFAULT_LIMITS, givenGraph?: SynergyGraph, horizon?: number): CandidateSet {
   const started = Date.now();
+  // The graph only needs the cards the search can use.
+  const graph = givenGraph ?? buildSynergyGraph(state, {maxUnplayed: limits.maxPool});
   const discarded: Array<{cardName: CardName, reason: string}> = [];
   const warnings: Array<string> = [];
-  const {cards, truncated: poolTruncated} = pool(state, graph, limits, discarded);
+  const {cards, truncated: overPool} = pool(state, graph, limits, discarded);
+  // The graph may already hold only `maxPool` unplayed cards: count them in the snapshot.
+  const unplayed = new Set([...state.me.hand, ...state.me.draftedCards].map((c) => c.name));
+  const offeredNames: Array<CardName> = [];
+  const collect = (choice: CoachChoice) => {
+    if (choice.inputType === 'card') {
+      (choice.cards ?? []).forEach((c) => offeredNames.push(c.name));
+    }
+    (choice.options ?? []).forEach(collect);
+  };
+  if (state.choices.status === 'awaiting-input') {
+    collect(state.choices.root);
+  }
+  offeredNames.forEach((name) => unplayed.add(name));
+  state.me.tableau.forEach((c) => unplayed.delete(c.name));
+  const poolTruncated = overPool || unplayed.size > limits.maxPool;
   if (poolTruncated) {
-    warnings.push(`only ${limits.maxPool} of the unplayed cards were considered`);
+    warnings.push(`only ${limits.maxPool} of the ${unplayed.size} unplayed cards were considered`);
   }
   const legal = legalNow(state);
   const names = new Set(cards.map((c) => c.name));
@@ -360,12 +400,21 @@ export function buildCandidates(state: CoachStateV1, limits: CandidateLimits = D
   }
   const seen = new Set<string>();
   const plans: Array<CandidatePlan> = [];
+  let evaluationStopped = false;
   for (const chain of chains) {
+    if (Date.now() - started > limits.maxMillis) {
+      evaluationStopped = true;
+      break;
+    }
     const id = chain.map((c) => c.name).join(' > ');
     if (!seen.has(id)) {
       seen.add(id);
       plans.push(evaluate(state, chain, graph, legal, playedLinks));
     }
+  }
+  if (evaluationStopped) {
+    warnings.push(`only ${plans.length} of ${chains.length} chains were evaluated within ${limits.maxMillis} ms; plans may be missing`);
+    stopped = true;
   }
   // Spread over goals: best of each goal in turn.
   const byGoal = new Map<PlanGoal, Array<CandidatePlan>>();
@@ -386,6 +435,11 @@ export function buildCandidates(state: CoachStateV1, limits: CandidateLimits = D
     }
     if (!added) {
       break;
+    }
+  }
+  if (horizon !== undefined) {
+    for (const plan of candidates) {
+      plan.forecast = forecastPlan(state, plan, horizon);
     }
   }
   return {

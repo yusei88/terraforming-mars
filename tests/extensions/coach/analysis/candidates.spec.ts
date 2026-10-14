@@ -191,6 +191,25 @@ describe('coach analysis candidates', () => {
     expect(known).greaterThan(10);
   }).timeout(120_000);
 
+  // Found by the forecast golden: a production decrease needs that production when the card is played.
+  it('blocks a production decrease the player cannot afford at that point of the plan', () => {
+    const {player} = actionGame(() => {}, [CardName.STRIP_MINE, CardName.STEELWORKS, CardName.POWER_PLANT, CardName.GEOTHERMAL_POWER]);
+    const set = buildCandidates(projectCoachState(player), {...DEFAULT_LIMITS, maxCandidates: 100});
+    const stripMine = (id: string) => set.candidates.find((p) => p.id === id)?.blockers.filter((b) => b.card === CardName.STRIP_MINE && b.kind === 'production');
+    const plans = set.candidates.filter((p) => p.cards.some((c) => c.name === CardName.STRIP_MINE));
+    expect(plans.length).greaterThan(0);
+    for (const plan of plans) {
+      const blockers = stripMine(plan.id) ?? [];
+      // Strip Mine lowers energy production by 2; the player starts with 0.
+      const before = plan.cards.slice(0, plan.cards.findIndex((c) => c.name === CardName.STRIP_MINE)).map((c) => c.name);
+      const energyBefore = (before.includes(CardName.POWER_PLANT) ? 1 : 0) + (before.includes(CardName.GEOTHERMAL_POWER) ? 2 : 0);
+      expect(blockers.length, plan.id).eq(energyBefore >= 2 ? 0 : 1);
+      if (blockers.length > 0) {
+        expect(blockers[0]).deep.include({observed: energyBefore, target: 2, gap: 2 - energyBefore, status: 'unmet'});
+      }
+    }
+  });
+
   // P2-14
   it('keeps offered cards as conditional with their purchase cost', () => {
     const player = TestPlayer.BLUE.newPlayer();
@@ -221,9 +240,11 @@ describe('coach analysis candidates', () => {
     const {player} = actionGame(SETUPS[1].setup, projectCardNames());
     const state = projectCoachState(player);
     const set = buildCandidates(state);
-    expect(set.search.poolSize).eq(DEFAULT_LIMITS.maxPool);
+    // At most the limit (cards that can never be played are dropped from it).
+    expect(set.search.poolSize).lessThanOrEqual(DEFAULT_LIMITS.maxPool);
+    expect(set.search.poolSize).greaterThan(DEFAULT_LIMITS.maxPool - 5);
     expect(set.search.truncated).is.true;
-    expect(set.warnings.join(' ')).contains(`only ${DEFAULT_LIMITS.maxPool}`);
+    expect(set.warnings.join(' ')).contains(`only ${DEFAULT_LIMITS.maxPool} of the`);
     expect(set.candidates.length).lessThanOrEqual(DEFAULT_LIMITS.maxCandidates);
     expect(set.search.elapsedMs).lessThan(1000);
 
