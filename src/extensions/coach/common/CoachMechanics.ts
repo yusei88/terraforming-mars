@@ -44,7 +44,12 @@ export type EffectAtom =
   /** Fixed victory points printed on the card. */
   {kind: 'victoryPoints', source: EffectSource, amount: number} |
   /** Victory points per `per` resources on this card (rounded down). */
-  {kind: 'victoryPointsPerResource', source: EffectSource, points: number, per: number};
+  {kind: 'victoryPointsPerResource', source: EffectSource, points: number, per: number} |
+  /**
+   * `points` victory points per `per` tags of `tag` (rounded down), counted like the engine scores them:
+   * the owner's own tags without wild tags, the card itself included; other players' tags too when `all`.
+   */
+  {kind: 'victoryPointsPerTag', source: EffectSource, tag: Tag, points: number, per: number, all: boolean};
 
 /** Kinds of effects the analysis knows to exist but does not compute. */
 export const UNMODELED_KINDS = [

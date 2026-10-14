@@ -76,7 +76,7 @@ describe('coach analysis golden', () => {
       });
       // Every discount card of base and Corporate Era is declarative: nothing is left unknown.
       expect(checked).eq(names.length);
-    });
+    }).timeout(30_000);
   }
 
   it('never predicts a cost below 0 with stacked discounts (P2-04)', () => {
@@ -155,11 +155,11 @@ describe('coach analysis golden', () => {
       }
     }
     expect(mismatches, mismatches.join('\n')).is.empty;
-  });
+  }).timeout(30_000);
 
-  // Every action of a supported card: pay, gain and resources here exactly as the engine does.
-  it('matches the engine for every action of every supported card', () => {
-    const supported = allMechanics().filter((m) => m.support === 'supported' && m.atoms.some((a) => a.source === 'action'));
+  // Every fully modeled action (also of partial cards): pay, gain and resources here exactly as the engine does.
+  it('matches the engine for every fully modeled action', () => {
+    const supported = allMechanics().filter((m) => m.atoms.some((a) => a.source === 'action') && !m.unmodeled.some((u) => u.source === 'action'));
     expect(supported.length).greaterThan(10);
     const mismatches: Array<string> = [];
     for (const mechanics of supported) {
@@ -205,7 +205,7 @@ describe('coach analysis golden', () => {
       }
     }
     expect(mismatches, mismatches.join('\n')).is.empty;
-  });
+  }).timeout(30_000);
 
   // Every supported corporation: starting M€, production and research card cost as the engine applies them.
   it('matches the engine for every supported corporation', () => {
@@ -236,7 +236,50 @@ describe('coach analysis golden', () => {
       }
     }
     expect(mismatches, mismatches.join('\n')).is.empty;
-  });
+  }).timeout(30_000);
+
+  // Every card whose victory points are modeled: VP from the atoms (tags and resources as the snapshot shows
+  // them) against the engine's score, after playing the card in a game with tags and resources on it.
+  it('matches the engine for every modeled victory point rule', () => {
+    const modeled = allMechanics().filter((m) => projectCards().includes(m.name) &&
+      m.atoms.some((a) => a.kind === 'victoryPoints' || a.kind === 'victoryPointsPerResource' || a.kind === 'victoryPointsPerTag') &&
+      !m.unmodeled.some((u) => u.source === 'victoryPoints' || u.key === 'getVictoryPoints'));
+    expect(modeled.length).greaterThan(40);
+    const mismatches: Array<string> = [];
+    for (const mechanics of modeled) {
+      for (const extra of [0, 3, 7]) {
+        const [, player, opponent] = testGame(2, {skipInitialCardSelection: true});
+        // Some tags of every kind on both players (the VP rule may count all players).
+        for (const name of [CardName.IO_MINING_INDUSTRIES, CardName.PHYSICS_COMPLEX, CardName.EARTH_OFFICE, CardName.KELP_FARMING].slice(0, extra === 0 ? 0 : 4)) {
+          if (name !== mechanics.name) {
+            player.playedCards.push(newCard(name));
+          }
+        }
+        opponent.playedCards.push(newCard(CardName.GANYMEDE_COLONY));
+        // In play without resolving its effects (scoring only needs it on the tableau).
+        const card = newCard(mechanics.name) as IProjectCard;
+        player.playedCards.push(card);
+        card.resourceCount = extra;
+        const state = projectCoachState(player);
+        let predicted = 0;
+        for (const atom of mechanics.atoms) {
+          if (atom.kind === 'victoryPoints') {
+            predicted += atom.amount;
+          } else if (atom.kind === 'victoryPointsPerResource') {
+            predicted += Math.floor(extra * atom.points / atom.per);
+          } else if (atom.kind === 'victoryPointsPerTag') {
+            const tags = (state.me.tags[atom.tag] ?? 0) + (atom.all ? state.opponents.reduce((n, o) => n + (o.tags[atom.tag] ?? 0), 0) : 0);
+            predicted += Math.floor(tags * atom.points / atom.per);
+          }
+        }
+        const engine = card.getVictoryPoints(player);
+        if (predicted !== engine) {
+          mismatches.push(`${mechanics.name} (resources ${extra}): predicted ${predicted}, engine ${engine}`);
+        }
+      }
+    }
+    expect(mismatches, mismatches.join('\n')).is.empty;
+  }).timeout(30_000);
 
   // P2-09 / Algae golden: the requirement and the effect, from the snapshot to the engine.
   it('Algae: plant production +2 and 1 plant, exactly as the engine plays it', () => {

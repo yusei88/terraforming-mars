@@ -36,6 +36,8 @@ function atomText(atom: EffectAtom): string {
     return `VP ${atom.amount}`;
   case 'victoryPointsPerResource':
     return `VP ${atom.points}/${atom.per} resources`;
+  case 'victoryPointsPerTag':
+    return `VP ${atom.points}/${atom.per} ${atom.tag} tags${atom.all ? ' (all players)' : ''}`;
   }
 }
 

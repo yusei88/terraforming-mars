@@ -143,7 +143,17 @@ function victoryPoints(collector: Collector, card: CoachCatalogCard) {
     return;
   }
   const countable = vp as Record<string, unknown>;
-  const keys = Object.keys(countable).filter((key) => key !== 'per' && key !== 'each');
+  const keys = Object.keys(countable).filter((key) => key !== 'per' && key !== 'each' && key !== 'all');
+  if (keys.length === 1 && keys[0] === 'tag' && typeof countable.tag === 'string') {
+    collector.atoms.push({
+      kind: 'victoryPointsPerTag', source: 'victoryPoints', tag: countable.tag as Tag,
+      points: isNumber(countable.each) ? countable.each : 1, per: isNumber(countable.per) ? countable.per : 1, all: countable.all === true,
+    });
+    return;
+  }
+  if (countable.all === true) {
+    keys.push('all players');
+  }
   if (keys.length === 1 && keys[0] === 'resourcesHere') {
     const per = isNumber(countable.per) ? countable.per : 1;
     const points = isNumber(countable.each) ? countable.each : 1;
@@ -187,12 +197,17 @@ function staticEffects(collector: Collector, card: CoachCatalogCard) {
   }
 }
 
+// Card code that changes the blue card action, and card code that changes what happens on play.
+const ACTION_HOOKS: ReadonlySet<string> = new Set(['action', 'bespokeAction', 'canAct', 'bespokeCanAct']);
+const PLAY_HOOKS: ReadonlySet<string> = new Set(['play', 'bespokePlay', 'bespokePlayBefore', 'productionBox', 'productionBehavior']);
+
 function hooks(collector: Collector, card: CoachCatalogCard) {
   for (const hook of card.effects.bespokeHooks) {
     if (PLAY_CONDITION_HOOKS.has(hook) || PLACEMENT_HOOKS.has(hook)) {
       continue;
     }
-    collector.unmodeled.push({source: 'static', kind: 'bespoke-code', key: hook, reason: `card code '${hook}' changes what the card does`});
+    const source: EffectSource = ACTION_HOOKS.has(hook) ? 'action' : PLAY_HOOKS.has(hook) ? 'onPlay' : 'static';
+    collector.unmodeled.push({source, kind: 'bespoke-code', key: hook, reason: `card code '${hook}' changes what the card does`});
   }
 }
 

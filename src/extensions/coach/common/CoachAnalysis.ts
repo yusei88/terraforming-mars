@@ -52,3 +52,49 @@ export type RequirementGap = {
   assumptions?: ReadonlyArray<string>,
   evidence: ReadonlyArray<Evidence>,
 };
+
+/** Where a card of the synergy graph is. */
+export type CardZone = 'played' | 'hand' | 'offered';
+
+export const SYNERGY_KINDS = ['UNLOCKS', 'DISCOUNTS', 'PRODUCES_FOR', 'FEEDS_RESOURCE', 'AMPLIFIES', 'SCORING', 'CONFLICTS_WITH'] as const;
+export type SynergyKind = typeof SYNERGY_KINDS[number];
+
+/**
+ * A directed relation "A helps (or hurts) B" backed by an actual effect or requirement, never by a
+ * shared tag alone.
+ */
+export type SynergyEdge = {
+  from: CardName,
+  to: CardName,
+  kind: SynergyKind,
+  /** Plain-English reason, built from the facts below. */
+  why: string,
+  /** Size of the effect where it is a number (M€ discount, steps of a requirement, VP), else absent. */
+  amount?: number,
+  /** UNLOCKS: true when A alone closes the requirement gap. */
+  completes?: boolean,
+  /** DISCOUNTS from a played card: the discount is already in B's current cost. */
+  alreadyApplied?: boolean,
+  /** CONFLICTS_WITH: the order that avoids the conflict, when there is one. */
+  playFirst?: CardName,
+  /** For requirement edges: index of B's requirement concerned. */
+  requirementIndex?: number,
+  support: Support,
+};
+
+export type SynergyNode = {
+  name: CardName,
+  zone: CardZone,
+  /** Coverage of the card's effects (see CoachMechanics). */
+  mechanics: 'supported' | 'partial' | 'unsupported' | 'none' | 'not-in-catalog',
+};
+
+/** Relations between the cards a player has played, holds and is offered. */
+export type SynergyGraph = {
+  nodes: ReadonlyArray<SynergyNode>,
+  edges: ReadonlyArray<SynergyEdge>,
+  /** Kinds of relations that are not produced yet, with the reason. */
+  notProduced: ReadonlyArray<{kind: SynergyKind, reason: string}>,
+  /** Cases inside the produced kinds that are not detected (so a missing edge is not a "no"). */
+  limitations: ReadonlyArray<string>,
+};
