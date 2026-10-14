@@ -39,8 +39,12 @@ function offeredCards(choice: CoachChoice | undefined, out: Array<{card: CoachCa
   }
 }
 
-/** Cards of the graph: played > hand > offered when a name appears twice. */
-function collectCards(state: CoachStateV1): Array<Card> {
+/**
+ * Cards of the graph: played > hand > offered when a name appears twice.
+ *
+ * With `maxUnplayed`, only that many unplayed cards are kept (hand before offer, then by name).
+ */
+function collectCards(state: CoachStateV1, maxUnplayed?: number): Array<Card> {
   const cards = new Map<CardName, Card>();
   const add = (instance: CoachCardInstance, zone: CardZone, path: string) => {
     if (!cards.has(instance.name)) {
@@ -54,7 +58,14 @@ function collectCards(state: CoachStateV1): Array<Card> {
   const offered: Array<{card: CoachCardInstance, path: string}> = [];
   offeredCards(state.choices.status === 'awaiting-input' ? state.choices.root : undefined, offered);
   offered.forEach(({card, path}) => add(card, 'offered', path));
-  return Array.from(cards.values());
+  const all = Array.from(cards.values());
+  if (maxUnplayed === undefined) {
+    return all;
+  }
+  const unplayed = all.filter((card) => card.zone !== 'played')
+    .sort((a, b) => (a.zone === b.zone ? a.name.localeCompare(b.name) : a.zone === 'hand' ? -1 : 1))
+    .slice(0, maxUnplayed);
+  return [...all.filter((card) => card.zone === 'played'), ...unplayed];
 }
 
 function catalogEvidence(card: CardName, fieldPath: string): Evidence {
@@ -296,9 +307,13 @@ function competitionEdge(a: Card, b: Card, edges: Array<SynergyEdge>) {
   }
 }
 
-/** Builds the synergy graph of the cards the player has played, holds and is offered. */
-export function buildSynergyGraph(state: CoachStateV1): SynergyGraph {
-  const cards = collectCards(state);
+/**
+ * Builds the synergy graph of the cards the player has played, holds and is offered.
+ *
+ * `maxUnplayed` bounds the unplayed cards considered (the graph grows with their square).
+ */
+export function buildSynergyGraph(state: CoachStateV1, options: {maxUnplayed?: number} = {}): SynergyGraph {
+  const cards = collectCards(state, options.maxUnplayed);
   const nodes: Array<SynergyNode> = cards.map((card) => ({name: card.name, zone: card.zone, mechanics: card.mechanics?.support ?? 'not-in-catalog'}));
   const gaps = new Map<CardName, ReadonlyArray<RequirementGap>>();
   for (const card of cards) {

@@ -147,6 +147,47 @@ export type CandidatePlan = {
   },
   support: Support,
   question: PlanQuestion,
+  /** Conservative forecast over the next production phases (Gate D). */
+  forecast?: PlanForecast,
+};
+
+/** Amounts per standard resource. */
+export type ResourceAmounts = Readonly<Record<'megacredits' | 'steel' | 'titanium' | 'plants' | 'energy' | 'heat', number>>;
+
+/**
+ * What playing a plan now changes over the next production phases, compared with not playing it.
+ *
+ * Only effect atoms are counted. When anything is not modeled, `complete` is false and the numbers are a
+ * lower bound of what is known, never a total.
+ */
+export type PlanForecast = {
+  /** Production phases asked for (0–3). */
+  horizonProductionPhases: number,
+  /** Production phases the forecast covers: the horizon, cut at the end of a solo game. */
+  productionPhases: number,
+  /** Production phases left in the game: known in solo, unknown otherwise. */
+  productionsLeft: number | 'unknown',
+  /**
+   * Difference to not playing the plan, after playing it (index 0) and after each production phase.
+   *
+   * Costs are paid in M€ here (see assumptions); steel/titanium could replace part of them.
+   */
+  deltas: ReadonlyArray<{
+    productionIndex: number,
+    resources: ResourceAmounts,
+    production: ResourceAmounts,
+    terraformRating: number,
+  }>,
+  /** M€ paid to buy and play the plan. */
+  upfront: {play: number | 'unknown', purchase: number},
+  /** M€ returned by the plan within the horizon (production and TR income), and the balance with its cost. */
+  megacredits: {returned: number, balance: number, recovered: boolean} | 'unknown',
+  /** VP the plan adds now (TR, printed VP, VP per tag and resource as known now), or unknown. */
+  victoryPoints: {total: number, terraformRating: number, cards: number} | 'unknown',
+  /** True when every effect of the plan is modeled. */
+  complete: boolean,
+  unmodeledEffects: ReadonlyArray<string>,
+  assumptions: ReadonlyArray<string>,
 };
 
 /** Result of the plan search with its limits. */

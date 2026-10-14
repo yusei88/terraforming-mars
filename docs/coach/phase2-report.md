@@ -1,8 +1,8 @@
-# Phase 2 進捗報告 — G0 + Gate A（PR #2）、Gate B（PR #3）、Gate C
+# Phase 2 進捗報告 — G0 + Gate A（PR #2）、Gate B（PR #3）、Gate C（PR #4）、Gate D
 
 - 計画: `TM-COACH-P2`、§14「最初の PR」
 - ブランチ: `coach/phase2`（起点 `7ee0c64bb` = `main`、内容は `ef8bc6664` と同一）
-- 状態: **G0・Gate A（PR #2）、Gate B（PR #3）はマージ済み、Gate C（ブランチ `coach/phase2-gate-c`）が完了。Phase 2 全体は進行中**（Gate D〜F 未着手）
+- 状態: **G0〜Gate C（PR #2〜#4）はマージ済み、Gate D（ブランチ `coach/phase2-gate-d`）が完了。Phase 2 全体は進行中**（Gate E・F 未着手）
 
 関連: [設計](phase2-design.md) / [カバレッジ監査](phase2-coverage.md) / [QA](phase2-qa.md) / [未対応](phase2-gaps.md)
 
@@ -64,7 +64,7 @@ PR #2 のレビュー後に Gate B へ進んだ（§6）。計画 §14 のとお
 
 次: Gate C（手札・提示カード中心の 3 枚以内のプラン列挙、現在可能／条件付きの区別、探索上限）。
 
-## 7. Gate C（ブランチ `coach/phase2-gate-c`、起点 `d64997b69`）
+## 7. Gate C（PR #4、マージ済み）
 
 | 項目 | 結果 |
 |---|---|
@@ -79,3 +79,20 @@ PR #2 のレビュー後に Gate B へ進んだ（§6）。計画 §14 のとお
 試験（g10）: コーチ 138 passing（新規 9）。`npm run test:server` 7,855 passing / 1 failing（既存の AI 対局タイムアウト）。`npm run test:client`・`lint:css` は起点と同じ、eslint・i18n・vue-tsc・ビルド成功、テスト型検査は既存 3 件のみ。
 
 次: Gate D（0〜3 回の生産フェーズの資源・TR・確定 VP の予測）。
+
+## 8. Gate D（ブランチ `coach/phase2-gate-d`、起点 `b7a652b12`）
+
+| 項目 | 結果 |
+|---|---|
+| 予測（`analysis/forecast.ts`） | 生産フェーズ 0〜3 回。プランあり/なしを本体の規則（温度・酸素のボーナス、電力→熱、TR 収入）で計算し差分を返す。ソロは残り回数で打ち切り、対人は `unknown` |
+| M€ 回収・VP | balance / returned / recovered、TR・印刷 VP・タグ VP。未解析を含むと総収支を出さない |
+| ゲート「本体 Golden との差分一致」 | 完全な予測 298 件をエンジンで再現し、プレイ直後・各生産後の資源・生産・TR と VP が全件一致 |
+| ミューテーション | 3 件とも検出 |
+
+見つけて直した事項:
+- Gate C の不足: 生産を下げるカード（Strip Mine など）は、その時点の生産が足りないとプレイできない（本体 `Production.canAdjust`）。プラン内の前のカードを含めて判定し `production` ブロッカーを出す（予測 Golden で発見、回帰試験を追加）。
+- 性能: 全体試験の負荷下で探索が 1.2 秒かかった。グラフを探索対象の 40 枚に限定し、評価にも時間上限を適用。208 枚でも p95 67.6 ms。
+
+試験（g10）: コーチ 148 passing（新規 10）。`npm run test:server` 7,866 passing / 0 failing。`npm run test:client`・`lint:css` は起点と同じ、eslint・i18n・vue-tsc・ビルド成功、テスト型検査は既存 3 件のみ。
+
+次: Gate E（`CoachAnalysisV1` と `GET /api/coach/analysis`、キャッシュ、P95 500 ms の実測）。
