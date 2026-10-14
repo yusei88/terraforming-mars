@@ -30,7 +30,8 @@ export type Support =
 
 /** Distance between the current game and one requirement of a card. */
 export type RequirementGap = {
-  kind: 'tag' | 'oxygen' | 'temperature' | 'oceans' | 'tr' | 'production' | 'greeneries' | 'cities' | 'other',
+  /** `cost`: what the player can pay (M€ plus usable steel/titanium/heat) against the card's cost. */
+  kind: 'tag' | 'oxygen' | 'temperature' | 'oceans' | 'tr' | 'production' | 'greeneries' | 'cities' | 'cost' | 'other',
   /** The value the game compares (bonuses already applied), or unknown. */
   observed: number | 'unknown',
   target: number | 'unknown',
@@ -97,4 +98,69 @@ export type SynergyGraph = {
   notProduced: ReadonlyArray<{kind: SynergyKind, reason: string}>,
   /** Cases inside the produced kinds that are not detected (so a missing edge is not a "no"). */
   limitations: ReadonlyArray<string>,
+};
+
+export const PLAN_GOALS = ['economy', 'unlock', 'engine', 'scoring', 'terraforming'] as const;
+export type PlanGoal = typeof PLAN_GOALS[number];
+
+/** One card of a candidate plan, in play order. */
+export type PlanCard = {
+  name: CardName,
+  zone: CardZone,
+  /**
+   * - `legal-now`: the game offers this card to play right now (first card of the plan only).
+   * - `conditional`: could be played later if the listed blockers are resolved (after earlier cards,
+   *   after buying it, with more resources).
+   * - `unknown`: a requirement or play condition of the card is not evaluated.
+   */
+  availability: 'legal-now' | 'conditional' | 'unknown',
+  reasons: ReadonlyArray<string>,
+  /** Cost when it is played in this plan (after the discounts of earlier cards of the plan), or unknown. */
+  cost: number | 'unknown',
+  /** M€ to buy the card first (offered cards only). */
+  purchaseCost?: number,
+};
+
+/** A question that makes the player weigh the plan; `key` and `params` allow translation. */
+export type PlanQuestion = {key: string, params: Readonly<Record<string, string>>, text: string};
+
+/**
+ * A short line of play (1–3 cards from hand or offer) with the relations that make it worth looking at.
+ *
+ * Not a recommendation: plans of different goals are shown side by side for the player to compare.
+ */
+export type CandidatePlan = {
+  id: string,
+  /** Main goal (from the strongest relation in the plan); `goals` lists all goals the plan touches. */
+  goal: PlanGoal,
+  goals: ReadonlyArray<PlanGoal>,
+  cards: ReadonlyArray<PlanCard>,
+  /** Relations inside the plan and from played cards to it. */
+  links: ReadonlyArray<SynergyEdge>,
+  /** Requirements and costs still unresolved, per card of the plan (`card` names it). */
+  blockers: ReadonlyArray<RequirementGap & {card: CardName}>,
+  payments: {
+    /** M€ cost of playing the cards in this order (after in-plan discounts), or unknown. */
+    play: number | 'unknown',
+    /** M€ to buy offered cards first. */
+    purchase: number,
+  },
+  support: Support,
+  question: PlanQuestion,
+};
+
+/** Result of the plan search with its limits. */
+export type CandidateSet = {
+  candidates: ReadonlyArray<CandidatePlan>,
+  /** Cards left out of every plan, with the reason. */
+  discarded: ReadonlyArray<{cardName: CardName, reason: string}>,
+  warnings: ReadonlyArray<string>,
+  search: {
+    /** Unplayed cards considered (hand and offer, after the pool limit). */
+    poolSize: number,
+    chainsExamined: number,
+    /** True when a limit stopped the search early (see warnings). */
+    truncated: boolean,
+    elapsedMs: number,
+  },
 };

@@ -1,8 +1,9 @@
-# Phase 2 設計（実装済み部分）— G0 + Gate A + Gate B
+# Phase 2 設計（実装済み部分）— G0 + Gate A + Gate B + Gate C
 
 計画: `TM-COACH-P2`（2026-10-14）。ブランチ `coach/phase2`、起点 `7ee0c64bb`（`main`、内容は `ef8bc6664` と同一）。
 最初の PR（#2、マージ済み）で **G0 修正・効果原子（EffectAtom）と未解析の表現・要件分析・実エンジンとの Golden** を入れた。
-続く PR（ブランチ `coach/phase2-gate-b`、起点 `c035476fe`）で **Gate B: コンボの有向グラフ** を追加（§7）。Gate C 以降は未着手。
+続く PR（#3、マージ済み）で **Gate B: コンボの有向グラフ** を追加（§7）。
+ブランチ `coach/phase2-gate-c`（起点 `d64997b69`）で **Gate C: プラン候補の列挙** を追加（§8）。Gate D 以降は未着手。
 
 関連: [カバレッジ監査](phase2-coverage.md) / [QA](phase2-qa.md) / [未対応](phase2-gaps.md) / [報告](phase2-report.md)
 
@@ -114,6 +115,40 @@ VP の Golden: VP を原子化した全カードについて、タグ・カー�
 検証で見つけた偽陽性: 現在コストが 1 M€ のカード（Fueled Generators など）に適用済み割引 2 M€ と表示していた → 下限 0 に吸収されるため、コスト 0 のときは金額を出さないよう修正。
 ミューテーション: 「イベントもタグを残す」は 3 件失敗で検出。「温度の 2 ℃ 刻みを無視」は偽陰性しか生まないため全件確認では検出できず、境界のテスト（-14 ℃ と最大 -12 ℃、1 段/2 段のカード）を追加して検出。トラック残り段数の上限は、要件の不足段数が残り段数を超えないため現行のエッジでは主張値に影響しない（防御的な上限として残す）。
 
-## 8. 次の段階（未着手）
+## 8. Gate C: プラン候補（`analysis/candidates.ts`、`analysis/payments.ts`）
 
-Gate C プラン列挙（3 枚以内、探索上限）、Gate D 2〜3 生産フェーズ予測、Gate E `GET /api/coach/analysis`、Gate F タブレット UI。データ契約 `CoachAnalysisV1` 全体は Gate E で確定する。
+**対象**: 未プレイのプロジェクトカード（手札 → ドラフト済み → 提示中）。企業・プレリュードの選択は計画しない（`discarded` に理由）。最大要件をすでに超えたカードは二度とプレイできないので除外（`discarded`）。
+
+**列挙**:
+- 1 枚: 場のカードからの関係（適用済み割引・鋼鉄など）があるもの
+- 2〜3 枚: 前のカードから次のカードへ役立つ関係（UNLOCKS / DISCOUNTS / PRODUCES_FOR / SCORING）があり、CONFLICTS_WITH の順序（`playFirst`）に反しないもの
+
+**上限**（P2-22）: 候補カード 40 枚（手札優先）、チェーン 5,000、150 ms、返すプラン 9。上限で止まったら `search.truncated` と警告。時間の上限は負荷時の安全弁で、通常はチェーン数で止まるため同じ局面なら同じ結果（試験済み、`elapsedMs` を除く）。
+
+**各カードの可否**:
+| availability | 意味 |
+|---|---|
+| `legal-now` | プランの 1 枚目で、ゲームが今「プレイ可能」として提示している（`choices` の `projectCard`）。合法性の正本はゲーム |
+| `conditional` | 前のカードの後、購入後（提示カード、研究時の価格 `me.cardCost`）、資源・要件がそろった後 |
+| `unknown` | 要件やプレイ条件が評価できない |
+
+**ブロッカー**: カードごとの未充足要件（前のカードの UNLOCKS で埋まる分を差し引く）と、1 枚目の支払い可否（`cost`）。
+**支払い可否**（P2-08）: M€ + 建物カードなら鋼鉄×価値 + 宇宙カードならチタン×価値 + Helion なら熱。他の支払い手段を与えるカード（Martian Lumber Corp・Psychrophiles など）や支払後の留保（reserveUnits）、対象外拡張があれば `conditional`。M€ だけで判定しない。
+**費用**: プラン内の順に、前のカードの割引を引いたコスト（下限 0）。前のカードの割引がカード固有コード（例: Indentured Workers の「次のカード -8」）なら `unknown`。提示カードの購入費は `payments.purchase` に別計上（プレイ費用と混同しない）。
+
+**目的**（`goal`/`goals`）: 関係から unlock（UNLOCKS）・engine（DISCOUNTS/PRODUCES_FOR）・scoring（SCORING）、効果原子から economy（生産増）・terraforming（global/TR）・scoring（VP）・engine（アクション）。
+**並べ方**: 目的ごとに「今プレイ可能 → ブロッカーが少ない → 関係が多い → 枚数が少ない → 名前」で並べ、目的を順に 1 つずつ取り出して混ぜる（単一の勝率スコアは使わない）。
+**問い**（`question`）: プレイヤーに判断を促す問いを目的ごとに生成（`key`・`params` で翻訳可能、`text` は英語）。推奨はしない。
+
+### 検証（Gate C のゲート「今可能と将来条件付きを区別」）
+
+| 試験 | 内容 | 結果 |
+|---|---|---|
+| legal-now の正しさ | 3 局面 × 25 枚ずつの手札（全 208 枚を網羅）の行動フェーズで、`legal-now` のカードはすべてエンジンの `canPlay` が真、1 枚目の手札で `legal-now` でないカードはすべて偽、`legal-now` に未充足ブロッカーなし | 全件一致 |
+| 支払い可否（P2-08） | 全プロジェクトカード × 5 つの所持資源 × Helion あり/なしで、`met`/`unmet` をエンジンの `canAfford` と比較（1,500 件以上） | 全件一致 |
+| プラン内の費用 | 割引を含むプランをエンジンで順にプレイし、各カードの `getCardCost` と予測を比較。`unknown` はカード固有コードの割引の後だけであることも確認 | 全件一致 |
+| ミューテーション | 「1 枚目を常に legal-now」「鋼鉄を無視」「プラン内割引を無視」 | 3 件とも検出 |
+
+## 9. 次の段階（未着手）
+
+Gate D 2〜3 生産フェーズ予測、Gate E `GET /api/coach/analysis`、Gate F タブレット UI。データ契約 `CoachAnalysisV1` 全体は Gate E で確定する。
