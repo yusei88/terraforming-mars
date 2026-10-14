@@ -1,10 +1,11 @@
-# Phase 2 設計（実装済み部分）— G0 + Gate A〜D
+# Phase 2 設計（実装済み部分）— G0 + Gate A〜E
 
 計画: `TM-COACH-P2`（2026-10-14）。ブランチ `coach/phase2`、起点 `7ee0c64bb`（`main`、内容は `ef8bc6664` と同一）。
 最初の PR（#2、マージ済み）で **G0 修正・効果原子（EffectAtom）と未解析の表現・要件分析・実エンジンとの Golden** を入れた。
 続く PR（#3、マージ済み）で **Gate B: コンボの有向グラフ** を追加（§7）。
 PR #4（マージ済み）で **Gate C: プラン候補の列挙** を追加（§8）。
-ブランチ `coach/phase2-gate-d`（起点 `b7a652b12`）で **Gate D: 生産フェーズ 0〜3 回の予測** を追加（§9）。Gate E 以降は未着手。
+PR #5（マージ済み）で **Gate D: 生産フェーズ 0〜3 回の予測** を追加（§9）。
+ブランチ `coach/phase2-gate-e`（起点 `2b8d5abf7`）で **Gate E: `CoachAnalysisV1` と `GET /api/coach/analysis`** を追加（§10）。Gate F は未着手。
 
 関連: [カバレッジ監査](phase2-coverage.md) / [QA](phase2-qa.md) / [未対応](phase2-gaps.md) / [報告](phase2-report.md)
 
@@ -184,6 +185,41 @@ Gate D で見つけた Gate C の不足: 生産を下げるカード（Strip Min
 
 予測込み（horizon 3）の `buildCandidates` 実測（g10、20 回）: 手札 12 枚 p95 2.5 ms、40 枚 p95 38.3 ms、208 枚 p95 67.6 ms（修正前は 1 秒超）。
 
-## 10. 次の段階（未着手）
+## 10. Gate E: 分析 API（`analysis/engine.ts`、`routes.ts`）
 
-Gate E `CoachAnalysisV1` と `GET /api/coach/analysis`、Gate F タブレット UI。
+**データ契約 `coach-analysis/1`**（`CoachAnalysisV1`、計画 §4 に準拠）:
+| 項目 | 内容 |
+|---|---|
+| `source` | 分析した状態の `fingerprint`・`advisoryFingerprint`、`catalogVersion`、`analysisVersion`（コードの版、`2.0.0`）、`generatedAt` |
+| `horizonProductionPhases` | 0〜3 |
+| `coverage` | グラフに入ったカード（場・手札・提示）の supported / partial / unsupported の数と、未解析の種類別の枚数 |
+| `candidates` | Gate C のプラン＋Gate D の予測 |
+| `discarded`・`warnings`・`search` | 除外したカード、警告（状態の品質警告を含む）、探索の上限情報 |
+| `limitations` | 作らない関係（FEEDS_RESOURCE・AMPLIFIES）と検出しない場合 |
+
+**API**: `GET /api/coach/analysis?id=<playerId>[&horizon=0..3]`（既定 3）。
+- 認可は `api/player` と同じ（本人の秘密 ID ＋ Discord 紐付け時は本人）。観戦者 ID・不正形式は 400、不明 ID は 404、Discord 不一致は 403。horizon が 0〜3 以外なら 400。
+- `Cache-Control: no-store`。最新の CoachState とカタログから純粋関数で計算し、ゲームを変更しない。
+- 失敗はコーチ側で 500（内部の詳細は返さない）。ゲームは継続。計算時間は Gate C の上限（150 ms）で抑え、上限で打ち切った場合は `warnings`・`search.truncated`。
+- **キャッシュ**: プロセス内 LRU（64 件）。キーは `fingerprint + advisoryFingerprint + catalogVersion + analysisVersion + horizon + 閲覧者`。閲覧者はプレイヤー ID の SHA-256 先頭 16 桁（キーに ID を残さない）。閲覧者を含むため、他のプレイヤーの手札を含む結果を別の人に返すことはない。応答は複製を返し、キャッシュ内の結果は変更されない。
+
+**履歴との関係**: 分析は現在の局面だけを使い、判断履歴（Phase 1.5）は使わない。履歴が不健全でも現在の局面の分析は有効（計画 §2）。
+
+### 検証
+
+| 試験 | 方法 | 結果 |
+|---|---|---|
+| 契約・認可・horizon | API 試験（`engine.spec.ts`） | PASS |
+| P2-21 同じ局面への連続呼び出し | 同じ本文、2 回目はキャッシュ（計算回数不変）、`game.serialize()` 不変 | PASS |
+| キャッシュの分離 | 2 人のプレイヤーで互いの手札が出ない、キーが閲覧者で異なりキーに ID なし | PASS |
+| P2-20 相手の公開操作 | 相手が都市を置くと分析の `source.fingerprint` が更新 | PASS |
+| P2-16 Undo 後の同一局面 | 復元した同じ局面は同じプラン（履歴上の位置は Phase 1.5 の `seq`/`branch` で別管理） | PASS |
+| 失敗の隔離 | 分析が例外 → 500、ゲームは行動待ちのまま | PASS |
+| 実機（g10、HTTP） | `liveCheck.ts --analysis`: 毎手、分析が現在の状態のものか、`legal-now` がゲームの提示に含まれるか、ID・相手の手札が出ないかを照合 | ソロ 79 手・1,525 チェック、2 人 229 手・6,606 チェック、利用者のゲーム 2 つ（読み取り専用）232 チェック、**失敗 0** |
+| 性能（g10、HTTP） | 同上で計測 | 分析 p95: ソロ 7.6 ms（80 回）、2 人 5.8 ms（300 回）、利用者のゲーム 8.2 / 7.0 ms。状態取得 p95 6.7 ms 以下。目標（分析 500 ms・状態 200 ms）を満たす |
+
+計測条件: g10（GMKtec G10、Node v24.13.0、`npm start`）、同一ホストからの HTTP、各手で状態が変わるため大半はキャッシュ外の計算。手札 208 枚の極端な場合の計算時間は in-process で p95 67.6 ms（§9）。
+
+## 11. 次の段階（未着手）
+
+Gate F タブレット最小 UI（`ClientExtension`、UI 文言の 16 言語翻訳）。

@@ -1,8 +1,8 @@
-# Phase 2 進捗報告 — G0 + Gate A（PR #2）、Gate B（PR #3）、Gate C（PR #4）、Gate D
+# Phase 2 進捗報告 — G0〜Gate D（PR #2〜#5）、Gate E
 
 - 計画: `TM-COACH-P2`、§14「最初の PR」
 - ブランチ: `coach/phase2`（起点 `7ee0c64bb` = `main`、内容は `ef8bc6664` と同一）
-- 状態: **G0〜Gate C（PR #2〜#4）はマージ済み、Gate D（ブランチ `coach/phase2-gate-d`）が完了。Phase 2 全体は進行中**（Gate E・F 未着手）
+- 状態: **G0〜Gate D（PR #2〜#5）はマージ済み、Gate E（ブランチ `coach/phase2-gate-e`）が完了。Phase 2 全体は進行中**（Gate F 未着手）
 
 関連: [設計](phase2-design.md) / [カバレッジ監査](phase2-coverage.md) / [QA](phase2-qa.md) / [未対応](phase2-gaps.md)
 
@@ -80,7 +80,7 @@ PR #2 のレビュー後に Gate B へ進んだ（§6）。計画 §14 のとお
 
 次: Gate D（0〜3 回の生産フェーズの資源・TR・確定 VP の予測）。
 
-## 8. Gate D（ブランチ `coach/phase2-gate-d`、起点 `b7a652b12`）
+## 8. Gate D（PR #5、マージ済み）
 
 | 項目 | 結果 |
 |---|---|
@@ -96,3 +96,17 @@ PR #2 のレビュー後に Gate B へ進んだ（§6）。計画 §14 のとお
 試験（g10）: コーチ 148 passing（新規 10）。`npm run test:server` 7,866 passing / 0 failing。`npm run test:client`・`lint:css` は起点と同じ、eslint・i18n・vue-tsc・ビルド成功、テスト型検査は既存 3 件のみ。
 
 次: Gate E（`CoachAnalysisV1` と `GET /api/coach/analysis`、キャッシュ、P95 500 ms の実測）。
+
+## 9. Gate E（ブランチ `coach/phase2-gate-e`、起点 `2b8d5abf7`）
+
+| 項目 | 結果 |
+|---|---|
+| データ契約 | `CoachAnalysisV1`（`coach-analysis/1`）: source（指紋・カタログ版・分析版）、coverage、candidates（予測付き）、discarded、limitations、warnings、search |
+| API | `GET /api/coach/analysis?id=&horizon=0..3`。本人のみ、no-store、失敗は 500 でゲームは継続 |
+| キャッシュ | 指紋・advisory・カタログ版・分析版・horizon・閲覧者（ID のハッシュ）をキーにしたプロセス内 LRU |
+| 実機（g10） | ソロ・2 人・利用者のゲーム（読み取り専用）で毎手照合、計 8,463 チェック失敗 0 |
+| 性能（DoD 8） | 分析 API p95 5.8〜8.2 ms（目標 500 ms）、状態 API p95 4.8〜6.7 ms（目標 200 ms を維持）。計測条件は設計 §10 |
+
+試験（g10）: コーチ 157 passing（新規 9）。`npm run test:server` 7,874 passing / 1 failing（既存の AI 対局タイムアウト）。`npm run test:client`・`lint:css` は起点と同じ、eslint・i18n・vue-tsc・ビルド成功、テスト型検査は既存 3 件のみ。
+
+次: Gate F（タブレット最小 UI、16 言語の翻訳、P2-24）。

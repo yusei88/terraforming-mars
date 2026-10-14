@@ -205,3 +205,37 @@ export type CandidateSet = {
     elapsedMs: number,
   },
 };
+
+/**
+ * The coach analysis of one player's position (`coach-analysis/1`), served by `GET /api/coach/analysis`.
+ *
+ * Built only from that player's CoachState and the card catalog. Plans are for comparison, not orders;
+ * a number is either backed by evidence or `'unknown'`.
+ */
+export type CoachAnalysisV1 = {
+  schemaVersion: typeof COACH_ANALYSIS_SCHEMA,
+  source: {
+    /** The snapshot analysed (CoachStateV1.fingerprint / advisoryFingerprint). */
+    fingerprint: string,
+    advisoryFingerprint: string,
+    catalogVersion: string,
+    /** Version of the analysis code; results of other versions are not comparable. */
+    analysisVersion: string,
+    generatedAt: string,
+  },
+  horizonProductionPhases: number,
+  /** How much of the cards involved (played, hand, offered) the analysis understands. */
+  coverage: {
+    supported: number,
+    partial: number,
+    unsupported: number,
+    /** Most frequent reasons of unmodeled effects among these cards, with counts. */
+    reasons: ReadonlyArray<string>,
+  },
+  candidates: ReadonlyArray<CandidatePlan>,
+  discarded: ReadonlyArray<{cardName: CardName, reason: string}>,
+  /** Relations the analysis does not produce and cases it does not detect. */
+  limitations: ReadonlyArray<string>,
+  warnings: ReadonlyArray<string>,
+  search: CandidateSet['search'],
+};
