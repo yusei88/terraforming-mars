@@ -1,4 +1,4 @@
-# Phase 2 進捗報告 — 最初の PR（G0 + Gate A + Golden）
+# Phase 2 進捗報告 — G0 + Gate A（PR #2、マージ済み）と Gate B
 
 - 計画: `TM-COACH-P2`、§14「最初の PR」
 - ブランチ: `coach/phase2`（起点 `7ee0c64bb` = `main`、内容は `ef8bc6664` と同一）
@@ -47,3 +47,19 @@
 ## 5. 次の手順
 
 この PR のレビュー後、Gate B（コンボの有向グラフ）から進める。計画 §14 のとおり、データの出自とテストオラクル（本 PR）を先に確定させた。
+
+## 6. Gate B（ブランチ `coach/phase2-gate-b`、起点 `c035476fe`）
+
+| 項目 | 結果 |
+|---|---|
+| コンボの有向グラフ（`analysis/synergyGraph.ts`） | UNLOCKS / DISCOUNTS / PRODUCES_FOR / SCORING / CONFLICTS_WITH を生成。FEEDS_RESOURCE / AMPLIFIES は理由付きで生成しない |
+| ゲート「Golden に偽陽性なし」 | 3 局面 × 208 枚の手札でエッジ 7,921 本、うち 7,402 本を実エンジンで個別確認し全件一致、確認不能 0 |
+| 追加した原子 | `victoryPointsPerTag`（VP の Golden で全件一致） |
+| Golden の拡張 | アクション: `partial` カードも含め、アクション部分に未解析がない全カード。VP: VP を原子化した全カード |
+| 見つけた不具合 | 適用済み割引の過大表示（コスト 1 M€ のカードに 2 M€）、カード固有コードのアクションを `static` に分類していた → 修正 |
+
+試験（g10）: コーチ 129 passing（新規 13）。`npm run test:server` 7,846 passing / 1 failing（既存の AI 対局タイムアウト）。
+`npm run test:client`・`lint:css` は起点と同じ結果、eslint・i18n・vue-tsc・ビルド成功、テスト型検査は既存 3 件のみ。
+途中の全体実行で、新しい VP の Golden が並列実行の負荷で既定の 2 秒を超えたため、重いエンジン照合のテストに明示的なタイムアウト（30 秒）を付けた。
+
+次: Gate C（手札・提示カード中心の 3 枚以内のプラン列挙、現在可能／条件付きの区別、探索上限）。

@@ -158,5 +158,5 @@ describe('coach analysis requirements', () => {
       }
     }
     expect(compared).greaterThan(150);
-  });
+  }).timeout(30_000);
 });
