@@ -1,8 +1,8 @@
-# Phase 2 進捗報告 — G0 + Gate A（PR #2、マージ済み）と Gate B
+# Phase 2 進捗報告 — G0 + Gate A（PR #2）、Gate B（PR #3）、Gate C
 
 - 計画: `TM-COACH-P2`、§14「最初の PR」
 - ブランチ: `coach/phase2`（起点 `7ee0c64bb` = `main`、内容は `ef8bc6664` と同一）
-- 状態: **G0・Gate A（PR #2 マージ済み）と Gate B（本ブランチ）が完了。Phase 2 全体は進行中**（Gate C〜F 未着手）
+- 状態: **G0・Gate A（PR #2）、Gate B（PR #3）はマージ済み、Gate C（ブランチ `coach/phase2-gate-c`）が完了。Phase 2 全体は進行中**（Gate D〜F 未着手）
 
 関連: [設計](phase2-design.md) / [カバレッジ監査](phase2-coverage.md) / [QA](phase2-qa.md) / [未対応](phase2-gaps.md)
 
@@ -48,7 +48,7 @@
 
 PR #2 のレビュー後に Gate B へ進んだ（§6）。計画 §14 のとおり、データの出自とテストオラクルを先に確定させた。
 
-## 6. Gate B（ブランチ `coach/phase2-gate-b`、起点 `c035476fe`）
+## 6. Gate B（PR #3、マージ済み）
 
 | 項目 | 結果 |
 |---|---|
@@ -63,3 +63,19 @@ PR #2 のレビュー後に Gate B へ進んだ（§6）。計画 §14 のとお
 途中の全体実行で、新しい VP の Golden が並列実行の負荷で既定の 2 秒を超えたため、重いエンジン照合のテストに明示的なタイムアウト（30 秒）を付けた。
 
 次: Gate C（手札・提示カード中心の 3 枚以内のプラン列挙、現在可能／条件付きの区別、探索上限）。
+
+## 7. Gate C（ブランチ `coach/phase2-gate-c`、起点 `d64997b69`）
+
+| 項目 | 結果 |
+|---|---|
+| プラン候補（`analysis/candidates.ts`） | 手札・提示カードから 1〜3 枚の連なり。各カードの可否（`legal-now` / `conditional` / `unknown`）、ブロッカー、プレイ費用と購入費、目的、問い |
+| 支払い可否（`analysis/payments.ts`） | M€・鋼鉄・チタン・Helion の熱。他の支払い手段は `conditional` |
+| ゲート「今可能と将来条件付きの区別」 | `legal-now` ⇔ エンジンの `canPlay`、支払い可否 ⇔ `canAfford`（1,500 件以上）、プラン内の費用 ⇔ `getCardCost`、すべて一致 |
+| 上限 | 40 枚・5,000 チェーン・150 ms・9 プラン。上限で止まると警告 |
+| ミューテーション | 3 件とも検出 |
+
+見つけた事項: Indentured Workers（次のカード -8、カード固有コード）の後のカードの費用を、推測せず `unknown` にしていることを試験で確認し、`unknown` の理由が「前のカードの割引がカード固有コード」に限られることを試験に追加した。
+
+試験（g10）: コーチ 138 passing（新規 9）。`npm run test:server` 7,855 passing / 1 failing（既存の AI 対局タイムアウト）。`npm run test:client`・`lint:css` は起点と同じ、eslint・i18n・vue-tsc・ビルド成功、テスト型検査は既存 3 件のみ。
+
+次: Gate D（0〜3 回の生産フェーズの資源・TR・確定 VP の予測）。
