@@ -1,0 +1,66 @@
+{
+  "instructions": "coach-instructions/1",
+  "effort": "low",
+  "runs": 2,
+  "questions": 106,
+  "summary": [
+    {
+      "model": "sarashina3-nano",
+      "calls": 212,
+      "answered": 206,
+      "valid": 200,
+      "failures": [
+        "provider",
+        "incomplete",
+        "incomplete",
+        "incomplete",
+        "incomplete",
+        "incomplete"
+      ],
+      "problemCodes": {
+        "forbidden-claim": 6
+      },
+      "latencyMs": {
+        "p50": 513,
+        "p95": 748,
+        "max": 1200
+      },
+      "usd": 0,
+      "usdPerAnswer": 0,
+      "avgInputTokens": 3554,
+      "avgOutputTokens": 122
+    },
+    {
+      "model": "sarashina3-mini",
+      "calls": 212,
+      "answered": 200,
+      "valid": 194,
+      "failures": [
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit"
+      ],
+      "problemCodes": {
+        "forbidden-claim": 6
+      },
+      "latencyMs": {
+        "p50": 1995,
+        "p95": 2762,
+        "max": 3795
+      },
+      "usd": 0,
+      "usdPerAnswer": 0,
+      "avgInputTokens": 3562,
+      "avgOutputTokens": 134
+    }
+  ]
+}

@@ -1,0 +1,3363 @@
+{
+ "id": "2p-g9-action",
+ "description": "Two players, generation 9",
+ "tags": {
+  "mode": "multiplayer",
+  "generation": 9,
+  "phase": "action",
+  "planCount": 9,
+  "goals": [
+   "unlock",
+   "engine"
+  ],
+  "truncated": false,
+  "incompleteForecast": true,
+  "unknownAvailability": false,
+  "legalNow": true
+ },
+ "state": {
+  "schemaVersion": "coach-state/1",
+  "fingerprint": "c80067d1a69667316951d510996b46a947560f7436d0c13ae4c522f9813be38c",
+  "advisoryFingerprint": "d1c6a7d08dcd96fbb593dc3a28353129def174f6dade5c1a94c43a04cc24c1e8",
+  "stateKey": "c80067d1a6966731:u0:s0:a165",
+  "version": {
+   "generation": 9,
+   "phase": "action",
+   "gameAge": 165,
+   "gameStep": 0,
+   "undoCount": 0
+  },
+  "catalogVersion": "96e3a55227c5e380",
+  "capturedAt": "2026-10-15T14:14:52.397Z",
+  "warnings": [],
+  "game": {
+   "name": "Thermal Optics Current",
+   "mode": "multiplayer",
+   "playerCount": 2,
+   "board": "tharsis",
+   "expansions": {
+    "corpera": true,
+    "promo": false,
+    "venus": false,
+    "colonies": false,
+    "prelude": false,
+    "prelude2": false,
+    "turmoil": false,
+    "community": false,
+    "ares": false,
+    "moon": false,
+    "pathfinders": false,
+    "ceo": false,
+    "starwars": false,
+    "underworld": false,
+    "deltaProject": false
+   },
+   "baseGameOnly": true,
+   "options": {
+    "draftVariant": false,
+    "initialDraftVariant": false,
+    "preludeDraftVariant": false,
+    "showOtherPlayersVP": false,
+    "undoOption": false,
+    "soloTR": false,
+    "fastModeOption": false,
+    "randomMA": "No randomization"
+   },
+   "generation": 9,
+   "phase": "action",
+   "lastSoloGeneration": 14,
+   "activePlayer": "blue",
+   "firstPlayer": "blue",
+   "passedPlayers": [],
+   "temperature": {
+    "value": -10,
+    "min": -30,
+    "max": 8,
+    "stepsRemaining": 9
+   },
+   "oxygen": {
+    "value": 1,
+    "min": 0,
+    "max": 14,
+    "stepsRemaining": 13
+   },
+   "oceans": {
+    "value": 1,
+    "min": 0,
+    "max": 9,
+    "stepsRemaining": 8
+   },
+   "isTerraformed": false,
+   "gameOver": false,
+   "decks": {
+    "projectDrawPile": 118,
+    "projectDiscardPile": 38,
+    "corporationDrawPile": 8
+   },
+   "spaces": [],
+   "milestones": [
+    {
+     "name": "Terraformer",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 25,
+       "claimable": false
+      },
+      {
+       "color": "red",
+       "score": 27,
+       "claimable": false
+      }
+     ],
+     "threshold": 35
+    },
+    {
+     "name": "Mayor",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0,
+       "claimable": false
+      },
+      {
+       "color": "red",
+       "score": 2,
+       "claimable": false
+      }
+     ],
+     "threshold": 3
+    },
+    {
+     "name": "Gardener",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0,
+       "claimable": false
+      },
+      {
+       "color": "red",
+       "score": 0,
+       "claimable": false
+      }
+     ],
+     "threshold": 3
+    },
+    {
+     "name": "Builder",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 6,
+       "claimable": false
+      },
+      {
+       "color": "red",
+       "score": 5,
+       "claimable": false
+      }
+     ],
+     "threshold": 8
+    },
+    {
+     "name": "Planner",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 14,
+       "claimable": false
+      },
+      {
+       "color": "red",
+       "score": 12,
+       "claimable": false
+      }
+     ],
+     "threshold": 16
+    }
+   ],
+   "awards": [
+    {
+     "name": "Landlord",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      },
+      {
+       "color": "red",
+       "score": 3
+      }
+     ]
+    },
+    {
+     "name": "Scientist",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 1
+      },
+      {
+       "color": "red",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "name": "Banker",
+     "scores": [
+      {
+       "color": "blue",
+       "score": -2
+      },
+      {
+       "color": "red",
+       "score": 8
+      }
+     ]
+    },
+    {
+     "name": "Thermalist",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 23
+      },
+      {
+       "color": "red",
+       "score": 16
+      }
+     ]
+    },
+    {
+     "name": "Miner",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 22
+      },
+      {
+       "color": "red",
+       "score": 17
+      }
+     ]
+    }
+   ],
+   "unsupported": []
+  },
+  "me": {
+   "color": "blue",
+   "name": "player-blue",
+   "isAi": false,
+   "isActive": true,
+   "hasPassed": false,
+   "terraformRating": 25,
+   "victoryPoints": {
+    "status": "known",
+    "value": {
+     "terraformRating": 25,
+     "milestones": 0,
+     "awards": 0,
+     "greenery": 0,
+     "city": 0,
+     "escapeVelocity": 0,
+     "moonHabitats": 0,
+     "moonMines": 0,
+     "moonRoads": 0,
+     "planetaryTracks": 0,
+     "victoryPoints": 1,
+     "total": 26,
+     "detailsCards": [
+      {
+       "cardName": "Vesta Shipyard",
+       "victoryPoint": 1
+      },
+      {
+       "cardName": "Tardigrades",
+       "victoryPoint": 0
+      }
+     ],
+     "detailsMilestones": [],
+     "detailsAwards": [],
+     "detailsPlanetaryTracks": [],
+     "negativeVP": 0
+    }
+   },
+   "resources": {
+    "megacredits": 17,
+    "steel": 18,
+    "titanium": 3,
+    "plants": 4,
+    "energy": 0,
+    "heat": 15
+   },
+   "production": {
+    "megacredits": -2,
+    "steel": 0,
+    "titanium": 1,
+    "plants": 1,
+    "energy": 0,
+    "heat": 8
+   },
+   "steelValue": 2,
+   "titaniumValue": 3,
+   "tags": {
+    "building": 6,
+    "space": 2,
+    "science": 1,
+    "power": 3,
+    "earth": 1,
+    "jovian": 1,
+    "plant": 1,
+    "microbe": 1,
+    "event": 2
+   },
+   "cardsWithoutTags": 0,
+   "cardsInHandCount": 14,
+   "corporations": [
+    "Interplanetary Cinematics"
+   ],
+   "tableau": [
+    {
+     "name": "Interplanetary Cinematics",
+     "inCatalog": true,
+     "calculatedCost": 0,
+     "resources": 0
+    },
+    {
+     "name": "GHG Factories",
+     "inCatalog": true,
+     "calculatedCost": 11,
+     "resources": 0
+    },
+    {
+     "name": "Technology Demonstration",
+     "inCatalog": true,
+     "calculatedCost": 5,
+     "resources": 0
+    },
+    {
+     "name": "Deep Well Heating",
+     "inCatalog": true,
+     "calculatedCost": 13,
+     "resources": 0
+    },
+    {
+     "name": "Development Center",
+     "inCatalog": true,
+     "calculatedCost": 11,
+     "resources": 0
+    },
+    {
+     "name": "Carbonate Processing",
+     "inCatalog": true,
+     "calculatedCost": 6,
+     "resources": 0
+    },
+    {
+     "name": "Space Mirrors",
+     "inCatalog": true,
+     "calculatedCost": 3,
+     "resources": 0
+    },
+    {
+     "name": "Vesta Shipyard",
+     "inCatalog": true,
+     "calculatedCost": 15,
+     "resources": 0
+    },
+    {
+     "name": "Media Archives",
+     "inCatalog": true,
+     "calculatedCost": 8,
+     "resources": 0
+    },
+    {
+     "name": "Power Infrastructure",
+     "inCatalog": true,
+     "calculatedCost": 4,
+     "resources": 0
+    },
+    {
+     "name": "Tardigrades",
+     "inCatalog": true,
+     "calculatedCost": 4,
+     "resources": 0
+    },
+    {
+     "name": "Grass",
+     "inCatalog": true,
+     "calculatedCost": 11,
+     "resources": 0
+    },
+    {
+     "name": "Land Claim",
+     "inCatalog": true,
+     "calculatedCost": 1,
+     "resources": 0
+    }
+   ],
+   "actionsUsedThisGeneration": [],
+   "actionsTakenThisRound": 0,
+   "availableBlueCardActionCount": 2,
+   "citiesCount": 0,
+   "cardCost": 3,
+   "protectedResources": {
+    "megacredits": "off",
+    "steel": "off",
+    "titanium": "off",
+    "plants": "off",
+    "energy": "off",
+    "heat": "off"
+   },
+   "protectedProduction": {
+    "megacredits": "off",
+    "steel": "off",
+    "titanium": "off",
+    "plants": "off",
+    "energy": "off",
+    "heat": "off"
+   },
+   "needsToResearch": true,
+   "hand": [
+    {
+     "name": "Small Animals",
+     "inCatalog": true,
+     "calculatedCost": 6
+    },
+    {
+     "name": "Decomposers",
+     "inCatalog": true,
+     "calculatedCost": 5
+    },
+    {
+     "name": "Restricted Area",
+     "inCatalog": true,
+     "calculatedCost": 11
+    },
+    {
+     "name": "Mining Area",
+     "inCatalog": true,
+     "calculatedCost": 4
+    },
+    {
+     "name": "Lunar Beam",
+     "inCatalog": true,
+     "calculatedCost": 13
+    },
+    {
+     "name": "Mars University",
+     "inCatalog": true,
+     "calculatedCost": 8
+    },
+    {
+     "name": "Advanced Ecosystems",
+     "inCatalog": true,
+     "calculatedCost": 11
+    },
+    {
+     "name": "Soil Factory",
+     "inCatalog": true,
+     "calculatedCost": 9
+    },
+    {
+     "name": "Water Import From Europa",
+     "inCatalog": true,
+     "calculatedCost": 25
+    },
+    {
+     "name": "Power Plant",
+     "inCatalog": true,
+     "calculatedCost": 4
+    },
+    {
+     "name": "Mineral Deposit",
+     "inCatalog": true,
+     "calculatedCost": 5
+    },
+    {
+     "name": "Artificial Lake",
+     "inCatalog": true,
+     "calculatedCost": 15
+    },
+    {
+     "name": "Electro Catapult",
+     "inCatalog": true,
+     "calculatedCost": 17
+    },
+    {
+     "name": "Magnetic Field Generators",
+     "inCatalog": true,
+     "calculatedCost": 20
+    }
+   ],
+   "preludesInHand": [],
+   "ceosInHand": [],
+   "draftedCards": [],
+   "dealt": {
+    "corporations": [
+     {
+      "name": "Interplanetary Cinematics",
+      "inCatalog": true,
+      "calculatedCost": 0
+     },
+     {
+      "name": "Teractor",
+      "inCatalog": true,
+      "calculatedCost": 0,
+      "discount": [
+       {
+        "tag": "earth",
+        "amount": 3
+       }
+      ]
+     }
+    ],
+    "preludes": [],
+    "projects": [
+     {
+      "name": "Herbivores",
+      "inCatalog": true,
+      "calculatedCost": 12
+     },
+     {
+      "name": "Adaptation Technology",
+      "inCatalog": true,
+      "calculatedCost": 12
+     },
+     {
+      "name": "Geothermal Power",
+      "inCatalog": true,
+      "calculatedCost": 11
+     },
+     {
+      "name": "Deimos Down",
+      "inCatalog": true,
+      "calculatedCost": 31
+     },
+     {
+      "name": "Optimal Aerobraking",
+      "inCatalog": true,
+      "calculatedCost": 7
+     },
+     {
+      "name": "Rover Construction",
+      "inCatalog": true,
+      "calculatedCost": 8
+     },
+     {
+      "name": "Tectonic Stress Power",
+      "inCatalog": true,
+      "calculatedCost": 18
+     },
+     {
+      "name": "Urbanized Area",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Noctis Farming",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Solar Power",
+      "inCatalog": true,
+      "calculatedCost": 11
+     }
+    ],
+    "ceos": []
+   },
+   "pickedCorporation": [
+    "Interplanetary Cinematics"
+   ],
+   "autopass": false,
+   "canCancelAction": false
+  },
+  "opponents": [
+   {
+    "color": "red",
+    "name": "player-red",
+    "isAi": false,
+    "isActive": false,
+    "hasPassed": false,
+    "terraformRating": 27,
+    "victoryPoints": {
+     "status": "hidden"
+    },
+    "resources": {
+     "megacredits": 27,
+     "steel": 6,
+     "titanium": 10,
+     "plants": 3,
+     "energy": 4,
+     "heat": 9
+    },
+    "production": {
+     "megacredits": 8,
+     "steel": 0,
+     "titanium": 1,
+     "plants": 0,
+     "energy": 4,
+     "heat": 3
+    },
+    "steelValue": 2,
+    "titaniumValue": 3,
+    "tags": {
+     "building": 5,
+     "space": 1,
+     "science": 1,
+     "power": 4,
+     "jovian": 1,
+     "plant": 1,
+     "city": 2,
+     "event": 4
+    },
+    "cardsWithoutTags": 2,
+    "cardsInHandCount": 12,
+    "corporations": [
+     "Saturn Systems"
+    ],
+    "tableau": [
+     {
+      "name": "Saturn Systems",
+      "inCatalog": true,
+      "calculatedCost": 0,
+      "resources": 0
+     },
+     {
+      "name": "Hired Raiders",
+      "inCatalog": true,
+      "calculatedCost": 1,
+      "resources": 0
+     },
+     {
+      "name": "Energy Tapping",
+      "inCatalog": true,
+      "calculatedCost": 3,
+      "resources": 0
+     },
+     {
+      "name": "Nuclear Power",
+      "inCatalog": true,
+      "calculatedCost": 10,
+      "resources": 0
+     },
+     {
+      "name": "Hackers",
+      "inCatalog": true,
+      "calculatedCost": 3,
+      "resources": 0
+     },
+     {
+      "name": "Corporate Stronghold",
+      "inCatalog": true,
+      "calculatedCost": 11,
+      "resources": 0
+     },
+     {
+      "name": "Greenhouses",
+      "inCatalog": true,
+      "calculatedCost": 6,
+      "resources": 0
+     },
+     {
+      "name": "Solar Wind Power",
+      "inCatalog": true,
+      "calculatedCost": 11,
+      "resources": 0
+     },
+     {
+      "name": "Business Contacts",
+      "inCatalog": true,
+      "calculatedCost": 7,
+      "resources": 0
+     },
+     {
+      "name": "Imported GHG",
+      "inCatalog": true,
+      "calculatedCost": 7,
+      "resources": 0
+     },
+     {
+      "name": "Immigrant City",
+      "inCatalog": true,
+      "calculatedCost": 13,
+      "resources": 0
+     },
+     {
+      "name": "Power Supply Consortium",
+      "inCatalog": true,
+      "calculatedCost": 5,
+      "resources": 0
+     },
+     {
+      "name": "Commercial District",
+      "inCatalog": true,
+      "calculatedCost": 16,
+      "resources": 0
+     },
+     {
+      "name": "Towing A Comet",
+      "inCatalog": true,
+      "calculatedCost": 23,
+      "resources": 0
+     },
+     {
+      "name": "Micro-Mills",
+      "inCatalog": true,
+      "calculatedCost": 3,
+      "resources": 0
+     }
+    ],
+    "actionsUsedThisGeneration": [],
+    "actionsTakenThisRound": 0,
+    "availableBlueCardActionCount": 0,
+    "citiesCount": 2,
+    "cardCost": 3,
+    "protectedResources": {
+     "megacredits": "off",
+     "steel": "off",
+     "titanium": "off",
+     "plants": "off",
+     "energy": "off",
+     "heat": "off"
+    },
+    "protectedProduction": {
+     "megacredits": "off",
+     "steel": "off",
+     "titanium": "off",
+     "plants": "off",
+     "energy": "off",
+     "heat": "off"
+    },
+    "needsToResearch": true
+   }
+  ],
+  "choices": {
+   "status": "awaiting-input",
+   "root": {
+    "path": "",
+    "inputType": "or",
+    "title": "Take your first action",
+    "buttonLabel": "Take action",
+    "optional": false,
+    "options": [
+     {
+      "path": "0",
+      "inputType": "option",
+      "title": "Convert 8 heat into temperature",
+      "buttonLabel": "Convert heat",
+      "optional": false
+     },
+     {
+      "path": "1",
+      "inputType": "card",
+      "title": "Perform an action from a played card",
+      "buttonLabel": "Take action",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Space Mirrors",
+        "inCatalog": true,
+        "calculatedCost": 3,
+        "resources": 0
+       },
+       {
+        "name": "Tardigrades",
+        "inCatalog": true,
+        "calculatedCost": 4,
+        "resources": 0
+       }
+      ],
+      "min": 1,
+      "max": 1,
+      "selectBlueCardAction": true
+     },
+     {
+      "path": "2",
+      "inputType": "projectCard",
+      "title": "Play project card",
+      "buttonLabel": "Play card",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Restricted Area",
+        "inCatalog": true,
+        "calculatedCost": 11,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Lunar Beam",
+        "inCatalog": true,
+        "calculatedCost": 13,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Mars University",
+        "inCatalog": true,
+        "calculatedCost": 8,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Water Import From Europa",
+        "inCatalog": true,
+        "calculatedCost": 25,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Power Plant",
+        "inCatalog": true,
+        "calculatedCost": 4,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Mineral Deposit",
+        "inCatalog": true,
+        "calculatedCost": 5,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       }
+      ],
+      "paymentOptions": {
+       "heat": false,
+       "lunaTradeFederationTitanium": false,
+       "plants": false
+      }
+     },
+     {
+      "path": "3",
+      "inputType": "or",
+      "title": "Fund an award (8 M€)",
+      "buttonLabel": "Confirm",
+      "optional": false,
+      "options": [
+       {
+        "path": "3.0",
+        "inputType": "option",
+        "title": "Landlord",
+        "buttonLabel": "Fund - (Landlord)",
+        "optional": false
+       },
+       {
+        "path": "3.1",
+        "inputType": "option",
+        "title": "Scientist",
+        "buttonLabel": "Fund - (Scientist)",
+        "optional": false
+       },
+       {
+        "path": "3.2",
+        "inputType": "option",
+        "title": "Banker",
+        "buttonLabel": "Fund - (Banker)",
+        "optional": false
+       },
+       {
+        "path": "3.3",
+        "inputType": "option",
+        "title": "Thermalist",
+        "buttonLabel": "Fund - (Thermalist)",
+        "optional": false
+       },
+       {
+        "path": "3.4",
+        "inputType": "option",
+        "title": "Miner",
+        "buttonLabel": "Fund - (Miner)",
+        "optional": false
+       }
+      ],
+      "initialIndex": 0
+     },
+     {
+      "path": "4",
+      "inputType": "projectCard",
+      "title": "Standard projects",
+      "buttonLabel": "Confirm",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Power Plant:SP",
+        "inCatalog": true,
+        "calculatedCost": 11,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Asteroid:SP",
+        "inCatalog": true,
+        "calculatedCost": 14,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Aquifer",
+        "inCatalog": true,
+        "calculatedCost": 18,
+        "isDisabled": true,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Greenery",
+        "inCatalog": true,
+        "calculatedCost": 23,
+        "isDisabled": true,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "City",
+        "inCatalog": true,
+        "calculatedCost": 25,
+        "isDisabled": true,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       }
+      ],
+      "paymentOptions": {
+       "heat": false,
+       "lunaTradeFederationTitanium": false,
+       "plants": false
+      }
+     },
+     {
+      "path": "5",
+      "inputType": "option",
+      "title": "Pass for this generation",
+      "buttonLabel": "Pass",
+      "optional": false,
+      "warnings": [
+       "pass"
+      ]
+     },
+     {
+      "path": "6",
+      "inputType": "card",
+      "title": "Sell patents",
+      "buttonLabel": "Sell",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Small Animals",
+        "inCatalog": true,
+        "calculatedCost": 6
+       },
+       {
+        "name": "Decomposers",
+        "inCatalog": true,
+        "calculatedCost": 5
+       },
+       {
+        "name": "Restricted Area",
+        "inCatalog": true,
+        "calculatedCost": 11
+       },
+       {
+        "name": "Mining Area",
+        "inCatalog": true,
+        "calculatedCost": 4
+       },
+       {
+        "name": "Lunar Beam",
+        "inCatalog": true,
+        "calculatedCost": 13
+       },
+       {
+        "name": "Mars University",
+        "inCatalog": true,
+        "calculatedCost": 8
+       },
+       {
+        "name": "Advanced Ecosystems",
+        "inCatalog": true,
+        "calculatedCost": 11
+       },
+       {
+        "name": "Soil Factory",
+        "inCatalog": true,
+        "calculatedCost": 9
+       },
+       {
+        "name": "Water Import From Europa",
+        "inCatalog": true,
+        "calculatedCost": 25
+       },
+       {
+        "name": "Power Plant",
+        "inCatalog": true,
+        "calculatedCost": 4
+       },
+       {
+        "name": "Mineral Deposit",
+        "inCatalog": true,
+        "calculatedCost": 5
+       },
+       {
+        "name": "Artificial Lake",
+        "inCatalog": true,
+        "calculatedCost": 15
+       },
+       {
+        "name": "Electro Catapult",
+        "inCatalog": true,
+        "calculatedCost": 17
+       },
+       {
+        "name": "Magnetic Field Generators",
+        "inCatalog": true,
+        "calculatedCost": 20
+       }
+      ],
+      "min": 1,
+      "max": 14,
+      "selectBlueCardAction": false
+     }
+    ],
+    "initialIndex": 0
+   }
+  }
+ },
+ "analysis": {
+  "schemaVersion": "coach-analysis/1",
+  "source": {
+   "fingerprint": "c80067d1a69667316951d510996b46a947560f7436d0c13ae4c522f9813be38c",
+   "advisoryFingerprint": "d1c6a7d08dcd96fbb593dc3a28353129def174f6dade5c1a94c43a04cc24c1e8",
+   "catalogVersion": "96e3a55227c5e380",
+   "analysisVersion": "2.0.0",
+   "generatedAt": "2026-10-15T14:14:52.401Z"
+  },
+  "horizonProductionPhases": 3,
+  "coverage": {
+   "supported": 15,
+   "partial": 8,
+   "unsupported": 4,
+   "reasons": [
+    "bespoke-code: 6 cards",
+    "tile-placement: 3 cards",
+    "choice: 1 card",
+    "conditional-cost: 1 card",
+    "countable: 1 card",
+    "target-choice: 1 card"
+   ]
+  },
+  "candidates": [
+   {
+    "id": "Small Animals > Advanced Ecosystems",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "scoring",
+     "engine"
+    ],
+    "cards": [
+     {
+      "name": "Small Animals",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "the game does not offer it to play right now"
+      ],
+      "cost": 6
+     },
+     {
+      "name": "Advanced Ecosystems",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "requirement met by Small Animals",
+       "after Small Animals"
+      ],
+      "cost": 11
+     }
+    ],
+    "links": [
+     {
+      "from": "Small Animals",
+      "to": "Advanced Ecosystems",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": true,
+      "requirementIndex": 1,
+      "why": "Small Animals adds 1 animal tag; Advanced Ecosystems needs 1 more",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "me.tags.animal",
+         "stateFingerprint": "c80067d1a69667316951d510996b46a947560f7436d0c13ae4c522f9813be38c"
+        },
+        {
+         "kind": "state",
+         "fieldPath": "me.tags.wild",
+         "stateFingerprint": "c80067d1a69667316951d510996b46a947560f7436d0c13ae4c522f9813be38c"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[1]",
+         "cardName": "Advanced Ecosystems"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Small Animals"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "oxygen",
+      "observed": 1,
+      "target": 6,
+      "comparator": ">=",
+      "gap": 5,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.oxygen.value",
+        "stateFingerprint": "c80067d1a69667316951d510996b46a947560f7436d0c13ae4c522f9813be38c"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Small Animals"
+       }
+      ],
+      "card": "Small Animals"
+     }
+    ],
+    "payments": {
+     "play": 17,
+     "purchase": 0
+    },
+    "support": {
+     "level": "verified",
+     "evidence": [
+      {
+       "kind": "state",
+       "fieldPath": "me.tags.animal",
+       "stateFingerprint": "c80067d1a69667316951d510996b46a947560f7436d0c13ae4c522f9813be38c"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.tags.wild",
+       "stateFingerprint": "c80067d1a69667316951d510996b46a947560f7436d0c13ae4c522f9813be38c"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[1]",
+       "cardName": "Advanced Ecosystems"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Small Animals"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Small Animals",
+      "to": "Advanced Ecosystems"
+     },
+     "text": "Is it worth playing Small Animals mainly to meet the requirement of Advanced Ecosystems, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -17,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -17,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -17,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -17,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 17,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 3,
+      "terraformRating": 0,
+      "cards": 3
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Small Animals: the target card or player is chosen when played",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)",
+      "the action of Small Animals is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Mineral Deposit > Mars University > Power Plant",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Mineral Deposit",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 5
+     },
+     {
+      "name": "Mars University",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Mineral Deposit"
+      ],
+      "cost": 8
+     },
+     {
+      "name": "Power Plant",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Mineral Deposit, Mars University"
+      ],
+      "cost": 4
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Mars University",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Mars University (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Mars University"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Power Plant",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Power Plant (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Power Plant"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Mineral Deposit",
+      "to": "Mars University",
+      "kind": "PRODUCES_FOR",
+      "why": "Mineral Deposit gives steel, which can pay for Mars University (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mineral Deposit"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Mars University"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Mineral Deposit",
+      "to": "Power Plant",
+      "kind": "PRODUCES_FOR",
+      "why": "Mineral Deposit gives steel, which can pay for Power Plant (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mineral Deposit"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Power Plant"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 17,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Mars University"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Power Plant"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mineral Deposit"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Mars University"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mineral Deposit"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Power Plant"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Power Plant"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Power Plant. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -17,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -17,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -17,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -17,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 17,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 0,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Mars University: card code 'onCardPlayed' changes what the card does",
+      "Mars University: card code 'onNonCardTagAdded' changes what the card does",
+      "Mars University: card code 'onScienceTagAdded' changes what the card does",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)"
+     ]
+    }
+   },
+   {
+    "id": "Mineral Deposit > Power Plant > Electro Catapult",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Mineral Deposit",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 5
+     },
+     {
+      "name": "Power Plant",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Mineral Deposit"
+      ],
+      "cost": 4
+     },
+     {
+      "name": "Electro Catapult",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Mineral Deposit, Power Plant"
+      ],
+      "cost": 17
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Power Plant",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Power Plant (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Power Plant"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Electro Catapult",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Electro Catapult (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Electro Catapult"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Mineral Deposit",
+      "to": "Electro Catapult",
+      "kind": "PRODUCES_FOR",
+      "why": "Mineral Deposit gives steel, which can pay for Electro Catapult (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mineral Deposit"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Electro Catapult"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Mineral Deposit",
+      "to": "Power Plant",
+      "kind": "PRODUCES_FOR",
+      "why": "Mineral Deposit gives steel, which can pay for Power Plant (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mineral Deposit"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Power Plant"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 26,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Power Plant"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Electro Catapult"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mineral Deposit"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Electro Catapult"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mineral Deposit"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Power Plant"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Electro Catapult"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Electro Catapult. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -26,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -26,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -26,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -26,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 26,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 0,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Electro Catapult: the player chooses one of several effects",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)"
+     ]
+    }
+   },
+   {
+    "id": "Mineral Deposit > Power Plant > Mars University",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Mineral Deposit",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 5
+     },
+     {
+      "name": "Power Plant",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Mineral Deposit"
+      ],
+      "cost": 4
+     },
+     {
+      "name": "Mars University",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Mineral Deposit, Power Plant"
+      ],
+      "cost": 8
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Power Plant",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Power Plant (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Power Plant"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Mars University",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Mars University (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Mars University"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Mineral Deposit",
+      "to": "Mars University",
+      "kind": "PRODUCES_FOR",
+      "why": "Mineral Deposit gives steel, which can pay for Mars University (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mineral Deposit"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Mars University"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Mineral Deposit",
+      "to": "Power Plant",
+      "kind": "PRODUCES_FOR",
+      "why": "Mineral Deposit gives steel, which can pay for Power Plant (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mineral Deposit"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Power Plant"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 17,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Power Plant"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Mars University"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mineral Deposit"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Mars University"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mineral Deposit"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Power Plant"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Mars University"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Mars University. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -17,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -17,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -17,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -17,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 17,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 0,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Mars University: card code 'onCardPlayed' changes what the card does",
+      "Mars University: card code 'onNonCardTagAdded' changes what the card does",
+      "Mars University: card code 'onScienceTagAdded' changes what the card does",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)"
+     ]
+    }
+   },
+   {
+    "id": "Mineral Deposit > Power Plant > Soil Factory",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Mineral Deposit",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 5
+     },
+     {
+      "name": "Power Plant",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Mineral Deposit"
+      ],
+      "cost": 4
+     },
+     {
+      "name": "Soil Factory",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Mineral Deposit, Power Plant"
+      ],
+      "cost": 9
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Power Plant",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Power Plant (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Power Plant"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Soil Factory",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Soil Factory (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Soil Factory"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Mineral Deposit",
+      "to": "Power Plant",
+      "kind": "PRODUCES_FOR",
+      "why": "Mineral Deposit gives steel, which can pay for Power Plant (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mineral Deposit"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Power Plant"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Mineral Deposit",
+      "to": "Soil Factory",
+      "kind": "PRODUCES_FOR",
+      "why": "Mineral Deposit gives steel, which can pay for Soil Factory (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mineral Deposit"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Soil Factory"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 18,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Power Plant"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Soil Factory"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mineral Deposit"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Power Plant"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mineral Deposit"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Soil Factory"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Soil Factory"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Soil Factory. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -18,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -18,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -18,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -18,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 3,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 18,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 0,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)"
+     ]
+    }
+   },
+   {
+    "id": "Mineral Deposit > Mars University",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Mineral Deposit",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 5
+     },
+     {
+      "name": "Mars University",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Mineral Deposit"
+      ],
+      "cost": 8
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Mars University",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Mars University (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Mars University"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Mineral Deposit",
+      "to": "Mars University",
+      "kind": "PRODUCES_FOR",
+      "why": "Mineral Deposit gives steel, which can pay for Mars University (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mineral Deposit"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Mars University"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 13,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Mars University"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mineral Deposit"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Mars University"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Mars University"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Mars University. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -13,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -13,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -13,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -13,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 13,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 0,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Mars University: card code 'onCardPlayed' changes what the card does",
+      "Mars University: card code 'onNonCardTagAdded' changes what the card does",
+      "Mars University: card code 'onScienceTagAdded' changes what the card does",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)"
+     ]
+    }
+   },
+   {
+    "id": "Mineral Deposit > Power Plant",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy"
+    ],
+    "cards": [
+     {
+      "name": "Mineral Deposit",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 5
+     },
+     {
+      "name": "Power Plant",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Mineral Deposit"
+      ],
+      "cost": 4
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Power Plant",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Power Plant (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Power Plant"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Mineral Deposit",
+      "to": "Power Plant",
+      "kind": "PRODUCES_FOR",
+      "why": "Mineral Deposit gives steel, which can pay for Power Plant (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mineral Deposit"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Power Plant"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 9,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Power Plant"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mineral Deposit"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Power Plant"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Power Plant"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Power Plant. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -9,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -9,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -9,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -9,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 9,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 0,
+      "terraformRating": 0,
+      "cards": 0
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)"
+     ]
+    }
+   },
+   {
+    "id": "Mars University",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Mars University",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 8
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Mars University",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Mars University (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Mars University"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 8,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Mars University"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Mars University"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Mars University. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -8,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -8,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -8,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -8,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 8,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 0,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Mars University: card code 'onCardPlayed' changes what the card does",
+      "Mars University: card code 'onNonCardTagAdded' changes what the card does",
+      "Mars University: card code 'onScienceTagAdded' changes what the card does",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)"
+     ]
+    }
+   },
+   {
+    "id": "Power Plant",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy"
+    ],
+    "cards": [
+     {
+      "name": "Power Plant",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 4
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Power Plant",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Power Plant (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Power Plant"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 4,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Power Plant"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Power Plant"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Power Plant. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -4,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -4,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -4,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -4,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 4,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 0,
+      "terraformRating": 0,
+      "cards": 0
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)"
+     ]
+    }
+   }
+  ],
+  "discarded": [],
+  "limitations": [
+   "FEEDS_RESOURCE: adding resources to another card is a target choice; no engine-verified adapter yet",
+   "AMPLIFIES: effects triggered by other cards are card code (e.g. Media Group); no engine-verified adapter yet",
+   "ocean requirements: oceans come from tile placement, which is not modeled",
+   "requirements counting all players' tags are not linked",
+   "temperature/oxygen bonuses of the global tracks (extra heat production, oxygen raising temperature) are not counted",
+   "M€ given by a card is not linked to particular cards (it pays for everything)"
+  ],
+  "warnings": [],
+  "search": {
+   "poolSize": 14,
+   "chainsExamined": 64,
+   "truncated": false,
+   "elapsedMs": 4
+  }
+ }
+}
