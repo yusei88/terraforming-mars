@@ -2,11 +2,20 @@
 
 **文書ID:** TM-COACH-P3-MVP  
 **作成日:** 2026-10-14  
-**ステータス:** 計画策定／実装前  
+**ステータス:** Iteration 0 完了（PR #8）。**Iteration 1 以降は [選択主導型の計画 TM-COACH-P3-CD](choice-driven-plan.md)（2026-10-16）に置き換え**  
 **対象リポジトリ:** [yusei88/terraforming-mars](https://github.com/yusei88/terraforming-mars)  
 **設計時の基準:** `main` = `969e918df7785b15878fa106e5950f87ce54e461`（Gate E マージ済み。着手時に更新を確認）  
 **推奨ブランチ:** `coach/phase3-mvp`（小さなPRに分けて段階マージ）  
 **構築対象:** 自宅G10上のゲームサーバー + タブレットブラウザ。外部AI利用は設定と明示的同意により有効化。
+
+---
+
+> **変更履歴**
+> - 2026-10-16: Iteration 1 以降のユーザー体験、優先順位、モデル評価基準を [TM-COACH-P3-CD](choice-driven-plan.md) に変更した。この文書と矛盾する場合は TM-COACH-P3-CD を優先する。
+>   - 自由質問のチャット（§4〜§6 の `question`/`hint`/`compare`/`explain`）は、補助機能として残す。
+>   - 主な体験は「ゲームの選択肢を見る → プレイヤーが選ぶ → その選択へのコーチング」にする。
+>   - 実装上の決定は [choice-driven-design.md](choice-driven-design.md) に記録する。
+>   - Iteration 0 の成果（ADR、評価データ、UX の決定、接続部品）はそのまま使う。
 
 ---
 
