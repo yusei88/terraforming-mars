@@ -1,0 +1,3534 @@
+{
+ "id": "2p-g4-research",
+ "description": "Two players, generation 4, buying cards",
+ "tags": {
+  "mode": "multiplayer",
+  "generation": 4,
+  "phase": "research",
+  "planCount": 9,
+  "goals": [
+   "engine"
+  ],
+  "truncated": false,
+  "incompleteForecast": true,
+  "unknownAvailability": false,
+  "legalNow": false
+ },
+ "state": {
+  "schemaVersion": "coach-state/1",
+  "fingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d",
+  "advisoryFingerprint": "cedbbf94ed570ef4c85064e082d01c3623d4c993d773423270d9f329e7e2f9c6",
+  "stateKey": "f9942bf02039edc8:u0:s0:a66",
+  "version": {
+   "generation": 4,
+   "phase": "research",
+   "gameAge": 66,
+   "gameStep": 0,
+   "undoCount": 0
+  },
+  "catalogVersion": "96e3a55227c5e380",
+  "capturedAt": "2026-10-15T14:14:51.892Z",
+  "warnings": [],
+  "game": {
+   "name": "Thermal Optics Current",
+   "mode": "multiplayer",
+   "playerCount": 2,
+   "board": "tharsis",
+   "expansions": {
+    "corpera": true,
+    "promo": false,
+    "venus": false,
+    "colonies": false,
+    "prelude": false,
+    "prelude2": false,
+    "turmoil": false,
+    "community": false,
+    "ares": false,
+    "moon": false,
+    "pathfinders": false,
+    "ceo": false,
+    "starwars": false,
+    "underworld": false,
+    "deltaProject": false
+   },
+   "baseGameOnly": true,
+   "options": {
+    "draftVariant": false,
+    "initialDraftVariant": false,
+    "preludeDraftVariant": false,
+    "showOtherPlayersVP": false,
+    "undoOption": false,
+    "soloTR": false,
+    "fastModeOption": false,
+    "randomMA": "No randomization"
+   },
+   "generation": 4,
+   "phase": "research",
+   "lastSoloGeneration": 14,
+   "activePlayer": "red",
+   "firstPlayer": "red",
+   "passedPlayers": [],
+   "temperature": {
+    "value": -28,
+    "min": -30,
+    "max": 8,
+    "stepsRemaining": 18
+   },
+   "oxygen": {
+    "value": 0,
+    "min": 0,
+    "max": 14,
+    "stepsRemaining": 14
+   },
+   "oceans": {
+    "value": 0,
+    "min": 0,
+    "max": 9,
+    "stepsRemaining": 9
+   },
+   "isTerraformed": false,
+   "gameOver": false,
+   "decks": {
+    "projectDrawPile": 162,
+    "projectDiscardPile": 24,
+    "corporationDrawPile": 8
+   },
+   "spaces": [],
+   "milestones": [
+    {
+     "name": "Terraformer",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 21,
+       "claimable": false
+      },
+      {
+       "color": "red",
+       "score": 20,
+       "claimable": false
+      }
+     ],
+     "threshold": 35
+    },
+    {
+     "name": "Mayor",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0,
+       "claimable": false
+      },
+      {
+       "color": "red",
+       "score": 1,
+       "claimable": false
+      }
+     ],
+     "threshold": 3
+    },
+    {
+     "name": "Gardener",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0,
+       "claimable": false
+      },
+      {
+       "color": "red",
+       "score": 0,
+       "claimable": false
+      }
+     ],
+     "threshold": 3
+    },
+    {
+     "name": "Builder",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 3,
+       "claimable": false
+      },
+      {
+       "color": "red",
+       "score": 2,
+       "claimable": false
+      }
+     ],
+     "threshold": 8
+    },
+    {
+     "name": "Planner",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 5,
+       "claimable": false
+      },
+      {
+       "color": "red",
+       "score": 1,
+       "claimable": false
+      }
+     ],
+     "threshold": 16
+    }
+   ],
+   "awards": [
+    {
+     "name": "Landlord",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      },
+      {
+       "color": "red",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "name": "Scientist",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      },
+      {
+       "color": "red",
+       "score": 0
+      }
+     ]
+    },
+    {
+     "name": "Banker",
+     "scores": [
+      {
+       "color": "blue",
+       "score": -2
+      },
+      {
+       "color": "red",
+       "score": 4
+      }
+     ]
+    },
+    {
+     "name": "Thermalist",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 15
+      },
+      {
+       "color": "red",
+       "score": 15
+      }
+     ]
+    },
+    {
+     "name": "Miner",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 18
+      },
+      {
+       "color": "red",
+       "score": 8
+      }
+     ]
+    }
+   ],
+   "unsupported": []
+  },
+  "me": {
+   "color": "blue",
+   "name": "player-blue",
+   "isAi": false,
+   "isActive": false,
+   "hasPassed": false,
+   "terraformRating": 21,
+   "victoryPoints": {
+    "status": "known",
+    "value": {
+     "terraformRating": 21,
+     "milestones": 0,
+     "awards": 0,
+     "greenery": 0,
+     "city": 0,
+     "escapeVelocity": 0,
+     "moonHabitats": 0,
+     "moonMines": 0,
+     "moonRoads": 0,
+     "planetaryTracks": 0,
+     "victoryPoints": 0,
+     "total": 21,
+     "detailsCards": [],
+     "detailsMilestones": [],
+     "detailsAwards": [],
+     "detailsPlanetaryTracks": [],
+     "negativeVP": 0
+    }
+   },
+   "resources": {
+    "megacredits": 22,
+    "steel": 18,
+    "titanium": 0,
+    "plants": 0,
+    "energy": 1,
+    "heat": 10
+   },
+   "production": {
+    "megacredits": -2,
+    "steel": 0,
+    "titanium": 0,
+    "plants": 0,
+    "energy": 1,
+    "heat": 4
+   },
+   "steelValue": 2,
+   "titaniumValue": 3,
+   "tags": {
+    "building": 3,
+    "power": 1,
+    "event": 1
+   },
+   "cardsWithoutTags": 0,
+   "cardsInHandCount": 5,
+   "corporations": [
+    "Interplanetary Cinematics"
+   ],
+   "tableau": [
+    {
+     "name": "Interplanetary Cinematics",
+     "inCatalog": true,
+     "calculatedCost": 0,
+     "resources": 0
+    },
+    {
+     "name": "GHG Factories",
+     "inCatalog": true,
+     "calculatedCost": 11,
+     "resources": 0
+    },
+    {
+     "name": "Technology Demonstration",
+     "inCatalog": true,
+     "calculatedCost": 5,
+     "resources": 0
+    },
+    {
+     "name": "Deep Well Heating",
+     "inCatalog": true,
+     "calculatedCost": 13,
+     "resources": 0
+    }
+   ],
+   "actionsUsedThisGeneration": [],
+   "actionsTakenThisRound": 0,
+   "availableBlueCardActionCount": 0,
+   "citiesCount": 0,
+   "cardCost": 3,
+   "protectedResources": {
+    "megacredits": "off",
+    "steel": "off",
+    "titanium": "off",
+    "plants": "off",
+    "energy": "off",
+    "heat": "off"
+   },
+   "protectedProduction": {
+    "megacredits": "off",
+    "steel": "off",
+    "titanium": "off",
+    "plants": "off",
+    "energy": "off",
+    "heat": "off"
+   },
+   "needsToResearch": true,
+   "hand": [
+    {
+     "name": "Small Animals",
+     "inCatalog": true,
+     "calculatedCost": 6
+    },
+    {
+     "name": "Grass",
+     "inCatalog": true,
+     "calculatedCost": 11
+    },
+    {
+     "name": "Decomposers",
+     "inCatalog": true,
+     "calculatedCost": 5
+    },
+    {
+     "name": "Vesta Shipyard",
+     "inCatalog": true,
+     "calculatedCost": 15
+    },
+    {
+     "name": "Development Center",
+     "inCatalog": true,
+     "calculatedCost": 11
+    }
+   ],
+   "preludesInHand": [],
+   "ceosInHand": [],
+   "draftedCards": [],
+   "dealt": {
+    "corporations": [
+     {
+      "name": "Interplanetary Cinematics",
+      "inCatalog": true,
+      "calculatedCost": 0
+     },
+     {
+      "name": "Teractor",
+      "inCatalog": true,
+      "calculatedCost": 0,
+      "discount": [
+       {
+        "tag": "earth",
+        "amount": 3
+       }
+      ]
+     }
+    ],
+    "preludes": [],
+    "projects": [
+     {
+      "name": "Herbivores",
+      "inCatalog": true,
+      "calculatedCost": 12
+     },
+     {
+      "name": "Adaptation Technology",
+      "inCatalog": true,
+      "calculatedCost": 12
+     },
+     {
+      "name": "Geothermal Power",
+      "inCatalog": true,
+      "calculatedCost": 11
+     },
+     {
+      "name": "Deimos Down",
+      "inCatalog": true,
+      "calculatedCost": 31
+     },
+     {
+      "name": "Optimal Aerobraking",
+      "inCatalog": true,
+      "calculatedCost": 7
+     },
+     {
+      "name": "Rover Construction",
+      "inCatalog": true,
+      "calculatedCost": 8
+     },
+     {
+      "name": "Tectonic Stress Power",
+      "inCatalog": true,
+      "calculatedCost": 18
+     },
+     {
+      "name": "Urbanized Area",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Noctis Farming",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Solar Power",
+      "inCatalog": true,
+      "calculatedCost": 11
+     }
+    ],
+    "ceos": []
+   },
+   "pickedCorporation": [
+    "Interplanetary Cinematics"
+   ],
+   "autopass": false,
+   "canCancelAction": false
+  },
+  "opponents": [
+   {
+    "color": "red",
+    "name": "player-red",
+    "isAi": false,
+    "isActive": true,
+    "hasPassed": false,
+    "terraformRating": 20,
+    "victoryPoints": {
+     "status": "hidden"
+    },
+    "resources": {
+     "megacredits": 27,
+     "steel": 4,
+     "titanium": 3,
+     "plants": 0,
+     "energy": 5,
+     "heat": 10
+    },
+    "production": {
+     "megacredits": 4,
+     "steel": 0,
+     "titanium": 1,
+     "plants": 0,
+     "energy": 5,
+     "heat": 0
+    },
+    "steelValue": 2,
+    "titaniumValue": 3,
+    "tags": {
+     "building": 2,
+     "power": 2,
+     "jovian": 1,
+     "city": 1,
+     "event": 1
+    },
+    "cardsWithoutTags": 1,
+    "cardsInHandCount": 1,
+    "corporations": [
+     "Saturn Systems"
+    ],
+    "tableau": [
+     {
+      "name": "Saturn Systems",
+      "inCatalog": true,
+      "calculatedCost": 0,
+      "resources": 0
+     },
+     {
+      "name": "Hired Raiders",
+      "inCatalog": true,
+      "calculatedCost": 1,
+      "resources": 0
+     },
+     {
+      "name": "Energy Tapping",
+      "inCatalog": true,
+      "calculatedCost": 3,
+      "resources": 0
+     },
+     {
+      "name": "Nuclear Power",
+      "inCatalog": true,
+      "calculatedCost": 10,
+      "resources": 0
+     },
+     {
+      "name": "Hackers",
+      "inCatalog": true,
+      "calculatedCost": 3,
+      "resources": 0
+     },
+     {
+      "name": "Corporate Stronghold",
+      "inCatalog": true,
+      "calculatedCost": 11,
+      "resources": 0
+     }
+    ],
+    "actionsUsedThisGeneration": [],
+    "actionsTakenThisRound": 0,
+    "availableBlueCardActionCount": 0,
+    "citiesCount": 1,
+    "cardCost": 3,
+    "protectedResources": {
+     "megacredits": "off",
+     "steel": "off",
+     "titanium": "off",
+     "plants": "off",
+     "energy": "off",
+     "heat": "off"
+    },
+    "protectedProduction": {
+     "megacredits": "off",
+     "steel": "off",
+     "titanium": "off",
+     "plants": "off",
+     "energy": "off",
+     "heat": "off"
+    },
+    "needsToResearch": true
+   }
+  ],
+  "choices": {
+   "status": "awaiting-input",
+   "root": {
+    "path": "",
+    "inputType": "card",
+    "title": "Select card(s) to buy",
+    "buttonLabel": "Buy",
+    "optional": false,
+    "cards": [
+     {
+      "name": "Restricted Area",
+      "inCatalog": true,
+      "calculatedCost": 11
+     },
+     {
+      "name": "Earth Catapult",
+      "inCatalog": true,
+      "calculatedCost": 23,
+      "discount": [
+       {
+        "amount": 2
+       }
+      ]
+     },
+     {
+      "name": "Carbonate Processing",
+      "inCatalog": true,
+      "calculatedCost": 6
+     },
+     {
+      "name": "Media Archives",
+      "inCatalog": true,
+      "calculatedCost": 8
+     }
+    ],
+    "min": 0,
+    "max": 4,
+    "selectBlueCardAction": false
+   }
+  }
+ },
+ "analysis": {
+  "schemaVersion": "coach-analysis/1",
+  "source": {
+   "fingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d",
+   "advisoryFingerprint": "cedbbf94ed570ef4c85064e082d01c3623d4c993d773423270d9f329e7e2f9c6",
+   "catalogVersion": "96e3a55227c5e380",
+   "analysisVersion": "2.0.0",
+   "generatedAt": "2026-10-15T14:14:51.894Z"
+  },
+  "horizonProductionPhases": 3,
+  "coverage": {
+   "supported": 8,
+   "partial": 4,
+   "unsupported": 1,
+   "reasons": [
+    "bespoke-code: 2 cards",
+    "countable: 1 card",
+    "target-choice: 1 card",
+    "tile-placement: 1 card"
+   ]
+  },
+  "candidates": [
+   {
+    "id": "Development Center",
+    "goal": "engine",
+    "goals": [
+     "engine"
+    ],
+    "cards": [
+     {
+      "name": "Development Center",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "cards can be played only on your turn in the action phase"
+      ],
+      "cost": 11
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Development Center (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Deep Well Heating gives energy, which the action of Development Center spends (1)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Deep Well Heating"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.action.spend",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 11,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.action.spend",
+       "cardName": "Development Center"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Development Center. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -11,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -11,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -11,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -11,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 11,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 0,
+      "terraformRating": 0,
+      "cards": 0
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)",
+      "the action of Development Center is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Carbonate Processing",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy"
+    ],
+    "cards": [
+     {
+      "name": "Carbonate Processing",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 6,
+      "purchaseCost": 3
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Carbonate Processing",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Carbonate Processing (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Carbonate Processing"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 6,
+     "purchase": 3
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Carbonate Processing"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Carbonate Processing"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Carbonate Processing. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -9,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 3
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -9,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 3
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 3
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -9,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 5
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 3
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -9,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 7
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 3
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 6,
+      "purchase": 3
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 0,
+      "terraformRating": 0,
+      "cards": 0
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)"
+     ]
+    }
+   },
+   {
+    "id": "Earth Catapult > Carbonate Processing > Development Center",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Earth Catapult",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 23,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Carbonate Processing",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 4,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Development Center",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Earth Catapult, Carbonate Processing"
+      ],
+      "cost": 9
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Carbonate Processing",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Carbonate Processing (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Carbonate Processing"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Development Center (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Deep Well Heating gives energy, which the action of Development Center spends (1)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Deep Well Heating"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.action.spend",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Earth Catapult",
+      "to": "Development Center",
+      "kind": "DISCOUNTS",
+      "amount": 2,
+      "why": "with Earth Catapult in play, Development Center costs 9 M€ instead of 11",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "me.hand[4].calculatedCost",
+         "cardName": "Development Center",
+         "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "cardDiscount",
+         "cardName": "Earth Catapult"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Earth Catapult",
+      "to": "Carbonate Processing",
+      "kind": "DISCOUNTS",
+      "amount": 2,
+      "why": "with Earth Catapult in play, Carbonate Processing costs 4 M€ instead of 6",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "choices.root.cards[2].calculatedCost",
+         "cardName": "Carbonate Processing",
+         "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "cardDiscount",
+         "cardName": "Earth Catapult"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Carbonate Processing"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "cost",
+      "observed": 22,
+      "target": 23,
+      "comparator": ">=",
+      "gap": 1,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.megacredits",
+        "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "choices.root.cards[1].calculatedCost",
+        "cardName": "Earth Catapult",
+        "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+       }
+      ],
+      "card": "Earth Catapult"
+     }
+    ],
+    "payments": {
+     "play": 36,
+     "purchase": 6
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Carbonate Processing"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.action.spend",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.hand[4].calculatedCost",
+       "cardName": "Development Center",
+       "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "cardDiscount",
+       "cardName": "Earth Catapult"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "choices.root.cards[2].calculatedCost",
+       "cardName": "Carbonate Processing",
+       "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "cardDiscount",
+       "cardName": "Earth Catapult"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Carbonate Processing"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Development Center. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -42,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 3
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -42,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 3
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 3
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -42,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 5
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 3
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -42,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 7
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 3
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 36,
+      "purchase": 6
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 2,
+      "terraformRating": 0,
+      "cards": 2
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)",
+      "the action of Development Center is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Earth Catapult > Development Center > Carbonate Processing",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Earth Catapult",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 23,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Development Center",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Earth Catapult"
+      ],
+      "cost": 9
+     },
+     {
+      "name": "Carbonate Processing",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 4,
+      "purchaseCost": 3
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Development Center (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Deep Well Heating gives energy, which the action of Development Center spends (1)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Deep Well Heating"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.action.spend",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Carbonate Processing",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Carbonate Processing (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Carbonate Processing"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Earth Catapult",
+      "to": "Development Center",
+      "kind": "DISCOUNTS",
+      "amount": 2,
+      "why": "with Earth Catapult in play, Development Center costs 9 M€ instead of 11",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "me.hand[4].calculatedCost",
+         "cardName": "Development Center",
+         "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "cardDiscount",
+         "cardName": "Earth Catapult"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Earth Catapult",
+      "to": "Carbonate Processing",
+      "kind": "DISCOUNTS",
+      "amount": 2,
+      "why": "with Earth Catapult in play, Carbonate Processing costs 4 M€ instead of 6",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "choices.root.cards[2].calculatedCost",
+         "cardName": "Carbonate Processing",
+         "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "cardDiscount",
+         "cardName": "Earth Catapult"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Carbonate Processing"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "cost",
+      "observed": 22,
+      "target": 23,
+      "comparator": ">=",
+      "gap": 1,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.megacredits",
+        "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "choices.root.cards[1].calculatedCost",
+        "cardName": "Earth Catapult",
+        "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+       }
+      ],
+      "card": "Earth Catapult"
+     }
+    ],
+    "payments": {
+     "play": 36,
+     "purchase": 6
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.action.spend",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Carbonate Processing"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.hand[4].calculatedCost",
+       "cardName": "Development Center",
+       "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "cardDiscount",
+       "cardName": "Earth Catapult"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "choices.root.cards[2].calculatedCost",
+       "cardName": "Carbonate Processing",
+       "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "cardDiscount",
+       "cardName": "Earth Catapult"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Carbonate Processing"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Carbonate Processing"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Carbonate Processing. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -42,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 3
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -42,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 3
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 3
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -42,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 5
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 3
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -42,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 7
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 3
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 36,
+      "purchase": 6
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 2,
+      "terraformRating": 0,
+      "cards": 2
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)",
+      "the action of Development Center is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Earth Catapult > Development Center > Media Archives",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Earth Catapult",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 23,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Development Center",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Earth Catapult"
+      ],
+      "cost": 9
+     },
+     {
+      "name": "Media Archives",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 6,
+      "purchaseCost": 3
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Development Center (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Deep Well Heating gives energy, which the action of Development Center spends (1)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Deep Well Heating"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.action.spend",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Earth Catapult",
+      "to": "Development Center",
+      "kind": "DISCOUNTS",
+      "amount": 2,
+      "why": "with Earth Catapult in play, Development Center costs 9 M€ instead of 11",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "me.hand[4].calculatedCost",
+         "cardName": "Development Center",
+         "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "cardDiscount",
+         "cardName": "Earth Catapult"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Earth Catapult",
+      "to": "Media Archives",
+      "kind": "DISCOUNTS",
+      "amount": 2,
+      "why": "with Earth Catapult in play, Media Archives costs 6 M€ instead of 8",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "choices.root.cards[3].calculatedCost",
+         "cardName": "Media Archives",
+         "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "cardDiscount",
+         "cardName": "Earth Catapult"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Media Archives"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "cost",
+      "observed": 22,
+      "target": 23,
+      "comparator": ">=",
+      "gap": 1,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.megacredits",
+        "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "choices.root.cards[1].calculatedCost",
+        "cardName": "Earth Catapult",
+        "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+       }
+      ],
+      "card": "Earth Catapult"
+     }
+    ],
+    "payments": {
+     "play": 38,
+     "purchase": 6
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.action.spend",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.hand[4].calculatedCost",
+       "cardName": "Development Center",
+       "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "cardDiscount",
+       "cardName": "Earth Catapult"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "choices.root.cards[3].calculatedCost",
+       "cardName": "Media Archives",
+       "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "cardDiscount",
+       "cardName": "Earth Catapult"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Media Archives"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Earth Catapult",
+      "to": "Media Archives"
+     },
+     "text": "Earth Catapult helps you pay for Media Archives. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -44,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -44,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -44,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -44,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 38,
+      "purchase": 6
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 2,
+      "terraformRating": 0,
+      "cards": 2
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Media Archives: the amount is given by a formula",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)",
+      "the action of Development Center is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Earth Catapult > Development Center > Restricted Area",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Earth Catapult",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 23,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Development Center",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Earth Catapult"
+      ],
+      "cost": 9
+     },
+     {
+      "name": "Restricted Area",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 9,
+      "purchaseCost": 3
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Development Center (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Deep Well Heating gives energy, which the action of Development Center spends (1)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Deep Well Heating"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.action.spend",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Earth Catapult",
+      "to": "Development Center",
+      "kind": "DISCOUNTS",
+      "amount": 2,
+      "why": "with Earth Catapult in play, Development Center costs 9 M€ instead of 11",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "me.hand[4].calculatedCost",
+         "cardName": "Development Center",
+         "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "cardDiscount",
+         "cardName": "Earth Catapult"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Earth Catapult",
+      "to": "Restricted Area",
+      "kind": "DISCOUNTS",
+      "amount": 2,
+      "why": "with Earth Catapult in play, Restricted Area costs 9 M€ instead of 11",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "choices.root.cards[0].calculatedCost",
+         "cardName": "Restricted Area",
+         "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "cardDiscount",
+         "cardName": "Earth Catapult"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Restricted Area"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "cost",
+      "observed": 22,
+      "target": 23,
+      "comparator": ">=",
+      "gap": 1,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.megacredits",
+        "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "choices.root.cards[1].calculatedCost",
+        "cardName": "Earth Catapult",
+        "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+       }
+      ],
+      "card": "Earth Catapult"
+     }
+    ],
+    "payments": {
+     "play": 41,
+     "purchase": 6
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.action.spend",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.hand[4].calculatedCost",
+       "cardName": "Development Center",
+       "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "cardDiscount",
+       "cardName": "Earth Catapult"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "choices.root.cards[0].calculatedCost",
+       "cardName": "Restricted Area",
+       "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "cardDiscount",
+       "cardName": "Earth Catapult"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Restricted Area"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Earth Catapult",
+      "to": "Restricted Area"
+     },
+     "text": "Earth Catapult helps you pay for Restricted Area. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -47,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -47,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -47,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -47,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 41,
+      "purchase": 6
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 2,
+      "terraformRating": 0,
+      "cards": 2
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Restricted Area: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)",
+      "the action of Development Center is not counted (it is optional each generation)",
+      "the action of Restricted Area is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Earth Catapult > Development Center > Vesta Shipyard",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Earth Catapult",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 23,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Development Center",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Earth Catapult"
+      ],
+      "cost": 9
+     },
+     {
+      "name": "Vesta Shipyard",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Earth Catapult, Development Center"
+      ],
+      "cost": 13
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Development Center (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Deep Well Heating gives energy, which the action of Development Center spends (1)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Deep Well Heating"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.action.spend",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Earth Catapult",
+      "to": "Development Center",
+      "kind": "DISCOUNTS",
+      "amount": 2,
+      "why": "with Earth Catapult in play, Development Center costs 9 M€ instead of 11",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "me.hand[4].calculatedCost",
+         "cardName": "Development Center",
+         "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "cardDiscount",
+         "cardName": "Earth Catapult"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Earth Catapult",
+      "to": "Vesta Shipyard",
+      "kind": "DISCOUNTS",
+      "amount": 2,
+      "why": "with Earth Catapult in play, Vesta Shipyard costs 13 M€ instead of 15",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "me.hand[3].calculatedCost",
+         "cardName": "Vesta Shipyard",
+         "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "cardDiscount",
+         "cardName": "Earth Catapult"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Vesta Shipyard"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "cost",
+      "observed": 22,
+      "target": 23,
+      "comparator": ">=",
+      "gap": 1,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.megacredits",
+        "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "choices.root.cards[1].calculatedCost",
+        "cardName": "Earth Catapult",
+        "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+       }
+      ],
+      "card": "Earth Catapult"
+     }
+    ],
+    "payments": {
+     "play": 45,
+     "purchase": 3
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.action.spend",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.hand[4].calculatedCost",
+       "cardName": "Development Center",
+       "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "cardDiscount",
+       "cardName": "Earth Catapult"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.hand[3].calculatedCost",
+       "cardName": "Vesta Shipyard",
+       "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "cardDiscount",
+       "cardName": "Earth Catapult"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Vesta Shipyard"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Earth Catapult",
+      "to": "Vesta Shipyard"
+     },
+     "text": "Earth Catapult helps you pay for Vesta Shipyard. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -48,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -48,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -48,
+        "steel": 0,
+        "titanium": 2,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -48,
+        "steel": 0,
+        "titanium": 3,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 45,
+      "purchase": 3
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 3,
+      "terraformRating": 0,
+      "cards": 3
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)",
+      "the action of Development Center is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Earth Catapult > Media Archives > Development Center",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Earth Catapult",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 23,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Media Archives",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 6,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Development Center",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Earth Catapult, Media Archives"
+      ],
+      "cost": 9
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Development Center (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Deep Well Heating gives energy, which the action of Development Center spends (1)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Deep Well Heating"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.action.spend",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Earth Catapult",
+      "to": "Development Center",
+      "kind": "DISCOUNTS",
+      "amount": 2,
+      "why": "with Earth Catapult in play, Development Center costs 9 M€ instead of 11",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "me.hand[4].calculatedCost",
+         "cardName": "Development Center",
+         "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "cardDiscount",
+         "cardName": "Earth Catapult"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Earth Catapult",
+      "to": "Media Archives",
+      "kind": "DISCOUNTS",
+      "amount": 2,
+      "why": "with Earth Catapult in play, Media Archives costs 6 M€ instead of 8",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "choices.root.cards[3].calculatedCost",
+         "cardName": "Media Archives",
+         "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "cardDiscount",
+         "cardName": "Earth Catapult"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Media Archives"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "cost",
+      "observed": 22,
+      "target": 23,
+      "comparator": ">=",
+      "gap": 1,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.megacredits",
+        "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "choices.root.cards[1].calculatedCost",
+        "cardName": "Earth Catapult",
+        "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+       }
+      ],
+      "card": "Earth Catapult"
+     }
+    ],
+    "payments": {
+     "play": 38,
+     "purchase": 6
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.action.spend",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.hand[4].calculatedCost",
+       "cardName": "Development Center",
+       "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "cardDiscount",
+       "cardName": "Earth Catapult"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "choices.root.cards[3].calculatedCost",
+       "cardName": "Media Archives",
+       "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "cardDiscount",
+       "cardName": "Earth Catapult"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Media Archives"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Development Center. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -44,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -44,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -44,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -44,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 38,
+      "purchase": 6
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 2,
+      "terraformRating": 0,
+      "cards": 2
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Media Archives: the amount is given by a formula",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)",
+      "the action of Development Center is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Earth Catapult > Restricted Area > Development Center",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Earth Catapult",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 23,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Restricted Area",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 9,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Development Center",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Earth Catapult, Restricted Area"
+      ],
+      "cost": 9
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Development Center (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Deep Well Heating gives energy, which the action of Development Center spends (1)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Deep Well Heating"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.action.spend",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Earth Catapult",
+      "to": "Development Center",
+      "kind": "DISCOUNTS",
+      "amount": 2,
+      "why": "with Earth Catapult in play, Development Center costs 9 M€ instead of 11",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "me.hand[4].calculatedCost",
+         "cardName": "Development Center",
+         "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "cardDiscount",
+         "cardName": "Earth Catapult"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Earth Catapult",
+      "to": "Restricted Area",
+      "kind": "DISCOUNTS",
+      "amount": 2,
+      "why": "with Earth Catapult in play, Restricted Area costs 9 M€ instead of 11",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "choices.root.cards[0].calculatedCost",
+         "cardName": "Restricted Area",
+         "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "cardDiscount",
+         "cardName": "Earth Catapult"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Restricted Area"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "cost",
+      "observed": 22,
+      "target": 23,
+      "comparator": ">=",
+      "gap": 1,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.megacredits",
+        "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "choices.root.cards[1].calculatedCost",
+        "cardName": "Earth Catapult",
+        "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+       }
+      ],
+      "card": "Earth Catapult"
+     }
+    ],
+    "payments": {
+     "play": 41,
+     "purchase": 6
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.action.spend",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.hand[4].calculatedCost",
+       "cardName": "Development Center",
+       "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "cardDiscount",
+       "cardName": "Earth Catapult"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "choices.root.cards[0].calculatedCost",
+       "cardName": "Restricted Area",
+       "stateFingerprint": "f9942bf02039edc861990fedc1e68bd3b2e337574eed8369160cb915adb2847d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "cardDiscount",
+       "cardName": "Earth Catapult"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Restricted Area"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Development Center. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": "unknown",
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -47,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -47,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -47,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -47,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 41,
+      "purchase": 6
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 2,
+      "terraformRating": 0,
+      "cards": 2
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Restricted Area: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the game may end before the horizon (it ends when Mars is terraformed)",
+      "the action of Restricted Area is not counted (it is optional each generation)",
+      "the action of Development Center is not counted (it is optional each generation)"
+     ]
+    }
+   }
+  ],
+  "discarded": [],
+  "limitations": [
+   "FEEDS_RESOURCE: adding resources to another card is a target choice; no engine-verified adapter yet",
+   "AMPLIFIES: effects triggered by other cards are card code (e.g. Media Group); no engine-verified adapter yet",
+   "ocean requirements: oceans come from tile placement, which is not modeled",
+   "requirements counting all players' tags are not linked",
+   "temperature/oxygen bonuses of the global tracks (extra heat production, oxygen raising temperature) are not counted",
+   "M€ given by a card is not linked to particular cards (it pays for everything)"
+  ],
+  "warnings": [],
+  "search": {
+   "poolSize": 9,
+   "chainsExamined": 73,
+   "truncated": false,
+   "elapsedMs": 4
+  }
+ }
+}

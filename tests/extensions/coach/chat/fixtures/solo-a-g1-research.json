@@ -1,0 +1,2994 @@
+{
+ "id": "solo-a-g1-research",
+ "description": "Solo, start of the game: choose corporation and cards",
+ "tags": {
+  "mode": "solo",
+  "generation": 1,
+  "phase": "research",
+  "planCount": 9,
+  "goals": [
+   "unlock",
+   "engine"
+  ],
+  "truncated": false,
+  "incompleteForecast": true,
+  "unknownAvailability": false,
+  "legalNow": false
+ },
+ "state": {
+  "schemaVersion": "coach-state/1",
+  "fingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d",
+  "advisoryFingerprint": "e6dc8664008240fc5e3d8e3bffce435a8b75fecdf947e31beca636bb0def77c1",
+  "stateKey": "8d6c1b2c8283c713:u0:s0:a7",
+  "version": {
+   "generation": 1,
+   "phase": "research",
+   "gameAge": 7,
+   "gameStep": 0,
+   "undoCount": 0
+  },
+  "catalogVersion": "96e3a55227c5e380",
+  "capturedAt": "2026-10-15T14:14:50.264Z",
+  "warnings": [],
+  "game": {
+   "name": "Latent Quartz Node",
+   "mode": "solo",
+   "playerCount": 1,
+   "board": "tharsis",
+   "expansions": {
+    "corpera": true,
+    "promo": false,
+    "venus": false,
+    "colonies": false,
+    "prelude": false,
+    "prelude2": false,
+    "turmoil": false,
+    "community": false,
+    "ares": false,
+    "moon": false,
+    "pathfinders": false,
+    "ceo": false,
+    "starwars": false,
+    "underworld": false,
+    "deltaProject": false
+   },
+   "baseGameOnly": true,
+   "options": {
+    "draftVariant": false,
+    "initialDraftVariant": false,
+    "preludeDraftVariant": false,
+    "showOtherPlayersVP": false,
+    "undoOption": false,
+    "soloTR": false,
+    "fastModeOption": false,
+    "randomMA": "No randomization"
+   },
+   "generation": 1,
+   "phase": "research",
+   "lastSoloGeneration": 14,
+   "activePlayer": "blue",
+   "firstPlayer": "blue",
+   "passedPlayers": [],
+   "temperature": {
+    "value": -30,
+    "min": -30,
+    "max": 8,
+    "stepsRemaining": 19
+   },
+   "oxygen": {
+    "value": 0,
+    "min": 0,
+    "max": 14,
+    "stepsRemaining": 14
+   },
+   "oceans": {
+    "value": 0,
+    "min": 0,
+    "max": 9,
+    "stepsRemaining": 9
+   },
+   "isTerraformed": false,
+   "gameOver": false,
+   "decks": {
+    "projectDrawPile": 194,
+    "projectDiscardPile": 4,
+    "corporationDrawPile": 10
+   },
+   "spaces": [],
+   "milestones": [
+    {
+     "name": "Terraformer",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 14,
+       "claimable": false
+      }
+     ],
+     "threshold": 35
+    },
+    {
+     "name": "Mayor",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0,
+       "claimable": false
+      }
+     ],
+     "threshold": 3
+    },
+    {
+     "name": "Gardener",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0,
+       "claimable": false
+      }
+     ],
+     "threshold": 3
+    },
+    {
+     "name": "Builder",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0,
+       "claimable": false
+      }
+     ],
+     "threshold": 8
+    },
+    {
+     "name": "Planner",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0,
+       "claimable": false
+      }
+     ],
+     "threshold": 16
+    }
+   ],
+   "awards": [
+    {
+     "name": "Landlord",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      }
+     ]
+    },
+    {
+     "name": "Scientist",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      }
+     ]
+    },
+    {
+     "name": "Banker",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      }
+     ]
+    },
+    {
+     "name": "Thermalist",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      }
+     ]
+    },
+    {
+     "name": "Miner",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      }
+     ]
+    }
+   ],
+   "unsupported": []
+  },
+  "me": {
+   "color": "blue",
+   "name": "player-blue",
+   "isAi": false,
+   "isActive": true,
+   "hasPassed": false,
+   "terraformRating": 14,
+   "victoryPoints": {
+    "status": "known",
+    "value": {
+     "terraformRating": 14,
+     "milestones": 0,
+     "awards": 0,
+     "greenery": 0,
+     "city": 0,
+     "escapeVelocity": 0,
+     "moonHabitats": 0,
+     "moonMines": 0,
+     "moonRoads": 0,
+     "planetaryTracks": 0,
+     "victoryPoints": 0,
+     "total": 14,
+     "detailsCards": [],
+     "detailsMilestones": [],
+     "detailsAwards": [],
+     "detailsPlanetaryTracks": [],
+     "negativeVP": 0
+    }
+   },
+   "resources": {
+    "megacredits": 0,
+    "steel": 0,
+    "titanium": 0,
+    "plants": 0,
+    "energy": 0,
+    "heat": 0
+   },
+   "production": {
+    "megacredits": 0,
+    "steel": 0,
+    "titanium": 0,
+    "plants": 0,
+    "energy": 0,
+    "heat": 0
+   },
+   "steelValue": 2,
+   "titaniumValue": 3,
+   "tags": {},
+   "cardsWithoutTags": 0,
+   "cardsInHandCount": 0,
+   "corporations": [],
+   "tableau": [],
+   "actionsUsedThisGeneration": [],
+   "actionsTakenThisRound": 0,
+   "availableBlueCardActionCount": 0,
+   "citiesCount": 0,
+   "cardCost": 3,
+   "protectedResources": {
+    "megacredits": "off",
+    "steel": "off",
+    "titanium": "off",
+    "plants": "off",
+    "energy": "off",
+    "heat": "off"
+   },
+   "protectedProduction": {
+    "megacredits": "off",
+    "steel": "off",
+    "titanium": "off",
+    "plants": "off",
+    "energy": "off",
+    "heat": "off"
+   },
+   "needsToResearch": true,
+   "hand": [],
+   "preludesInHand": [],
+   "ceosInHand": [],
+   "draftedCards": [],
+   "dealt": {
+    "corporations": [
+     {
+      "name": "Interplanetary Cinematics",
+      "inCatalog": true,
+      "calculatedCost": 0
+     },
+     {
+      "name": "Teractor",
+      "inCatalog": true,
+      "calculatedCost": 0,
+      "discount": [
+       {
+        "tag": "earth",
+        "amount": 3
+       }
+      ]
+     }
+    ],
+    "preludes": [],
+    "projects": [
+     {
+      "name": "Optimal Aerobraking",
+      "inCatalog": true,
+      "calculatedCost": 7
+     },
+     {
+      "name": "Rover Construction",
+      "inCatalog": true,
+      "calculatedCost": 8
+     },
+     {
+      "name": "Tectonic Stress Power",
+      "inCatalog": true,
+      "calculatedCost": 18
+     },
+     {
+      "name": "Urbanized Area",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Noctis Farming",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Solar Power",
+      "inCatalog": true,
+      "calculatedCost": 11
+     },
+     {
+      "name": "Giant Ice Asteroid",
+      "inCatalog": true,
+      "calculatedCost": 36
+     },
+     {
+      "name": "Bushes",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Mine",
+      "inCatalog": true,
+      "calculatedCost": 4
+     },
+     {
+      "name": "Martian Rails",
+      "inCatalog": true,
+      "calculatedCost": 13
+     }
+    ],
+    "ceos": []
+   },
+   "pickedCorporation": [],
+   "autopass": false,
+   "canCancelAction": false
+  },
+  "opponents": [],
+  "choices": {
+   "status": "awaiting-input",
+   "root": {
+    "path": "",
+    "inputType": "initialCards",
+    "title": " ",
+    "buttonLabel": "Start",
+    "optional": false,
+    "options": [
+     {
+      "path": "0",
+      "inputType": "card",
+      "title": "Select corporation",
+      "buttonLabel": "Save",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Interplanetary Cinematics",
+        "inCatalog": true,
+        "calculatedCost": 0,
+        "resources": 0
+       },
+       {
+        "name": "Teractor",
+        "inCatalog": true,
+        "calculatedCost": 0,
+        "resources": 0,
+        "discount": [
+         {
+          "tag": "earth",
+          "amount": 3
+         }
+        ]
+       }
+      ],
+      "min": 1,
+      "max": 1,
+      "selectBlueCardAction": false
+     },
+     {
+      "path": "1",
+      "inputType": "card",
+      "title": "Select initial cards to buy",
+      "buttonLabel": "Save",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Optimal Aerobraking",
+        "inCatalog": true,
+        "calculatedCost": 7,
+        "resources": 0
+       },
+       {
+        "name": "Rover Construction",
+        "inCatalog": true,
+        "calculatedCost": 8,
+        "resources": 0
+       },
+       {
+        "name": "Tectonic Stress Power",
+        "inCatalog": true,
+        "calculatedCost": 18,
+        "resources": 0
+       },
+       {
+        "name": "Urbanized Area",
+        "inCatalog": true,
+        "calculatedCost": 10,
+        "resources": 0
+       },
+       {
+        "name": "Noctis Farming",
+        "inCatalog": true,
+        "calculatedCost": 10,
+        "resources": 0
+       },
+       {
+        "name": "Solar Power",
+        "inCatalog": true,
+        "calculatedCost": 11,
+        "resources": 0
+       },
+       {
+        "name": "Giant Ice Asteroid",
+        "inCatalog": true,
+        "calculatedCost": 36,
+        "resources": 0
+       },
+       {
+        "name": "Bushes",
+        "inCatalog": true,
+        "calculatedCost": 10,
+        "resources": 0
+       },
+       {
+        "name": "Mine",
+        "inCatalog": true,
+        "calculatedCost": 4,
+        "resources": 0
+       },
+       {
+        "name": "Martian Rails",
+        "inCatalog": true,
+        "calculatedCost": 13,
+        "resources": 0
+       }
+      ],
+      "min": 0,
+      "max": 10,
+      "selectBlueCardAction": false
+     }
+    ]
+   }
+  }
+ },
+ "analysis": {
+  "schemaVersion": "coach-analysis/1",
+  "source": {
+   "fingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d",
+   "advisoryFingerprint": "e6dc8664008240fc5e3d8e3bffce435a8b75fecdf947e31beca636bb0def77c1",
+   "catalogVersion": "96e3a55227c5e380",
+   "analysisVersion": "2.0.0",
+   "generatedAt": "2026-10-15T14:14:50.267Z"
+  },
+  "horizonProductionPhases": 3,
+  "coverage": {
+   "supported": 6,
+   "partial": 5,
+   "unsupported": 1,
+   "reasons": [
+    "bespoke-code: 4 cards",
+    "countable: 1 card",
+    "target-choice: 1 card",
+    "tile-placement: 1 card"
+   ]
+  },
+  "candidates": [
+   {
+    "id": "Giant Ice Asteroid > Bushes",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "economy",
+     "terraforming"
+    ],
+    "cards": [
+     {
+      "name": "Giant Ice Asteroid",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 36,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Bushes",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 10,
+      "purchaseCost": 3
+     }
+    ],
+    "links": [
+     {
+      "from": "Giant Ice Asteroid",
+      "to": "Bushes",
+      "kind": "UNLOCKS",
+      "amount": 2,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Giant Ice Asteroid adds 2 temperature steps; Bushes needs 10 more (8 still missing)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Giant Ice Asteroid has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Bushes"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Giant Ice Asteroid"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "cost",
+      "observed": 0,
+      "target": 36,
+      "comparator": ">=",
+      "gap": 36,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.megacredits",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "choices.root.1.cards[6].calculatedCost",
+        "cardName": "Giant Ice Asteroid",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.titanium",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       }
+      ],
+      "card": "Giant Ice Asteroid"
+     },
+     {
+      "kind": "temperature",
+      "observed": -30,
+      "target": -10,
+      "comparator": ">=",
+      "gap": 8,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Bushes"
+       }
+      ],
+      "card": "Bushes"
+     }
+    ],
+    "payments": {
+     "play": 46,
+     "purchase": 6
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Giant Ice Asteroid has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Bushes"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Giant Ice Asteroid"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Giant Ice Asteroid",
+      "to": "Bushes"
+     },
+     "text": "Is it worth playing Giant Ice Asteroid mainly to meet the requirement of Bushes, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 14,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -52,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 2
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -50,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 2
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -48,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 6,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 2
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -46,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 8,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 2
+      }
+     ],
+     "upfront": {
+      "play": 46,
+      "purchase": 6
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 2,
+      "terraformRating": 2,
+      "cards": 0
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Giant Ice Asteroid: the target card or player is chosen when played",
+      "Giant Ice Asteroid: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   },
+   {
+    "id": "Mine > Martian Rails > Rover Construction",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Mine",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 4,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Martian Rails",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 13,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Rover Construction",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 8,
+      "purchaseCost": 3
+     }
+    ],
+    "links": [
+     {
+      "from": "Mine",
+      "to": "Martian Rails",
+      "kind": "PRODUCES_FOR",
+      "why": "Mine gives steel, which can pay for Martian Rails (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mine"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Martian Rails"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Mine",
+      "to": "Rover Construction",
+      "kind": "PRODUCES_FOR",
+      "why": "Mine gives steel, which can pay for Rover Construction (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mine"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Rover Construction"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "cost",
+      "observed": 0,
+      "target": 4,
+      "comparator": ">=",
+      "gap": 4,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.megacredits",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "choices.root.1.cards[8].calculatedCost",
+        "cardName": "Mine",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.steel",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       }
+      ],
+      "card": "Mine"
+     }
+    ],
+    "payments": {
+     "play": 25,
+     "purchase": 9
+    },
+    "support": {
+     "level": "verified",
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mine"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Martian Rails"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mine"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Rover Construction"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Mine",
+      "to": "Rover Construction"
+     },
+     "text": "Mine helps you pay for Rover Construction. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 14,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -34,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -34,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -34,
+        "steel": 2,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -34,
+        "steel": 3,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 25,
+      "purchase": 9
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 0,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Martian Rails: the amount is given by a formula",
+      "Rover Construction: card code 'onTilePlaced' changes what the card does"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of Martian Rails is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Giant Ice Asteroid > Noctis Farming",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "economy",
+     "terraforming",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Giant Ice Asteroid",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 36,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Noctis Farming",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 10,
+      "purchaseCost": 3
+     }
+    ],
+    "links": [
+     {
+      "from": "Giant Ice Asteroid",
+      "to": "Noctis Farming",
+      "kind": "UNLOCKS",
+      "amount": 2,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Giant Ice Asteroid adds 2 temperature steps; Noctis Farming needs 5 more (3 still missing)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Giant Ice Asteroid has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Noctis Farming"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Giant Ice Asteroid"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "cost",
+      "observed": 0,
+      "target": 36,
+      "comparator": ">=",
+      "gap": 36,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.megacredits",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "choices.root.1.cards[6].calculatedCost",
+        "cardName": "Giant Ice Asteroid",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.titanium",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       }
+      ],
+      "card": "Giant Ice Asteroid"
+     },
+     {
+      "kind": "temperature",
+      "observed": -30,
+      "target": -20,
+      "comparator": ">=",
+      "gap": 3,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Noctis Farming"
+       }
+      ],
+      "card": "Noctis Farming"
+     }
+    ],
+    "payments": {
+     "play": 46,
+     "purchase": 6
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Giant Ice Asteroid has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Noctis Farming"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Giant Ice Asteroid"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Giant Ice Asteroid",
+      "to": "Noctis Farming"
+     },
+     "text": "Is it worth playing Giant Ice Asteroid mainly to meet the requirement of Noctis Farming, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 14,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -52,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 1,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 2
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -49,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 1,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 2
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -46,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 1,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 2
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -43,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 1,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 2
+      }
+     ],
+     "upfront": {
+      "play": 46,
+      "purchase": 6
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 3,
+      "terraformRating": 2,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Giant Ice Asteroid: the target card or player is chosen when played",
+      "Giant Ice Asteroid: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   },
+   {
+    "id": "Mine > Martian Rails > Solar Power",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Mine",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 4,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Martian Rails",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 13,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Solar Power",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 11,
+      "purchaseCost": 3
+     }
+    ],
+    "links": [
+     {
+      "from": "Mine",
+      "to": "Martian Rails",
+      "kind": "PRODUCES_FOR",
+      "why": "Mine gives steel, which can pay for Martian Rails (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mine"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Martian Rails"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Mine",
+      "to": "Solar Power",
+      "kind": "PRODUCES_FOR",
+      "why": "Mine gives steel, which can pay for Solar Power (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mine"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Solar Power"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "cost",
+      "observed": 0,
+      "target": 4,
+      "comparator": ">=",
+      "gap": 4,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.megacredits",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "choices.root.1.cards[8].calculatedCost",
+        "cardName": "Mine",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.steel",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       }
+      ],
+      "card": "Mine"
+     }
+    ],
+    "payments": {
+     "play": 28,
+     "purchase": 9
+    },
+    "support": {
+     "level": "verified",
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mine"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Martian Rails"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mine"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Solar Power"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Mine",
+      "to": "Solar Power"
+     },
+     "text": "Mine helps you pay for Solar Power. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 14,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -37,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -37,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -37,
+        "steel": 2,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -37,
+        "steel": 3,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 28,
+      "purchase": 9
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 0,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Martian Rails: the amount is given by a formula"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of Martian Rails is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Giant Ice Asteroid > Bushes > Noctis Farming",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "economy",
+     "terraforming",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Giant Ice Asteroid",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 36,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Bushes",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 10,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Noctis Farming",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 10,
+      "purchaseCost": 3
+     }
+    ],
+    "links": [
+     {
+      "from": "Giant Ice Asteroid",
+      "to": "Bushes",
+      "kind": "UNLOCKS",
+      "amount": 2,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Giant Ice Asteroid adds 2 temperature steps; Bushes needs 10 more (8 still missing)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Giant Ice Asteroid has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Bushes"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Giant Ice Asteroid"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Giant Ice Asteroid",
+      "to": "Noctis Farming",
+      "kind": "UNLOCKS",
+      "amount": 2,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Giant Ice Asteroid adds 2 temperature steps; Noctis Farming needs 5 more (3 still missing)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Giant Ice Asteroid has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Noctis Farming"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Giant Ice Asteroid"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "cost",
+      "observed": 0,
+      "target": 36,
+      "comparator": ">=",
+      "gap": 36,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.megacredits",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "choices.root.1.cards[6].calculatedCost",
+        "cardName": "Giant Ice Asteroid",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.titanium",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       }
+      ],
+      "card": "Giant Ice Asteroid"
+     },
+     {
+      "kind": "temperature",
+      "observed": -30,
+      "target": -10,
+      "comparator": ">=",
+      "gap": 8,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Bushes"
+       }
+      ],
+      "card": "Bushes"
+     },
+     {
+      "kind": "temperature",
+      "observed": -30,
+      "target": -20,
+      "comparator": ">=",
+      "gap": 3,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Noctis Farming"
+       }
+      ],
+      "card": "Noctis Farming"
+     }
+    ],
+    "payments": {
+     "play": 56,
+     "purchase": 9
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Giant Ice Asteroid has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Bushes"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Giant Ice Asteroid"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Noctis Farming"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Giant Ice Asteroid"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Giant Ice Asteroid",
+      "to": "Noctis Farming"
+     },
+     "text": "Is it worth playing Giant Ice Asteroid mainly to meet the requirement of Noctis Farming, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 14,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -65,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 1,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 2
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -62,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 6,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 1,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 2
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -59,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 8,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 1,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 2
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -56,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 10,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 1,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 2
+      }
+     ],
+     "upfront": {
+      "play": 56,
+      "purchase": 9
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 3,
+      "terraformRating": 2,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Giant Ice Asteroid: the target card or player is chosen when played",
+      "Giant Ice Asteroid: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   },
+   {
+    "id": "Mine > Rover Construction > Martian Rails",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Mine",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 4,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Rover Construction",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 8,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Martian Rails",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 13,
+      "purchaseCost": 3
+     }
+    ],
+    "links": [
+     {
+      "from": "Mine",
+      "to": "Martian Rails",
+      "kind": "PRODUCES_FOR",
+      "why": "Mine gives steel, which can pay for Martian Rails (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mine"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Martian Rails"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Mine",
+      "to": "Rover Construction",
+      "kind": "PRODUCES_FOR",
+      "why": "Mine gives steel, which can pay for Rover Construction (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mine"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Rover Construction"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "cost",
+      "observed": 0,
+      "target": 4,
+      "comparator": ">=",
+      "gap": 4,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.megacredits",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "choices.root.1.cards[8].calculatedCost",
+        "cardName": "Mine",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.steel",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       }
+      ],
+      "card": "Mine"
+     }
+    ],
+    "payments": {
+     "play": 25,
+     "purchase": 9
+    },
+    "support": {
+     "level": "verified",
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mine"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Martian Rails"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mine"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Rover Construction"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Mine",
+      "to": "Martian Rails"
+     },
+     "text": "Mine helps you pay for Martian Rails. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 14,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -34,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -34,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -34,
+        "steel": 2,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -34,
+        "steel": 3,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 25,
+      "purchase": 9
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 0,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Rover Construction: card code 'onTilePlaced' changes what the card does",
+      "Martian Rails: the amount is given by a formula"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of Martian Rails is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Giant Ice Asteroid > Noctis Farming > Bushes",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "economy",
+     "terraforming",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Giant Ice Asteroid",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 36,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Noctis Farming",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 10,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Bushes",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 10,
+      "purchaseCost": 3
+     }
+    ],
+    "links": [
+     {
+      "from": "Giant Ice Asteroid",
+      "to": "Bushes",
+      "kind": "UNLOCKS",
+      "amount": 2,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Giant Ice Asteroid adds 2 temperature steps; Bushes needs 10 more (8 still missing)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Giant Ice Asteroid has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Bushes"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Giant Ice Asteroid"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Giant Ice Asteroid",
+      "to": "Noctis Farming",
+      "kind": "UNLOCKS",
+      "amount": 2,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Giant Ice Asteroid adds 2 temperature steps; Noctis Farming needs 5 more (3 still missing)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Giant Ice Asteroid has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Noctis Farming"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Giant Ice Asteroid"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "cost",
+      "observed": 0,
+      "target": 36,
+      "comparator": ">=",
+      "gap": 36,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.megacredits",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "choices.root.1.cards[6].calculatedCost",
+        "cardName": "Giant Ice Asteroid",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.titanium",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       }
+      ],
+      "card": "Giant Ice Asteroid"
+     },
+     {
+      "kind": "temperature",
+      "observed": -30,
+      "target": -20,
+      "comparator": ">=",
+      "gap": 3,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Noctis Farming"
+       }
+      ],
+      "card": "Noctis Farming"
+     },
+     {
+      "kind": "temperature",
+      "observed": -30,
+      "target": -10,
+      "comparator": ">=",
+      "gap": 8,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Bushes"
+       }
+      ],
+      "card": "Bushes"
+     }
+    ],
+    "payments": {
+     "play": 56,
+     "purchase": 9
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Giant Ice Asteroid has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Bushes"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Giant Ice Asteroid"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Noctis Farming"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Giant Ice Asteroid"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Giant Ice Asteroid",
+      "to": "Bushes"
+     },
+     "text": "Is it worth playing Giant Ice Asteroid mainly to meet the requirement of Bushes, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 14,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -65,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 1,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 2
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -62,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 6,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 1,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 2
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -59,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 8,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 1,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 2
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -56,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 10,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 1,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 2
+      }
+     ],
+     "upfront": {
+      "play": 56,
+      "purchase": 9
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 3,
+      "terraformRating": 2,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Giant Ice Asteroid: the target card or player is chosen when played",
+      "Giant Ice Asteroid: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   },
+   {
+    "id": "Mine > Rover Construction > Solar Power",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Mine",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 4,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Rover Construction",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 8,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Solar Power",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 11,
+      "purchaseCost": 3
+     }
+    ],
+    "links": [
+     {
+      "from": "Mine",
+      "to": "Rover Construction",
+      "kind": "PRODUCES_FOR",
+      "why": "Mine gives steel, which can pay for Rover Construction (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mine"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Rover Construction"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Mine",
+      "to": "Solar Power",
+      "kind": "PRODUCES_FOR",
+      "why": "Mine gives steel, which can pay for Solar Power (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mine"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Solar Power"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "cost",
+      "observed": 0,
+      "target": 4,
+      "comparator": ">=",
+      "gap": 4,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.megacredits",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "choices.root.1.cards[8].calculatedCost",
+        "cardName": "Mine",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.steel",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       }
+      ],
+      "card": "Mine"
+     }
+    ],
+    "payments": {
+     "play": 23,
+     "purchase": 9
+    },
+    "support": {
+     "level": "verified",
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mine"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Rover Construction"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mine"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Solar Power"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Mine",
+      "to": "Solar Power"
+     },
+     "text": "Mine helps you pay for Solar Power. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 14,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -32,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -32,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -32,
+        "steel": 2,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -32,
+        "steel": 3,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 23,
+      "purchase": 9
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 2,
+      "terraformRating": 0,
+      "cards": 2
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Rover Construction: card code 'onTilePlaced' changes what the card does"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   },
+   {
+    "id": "Mine > Solar Power > Martian Rails",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Mine",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 4,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Solar Power",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 11,
+      "purchaseCost": 3
+     },
+     {
+      "name": "Martian Rails",
+      "zone": "offered",
+      "availability": "conditional",
+      "reasons": [
+       "must be bought first (3 M€)"
+      ],
+      "cost": 13,
+      "purchaseCost": 3
+     }
+    ],
+    "links": [
+     {
+      "from": "Mine",
+      "to": "Martian Rails",
+      "kind": "PRODUCES_FOR",
+      "why": "Mine gives steel, which can pay for Martian Rails (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mine"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Martian Rails"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Mine",
+      "to": "Solar Power",
+      "kind": "PRODUCES_FOR",
+      "why": "Mine gives steel, which can pay for Solar Power (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mine"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Solar Power"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "cost",
+      "observed": 0,
+      "target": 4,
+      "comparator": ">=",
+      "gap": 4,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.megacredits",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "choices.root.1.cards[8].calculatedCost",
+        "cardName": "Mine",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "me.resources.steel",
+        "stateFingerprint": "8d6c1b2c8283c713d728cb18d565a96955664d982a921235fc001a9de4dbd95d"
+       }
+      ],
+      "card": "Mine"
+     }
+    ],
+    "payments": {
+     "play": 28,
+     "purchase": 9
+    },
+    "support": {
+     "level": "verified",
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mine"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Martian Rails"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mine"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Solar Power"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Mine",
+      "to": "Martian Rails"
+     },
+     "text": "Mine helps you pay for Martian Rails. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 14,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -37,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -37,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -37,
+        "steel": 2,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -37,
+        "steel": 3,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 28,
+      "purchase": 9
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 0,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Martian Rails: the amount is given by a formula"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of Martian Rails is not counted (it is optional each generation)"
+     ]
+    }
+   }
+  ],
+  "discarded": [
+   {
+    "cardName": "Interplanetary Cinematics",
+    "reason": "corporation cards are chosen, not planned"
+   },
+   {
+    "cardName": "Teractor",
+    "reason": "corporation cards are chosen, not planned"
+   }
+  ],
+  "limitations": [
+   "FEEDS_RESOURCE: adding resources to another card is a target choice; no engine-verified adapter yet",
+   "AMPLIFIES: effects triggered by other cards are card code (e.g. Media Group); no engine-verified adapter yet",
+   "ocean requirements: oceans come from tile placement, which is not modeled",
+   "requirements counting all players' tags are not linked",
+   "temperature/oxygen bonuses of the global tracks (extra heat production, oxygen raising temperature) are not counted",
+   "M€ given by a card is not linked to particular cards (it pays for everything)"
+  ],
+  "warnings": [],
+  "search": {
+   "poolSize": 10,
+   "chainsExamined": 50,
+   "truncated": false,
+   "elapsedMs": 8
+  }
+ }
+}

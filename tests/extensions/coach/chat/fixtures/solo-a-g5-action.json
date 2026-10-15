@@ -1,0 +1,3046 @@
+{
+ "id": "solo-a-g5-action",
+ "description": "Solo, generation 5",
+ "tags": {
+  "mode": "solo",
+  "generation": 5,
+  "phase": "action",
+  "planCount": 9,
+  "goals": [
+   "unlock",
+   "engine"
+  ],
+  "truncated": false,
+  "incompleteForecast": true,
+  "unknownAvailability": false,
+  "legalNow": true
+ },
+ "state": {
+  "schemaVersion": "coach-state/1",
+  "fingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27",
+  "advisoryFingerprint": "dff29eeecec36594f1868be280cb57041497b4a7c80b16ad154a8d5315ce6a8f",
+  "stateKey": "beb19ee106219f01:u0:s0:a41",
+  "version": {
+   "generation": 5,
+   "phase": "action",
+   "gameAge": 41,
+   "gameStep": 0,
+   "undoCount": 0
+  },
+  "catalogVersion": "96e3a55227c5e380",
+  "capturedAt": "2026-10-15T14:14:50.485Z",
+  "warnings": [],
+  "game": {
+   "name": "Latent Quartz Node",
+   "mode": "solo",
+   "playerCount": 1,
+   "board": "tharsis",
+   "expansions": {
+    "corpera": true,
+    "promo": false,
+    "venus": false,
+    "colonies": false,
+    "prelude": false,
+    "prelude2": false,
+    "turmoil": false,
+    "community": false,
+    "ares": false,
+    "moon": false,
+    "pathfinders": false,
+    "ceo": false,
+    "starwars": false,
+    "underworld": false,
+    "deltaProject": false
+   },
+   "baseGameOnly": true,
+   "options": {
+    "draftVariant": false,
+    "initialDraftVariant": false,
+    "preludeDraftVariant": false,
+    "showOtherPlayersVP": false,
+    "undoOption": false,
+    "soloTR": false,
+    "fastModeOption": false,
+    "randomMA": "No randomization"
+   },
+   "generation": 5,
+   "phase": "action",
+   "lastSoloGeneration": 14,
+   "activePlayer": "blue",
+   "firstPlayer": "blue",
+   "passedPlayers": [],
+   "temperature": {
+    "value": -28,
+    "min": -30,
+    "max": 8,
+    "stepsRemaining": 18
+   },
+   "oxygen": {
+    "value": 0,
+    "min": 0,
+    "max": 14,
+    "stepsRemaining": 14
+   },
+   "oceans": {
+    "value": 0,
+    "min": 0,
+    "max": 9,
+    "stepsRemaining": 9
+   },
+   "isTerraformed": false,
+   "gameOver": false,
+   "decks": {
+    "projectDrawPile": 176,
+    "projectDiscardPile": 19,
+    "corporationDrawPile": 10
+   },
+   "spaces": [],
+   "milestones": [
+    {
+     "name": "Terraformer",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 15,
+       "claimable": false
+      }
+     ],
+     "threshold": 35
+    },
+    {
+     "name": "Mayor",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0,
+       "claimable": false
+      }
+     ],
+     "threshold": 3
+    },
+    {
+     "name": "Gardener",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0,
+       "claimable": false
+      }
+     ],
+     "threshold": 3
+    },
+    {
+     "name": "Builder",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 2,
+       "claimable": false
+      }
+     ],
+     "threshold": 8
+    },
+    {
+     "name": "Planner",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 9,
+       "claimable": false
+      }
+     ],
+     "threshold": 16
+    }
+   ],
+   "awards": [
+    {
+     "name": "Landlord",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      }
+     ]
+    },
+    {
+     "name": "Scientist",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      }
+     ]
+    },
+    {
+     "name": "Banker",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      }
+     ]
+    },
+    {
+     "name": "Thermalist",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 15
+      }
+     ]
+    },
+    {
+     "name": "Miner",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 22
+      }
+     ]
+    }
+   ],
+   "unsupported": []
+  },
+  "me": {
+   "color": "blue",
+   "name": "player-blue",
+   "isAi": false,
+   "isActive": true,
+   "hasPassed": false,
+   "terraformRating": 15,
+   "victoryPoints": {
+    "status": "known",
+    "value": {
+     "terraformRating": 15,
+     "milestones": 0,
+     "awards": 0,
+     "greenery": 0,
+     "city": 0,
+     "escapeVelocity": 0,
+     "moonHabitats": 0,
+     "moonMines": 0,
+     "moonRoads": 0,
+     "planetaryTracks": 0,
+     "victoryPoints": -1,
+     "total": 14,
+     "detailsCards": [
+      {
+       "cardName": "Energy Tapping",
+       "victoryPoint": -1
+      }
+     ],
+     "detailsMilestones": [],
+     "detailsAwards": [],
+     "detailsPlanetaryTracks": [],
+     "negativeVP": -1
+    }
+   },
+   "resources": {
+    "megacredits": 16,
+    "steel": 22,
+    "titanium": 0,
+    "plants": 0,
+    "energy": 2,
+    "heat": 9
+   },
+   "production": {
+    "megacredits": 0,
+    "steel": 0,
+    "titanium": 0,
+    "plants": 0,
+    "energy": 2,
+    "heat": 4
+   },
+   "steelValue": 2,
+   "titaniumValue": 3,
+   "tags": {
+    "building": 2,
+    "power": 1,
+    "event": 2
+   },
+   "cardsWithoutTags": 0,
+   "cardsInHandCount": 9,
+   "corporations": [
+    "Interplanetary Cinematics"
+   ],
+   "tableau": [
+    {
+     "name": "Interplanetary Cinematics",
+     "inCatalog": true,
+     "calculatedCost": 0,
+     "resources": 0
+    },
+    {
+     "name": "GHG Factories",
+     "inCatalog": true,
+     "calculatedCost": 11,
+     "resources": 0
+    },
+    {
+     "name": "Hired Raiders",
+     "inCatalog": true,
+     "calculatedCost": 1,
+     "resources": 0
+    },
+    {
+     "name": "Energy Tapping",
+     "inCatalog": true,
+     "calculatedCost": 3,
+     "resources": 0
+    },
+    {
+     "name": "Technology Demonstration",
+     "inCatalog": true,
+     "calculatedCost": 5,
+     "resources": 0
+    }
+   ],
+   "actionsUsedThisGeneration": [],
+   "actionsTakenThisRound": 0,
+   "availableBlueCardActionCount": 0,
+   "citiesCount": 0,
+   "cardCost": 3,
+   "protectedResources": {
+    "megacredits": "off",
+    "steel": "off",
+    "titanium": "off",
+    "plants": "off",
+    "energy": "off",
+    "heat": "off"
+   },
+   "protectedProduction": {
+    "megacredits": "off",
+    "steel": "off",
+    "titanium": "off",
+    "plants": "off",
+    "energy": "off",
+    "heat": "off"
+   },
+   "needsToResearch": true,
+   "hand": [
+    {
+     "name": "Small Animals",
+     "inCatalog": true,
+     "calculatedCost": 6
+    },
+    {
+     "name": "Grass",
+     "inCatalog": true,
+     "calculatedCost": 11
+    },
+    {
+     "name": "Decomposers",
+     "inCatalog": true,
+     "calculatedCost": 5
+    },
+    {
+     "name": "Deep Well Heating",
+     "inCatalog": true,
+     "calculatedCost": 13
+    },
+    {
+     "name": "AI Central",
+     "inCatalog": true,
+     "calculatedCost": 21
+    },
+    {
+     "name": "Tundra Farming",
+     "inCatalog": true,
+     "calculatedCost": 16
+    },
+    {
+     "name": "Hackers",
+     "inCatalog": true,
+     "calculatedCost": 3
+    },
+    {
+     "name": "Corporate Stronghold",
+     "inCatalog": true,
+     "calculatedCost": 11
+    },
+    {
+     "name": "Trees",
+     "inCatalog": true,
+     "calculatedCost": 13
+    }
+   ],
+   "preludesInHand": [],
+   "ceosInHand": [],
+   "draftedCards": [],
+   "dealt": {
+    "corporations": [
+     {
+      "name": "Interplanetary Cinematics",
+      "inCatalog": true,
+      "calculatedCost": 0
+     },
+     {
+      "name": "Teractor",
+      "inCatalog": true,
+      "calculatedCost": 0,
+      "discount": [
+       {
+        "tag": "earth",
+        "amount": 3
+       }
+      ]
+     }
+    ],
+    "preludes": [],
+    "projects": [
+     {
+      "name": "Optimal Aerobraking",
+      "inCatalog": true,
+      "calculatedCost": 7
+     },
+     {
+      "name": "Rover Construction",
+      "inCatalog": true,
+      "calculatedCost": 8
+     },
+     {
+      "name": "Tectonic Stress Power",
+      "inCatalog": true,
+      "calculatedCost": 18
+     },
+     {
+      "name": "Urbanized Area",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Noctis Farming",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Solar Power",
+      "inCatalog": true,
+      "calculatedCost": 11
+     },
+     {
+      "name": "Giant Ice Asteroid",
+      "inCatalog": true,
+      "calculatedCost": 36
+     },
+     {
+      "name": "Bushes",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Mine",
+      "inCatalog": true,
+      "calculatedCost": 4
+     },
+     {
+      "name": "Martian Rails",
+      "inCatalog": true,
+      "calculatedCost": 13
+     }
+    ],
+    "ceos": []
+   },
+   "pickedCorporation": [
+    "Interplanetary Cinematics"
+   ],
+   "autopass": false,
+   "canCancelAction": false
+  },
+  "opponents": [],
+  "choices": {
+   "status": "awaiting-input",
+   "root": {
+    "path": "",
+    "inputType": "or",
+    "title": "Take your first action",
+    "buttonLabel": "Take action",
+    "optional": false,
+    "options": [
+     {
+      "path": "0",
+      "inputType": "option",
+      "title": "Convert 8 heat into temperature",
+      "buttonLabel": "Convert heat",
+      "optional": false
+     },
+     {
+      "path": "1",
+      "inputType": "projectCard",
+      "title": "Play project card",
+      "buttonLabel": "Play card",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Deep Well Heating",
+        "inCatalog": true,
+        "calculatedCost": 13,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Hackers",
+        "inCatalog": true,
+        "calculatedCost": 3,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Corporate Stronghold",
+        "inCatalog": true,
+        "calculatedCost": 11,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       }
+      ],
+      "paymentOptions": {
+       "heat": false,
+       "lunaTradeFederationTitanium": false,
+       "plants": false
+      }
+     },
+     {
+      "path": "2",
+      "inputType": "projectCard",
+      "title": "Standard projects",
+      "buttonLabel": "Confirm",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Power Plant:SP",
+        "inCatalog": true,
+        "calculatedCost": 11,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Asteroid:SP",
+        "inCatalog": true,
+        "calculatedCost": 14,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Aquifer",
+        "inCatalog": true,
+        "calculatedCost": 18,
+        "isDisabled": true,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Greenery",
+        "inCatalog": true,
+        "calculatedCost": 23,
+        "isDisabled": true,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "City",
+        "inCatalog": true,
+        "calculatedCost": 25,
+        "isDisabled": true,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       }
+      ],
+      "paymentOptions": {
+       "heat": false,
+       "lunaTradeFederationTitanium": false,
+       "plants": false
+      }
+     },
+     {
+      "path": "3",
+      "inputType": "option",
+      "title": "Pass for this generation",
+      "buttonLabel": "Pass",
+      "optional": false,
+      "warnings": [
+       "pass"
+      ]
+     },
+     {
+      "path": "4",
+      "inputType": "card",
+      "title": "Sell patents",
+      "buttonLabel": "Sell",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Small Animals",
+        "inCatalog": true,
+        "calculatedCost": 6
+       },
+       {
+        "name": "Grass",
+        "inCatalog": true,
+        "calculatedCost": 11
+       },
+       {
+        "name": "Decomposers",
+        "inCatalog": true,
+        "calculatedCost": 5
+       },
+       {
+        "name": "Deep Well Heating",
+        "inCatalog": true,
+        "calculatedCost": 13
+       },
+       {
+        "name": "AI Central",
+        "inCatalog": true,
+        "calculatedCost": 21
+       },
+       {
+        "name": "Tundra Farming",
+        "inCatalog": true,
+        "calculatedCost": 16
+       },
+       {
+        "name": "Hackers",
+        "inCatalog": true,
+        "calculatedCost": 3
+       },
+       {
+        "name": "Corporate Stronghold",
+        "inCatalog": true,
+        "calculatedCost": 11
+       },
+       {
+        "name": "Trees",
+        "inCatalog": true,
+        "calculatedCost": 13
+       }
+      ],
+      "min": 1,
+      "max": 9,
+      "selectBlueCardAction": false
+     }
+    ],
+    "initialIndex": 0
+   }
+  }
+ },
+ "analysis": {
+  "schemaVersion": "coach-analysis/1",
+  "source": {
+   "fingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27",
+   "advisoryFingerprint": "dff29eeecec36594f1868be280cb57041497b4a7c80b16ad154a8d5315ce6a8f",
+   "catalogVersion": "96e3a55227c5e380",
+   "analysisVersion": "2.0.0",
+   "generatedAt": "2026-10-15T14:14:50.487Z"
+  },
+  "horizonProductionPhases": 3,
+  "coverage": {
+   "supported": 7,
+   "partial": 6,
+   "unsupported": 1,
+   "reasons": [
+    "bespoke-code: 5 cards",
+    "target-choice: 1 card",
+    "tile-placement: 1 card"
+   ]
+  },
+  "candidates": [
+   {
+    "id": "Deep Well Heating > Grass",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "terraforming"
+    ],
+    "cards": [
+     {
+      "name": "Deep Well Heating",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 13
+     },
+     {
+      "name": "Grass",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating"
+      ],
+      "cost": 11
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Deep Well Heating",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Deep Well Heating (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Grass",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Deep Well Heating adds 1 temperature step; Grass needs 6 more (5 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Grass"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "temperature",
+      "observed": -28,
+      "target": -16,
+      "comparator": ">=",
+      "gap": 5,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Grass"
+       }
+      ],
+      "card": "Grass"
+     }
+    ],
+    "payments": {
+     "play": 24,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Grass"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Deep Well Heating"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Deep Well Heating",
+      "to": "Grass"
+     },
+     "text": "Is it worth playing Deep Well Heating mainly to meet the requirement of Grass, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -24,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 3,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -23,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -22,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 5,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -21,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 6,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 24,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 1,
+      "cards": 0
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   },
+   {
+    "id": "Corporate Stronghold",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Corporate Stronghold",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 11
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Corporate Stronghold",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Corporate Stronghold (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Corporate Stronghold"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 11,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Corporate Stronghold"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Corporate Stronghold"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Corporate Stronghold. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -11,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 3,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -8,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 3,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -5,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": -1
+       },
+       "production": {
+        "megacredits": 3,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": -2
+       },
+       "production": {
+        "megacredits": 3,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 11,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": -2,
+      "terraformRating": 0,
+      "cards": -2
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Corporate Stronghold: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   },
+   {
+    "id": "Deep Well Heating > Trees",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "terraforming",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Deep Well Heating",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 13
+     },
+     {
+      "name": "Trees",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating"
+      ],
+      "cost": 13
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Deep Well Heating",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Deep Well Heating (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Trees",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Deep Well Heating adds 1 temperature step; Trees needs 12 more (11 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Trees"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "temperature",
+      "observed": -28,
+      "target": -4,
+      "comparator": ">=",
+      "gap": 11,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Trees"
+       }
+      ],
+      "card": "Trees"
+     }
+    ],
+    "payments": {
+     "play": 26,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Trees"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Deep Well Heating"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Deep Well Heating",
+      "to": "Trees"
+     },
+     "text": "Is it worth playing Deep Well Heating mainly to meet the requirement of Trees, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -26,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 3,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -25,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 3,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -24,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 7,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 3,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -23,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 10,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 3,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 26,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 2,
+      "terraformRating": 1,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   },
+   {
+    "id": "Deep Well Heating",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "terraforming"
+    ],
+    "cards": [
+     {
+      "name": "Deep Well Heating",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 13
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Deep Well Heating",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Deep Well Heating (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 13,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Deep Well Heating"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Deep Well Heating"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Deep Well Heating. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -13,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -12,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -11,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -10,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 13,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 1,
+      "cards": 0
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   },
+   {
+    "id": "Deep Well Heating > Tundra Farming",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "terraforming",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Deep Well Heating",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 13
+     },
+     {
+      "name": "Tundra Farming",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating"
+      ],
+      "cost": 16
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Deep Well Heating",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Deep Well Heating (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Tundra Farming",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Deep Well Heating adds 1 temperature step; Tundra Farming needs 11 more (10 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Tundra Farming"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "temperature",
+      "observed": -28,
+      "target": -6,
+      "comparator": ">=",
+      "gap": 10,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Tundra Farming"
+       }
+      ],
+      "card": "Tundra Farming"
+     }
+    ],
+    "payments": {
+     "play": 29,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Tundra Farming"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Deep Well Heating"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Deep Well Heating",
+      "to": "Tundra Farming"
+     },
+     "text": "Is it worth playing Deep Well Heating mainly to meet the requirement of Tundra Farming, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -29,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -26,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -23,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 3,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -20,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 29,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 3,
+      "terraformRating": 1,
+      "cards": 2
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   },
+   {
+    "id": "AI Central",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "AI Central",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "the game does not offer it to play right now"
+      ],
+      "cost": 21
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "AI Central",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for AI Central (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "AI Central"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "tag",
+      "observed": 0,
+      "target": 3,
+      "comparator": ">=",
+      "gap": 3,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.tags.science",
+        "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "me.tags.wild",
+        "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "AI Central"
+       }
+      ],
+      "card": "AI Central"
+     }
+    ],
+    "payments": {
+     "play": 21,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "AI Central"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "AI Central"
+     },
+     "text": "Interplanetary Cinematics helps you pay for AI Central. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -21,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -21,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -21,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": -1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -21,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": -2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 21,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 0,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of AI Central is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Deep Well Heating > Grass > Trees",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "terraforming",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Deep Well Heating",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 13
+     },
+     {
+      "name": "Grass",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating"
+      ],
+      "cost": 11
+     },
+     {
+      "name": "Trees",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating, Grass"
+      ],
+      "cost": 13
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Deep Well Heating",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Deep Well Heating (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Grass",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Deep Well Heating adds 1 temperature step; Grass needs 6 more (5 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Grass"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Trees",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Deep Well Heating adds 1 temperature step; Trees needs 12 more (11 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Trees"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "temperature",
+      "observed": -28,
+      "target": -16,
+      "comparator": ">=",
+      "gap": 5,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Grass"
+       }
+      ],
+      "card": "Grass"
+     },
+     {
+      "kind": "temperature",
+      "observed": -28,
+      "target": -4,
+      "comparator": ">=",
+      "gap": 11,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Trees"
+       }
+      ],
+      "card": "Trees"
+     }
+    ],
+    "payments": {
+     "play": 37,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Grass"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Trees"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Deep Well Heating"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Deep Well Heating",
+      "to": "Trees"
+     },
+     "text": "Is it worth playing Deep Well Heating mainly to meet the requirement of Trees, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -37,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -36,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 8,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -35,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 12,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -34,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 16,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 37,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 2,
+      "terraformRating": 1,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   },
+   {
+    "id": "Deep Well Heating > Grass > Tundra Farming",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "terraforming",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Deep Well Heating",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 13
+     },
+     {
+      "name": "Grass",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating"
+      ],
+      "cost": 11
+     },
+     {
+      "name": "Tundra Farming",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating, Grass"
+      ],
+      "cost": 16
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Deep Well Heating",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Deep Well Heating (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Grass",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Deep Well Heating adds 1 temperature step; Grass needs 6 more (5 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Grass"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Tundra Farming",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Deep Well Heating adds 1 temperature step; Tundra Farming needs 11 more (10 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Tundra Farming"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "temperature",
+      "observed": -28,
+      "target": -16,
+      "comparator": ">=",
+      "gap": 5,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Grass"
+       }
+      ],
+      "card": "Grass"
+     },
+     {
+      "kind": "temperature",
+      "observed": -28,
+      "target": -6,
+      "comparator": ">=",
+      "gap": 10,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Tundra Farming"
+       }
+      ],
+      "card": "Tundra Farming"
+     }
+    ],
+    "payments": {
+     "play": 40,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Grass"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Tundra Farming"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Deep Well Heating"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Deep Well Heating",
+      "to": "Tundra Farming"
+     },
+     "text": "Is it worth playing Deep Well Heating mainly to meet the requirement of Tundra Farming, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -40,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -37,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 6,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -34,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 8,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -31,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 10,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 40,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 3,
+      "terraformRating": 1,
+      "cards": 2
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   },
+   {
+    "id": "Deep Well Heating > Trees > Grass",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "terraforming",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Deep Well Heating",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 13
+     },
+     {
+      "name": "Trees",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating"
+      ],
+      "cost": 13
+     },
+     {
+      "name": "Grass",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating, Trees"
+      ],
+      "cost": 11
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Deep Well Heating",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Deep Well Heating (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Grass",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Deep Well Heating adds 1 temperature step; Grass needs 6 more (5 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Grass"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Trees",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Deep Well Heating adds 1 temperature step; Trees needs 12 more (11 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Trees"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "temperature",
+      "observed": -28,
+      "target": -4,
+      "comparator": ">=",
+      "gap": 11,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Trees"
+       }
+      ],
+      "card": "Trees"
+     },
+     {
+      "kind": "temperature",
+      "observed": -28,
+      "target": -16,
+      "comparator": ">=",
+      "gap": 5,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Grass"
+       }
+      ],
+      "card": "Grass"
+     }
+    ],
+    "payments": {
+     "play": 37,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Grass"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "beb19ee106219f013f10a58a91bbd0e65d77af5b719aeaab1ff2743b73747b27"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Trees"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Deep Well Heating"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Deep Well Heating",
+      "to": "Grass"
+     },
+     "text": "Is it worth playing Deep Well Heating mainly to meet the requirement of Grass, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -37,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -36,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 8,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -35,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 12,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -34,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 16,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 37,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 2,
+      "terraformRating": 1,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   }
+  ],
+  "discarded": [],
+  "limitations": [
+   "FEEDS_RESOURCE: adding resources to another card is a target choice; no engine-verified adapter yet",
+   "AMPLIFIES: effects triggered by other cards are card code (e.g. Media Group); no engine-verified adapter yet",
+   "ocean requirements: oceans come from tile placement, which is not modeled",
+   "requirements counting all players' tags are not linked",
+   "temperature/oxygen bonuses of the global tracks (extra heat production, oxygen raising temperature) are not counted",
+   "M€ given by a card is not linked to particular cards (it pays for everything)"
+  ],
+  "warnings": [],
+  "search": {
+   "poolSize": 9,
+   "chainsExamined": 18,
+   "truncated": false,
+   "elapsedMs": 1
+  }
+ }
+}

@@ -1,0 +1,3072 @@
+{
+ "id": "solo-b-g8-action",
+ "description": "Solo (other seed), generation 8",
+ "tags": {
+  "mode": "solo",
+  "generation": 8,
+  "phase": "action",
+  "planCount": 9,
+  "goals": [
+   "unlock",
+   "engine"
+  ],
+  "truncated": false,
+  "incompleteForecast": true,
+  "unknownAvailability": false,
+  "legalNow": true
+ },
+ "state": {
+  "schemaVersion": "coach-state/1",
+  "fingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30",
+  "advisoryFingerprint": "41528a3c32f1d0e82ce3dbb8e2790b982177d9c61033ef565a33cd92e0a4aa39",
+  "stateKey": "e8662ee8855de40b:u0:s0:a71",
+  "version": {
+   "generation": 8,
+   "phase": "action",
+   "gameAge": 71,
+   "gameStep": 0,
+   "undoCount": 0
+  },
+  "catalogVersion": "96e3a55227c5e380",
+  "capturedAt": "2026-10-15T14:14:51.389Z",
+  "warnings": [],
+  "game": {
+   "name": "Binary Gamma Unit",
+   "mode": "solo",
+   "playerCount": 1,
+   "board": "tharsis",
+   "expansions": {
+    "corpera": true,
+    "promo": false,
+    "venus": false,
+    "colonies": false,
+    "prelude": false,
+    "prelude2": false,
+    "turmoil": false,
+    "community": false,
+    "ares": false,
+    "moon": false,
+    "pathfinders": false,
+    "ceo": false,
+    "starwars": false,
+    "underworld": false,
+    "deltaProject": false
+   },
+   "baseGameOnly": true,
+   "options": {
+    "draftVariant": false,
+    "initialDraftVariant": false,
+    "preludeDraftVariant": false,
+    "showOtherPlayersVP": false,
+    "undoOption": false,
+    "soloTR": false,
+    "fastModeOption": false,
+    "randomMA": "No randomization"
+   },
+   "generation": 8,
+   "phase": "action",
+   "lastSoloGeneration": 14,
+   "activePlayer": "blue",
+   "firstPlayer": "blue",
+   "passedPlayers": [],
+   "temperature": {
+    "value": -20,
+    "min": -30,
+    "max": 8,
+    "stepsRemaining": 14
+   },
+   "oxygen": {
+    "value": 0,
+    "min": 0,
+    "max": 14,
+    "stepsRemaining": 14
+   },
+   "oceans": {
+    "value": 0,
+    "min": 0,
+    "max": 9,
+    "stepsRemaining": 9
+   },
+   "isTerraformed": false,
+   "gameOver": false,
+   "decks": {
+    "projectDrawPile": 164,
+    "projectDiscardPile": 22,
+    "corporationDrawPile": 10
+   },
+   "spaces": [],
+   "milestones": [
+    {
+     "name": "Terraformer",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 19,
+       "claimable": false
+      }
+     ],
+     "threshold": 35
+    },
+    {
+     "name": "Mayor",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 1,
+       "claimable": false
+      }
+     ],
+     "threshold": 3
+    },
+    {
+     "name": "Gardener",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0,
+       "claimable": false
+      }
+     ],
+     "threshold": 3
+    },
+    {
+     "name": "Builder",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 5,
+       "claimable": false
+      }
+     ],
+     "threshold": 8
+    },
+    {
+     "name": "Planner",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 14,
+       "claimable": false
+      }
+     ],
+     "threshold": 16
+    }
+   ],
+   "awards": [
+    {
+     "name": "Landlord",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "name": "Scientist",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      }
+     ]
+    },
+    {
+     "name": "Banker",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 5
+      }
+     ]
+    },
+    {
+     "name": "Thermalist",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 21
+      }
+     ]
+    },
+    {
+     "name": "Miner",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 24
+      }
+     ]
+    }
+   ],
+   "unsupported": []
+  },
+  "me": {
+   "color": "blue",
+   "name": "player-blue",
+   "isAi": false,
+   "isActive": true,
+   "hasPassed": false,
+   "terraformRating": 19,
+   "victoryPoints": {
+    "status": "known",
+    "value": {
+     "terraformRating": 19,
+     "milestones": 0,
+     "awards": 0,
+     "greenery": 0,
+     "city": 0,
+     "escapeVelocity": 0,
+     "moonHabitats": 0,
+     "moonMines": 0,
+     "moonRoads": 0,
+     "planetaryTracks": 0,
+     "victoryPoints": -4,
+     "total": 15,
+     "detailsCards": [
+      {
+       "cardName": "Energy Tapping",
+       "victoryPoint": -1
+      },
+      {
+       "cardName": "Hackers",
+       "victoryPoint": -1
+      },
+      {
+       "cardName": "Corporate Stronghold",
+       "victoryPoint": -2
+      }
+     ],
+     "detailsMilestones": [],
+     "detailsAwards": [],
+     "detailsPlanetaryTracks": [],
+     "negativeVP": -4
+    }
+   },
+   "resources": {
+    "megacredits": 19,
+    "steel": 24,
+    "titanium": 0,
+    "plants": 0,
+    "energy": 0,
+    "heat": 12
+   },
+   "production": {
+    "megacredits": 5,
+    "steel": 0,
+    "titanium": 0,
+    "plants": 0,
+    "energy": 0,
+    "heat": 9
+   },
+   "steelValue": 2,
+   "titaniumValue": 3,
+   "tags": {
+    "building": 5,
+    "power": 2,
+    "city": 1,
+    "event": 2
+   },
+   "cardsWithoutTags": 1,
+   "cardsInHandCount": 14,
+   "corporations": [
+    "Interplanetary Cinematics"
+   ],
+   "tableau": [
+    {
+     "name": "Interplanetary Cinematics",
+     "inCatalog": true,
+     "calculatedCost": 0,
+     "resources": 0
+    },
+    {
+     "name": "GHG Factories",
+     "inCatalog": true,
+     "calculatedCost": 11,
+     "resources": 0
+    },
+    {
+     "name": "Hired Raiders",
+     "inCatalog": true,
+     "calculatedCost": 1,
+     "resources": 0
+    },
+    {
+     "name": "Energy Tapping",
+     "inCatalog": true,
+     "calculatedCost": 3,
+     "resources": 0
+    },
+    {
+     "name": "Technology Demonstration",
+     "inCatalog": true,
+     "calculatedCost": 5,
+     "resources": 0
+    },
+    {
+     "name": "Deep Well Heating",
+     "inCatalog": true,
+     "calculatedCost": 13,
+     "resources": 0
+    },
+    {
+     "name": "Hackers",
+     "inCatalog": true,
+     "calculatedCost": 3,
+     "resources": 0
+    },
+    {
+     "name": "Carbonate Processing",
+     "inCatalog": true,
+     "calculatedCost": 6,
+     "resources": 0
+    },
+    {
+     "name": "Corporate Stronghold",
+     "inCatalog": true,
+     "calculatedCost": 11,
+     "resources": 0
+    }
+   ],
+   "actionsUsedThisGeneration": [],
+   "actionsTakenThisRound": 0,
+   "availableBlueCardActionCount": 0,
+   "citiesCount": 1,
+   "cardCost": 3,
+   "protectedResources": {
+    "megacredits": "off",
+    "steel": "off",
+    "titanium": "off",
+    "plants": "off",
+    "energy": "off",
+    "heat": "off"
+   },
+   "protectedProduction": {
+    "megacredits": "off",
+    "steel": "off",
+    "titanium": "off",
+    "plants": "off",
+    "energy": "off",
+    "heat": "off"
+   },
+   "needsToResearch": true,
+   "hand": [
+    {
+     "name": "Small Animals",
+     "inCatalog": true,
+     "calculatedCost": 6
+    },
+    {
+     "name": "Grass",
+     "inCatalog": true,
+     "calculatedCost": 11
+    },
+    {
+     "name": "Decomposers",
+     "inCatalog": true,
+     "calculatedCost": 5
+    },
+    {
+     "name": "AI Central",
+     "inCatalog": true,
+     "calculatedCost": 21
+    },
+    {
+     "name": "Tundra Farming",
+     "inCatalog": true,
+     "calculatedCost": 16
+    },
+    {
+     "name": "Trees",
+     "inCatalog": true,
+     "calculatedCost": 13
+    },
+    {
+     "name": "Media Archives",
+     "inCatalog": true,
+     "calculatedCost": 8
+    },
+    {
+     "name": "Restricted Area",
+     "inCatalog": true,
+     "calculatedCost": 11
+    },
+    {
+     "name": "Greenhouses",
+     "inCatalog": true,
+     "calculatedCost": 6
+    },
+    {
+     "name": "Solar Wind Power",
+     "inCatalog": true,
+     "calculatedCost": 11
+    },
+    {
+     "name": "Open City",
+     "inCatalog": true,
+     "calculatedCost": 23
+    },
+    {
+     "name": "Space Mirrors",
+     "inCatalog": true,
+     "calculatedCost": 3
+    },
+    {
+     "name": "Mining Area",
+     "inCatalog": true,
+     "calculatedCost": 4
+    },
+    {
+     "name": "Lunar Beam",
+     "inCatalog": true,
+     "calculatedCost": 13
+    }
+   ],
+   "preludesInHand": [],
+   "ceosInHand": [],
+   "draftedCards": [],
+   "dealt": {
+    "corporations": [
+     {
+      "name": "Interplanetary Cinematics",
+      "inCatalog": true,
+      "calculatedCost": 0
+     },
+     {
+      "name": "Teractor",
+      "inCatalog": true,
+      "calculatedCost": 0,
+      "discount": [
+       {
+        "tag": "earth",
+        "amount": 3
+       }
+      ]
+     }
+    ],
+    "preludes": [],
+    "projects": [
+     {
+      "name": "Optimal Aerobraking",
+      "inCatalog": true,
+      "calculatedCost": 7
+     },
+     {
+      "name": "Rover Construction",
+      "inCatalog": true,
+      "calculatedCost": 8
+     },
+     {
+      "name": "Tectonic Stress Power",
+      "inCatalog": true,
+      "calculatedCost": 18
+     },
+     {
+      "name": "Urbanized Area",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Noctis Farming",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Solar Power",
+      "inCatalog": true,
+      "calculatedCost": 11
+     },
+     {
+      "name": "Giant Ice Asteroid",
+      "inCatalog": true,
+      "calculatedCost": 36
+     },
+     {
+      "name": "Bushes",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Mine",
+      "inCatalog": true,
+      "calculatedCost": 4
+     },
+     {
+      "name": "Martian Rails",
+      "inCatalog": true,
+      "calculatedCost": 13
+     }
+    ],
+    "ceos": []
+   },
+   "pickedCorporation": [
+    "Interplanetary Cinematics"
+   ],
+   "autopass": false,
+   "canCancelAction": false
+  },
+  "opponents": [],
+  "choices": {
+   "status": "awaiting-input",
+   "root": {
+    "path": "",
+    "inputType": "or",
+    "title": "Take your first action",
+    "buttonLabel": "Take action",
+    "optional": false,
+    "options": [
+     {
+      "path": "0",
+      "inputType": "option",
+      "title": "Convert 8 heat into temperature",
+      "buttonLabel": "Convert heat",
+      "optional": false
+     },
+     {
+      "path": "1",
+      "inputType": "projectCard",
+      "title": "Play project card",
+      "buttonLabel": "Play card",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Media Archives",
+        "inCatalog": true,
+        "calculatedCost": 8,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Restricted Area",
+        "inCatalog": true,
+        "calculatedCost": 11,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Greenhouses",
+        "inCatalog": true,
+        "calculatedCost": 6,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Solar Wind Power",
+        "inCatalog": true,
+        "calculatedCost": 11,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Space Mirrors",
+        "inCatalog": true,
+        "calculatedCost": 3,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Mining Area",
+        "inCatalog": true,
+        "calculatedCost": 4,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Lunar Beam",
+        "inCatalog": true,
+        "calculatedCost": 13,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       }
+      ],
+      "paymentOptions": {
+       "heat": false,
+       "lunaTradeFederationTitanium": false,
+       "plants": false
+      }
+     },
+     {
+      "path": "2",
+      "inputType": "projectCard",
+      "title": "Standard projects",
+      "buttonLabel": "Confirm",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Power Plant:SP",
+        "inCatalog": true,
+        "calculatedCost": 11,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Asteroid:SP",
+        "inCatalog": true,
+        "calculatedCost": 14,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Aquifer",
+        "inCatalog": true,
+        "calculatedCost": 18,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Greenery",
+        "inCatalog": true,
+        "calculatedCost": 23,
+        "isDisabled": true,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "City",
+        "inCatalog": true,
+        "calculatedCost": 25,
+        "isDisabled": true,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       }
+      ],
+      "paymentOptions": {
+       "heat": false,
+       "lunaTradeFederationTitanium": false,
+       "plants": false
+      }
+     },
+     {
+      "path": "3",
+      "inputType": "option",
+      "title": "Pass for this generation",
+      "buttonLabel": "Pass",
+      "optional": false,
+      "warnings": [
+       "pass"
+      ]
+     },
+     {
+      "path": "4",
+      "inputType": "card",
+      "title": "Sell patents",
+      "buttonLabel": "Sell",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Small Animals",
+        "inCatalog": true,
+        "calculatedCost": 6
+       },
+       {
+        "name": "Grass",
+        "inCatalog": true,
+        "calculatedCost": 11
+       },
+       {
+        "name": "Decomposers",
+        "inCatalog": true,
+        "calculatedCost": 5
+       },
+       {
+        "name": "AI Central",
+        "inCatalog": true,
+        "calculatedCost": 21
+       },
+       {
+        "name": "Tundra Farming",
+        "inCatalog": true,
+        "calculatedCost": 16
+       },
+       {
+        "name": "Trees",
+        "inCatalog": true,
+        "calculatedCost": 13
+       },
+       {
+        "name": "Media Archives",
+        "inCatalog": true,
+        "calculatedCost": 8
+       },
+       {
+        "name": "Restricted Area",
+        "inCatalog": true,
+        "calculatedCost": 11
+       },
+       {
+        "name": "Greenhouses",
+        "inCatalog": true,
+        "calculatedCost": 6
+       },
+       {
+        "name": "Solar Wind Power",
+        "inCatalog": true,
+        "calculatedCost": 11
+       },
+       {
+        "name": "Open City",
+        "inCatalog": true,
+        "calculatedCost": 23
+       },
+       {
+        "name": "Space Mirrors",
+        "inCatalog": true,
+        "calculatedCost": 3
+       },
+       {
+        "name": "Mining Area",
+        "inCatalog": true,
+        "calculatedCost": 4
+       },
+       {
+        "name": "Lunar Beam",
+        "inCatalog": true,
+        "calculatedCost": 13
+       }
+      ],
+      "min": 1,
+      "max": 14,
+      "selectBlueCardAction": false
+     }
+    ],
+    "initialIndex": 0
+   }
+  }
+ },
+ "analysis": {
+  "schemaVersion": "coach-analysis/1",
+  "source": {
+   "fingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30",
+   "advisoryFingerprint": "41528a3c32f1d0e82ce3dbb8e2790b982177d9c61033ef565a33cd92e0a4aa39",
+   "catalogVersion": "96e3a55227c5e380",
+   "analysisVersion": "2.0.0",
+   "generatedAt": "2026-10-15T14:14:51.391Z"
+  },
+  "horizonProductionPhases": 3,
+  "coverage": {
+   "supported": 11,
+   "partial": 8,
+   "unsupported": 4,
+   "reasons": [
+    "bespoke-code: 6 cards",
+    "tile-placement: 3 cards",
+    "countable: 2 cards",
+    "target-choice: 1 card"
+   ]
+  },
+  "candidates": [
+   {
+    "id": "Solar Wind Power > AI Central > Space Mirrors",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Solar Wind Power",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 11
+     },
+     {
+      "name": "AI Central",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Solar Wind Power"
+      ],
+      "cost": 21
+     },
+     {
+      "name": "Space Mirrors",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Solar Wind Power, AI Central"
+      ],
+      "cost": 3
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "AI Central",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for AI Central (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "AI Central"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Solar Wind Power",
+      "to": "AI Central",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Solar Wind Power adds 1 science tag; AI Central needs 3 more (2 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "me.tags.science",
+         "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+        },
+        {
+         "kind": "state",
+         "fieldPath": "me.tags.wild",
+         "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "AI Central"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Solar Wind Power"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Solar Wind Power",
+      "to": "Space Mirrors",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Space Mirrors (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Space Mirrors"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "tag",
+      "observed": 0,
+      "target": 3,
+      "comparator": ">=",
+      "gap": 2,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.tags.science",
+        "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "me.tags.wild",
+        "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "AI Central"
+       }
+      ],
+      "card": "AI Central"
+     }
+    ],
+    "payments": {
+     "play": 35,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "AI Central"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.tags.science",
+       "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.tags.wild",
+       "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "AI Central"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Space Mirrors"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Solar Wind Power",
+      "to": "Space Mirrors"
+     },
+     "text": "Is it worth playing Solar Wind Power mainly to meet the requirement of Space Mirrors, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 7,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -35,
+        "steel": 0,
+        "titanium": 2,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -35,
+        "steel": 0,
+        "titanium": 2,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -35,
+        "steel": 0,
+        "titanium": 2,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -35,
+        "steel": 0,
+        "titanium": 2,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 35,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 0,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of AI Central is not counted (it is optional each generation)",
+      "the action of Space Mirrors is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Greenhouses",
+    "goal": "engine",
+    "goals": [
+     "engine"
+    ],
+    "cards": [
+     {
+      "name": "Greenhouses",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 6
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Greenhouses",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Greenhouses (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Greenhouses"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 6,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Greenhouses"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Greenhouses"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Greenhouses. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 7,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -6,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -6,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -6,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -6,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 6,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 0,
+      "terraformRating": 0,
+      "cards": 0
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Greenhouses: the amount is given by a formula",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   },
+   {
+    "id": "Solar Wind Power > Space Mirrors > AI Central",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Solar Wind Power",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 11
+     },
+     {
+      "name": "Space Mirrors",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Solar Wind Power"
+      ],
+      "cost": 3
+     },
+     {
+      "name": "AI Central",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Solar Wind Power, Space Mirrors"
+      ],
+      "cost": 21
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "AI Central",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for AI Central (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "AI Central"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Solar Wind Power",
+      "to": "AI Central",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Solar Wind Power adds 1 science tag; AI Central needs 3 more (2 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "me.tags.science",
+         "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+        },
+        {
+         "kind": "state",
+         "fieldPath": "me.tags.wild",
+         "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "AI Central"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Solar Wind Power"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Solar Wind Power",
+      "to": "Space Mirrors",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Space Mirrors (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Space Mirrors"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "tag",
+      "observed": 0,
+      "target": 3,
+      "comparator": ">=",
+      "gap": 2,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.tags.science",
+        "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "me.tags.wild",
+        "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "AI Central"
+       }
+      ],
+      "card": "AI Central"
+     }
+    ],
+    "payments": {
+     "play": 35,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "AI Central"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.tags.science",
+       "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.tags.wild",
+       "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "AI Central"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Space Mirrors"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "AI Central"
+     },
+     "text": "Is it worth playing Interplanetary Cinematics mainly to meet the requirement of AI Central, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 7,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -35,
+        "steel": 0,
+        "titanium": 2,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -35,
+        "steel": 0,
+        "titanium": 2,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -35,
+        "steel": 0,
+        "titanium": 2,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -35,
+        "steel": 0,
+        "titanium": 2,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 35,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 0,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of Space Mirrors is not counted (it is optional each generation)",
+      "the action of AI Central is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Solar Wind Power > Space Mirrors",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy"
+    ],
+    "cards": [
+     {
+      "name": "Solar Wind Power",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 11
+     },
+     {
+      "name": "Space Mirrors",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Solar Wind Power"
+      ],
+      "cost": 3
+     }
+    ],
+    "links": [
+     {
+      "from": "Solar Wind Power",
+      "to": "Space Mirrors",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Space Mirrors (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Space Mirrors"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 14,
+     "purchase": 0
+    },
+    "support": {
+     "level": "verified",
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Space Mirrors"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Solar Wind Power",
+      "to": "Space Mirrors"
+     },
+     "text": "Solar Wind Power helps you pay for Space Mirrors. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 7,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -14,
+        "steel": 0,
+        "titanium": 2,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -14,
+        "steel": 0,
+        "titanium": 2,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -14,
+        "steel": 0,
+        "titanium": 2,
+        "plants": 0,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -14,
+        "steel": 0,
+        "titanium": 2,
+        "plants": 0,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 14,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 0,
+      "terraformRating": 0,
+      "cards": 0
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of Space Mirrors is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Solar Wind Power > AI Central",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Solar Wind Power",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 11
+     },
+     {
+      "name": "AI Central",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Solar Wind Power"
+      ],
+      "cost": 21
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "AI Central",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for AI Central (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "AI Central"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Solar Wind Power",
+      "to": "AI Central",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Solar Wind Power adds 1 science tag; AI Central needs 3 more (2 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "me.tags.science",
+         "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+        },
+        {
+         "kind": "state",
+         "fieldPath": "me.tags.wild",
+         "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "AI Central"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Solar Wind Power"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "tag",
+      "observed": 0,
+      "target": 3,
+      "comparator": ">=",
+      "gap": 2,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.tags.science",
+        "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "me.tags.wild",
+        "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "AI Central"
+       }
+      ],
+      "card": "AI Central"
+     }
+    ],
+    "payments": {
+     "play": 32,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "AI Central"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.tags.science",
+       "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.tags.wild",
+       "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "AI Central"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Solar Wind Power"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "AI Central"
+     },
+     "text": "Is it worth playing Interplanetary Cinematics mainly to meet the requirement of AI Central, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 7,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -32,
+        "steel": 0,
+        "titanium": 2,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -32,
+        "steel": 0,
+        "titanium": 2,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -32,
+        "steel": 0,
+        "titanium": 2,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -32,
+        "steel": 0,
+        "titanium": 2,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 32,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 0,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of AI Central is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Mining Area",
+    "goal": "engine",
+    "goals": [
+     "engine"
+    ],
+    "cards": [
+     {
+      "name": "Mining Area",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [
+       "requirement not evaluated: card-specific play condition (bespokeCanPlay)"
+      ],
+      "cost": 4
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Mining Area",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Mining Area (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Mining Area"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "other",
+      "observed": "unknown",
+      "target": "unknown",
+      "comparator": "rule-dependent",
+      "gap": "unknown",
+      "status": "unsupported",
+      "assumptions": [
+       "card-specific play condition (bespokeCanPlay)"
+      ],
+      "evidence": [
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Mining Area"
+       }
+      ],
+      "card": "Mining Area"
+     }
+    ],
+    "payments": {
+     "play": 4,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Mining Area"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Mining Area"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Mining Area. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 7,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -4,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -4,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -4,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -4,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 4,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 0,
+      "terraformRating": 0,
+      "cards": 0
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Mining Area: card code 'bespokePlay' changes what the card does",
+      "Mining Area: card code 'productionBox' changes what the card does",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   },
+   {
+    "id": "Restricted Area > AI Central",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Restricted Area",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 11
+     },
+     {
+      "name": "AI Central",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Restricted Area"
+      ],
+      "cost": 21
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "AI Central",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for AI Central (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "AI Central"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Restricted Area",
+      "to": "AI Central",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Restricted Area adds 1 science tag; AI Central needs 3 more (2 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "me.tags.science",
+         "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+        },
+        {
+         "kind": "state",
+         "fieldPath": "me.tags.wild",
+         "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "AI Central"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Restricted Area"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "tag",
+      "observed": 0,
+      "target": 3,
+      "comparator": ">=",
+      "gap": 2,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.tags.science",
+        "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "me.tags.wild",
+        "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "AI Central"
+       }
+      ],
+      "card": "AI Central"
+     },
+     {
+      "card": "AI Central",
+      "kind": "production",
+      "observed": 0,
+      "target": 1,
+      "comparator": ">=",
+      "gap": 1,
+      "status": "unmet",
+      "assumptions": [
+       "AI Central lowers energy production by 1"
+      ],
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.production.energy",
+        "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "effects.onPlay.production",
+        "cardName": "AI Central"
+       }
+      ]
+     }
+    ],
+    "payments": {
+     "play": 32,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "AI Central"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.tags.science",
+       "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.tags.wild",
+       "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "AI Central"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Restricted Area"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "AI Central"
+     },
+     "text": "Is it worth playing Interplanetary Cinematics mainly to meet the requirement of AI Central, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 7,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -32,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -32,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -32,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": -1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -32,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": -2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 32,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 0,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Restricted Area: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed",
+      "AI Central cannot be played then: energy production 0 cannot change by -1"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of Restricted Area is not counted (it is optional each generation)",
+      "the action of AI Central is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "AI Central",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "AI Central",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "the game does not offer it to play right now"
+      ],
+      "cost": 21
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "AI Central",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for AI Central (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "AI Central"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "tag",
+      "observed": 0,
+      "target": 3,
+      "comparator": ">=",
+      "gap": 3,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.tags.science",
+        "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "me.tags.wild",
+        "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "AI Central"
+       }
+      ],
+      "card": "AI Central"
+     },
+     {
+      "card": "AI Central",
+      "kind": "production",
+      "observed": 0,
+      "target": 1,
+      "comparator": ">=",
+      "gap": 1,
+      "status": "unmet",
+      "assumptions": [
+       "AI Central lowers energy production by 1"
+      ],
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.production.energy",
+        "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "effects.onPlay.production",
+        "cardName": "AI Central"
+       }
+      ]
+     }
+    ],
+    "payments": {
+     "play": 21,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "AI Central"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "AI Central"
+     },
+     "text": "Interplanetary Cinematics helps you pay for AI Central. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 7,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -21,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -21,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -21,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": -1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -21,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": -2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 21,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 0,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed",
+      "AI Central cannot be played then: energy production 0 cannot change by -1"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of AI Central is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Open City",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Open City",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "the game does not offer it to play right now"
+      ],
+      "cost": 23
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Open City",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Open City (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Open City"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "oxygen",
+      "observed": 0,
+      "target": 12,
+      "comparator": ">=",
+      "gap": 12,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.oxygen.value",
+        "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Open City"
+       }
+      ],
+      "card": "Open City"
+     },
+     {
+      "card": "Open City",
+      "kind": "production",
+      "observed": 0,
+      "target": 1,
+      "comparator": ">=",
+      "gap": 1,
+      "status": "unmet",
+      "assumptions": [
+       "Open City lowers energy production by 1"
+      ],
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.production.energy",
+        "stateFingerprint": "e8662ee8855de40bbab3b15436e72ec5ec85f8de1cb67ec2fd84de388ae5ad30"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "effects.onPlay.production",
+        "cardName": "Open City"
+       }
+      ]
+     }
+    ],
+    "payments": {
+     "play": 23,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Open City"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Open City"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Open City. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 7,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -23,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 4,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -19,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": -1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 4,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -15,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": -1,
+        "heat": -1
+       },
+       "production": {
+        "megacredits": 4,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -11,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": -1,
+        "heat": -2
+       },
+       "production": {
+        "megacredits": 4,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 23,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 0,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Open City: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed",
+      "Open City cannot be played then: energy production 0 cannot change by -1"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   }
+  ],
+  "discarded": [],
+  "limitations": [
+   "FEEDS_RESOURCE: adding resources to another card is a target choice; no engine-verified adapter yet",
+   "AMPLIFIES: effects triggered by other cards are card code (e.g. Media Group); no engine-verified adapter yet",
+   "ocean requirements: oceans come from tile placement, which is not modeled",
+   "requirements counting all players' tags are not linked",
+   "temperature/oxygen bonuses of the global tracks (extra heat production, oxygen raising temperature) are not counted",
+   "M€ given by a card is not linked to particular cards (it pays for everything)"
+  ],
+  "warnings": [],
+  "search": {
+   "poolSize": 14,
+   "chainsExamined": 19,
+   "truncated": false,
+   "elapsedMs": 2
+  }
+ }
+}

@@ -1,0 +1,49 @@
+{
+  "instructions": "coach-instructions/1",
+  "effort": "low",
+  "runs": 2,
+  "questions": 106,
+  "summary": [
+    {
+      "model": "gpt-6-luna",
+      "calls": 212,
+      "answered": 211,
+      "valid": 202,
+      "failures": [
+        "provider"
+      ],
+      "problemCodes": {
+        "forbidden-claim": 8,
+        "number-not-in-context": 1
+      },
+      "latencyMs": {
+        "p50": 3273,
+        "p95": 5673,
+        "max": 12769
+      },
+      "usd": 0.056,
+      "usdPerAnswer": 0.00026,
+      "avgInputTokens": 3189,
+      "avgOutputTokens": 183
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "calls": 212,
+      "answered": 212,
+      "valid": 204,
+      "failures": [],
+      "problemCodes": {
+        "forbidden-claim": 8
+      },
+      "latencyMs": {
+        "p50": 6256,
+        "p95": 8830,
+        "max": 14010
+      },
+      "usd": 1.1774,
+      "usdPerAnswer": 0.00555,
+      "avgInputTokens": 3194,
+      "avgOutputTokens": 225
+    }
+  ]
+}

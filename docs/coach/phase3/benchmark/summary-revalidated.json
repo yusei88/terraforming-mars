@@ -1,0 +1,103 @@
+{
+  "revalidatedWith": "current replyValidator",
+  "files": [
+    "results-2026-10-15T14-25-38-197Z.jsonl",
+    "results-2026-10-15T14-53-29-091Z.jsonl"
+  ],
+  "summary": [
+    {
+      "model": "gpt-6-luna",
+      "calls": 212,
+      "answered": 211,
+      "valid": 210,
+      "failures": [
+        "provider"
+      ],
+      "problemCodes": {
+        "number-not-in-context": 1
+      },
+      "latencyMs": {
+        "p50": 3273,
+        "p95": 5673,
+        "max": 12769
+      },
+      "usd": 0.056,
+      "usdPerAnswer": 0.00026,
+      "avgInputTokens": 3189,
+      "avgOutputTokens": 183
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "calls": 212,
+      "answered": 212,
+      "valid": 212,
+      "failures": [],
+      "problemCodes": {},
+      "latencyMs": {
+        "p50": 6256,
+        "p95": 8830,
+        "max": 14010
+      },
+      "usd": 1.1774,
+      "usdPerAnswer": 0.00555,
+      "avgInputTokens": 3194,
+      "avgOutputTokens": 225
+    },
+    {
+      "model": "sarashina3-nano",
+      "calls": 212,
+      "answered": 206,
+      "valid": 205,
+      "failures": [
+        "provider",
+        "incomplete",
+        "incomplete",
+        "incomplete",
+        "incomplete",
+        "incomplete"
+      ],
+      "problemCodes": {
+        "forbidden-claim": 1
+      },
+      "latencyMs": {
+        "p50": 513,
+        "p95": 748,
+        "max": 1200
+      },
+      "usd": 0,
+      "usdPerAnswer": 0,
+      "avgInputTokens": 3554,
+      "avgOutputTokens": 122
+    },
+    {
+      "model": "sarashina3-mini",
+      "calls": 212,
+      "answered": 200,
+      "valid": 200,
+      "failures": [
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit",
+        "rate-limit"
+      ],
+      "problemCodes": {},
+      "latencyMs": {
+        "p50": 1995,
+        "p95": 2762,
+        "max": 3795
+      },
+      "usd": 0,
+      "usdPerAnswer": 0,
+      "avgInputTokens": 3562,
+      "avgOutputTokens": 134
+    }
+  ]
+}

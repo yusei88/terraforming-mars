@@ -1,0 +1,668 @@
+{
+ "id": "2p-g1-action",
+ "description": "Two players, generation 1",
+ "tags": {
+  "mode": "multiplayer",
+  "generation": 1,
+  "phase": "action",
+  "planCount": 0,
+  "goals": [],
+  "truncated": false,
+  "incompleteForecast": false,
+  "unknownAvailability": false,
+  "legalNow": false
+ },
+ "state": {
+  "schemaVersion": "coach-state/1",
+  "fingerprint": "8584f671377d341856840d9ba0e99daf25b212d23b2776ec3537157cfa18a2fe",
+  "advisoryFingerprint": "6168c39bbf6793f4b64218f55af7c195eaa40cb0fd2a9313b3741a3766c59fbc",
+  "stateKey": "8584f671377d3418:u0:s0:a11",
+  "version": {
+   "generation": 1,
+   "phase": "action",
+   "gameAge": 11,
+   "gameStep": 0,
+   "undoCount": 0
+  },
+  "catalogVersion": "96e3a55227c5e380",
+  "capturedAt": "2026-10-15T14:14:51.645Z",
+  "warnings": [],
+  "game": {
+   "name": "Thermal Optics Current",
+   "mode": "multiplayer",
+   "playerCount": 2,
+   "board": "tharsis",
+   "expansions": {
+    "corpera": true,
+    "promo": false,
+    "venus": false,
+    "colonies": false,
+    "prelude": false,
+    "prelude2": false,
+    "turmoil": false,
+    "community": false,
+    "ares": false,
+    "moon": false,
+    "pathfinders": false,
+    "ceo": false,
+    "starwars": false,
+    "underworld": false,
+    "deltaProject": false
+   },
+   "baseGameOnly": true,
+   "options": {
+    "draftVariant": false,
+    "initialDraftVariant": false,
+    "preludeDraftVariant": false,
+    "showOtherPlayersVP": false,
+    "undoOption": false,
+    "soloTR": false,
+    "fastModeOption": false,
+    "randomMA": "No randomization"
+   },
+   "generation": 1,
+   "phase": "action",
+   "lastSoloGeneration": 14,
+   "activePlayer": "blue",
+   "firstPlayer": "blue",
+   "passedPlayers": [],
+   "temperature": {
+    "value": -30,
+    "min": -30,
+    "max": 8,
+    "stepsRemaining": 19
+   },
+   "oxygen": {
+    "value": 0,
+    "min": 0,
+    "max": 14,
+    "stepsRemaining": 14
+   },
+   "oceans": {
+    "value": 0,
+    "min": 0,
+    "max": 9,
+    "stepsRemaining": 9
+   },
+   "isTerraformed": false,
+   "gameOver": false,
+   "decks": {
+    "projectDrawPile": 188,
+    "projectDiscardPile": 20,
+    "corporationDrawPile": 8
+   },
+   "spaces": [],
+   "milestones": [
+    {
+     "name": "Terraformer",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 20,
+       "claimable": false
+      },
+      {
+       "color": "red",
+       "score": 20,
+       "claimable": false
+      }
+     ],
+     "threshold": 35
+    },
+    {
+     "name": "Mayor",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0,
+       "claimable": false
+      },
+      {
+       "color": "red",
+       "score": 0,
+       "claimable": false
+      }
+     ],
+     "threshold": 3
+    },
+    {
+     "name": "Gardener",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0,
+       "claimable": false
+      },
+      {
+       "color": "red",
+       "score": 0,
+       "claimable": false
+      }
+     ],
+     "threshold": 3
+    },
+    {
+     "name": "Builder",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 1,
+       "claimable": false
+      },
+      {
+       "color": "red",
+       "score": 0,
+       "claimable": false
+      }
+     ],
+     "threshold": 8
+    },
+    {
+     "name": "Planner",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0,
+       "claimable": false
+      },
+      {
+       "color": "red",
+       "score": 0,
+       "claimable": false
+      }
+     ],
+     "threshold": 16
+    }
+   ],
+   "awards": [
+    {
+     "name": "Landlord",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      },
+      {
+       "color": "red",
+       "score": 0
+      }
+     ]
+    },
+    {
+     "name": "Scientist",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      },
+      {
+       "color": "red",
+       "score": 0
+      }
+     ]
+    },
+    {
+     "name": "Banker",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      },
+      {
+       "color": "red",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "name": "Thermalist",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      },
+      {
+       "color": "red",
+       "score": 0
+      }
+     ]
+    },
+    {
+     "name": "Miner",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 20
+      },
+      {
+       "color": "red",
+       "score": 1
+      }
+     ]
+    }
+   ],
+   "unsupported": []
+  },
+  "me": {
+   "color": "blue",
+   "name": "player-blue",
+   "isAi": false,
+   "isActive": true,
+   "hasPassed": false,
+   "terraformRating": 20,
+   "victoryPoints": {
+    "status": "known",
+    "value": {
+     "terraformRating": 20,
+     "milestones": 0,
+     "awards": 0,
+     "greenery": 0,
+     "city": 0,
+     "escapeVelocity": 0,
+     "moonHabitats": 0,
+     "moonMines": 0,
+     "moonRoads": 0,
+     "planetaryTracks": 0,
+     "victoryPoints": 0,
+     "total": 20,
+     "detailsCards": [],
+     "detailsMilestones": [],
+     "detailsAwards": [],
+     "detailsPlanetaryTracks": [],
+     "negativeVP": 0
+    }
+   },
+   "resources": {
+    "megacredits": 30,
+    "steel": 20,
+    "titanium": 0,
+    "plants": 0,
+    "energy": 0,
+    "heat": 0
+   },
+   "production": {
+    "megacredits": 0,
+    "steel": 0,
+    "titanium": 0,
+    "plants": 0,
+    "energy": 0,
+    "heat": 0
+   },
+   "steelValue": 2,
+   "titaniumValue": 3,
+   "tags": {
+    "building": 1
+   },
+   "cardsWithoutTags": 0,
+   "cardsInHandCount": 0,
+   "corporations": [
+    "Interplanetary Cinematics"
+   ],
+   "tableau": [
+    {
+     "name": "Interplanetary Cinematics",
+     "inCatalog": true,
+     "calculatedCost": 0,
+     "resources": 0
+    }
+   ],
+   "actionsUsedThisGeneration": [],
+   "actionsTakenThisRound": 0,
+   "availableBlueCardActionCount": 0,
+   "citiesCount": 0,
+   "cardCost": 3,
+   "protectedResources": {
+    "megacredits": "off",
+    "steel": "off",
+    "titanium": "off",
+    "plants": "off",
+    "energy": "off",
+    "heat": "off"
+   },
+   "protectedProduction": {
+    "megacredits": "off",
+    "steel": "off",
+    "titanium": "off",
+    "plants": "off",
+    "energy": "off",
+    "heat": "off"
+   },
+   "needsToResearch": true,
+   "hand": [],
+   "preludesInHand": [],
+   "ceosInHand": [],
+   "draftedCards": [],
+   "dealt": {
+    "corporations": [
+     {
+      "name": "Interplanetary Cinematics",
+      "inCatalog": true,
+      "calculatedCost": 0
+     },
+     {
+      "name": "Teractor",
+      "inCatalog": true,
+      "calculatedCost": 0,
+      "discount": [
+       {
+        "tag": "earth",
+        "amount": 3
+       }
+      ]
+     }
+    ],
+    "preludes": [],
+    "projects": [
+     {
+      "name": "Herbivores",
+      "inCatalog": true,
+      "calculatedCost": 12
+     },
+     {
+      "name": "Adaptation Technology",
+      "inCatalog": true,
+      "calculatedCost": 12
+     },
+     {
+      "name": "Geothermal Power",
+      "inCatalog": true,
+      "calculatedCost": 11
+     },
+     {
+      "name": "Deimos Down",
+      "inCatalog": true,
+      "calculatedCost": 31
+     },
+     {
+      "name": "Optimal Aerobraking",
+      "inCatalog": true,
+      "calculatedCost": 7
+     },
+     {
+      "name": "Rover Construction",
+      "inCatalog": true,
+      "calculatedCost": 8
+     },
+     {
+      "name": "Tectonic Stress Power",
+      "inCatalog": true,
+      "calculatedCost": 18
+     },
+     {
+      "name": "Urbanized Area",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Noctis Farming",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Solar Power",
+      "inCatalog": true,
+      "calculatedCost": 11
+     }
+    ],
+    "ceos": []
+   },
+   "pickedCorporation": [
+    "Interplanetary Cinematics"
+   ],
+   "autopass": false,
+   "canCancelAction": false
+  },
+  "opponents": [
+   {
+    "color": "red",
+    "name": "player-red",
+    "isAi": false,
+    "isActive": false,
+    "hasPassed": false,
+    "terraformRating": 20,
+    "victoryPoints": {
+     "status": "hidden"
+    },
+    "resources": {
+     "megacredits": 42,
+     "steel": 0,
+     "titanium": 0,
+     "plants": 0,
+     "energy": 0,
+     "heat": 0
+    },
+    "production": {
+     "megacredits": 1,
+     "steel": 0,
+     "titanium": 1,
+     "plants": 0,
+     "energy": 0,
+     "heat": 0
+    },
+    "steelValue": 2,
+    "titaniumValue": 3,
+    "tags": {
+     "jovian": 1
+    },
+    "cardsWithoutTags": 0,
+    "cardsInHandCount": 0,
+    "corporations": [
+     "Saturn Systems"
+    ],
+    "tableau": [
+     {
+      "name": "Saturn Systems",
+      "inCatalog": true,
+      "calculatedCost": 0,
+      "resources": 0
+     }
+    ],
+    "actionsUsedThisGeneration": [],
+    "actionsTakenThisRound": 0,
+    "availableBlueCardActionCount": 0,
+    "citiesCount": 0,
+    "cardCost": 3,
+    "protectedResources": {
+     "megacredits": "off",
+     "steel": "off",
+     "titanium": "off",
+     "plants": "off",
+     "energy": "off",
+     "heat": "off"
+    },
+    "protectedProduction": {
+     "megacredits": "off",
+     "steel": "off",
+     "titanium": "off",
+     "plants": "off",
+     "energy": "off",
+     "heat": "off"
+    },
+    "needsToResearch": true
+   }
+  ],
+  "choices": {
+   "status": "awaiting-input",
+   "root": {
+    "path": "",
+    "inputType": "or",
+    "title": "Take your first action",
+    "buttonLabel": "Take action",
+    "optional": false,
+    "options": [
+     {
+      "path": "0",
+      "inputType": "or",
+      "title": "Fund an award (8 M€)",
+      "buttonLabel": "Confirm",
+      "optional": false,
+      "options": [
+       {
+        "path": "0.0",
+        "inputType": "option",
+        "title": "Landlord",
+        "buttonLabel": "Fund - (Landlord)",
+        "optional": false
+       },
+       {
+        "path": "0.1",
+        "inputType": "option",
+        "title": "Scientist",
+        "buttonLabel": "Fund - (Scientist)",
+        "optional": false
+       },
+       {
+        "path": "0.2",
+        "inputType": "option",
+        "title": "Banker",
+        "buttonLabel": "Fund - (Banker)",
+        "optional": false
+       },
+       {
+        "path": "0.3",
+        "inputType": "option",
+        "title": "Thermalist",
+        "buttonLabel": "Fund - (Thermalist)",
+        "optional": false
+       },
+       {
+        "path": "0.4",
+        "inputType": "option",
+        "title": "Miner",
+        "buttonLabel": "Fund - (Miner)",
+        "optional": false
+       }
+      ],
+      "initialIndex": 0
+     },
+     {
+      "path": "1",
+      "inputType": "projectCard",
+      "title": "Standard projects",
+      "buttonLabel": "Confirm",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Power Plant:SP",
+        "inCatalog": true,
+        "calculatedCost": 11,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Asteroid:SP",
+        "inCatalog": true,
+        "calculatedCost": 14,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Aquifer",
+        "inCatalog": true,
+        "calculatedCost": 18,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Greenery",
+        "inCatalog": true,
+        "calculatedCost": 23,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "City",
+        "inCatalog": true,
+        "calculatedCost": 25,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       }
+      ],
+      "paymentOptions": {
+       "heat": false,
+       "lunaTradeFederationTitanium": false,
+       "plants": false
+      }
+     },
+     {
+      "path": "2",
+      "inputType": "option",
+      "title": "Pass for this generation",
+      "buttonLabel": "Pass",
+      "optional": false,
+      "warnings": [
+       "pass"
+      ]
+     }
+    ],
+    "initialIndex": 0
+   }
+  }
+ },
+ "analysis": {
+  "schemaVersion": "coach-analysis/1",
+  "source": {
+   "fingerprint": "8584f671377d341856840d9ba0e99daf25b212d23b2776ec3537157cfa18a2fe",
+   "advisoryFingerprint": "6168c39bbf6793f4b64218f55af7c195eaa40cb0fd2a9313b3741a3766c59fbc",
+   "catalogVersion": "96e3a55227c5e380",
+   "analysisVersion": "2.0.0",
+   "generatedAt": "2026-10-15T14:14:51.647Z"
+  },
+  "horizonProductionPhases": 3,
+  "coverage": {
+   "supported": 0,
+   "partial": 1,
+   "unsupported": 0,
+   "reasons": [
+    "bespoke-code: 1 card"
+   ]
+  },
+  "candidates": [],
+  "discarded": [],
+  "limitations": [
+   "FEEDS_RESOURCE: adding resources to another card is a target choice; no engine-verified adapter yet",
+   "AMPLIFIES: effects triggered by other cards are card code (e.g. Media Group); no engine-verified adapter yet",
+   "ocean requirements: oceans come from tile placement, which is not modeled",
+   "requirements counting all players' tags are not linked",
+   "temperature/oxygen bonuses of the global tracks (extra heat production, oxygen raising temperature) are not counted",
+   "M€ given by a card is not linked to particular cards (it pays for everything)"
+  ],
+  "warnings": [],
+  "search": {
+   "poolSize": 0,
+   "chainsExamined": 0,
+   "truncated": false,
+   "elapsedMs": 0
+  }
+ }
+}

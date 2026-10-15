@@ -1,0 +1,3778 @@
+{
+ "id": "solo-a-g14-action",
+ "description": "Solo, last generation",
+ "tags": {
+  "mode": "solo",
+  "generation": 14,
+  "phase": "action",
+  "planCount": 9,
+  "goals": [
+   "unlock",
+   "engine"
+  ],
+  "truncated": false,
+  "incompleteForecast": true,
+  "unknownAvailability": false,
+  "legalNow": true
+ },
+ "state": {
+  "schemaVersion": "coach-state/1",
+  "fingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029",
+  "advisoryFingerprint": "2556734087523b2a007b34f0ae51236fb7bf6049eceeb450c89fb98a4ef19485",
+  "stateKey": "6b72d826eb10eb17:u0:s0:a145",
+  "version": {
+   "generation": 14,
+   "phase": "action",
+   "gameAge": 145,
+   "gameStep": 0,
+   "undoCount": 0
+  },
+  "catalogVersion": "96e3a55227c5e380",
+  "capturedAt": "2026-10-15T14:14:51.118Z",
+  "warnings": [],
+  "game": {
+   "name": "Latent Quartz Node",
+   "mode": "solo",
+   "playerCount": 1,
+   "board": "tharsis",
+   "expansions": {
+    "corpera": true,
+    "promo": false,
+    "venus": false,
+    "colonies": false,
+    "prelude": false,
+    "prelude2": false,
+    "turmoil": false,
+    "community": false,
+    "ares": false,
+    "moon": false,
+    "pathfinders": false,
+    "ceo": false,
+    "starwars": false,
+    "underworld": false,
+    "deltaProject": false
+   },
+   "baseGameOnly": true,
+   "options": {
+    "draftVariant": false,
+    "initialDraftVariant": false,
+    "preludeDraftVariant": false,
+    "showOtherPlayersVP": false,
+    "undoOption": false,
+    "soloTR": false,
+    "fastModeOption": false,
+    "randomMA": "No randomization"
+   },
+   "generation": 14,
+   "phase": "action",
+   "lastSoloGeneration": 14,
+   "activePlayer": "blue",
+   "firstPlayer": "blue",
+   "passedPlayers": [],
+   "temperature": {
+    "value": -4,
+    "min": -30,
+    "max": 8,
+    "stepsRemaining": 6
+   },
+   "oxygen": {
+    "value": 1,
+    "min": 0,
+    "max": 14,
+    "stepsRemaining": 13
+   },
+   "oceans": {
+    "value": 1,
+    "min": 0,
+    "max": 9,
+    "stepsRemaining": 8
+   },
+   "isTerraformed": false,
+   "gameOver": false,
+   "decks": {
+    "projectDrawPile": 135,
+    "projectDiscardPile": 31,
+    "corporationDrawPile": 10
+   },
+   "spaces": [],
+   "milestones": [
+    {
+     "name": "Terraformer",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 29,
+       "claimable": false
+      }
+     ],
+     "threshold": 35
+    },
+    {
+     "name": "Mayor",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 2,
+       "claimable": false
+      }
+     ],
+     "threshold": 3
+    },
+    {
+     "name": "Gardener",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 1,
+       "claimable": false
+      }
+     ],
+     "threshold": 3
+    },
+    {
+     "name": "Builder",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 10,
+       "claimable": true
+      }
+     ],
+     "threshold": 8
+    },
+    {
+     "name": "Planner",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 19,
+       "claimable": true
+      }
+     ],
+     "threshold": 16
+    }
+   ],
+   "awards": [
+    {
+     "name": "Landlord",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 5
+      }
+     ]
+    },
+    {
+     "name": "Scientist",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 3
+      }
+     ]
+    },
+    {
+     "name": "Banker",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 2
+      }
+     ]
+    },
+    {
+     "name": "Thermalist",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 29
+      }
+     ]
+    },
+    {
+     "name": "Miner",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 34
+      }
+     ]
+    }
+   ],
+   "unsupported": []
+  },
+  "me": {
+   "color": "blue",
+   "name": "player-blue",
+   "isAi": false,
+   "isActive": true,
+   "hasPassed": false,
+   "terraformRating": 29,
+   "victoryPoints": {
+    "status": "known",
+    "value": {
+     "terraformRating": 29,
+     "milestones": 0,
+     "awards": 0,
+     "greenery": 1,
+     "city": 2,
+     "escapeVelocity": 0,
+     "moonHabitats": 0,
+     "moonMines": 0,
+     "moonRoads": 0,
+     "planetaryTracks": 0,
+     "victoryPoints": -3,
+     "total": 29,
+     "detailsCards": [
+      {
+       "cardName": "Energy Tapping",
+       "victoryPoint": -1
+      },
+      {
+       "cardName": "Hackers",
+       "victoryPoint": -1
+      },
+      {
+       "cardName": "Corporate Stronghold",
+       "victoryPoint": -2
+      },
+      {
+       "cardName": "Mars University",
+       "victoryPoint": 1
+      }
+     ],
+     "detailsMilestones": [],
+     "detailsAwards": [],
+     "detailsPlanetaryTracks": [],
+     "negativeVP": -4
+    }
+   },
+   "resources": {
+    "megacredits": 22,
+    "steel": 31,
+    "titanium": 2,
+    "plants": 2,
+    "energy": 3,
+    "heat": 15
+   },
+   "production": {
+    "megacredits": 2,
+    "steel": 1,
+    "titanium": 0,
+    "plants": 1,
+    "energy": 3,
+    "heat": 11
+   },
+   "steelValue": 2,
+   "titaniumValue": 3,
+   "tags": {
+    "building": 10,
+    "space": 2,
+    "science": 3,
+    "power": 7,
+    "earth": 3,
+    "plant": 2,
+    "city": 2,
+    "event": 4
+   },
+   "cardsWithoutTags": 1,
+   "cardsInHandCount": 19,
+   "corporations": [
+    "Interplanetary Cinematics"
+   ],
+   "tableau": [
+    {
+     "name": "Interplanetary Cinematics",
+     "inCatalog": true,
+     "calculatedCost": 0,
+     "resources": 0
+    },
+    {
+     "name": "GHG Factories",
+     "inCatalog": true,
+     "calculatedCost": 11,
+     "resources": 0
+    },
+    {
+     "name": "Hired Raiders",
+     "inCatalog": true,
+     "calculatedCost": 1,
+     "resources": 0
+    },
+    {
+     "name": "Energy Tapping",
+     "inCatalog": true,
+     "calculatedCost": 3,
+     "resources": 0
+    },
+    {
+     "name": "Technology Demonstration",
+     "inCatalog": true,
+     "calculatedCost": 5,
+     "resources": 0
+    },
+    {
+     "name": "Deep Well Heating",
+     "inCatalog": true,
+     "calculatedCost": 13,
+     "resources": 0
+    },
+    {
+     "name": "Hackers",
+     "inCatalog": true,
+     "calculatedCost": 3,
+     "resources": 0
+    },
+    {
+     "name": "Carbonate Processing",
+     "inCatalog": true,
+     "calculatedCost": 6,
+     "resources": 0
+    },
+    {
+     "name": "Corporate Stronghold",
+     "inCatalog": true,
+     "calculatedCost": 11,
+     "resources": 0
+    },
+    {
+     "name": "Media Archives",
+     "inCatalog": true,
+     "calculatedCost": 8,
+     "resources": 0
+    },
+    {
+     "name": "Restricted Area",
+     "inCatalog": true,
+     "calculatedCost": 11,
+     "resources": 0
+    },
+    {
+     "name": "Greenhouses",
+     "inCatalog": true,
+     "calculatedCost": 6,
+     "resources": 0
+    },
+    {
+     "name": "Solar Wind Power",
+     "inCatalog": true,
+     "calculatedCost": 11,
+     "resources": 0
+    },
+    {
+     "name": "Grass",
+     "inCatalog": true,
+     "calculatedCost": 11,
+     "resources": 0
+    },
+    {
+     "name": "Space Mirrors",
+     "inCatalog": true,
+     "calculatedCost": 3,
+     "resources": 0
+    },
+    {
+     "name": "Mining Area",
+     "inCatalog": true,
+     "calculatedCost": 4,
+     "resources": 0,
+     "bonusResource": [
+      "steel"
+     ]
+    },
+    {
+     "name": "Lunar Beam",
+     "inCatalog": true,
+     "calculatedCost": 13,
+     "resources": 0
+    },
+    {
+     "name": "Power Infrastructure",
+     "inCatalog": true,
+     "calculatedCost": 4,
+     "resources": 0
+    },
+    {
+     "name": "Business Contacts",
+     "inCatalog": true,
+     "calculatedCost": 7,
+     "resources": 0
+    },
+    {
+     "name": "Immigrant City",
+     "inCatalog": true,
+     "calculatedCost": 13,
+     "resources": 0
+    },
+    {
+     "name": "Earth Office",
+     "inCatalog": true,
+     "calculatedCost": 1,
+     "resources": 0,
+     "discount": [
+      {
+       "tag": "earth",
+       "amount": 3
+      }
+     ]
+    },
+    {
+     "name": "Permafrost Extraction",
+     "inCatalog": true,
+     "calculatedCost": 8,
+     "resources": 0
+    },
+    {
+     "name": "Mars University",
+     "inCatalog": true,
+     "calculatedCost": 8,
+     "resources": 0
+    },
+    {
+     "name": "Power Supply Consortium",
+     "inCatalog": true,
+     "calculatedCost": 5,
+     "resources": 0
+    }
+   ],
+   "actionsUsedThisGeneration": [],
+   "actionsTakenThisRound": 0,
+   "availableBlueCardActionCount": 3,
+   "citiesCount": 2,
+   "cardCost": 3,
+   "protectedResources": {
+    "megacredits": "off",
+    "steel": "off",
+    "titanium": "off",
+    "plants": "off",
+    "energy": "off",
+    "heat": "off"
+   },
+   "protectedProduction": {
+    "megacredits": "off",
+    "steel": "off",
+    "titanium": "off",
+    "plants": "off",
+    "energy": "off",
+    "heat": "off"
+   },
+   "needsToResearch": true,
+   "hand": [
+    {
+     "name": "Decomposers",
+     "inCatalog": true,
+     "calculatedCost": 5
+    },
+    {
+     "name": "AI Central",
+     "inCatalog": true,
+     "calculatedCost": 21
+    },
+    {
+     "name": "Tundra Farming",
+     "inCatalog": true,
+     "calculatedCost": 16
+    },
+    {
+     "name": "Trees",
+     "inCatalog": true,
+     "calculatedCost": 13
+    },
+    {
+     "name": "Open City",
+     "inCatalog": true,
+     "calculatedCost": 23
+    },
+    {
+     "name": "Advanced Ecosystems",
+     "inCatalog": true,
+     "calculatedCost": 11
+    },
+    {
+     "name": "Commercial District",
+     "inCatalog": true,
+     "calculatedCost": 16
+    },
+    {
+     "name": "Towing A Comet",
+     "inCatalog": true,
+     "calculatedCost": 23
+    },
+    {
+     "name": "Tardigrades",
+     "inCatalog": true,
+     "calculatedCost": 4
+    },
+    {
+     "name": "Soil Factory",
+     "inCatalog": true,
+     "calculatedCost": 9
+    },
+    {
+     "name": "Water Import From Europa",
+     "inCatalog": true,
+     "calculatedCost": 25
+    },
+    {
+     "name": "Special Design",
+     "inCatalog": true,
+     "calculatedCost": 4
+    },
+    {
+     "name": "Advanced Alloys",
+     "inCatalog": true,
+     "calculatedCost": 9
+    },
+    {
+     "name": "Zeppelins",
+     "inCatalog": true,
+     "calculatedCost": 13
+    },
+    {
+     "name": "Livestock",
+     "inCatalog": true,
+     "calculatedCost": 13
+    },
+    {
+     "name": "Vesta Shipyard",
+     "inCatalog": true,
+     "calculatedCost": 15
+    },
+    {
+     "name": "Land Claim",
+     "inCatalog": true,
+     "calculatedCost": 1
+    },
+    {
+     "name": "Power Plant",
+     "inCatalog": true,
+     "calculatedCost": 4
+    },
+    {
+     "name": "Mineral Deposit",
+     "inCatalog": true,
+     "calculatedCost": 5
+    }
+   ],
+   "preludesInHand": [],
+   "ceosInHand": [],
+   "draftedCards": [],
+   "dealt": {
+    "corporations": [
+     {
+      "name": "Interplanetary Cinematics",
+      "inCatalog": true,
+      "calculatedCost": 0
+     },
+     {
+      "name": "Teractor",
+      "inCatalog": true,
+      "calculatedCost": 0,
+      "discount": [
+       {
+        "tag": "earth",
+        "amount": 3
+       }
+      ]
+     }
+    ],
+    "preludes": [],
+    "projects": [
+     {
+      "name": "Optimal Aerobraking",
+      "inCatalog": true,
+      "calculatedCost": 7
+     },
+     {
+      "name": "Rover Construction",
+      "inCatalog": true,
+      "calculatedCost": 8
+     },
+     {
+      "name": "Tectonic Stress Power",
+      "inCatalog": true,
+      "calculatedCost": 18
+     },
+     {
+      "name": "Urbanized Area",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Noctis Farming",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Solar Power",
+      "inCatalog": true,
+      "calculatedCost": 11
+     },
+     {
+      "name": "Giant Ice Asteroid",
+      "inCatalog": true,
+      "calculatedCost": 36
+     },
+     {
+      "name": "Bushes",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Mine",
+      "inCatalog": true,
+      "calculatedCost": 4
+     },
+     {
+      "name": "Martian Rails",
+      "inCatalog": true,
+      "calculatedCost": 13
+     }
+    ],
+    "ceos": []
+   },
+   "pickedCorporation": [
+    "Interplanetary Cinematics"
+   ],
+   "autopass": false,
+   "canCancelAction": false
+  },
+  "opponents": [],
+  "choices": {
+   "status": "awaiting-input",
+   "root": {
+    "path": "",
+    "inputType": "or",
+    "title": "Take your first action",
+    "buttonLabel": "Take action",
+    "optional": false,
+    "options": [
+     {
+      "path": "0",
+      "inputType": "option",
+      "title": "Convert 8 heat into temperature",
+      "buttonLabel": "Convert heat",
+      "optional": false
+     },
+     {
+      "path": "1",
+      "inputType": "card",
+      "title": "Perform an action from a played card",
+      "buttonLabel": "Take action",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Restricted Area",
+        "inCatalog": true,
+        "calculatedCost": 11,
+        "resources": 0
+       },
+       {
+        "name": "Space Mirrors",
+        "inCatalog": true,
+        "calculatedCost": 3,
+        "resources": 0
+       },
+       {
+        "name": "Power Infrastructure",
+        "inCatalog": true,
+        "calculatedCost": 4,
+        "resources": 0
+       }
+      ],
+      "min": 1,
+      "max": 1,
+      "selectBlueCardAction": true
+     },
+     {
+      "path": "2",
+      "inputType": "projectCard",
+      "title": "Play project card",
+      "buttonLabel": "Play card",
+      "optional": false,
+      "cards": [
+       {
+        "name": "AI Central",
+        "inCatalog": true,
+        "calculatedCost": 21,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Tundra Farming",
+        "inCatalog": true,
+        "calculatedCost": 16,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Trees",
+        "inCatalog": true,
+        "calculatedCost": 13,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Commercial District",
+        "inCatalog": true,
+        "calculatedCost": 16,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Towing A Comet",
+        "inCatalog": true,
+        "calculatedCost": 23,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Tardigrades",
+        "inCatalog": true,
+        "calculatedCost": 4,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Soil Factory",
+        "inCatalog": true,
+        "calculatedCost": 9,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Water Import From Europa",
+        "inCatalog": true,
+        "calculatedCost": 25,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Special Design",
+        "inCatalog": true,
+        "calculatedCost": 4,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Advanced Alloys",
+        "inCatalog": true,
+        "calculatedCost": 9,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Vesta Shipyard",
+        "inCatalog": true,
+        "calculatedCost": 15,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Land Claim",
+        "inCatalog": true,
+        "calculatedCost": 1,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Power Plant",
+        "inCatalog": true,
+        "calculatedCost": 4,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Mineral Deposit",
+        "inCatalog": true,
+        "calculatedCost": 5,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       }
+      ],
+      "paymentOptions": {
+       "heat": false,
+       "lunaTradeFederationTitanium": false,
+       "plants": false
+      }
+     },
+     {
+      "path": "3",
+      "inputType": "projectCard",
+      "title": "Standard projects",
+      "buttonLabel": "Confirm",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Power Plant:SP",
+        "inCatalog": true,
+        "calculatedCost": 11,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Asteroid:SP",
+        "inCatalog": true,
+        "calculatedCost": 14,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Aquifer",
+        "inCatalog": true,
+        "calculatedCost": 18,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Greenery",
+        "inCatalog": true,
+        "calculatedCost": 23,
+        "isDisabled": true,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "City",
+        "inCatalog": true,
+        "calculatedCost": 25,
+        "isDisabled": true,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       }
+      ],
+      "paymentOptions": {
+       "heat": false,
+       "lunaTradeFederationTitanium": false,
+       "plants": false
+      }
+     },
+     {
+      "path": "4",
+      "inputType": "option",
+      "title": "Pass for this generation",
+      "buttonLabel": "Pass",
+      "optional": false,
+      "warnings": [
+       "pass"
+      ]
+     },
+     {
+      "path": "5",
+      "inputType": "card",
+      "title": "Sell patents",
+      "buttonLabel": "Sell",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Decomposers",
+        "inCatalog": true,
+        "calculatedCost": 5
+       },
+       {
+        "name": "AI Central",
+        "inCatalog": true,
+        "calculatedCost": 21
+       },
+       {
+        "name": "Tundra Farming",
+        "inCatalog": true,
+        "calculatedCost": 16
+       },
+       {
+        "name": "Trees",
+        "inCatalog": true,
+        "calculatedCost": 13
+       },
+       {
+        "name": "Open City",
+        "inCatalog": true,
+        "calculatedCost": 23
+       },
+       {
+        "name": "Advanced Ecosystems",
+        "inCatalog": true,
+        "calculatedCost": 11
+       },
+       {
+        "name": "Commercial District",
+        "inCatalog": true,
+        "calculatedCost": 16
+       },
+       {
+        "name": "Towing A Comet",
+        "inCatalog": true,
+        "calculatedCost": 23
+       },
+       {
+        "name": "Tardigrades",
+        "inCatalog": true,
+        "calculatedCost": 4
+       },
+       {
+        "name": "Soil Factory",
+        "inCatalog": true,
+        "calculatedCost": 9
+       },
+       {
+        "name": "Water Import From Europa",
+        "inCatalog": true,
+        "calculatedCost": 25
+       },
+       {
+        "name": "Special Design",
+        "inCatalog": true,
+        "calculatedCost": 4
+       },
+       {
+        "name": "Advanced Alloys",
+        "inCatalog": true,
+        "calculatedCost": 9
+       },
+       {
+        "name": "Zeppelins",
+        "inCatalog": true,
+        "calculatedCost": 13
+       },
+       {
+        "name": "Livestock",
+        "inCatalog": true,
+        "calculatedCost": 13
+       },
+       {
+        "name": "Vesta Shipyard",
+        "inCatalog": true,
+        "calculatedCost": 15
+       },
+       {
+        "name": "Land Claim",
+        "inCatalog": true,
+        "calculatedCost": 1
+       },
+       {
+        "name": "Power Plant",
+        "inCatalog": true,
+        "calculatedCost": 4
+       },
+       {
+        "name": "Mineral Deposit",
+        "inCatalog": true,
+        "calculatedCost": 5
+       }
+      ],
+      "min": 1,
+      "max": 19,
+      "selectBlueCardAction": false
+     }
+    ],
+    "initialIndex": 0
+   }
+  }
+ },
+ "analysis": {
+  "schemaVersion": "coach-analysis/1",
+  "source": {
+   "fingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029",
+   "advisoryFingerprint": "2556734087523b2a007b34f0ae51236fb7bf6049eceeb450c89fb98a4ef19485",
+   "catalogVersion": "96e3a55227c5e380",
+   "analysisVersion": "2.0.0",
+   "generatedAt": "2026-10-15T14:14:51.120Z"
+  },
+  "horizonProductionPhases": 3,
+  "coverage": {
+   "supported": 21,
+   "partial": 12,
+   "unsupported": 10,
+   "reasons": [
+    "bespoke-code: 11 cards",
+    "tile-placement: 7 cards",
+    "countable: 4 cards",
+    "choice: 1 card",
+    "conditional-cost: 1 card"
+   ]
+  },
+  "candidates": [
+   {
+    "id": "Vesta Shipyard > Towing A Comet > Open City",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "terraforming",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Vesta Shipyard",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 15
+     },
+     {
+      "name": "Towing A Comet",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Vesta Shipyard"
+      ],
+      "cost": 23
+     },
+     {
+      "name": "Open City",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Vesta Shipyard, Towing A Comet"
+      ],
+      "cost": 23
+     }
+    ],
+    "links": [
+     {
+      "from": "Solar Wind Power",
+      "to": "Vesta Shipyard",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Vesta Shipyard (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Vesta Shipyard"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Solar Wind Power",
+      "to": "Towing A Comet",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Towing A Comet (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Open City",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Open City (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Open City"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Towing A Comet",
+      "to": "Open City",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Towing A Comet adds 1 oxygen step; Open City needs 11 more (10 still missing)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Towing A Comet has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.oxygen.value",
+         "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Open City"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Vesta Shipyard",
+      "to": "Towing A Comet",
+      "kind": "PRODUCES_FOR",
+      "why": "Vesta Shipyard gives titanium, which can pay for Towing A Comet (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Vesta Shipyard"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "oxygen",
+      "observed": 1,
+      "target": 12,
+      "comparator": ">=",
+      "gap": 10,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.oxygen.value",
+        "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Open City"
+       }
+      ],
+      "card": "Open City"
+     }
+    ],
+    "payments": {
+     "play": 61,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition",
+      "Towing A Comet has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Towing A Comet"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Open City"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.oxygen.value",
+       "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Open City"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Towing A Comet"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Towing A Comet"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Open City"
+     },
+     "text": "Is it worth playing Interplanetary Cinematics mainly to meet the requirement of Open City, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 1,
+     "productionsLeft": 1,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -61,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 4,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -56,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 4,
+        "energy": -1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 4,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 61,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 3,
+      "terraformRating": 1,
+      "cards": 2
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Towing A Comet: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Open City: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed",
+      "Immigrant City (in play) may react: onTilePlaced",
+      "Mars University (in play) may react: onCardPlayed, onNonCardTagAdded"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "only 1 production phase left in this solo game"
+     ]
+    }
+   },
+   {
+    "id": "Vesta Shipyard > Towing A Comet > Water Import From Europa",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "scoring",
+     "economy",
+     "terraforming"
+    ],
+    "cards": [
+     {
+      "name": "Vesta Shipyard",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 15
+     },
+     {
+      "name": "Towing A Comet",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Vesta Shipyard"
+      ],
+      "cost": 23
+     },
+     {
+      "name": "Water Import From Europa",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Vesta Shipyard, Towing A Comet"
+      ],
+      "cost": 25
+     }
+    ],
+    "links": [
+     {
+      "from": "Solar Wind Power",
+      "to": "Vesta Shipyard",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Vesta Shipyard (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Vesta Shipyard"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Solar Wind Power",
+      "to": "Towing A Comet",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Towing A Comet (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Solar Wind Power",
+      "to": "Water Import From Europa",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Water Import From Europa (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Water Import From Europa"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Vesta Shipyard",
+      "to": "Towing A Comet",
+      "kind": "PRODUCES_FOR",
+      "why": "Vesta Shipyard gives titanium, which can pay for Towing A Comet (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Vesta Shipyard"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Vesta Shipyard",
+      "to": "Water Import From Europa",
+      "kind": "PRODUCES_FOR",
+      "why": "Vesta Shipyard gives titanium, which can pay for Water Import From Europa (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Vesta Shipyard"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Water Import From Europa"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Vesta Shipyard",
+      "to": "Water Import From Europa",
+      "kind": "SCORING",
+      "amount": 1,
+      "why": "Vesta Shipyard adds 1 jovian tag; Water Import From Europa scores 1 VP per 1: +1 VP",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Water Import From Europa is in play at the end of the game",
+        "counted with the tags known now"
+       ],
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "me.tags.jovian",
+         "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Vesta Shipyard"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "victoryPoints",
+         "cardName": "Water Import From Europa"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 63,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Water Import From Europa is in play at the end of the game",
+      "counted with the tags known now"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Towing A Comet"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Water Import From Europa"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Towing A Comet"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Water Import From Europa"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.tags.jovian",
+       "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "victoryPoints",
+       "cardName": "Water Import From Europa"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Solar Wind Power",
+      "to": "Water Import From Europa"
+     },
+     "text": "Solar Wind Power helps you pay for Water Import From Europa. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 1,
+     "productionsLeft": 1,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -63,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -62,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 63,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 4,
+      "terraformRating": 1,
+      "cards": 3
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Towing A Comet: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Water Import From Europa: the cost may be paid with steel or titanium instead",
+      "Water Import From Europa: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed",
+      "Immigrant City (in play) may react: onTilePlaced",
+      "Mars University (in play) may react: onCardPlayed, onNonCardTagAdded"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "only 1 production phase left in this solo game",
+      "the action of Water Import From Europa is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Vesta Shipyard > Towing A Comet > Decomposers",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "terraforming",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Vesta Shipyard",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 15
+     },
+     {
+      "name": "Towing A Comet",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Vesta Shipyard"
+      ],
+      "cost": 23
+     },
+     {
+      "name": "Decomposers",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Vesta Shipyard, Towing A Comet"
+      ],
+      "cost": 5
+     }
+    ],
+    "links": [
+     {
+      "from": "Solar Wind Power",
+      "to": "Vesta Shipyard",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Vesta Shipyard (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Vesta Shipyard"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Solar Wind Power",
+      "to": "Towing A Comet",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Towing A Comet (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Towing A Comet",
+      "to": "Decomposers",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Towing A Comet adds 1 oxygen step; Decomposers needs 2 more (1 still missing)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Towing A Comet has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.oxygen.value",
+         "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Decomposers"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Vesta Shipyard",
+      "to": "Towing A Comet",
+      "kind": "PRODUCES_FOR",
+      "why": "Vesta Shipyard gives titanium, which can pay for Towing A Comet (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Vesta Shipyard"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "oxygen",
+      "observed": 1,
+      "target": 3,
+      "comparator": ">=",
+      "gap": 1,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.oxygen.value",
+        "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Decomposers"
+       }
+      ],
+      "card": "Decomposers"
+     }
+    ],
+    "payments": {
+     "play": 43,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Towing A Comet has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Towing A Comet"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.oxygen.value",
+       "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Decomposers"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Towing A Comet"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Towing A Comet"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Towing A Comet",
+      "to": "Decomposers"
+     },
+     "text": "Is it worth playing Towing A Comet mainly to meet the requirement of Decomposers, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 1,
+     "productionsLeft": 1,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -43,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -42,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 43,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 2,
+      "terraformRating": 1,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Towing A Comet: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Decomposers: card code 'bespokePlay' changes what the card does",
+      "Decomposers: card code 'onCardPlayed' changes what the card does",
+      "Decomposers: card code 'onNonCardTagAdded' changes what the card does",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed",
+      "Immigrant City (in play) may react: onTilePlaced",
+      "Mars University (in play) may react: onCardPlayed, onNonCardTagAdded"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "only 1 production phase left in this solo game"
+     ]
+    }
+   },
+   {
+    "id": "Vesta Shipyard > Water Import From Europa > Towing A Comet",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "scoring",
+     "economy",
+     "terraforming"
+    ],
+    "cards": [
+     {
+      "name": "Vesta Shipyard",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 15
+     },
+     {
+      "name": "Water Import From Europa",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Vesta Shipyard"
+      ],
+      "cost": 25
+     },
+     {
+      "name": "Towing A Comet",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Vesta Shipyard, Water Import From Europa"
+      ],
+      "cost": 23
+     }
+    ],
+    "links": [
+     {
+      "from": "Solar Wind Power",
+      "to": "Vesta Shipyard",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Vesta Shipyard (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Vesta Shipyard"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Solar Wind Power",
+      "to": "Water Import From Europa",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Water Import From Europa (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Water Import From Europa"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Solar Wind Power",
+      "to": "Towing A Comet",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Towing A Comet (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Vesta Shipyard",
+      "to": "Towing A Comet",
+      "kind": "PRODUCES_FOR",
+      "why": "Vesta Shipyard gives titanium, which can pay for Towing A Comet (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Vesta Shipyard"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Vesta Shipyard",
+      "to": "Water Import From Europa",
+      "kind": "PRODUCES_FOR",
+      "why": "Vesta Shipyard gives titanium, which can pay for Water Import From Europa (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Vesta Shipyard"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Water Import From Europa"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Vesta Shipyard",
+      "to": "Water Import From Europa",
+      "kind": "SCORING",
+      "amount": 1,
+      "why": "Vesta Shipyard adds 1 jovian tag; Water Import From Europa scores 1 VP per 1: +1 VP",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Water Import From Europa is in play at the end of the game",
+        "counted with the tags known now"
+       ],
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "me.tags.jovian",
+         "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Vesta Shipyard"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "victoryPoints",
+         "cardName": "Water Import From Europa"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 63,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Water Import From Europa is in play at the end of the game",
+      "counted with the tags known now"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Water Import From Europa"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Towing A Comet"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Towing A Comet"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Water Import From Europa"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.tags.jovian",
+       "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "victoryPoints",
+       "cardName": "Water Import From Europa"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Solar Wind Power",
+      "to": "Towing A Comet"
+     },
+     "text": "Solar Wind Power helps you pay for Towing A Comet. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 1,
+     "productionsLeft": 1,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -63,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -62,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 63,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 4,
+      "terraformRating": 1,
+      "cards": 3
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Water Import From Europa: the cost may be paid with steel or titanium instead",
+      "Water Import From Europa: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Towing A Comet: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed",
+      "Immigrant City (in play) may react: onTilePlaced",
+      "Mars University (in play) may react: onCardPlayed, onNonCardTagAdded"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "only 1 production phase left in this solo game",
+      "the action of Water Import From Europa is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Vesta Shipyard > Towing A Comet > Livestock",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "terraforming",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Vesta Shipyard",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 15
+     },
+     {
+      "name": "Towing A Comet",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Vesta Shipyard"
+      ],
+      "cost": 23
+     },
+     {
+      "name": "Livestock",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Vesta Shipyard, Towing A Comet"
+      ],
+      "cost": 13
+     }
+    ],
+    "links": [
+     {
+      "from": "Solar Wind Power",
+      "to": "Vesta Shipyard",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Vesta Shipyard (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Vesta Shipyard"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Solar Wind Power",
+      "to": "Towing A Comet",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Towing A Comet (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Towing A Comet",
+      "to": "Livestock",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Towing A Comet adds 1 oxygen step; Livestock needs 8 more (7 still missing)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Towing A Comet has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.oxygen.value",
+         "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Livestock"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Vesta Shipyard",
+      "to": "Towing A Comet",
+      "kind": "PRODUCES_FOR",
+      "why": "Vesta Shipyard gives titanium, which can pay for Towing A Comet (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Vesta Shipyard"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "oxygen",
+      "observed": 1,
+      "target": 9,
+      "comparator": ">=",
+      "gap": 7,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.oxygen.value",
+        "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Livestock"
+       }
+      ],
+      "card": "Livestock"
+     }
+    ],
+    "payments": {
+     "play": 51,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Towing A Comet has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Towing A Comet"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.oxygen.value",
+       "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Livestock"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Towing A Comet"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Towing A Comet"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Towing A Comet",
+      "to": "Livestock"
+     },
+     "text": "Is it worth playing Towing A Comet mainly to meet the requirement of Livestock, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 1,
+     "productionsLeft": 1,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -51,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 1,
+        "plants": -1,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -48,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 1,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 1,
+        "plants": -1,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 51,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 2,
+      "terraformRating": 1,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Towing A Comet: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed",
+      "Immigrant City (in play) may react: onTilePlaced",
+      "Mars University (in play) may react: onCardPlayed, onNonCardTagAdded"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "only 1 production phase left in this solo game",
+      "the action of Livestock is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Vesta Shipyard > Water Import From Europa",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "scoring",
+     "economy"
+    ],
+    "cards": [
+     {
+      "name": "Vesta Shipyard",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 15
+     },
+     {
+      "name": "Water Import From Europa",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Vesta Shipyard"
+      ],
+      "cost": 25
+     }
+    ],
+    "links": [
+     {
+      "from": "Solar Wind Power",
+      "to": "Vesta Shipyard",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Vesta Shipyard (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Vesta Shipyard"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Solar Wind Power",
+      "to": "Water Import From Europa",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Water Import From Europa (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Water Import From Europa"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Vesta Shipyard",
+      "to": "Water Import From Europa",
+      "kind": "PRODUCES_FOR",
+      "why": "Vesta Shipyard gives titanium, which can pay for Water Import From Europa (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Vesta Shipyard"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Water Import From Europa"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Vesta Shipyard",
+      "to": "Water Import From Europa",
+      "kind": "SCORING",
+      "amount": 1,
+      "why": "Vesta Shipyard adds 1 jovian tag; Water Import From Europa scores 1 VP per 1: +1 VP",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Water Import From Europa is in play at the end of the game",
+        "counted with the tags known now"
+       ],
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "me.tags.jovian",
+         "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Vesta Shipyard"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "victoryPoints",
+         "cardName": "Water Import From Europa"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 40,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Water Import From Europa is in play at the end of the game",
+      "counted with the tags known now"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Water Import From Europa"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Water Import From Europa"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.tags.jovian",
+       "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "victoryPoints",
+       "cardName": "Water Import From Europa"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Solar Wind Power",
+      "to": "Water Import From Europa"
+     },
+     "text": "Solar Wind Power helps you pay for Water Import From Europa. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 1,
+     "productionsLeft": 1,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -40,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -40,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 40,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 3,
+      "terraformRating": 0,
+      "cards": 3
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Water Import From Europa: the cost may be paid with steel or titanium instead",
+      "Water Import From Europa: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed",
+      "Immigrant City (in play) may react: onTilePlaced",
+      "Mars University (in play) may react: onCardPlayed, onNonCardTagAdded"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "only 1 production phase left in this solo game",
+      "the action of Water Import From Europa is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Vesta Shipyard > Towing A Comet > Zeppelins",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "terraforming",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Vesta Shipyard",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 15
+     },
+     {
+      "name": "Towing A Comet",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Vesta Shipyard"
+      ],
+      "cost": 23
+     },
+     {
+      "name": "Zeppelins",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Vesta Shipyard, Towing A Comet"
+      ],
+      "cost": 13
+     }
+    ],
+    "links": [
+     {
+      "from": "Solar Wind Power",
+      "to": "Vesta Shipyard",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Vesta Shipyard (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Vesta Shipyard"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Solar Wind Power",
+      "to": "Towing A Comet",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Towing A Comet (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Towing A Comet",
+      "to": "Zeppelins",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Towing A Comet adds 1 oxygen step; Zeppelins needs 4 more (3 still missing)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Towing A Comet has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.oxygen.value",
+         "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Zeppelins"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Vesta Shipyard",
+      "to": "Towing A Comet",
+      "kind": "PRODUCES_FOR",
+      "why": "Vesta Shipyard gives titanium, which can pay for Towing A Comet (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Vesta Shipyard"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "oxygen",
+      "observed": 1,
+      "target": 5,
+      "comparator": ">=",
+      "gap": 3,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.oxygen.value",
+        "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Zeppelins"
+       }
+      ],
+      "card": "Zeppelins"
+     }
+    ],
+    "payments": {
+     "play": 51,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Towing A Comet has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Towing A Comet"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.oxygen.value",
+       "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Zeppelins"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Towing A Comet"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Vesta Shipyard"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Towing A Comet"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Towing A Comet",
+      "to": "Zeppelins"
+     },
+     "text": "Is it worth playing Towing A Comet mainly to meet the requirement of Zeppelins, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 1,
+     "productionsLeft": 1,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -51,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -50,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 2,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 1,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 51,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 3,
+      "terraformRating": 1,
+      "cards": 2
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Towing A Comet: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Zeppelins: the amount is given by a formula",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed",
+      "Immigrant City (in play) may react: onTilePlaced",
+      "Mars University (in play) may react: onCardPlayed, onNonCardTagAdded"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "only 1 production phase left in this solo game"
+     ]
+    }
+   },
+   {
+    "id": "Mineral Deposit > AI Central > Commercial District",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Mineral Deposit",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 5
+     },
+     {
+      "name": "AI Central",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Mineral Deposit"
+      ],
+      "cost": 21
+     },
+     {
+      "name": "Commercial District",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Mineral Deposit, AI Central"
+      ],
+      "cost": 16
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "AI Central",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for AI Central (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "AI Central"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Commercial District",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Commercial District (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Commercial District"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Mineral Deposit",
+      "to": "AI Central",
+      "kind": "PRODUCES_FOR",
+      "why": "Mineral Deposit gives steel, which can pay for AI Central (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mineral Deposit"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "AI Central"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Mineral Deposit",
+      "to": "Commercial District",
+      "kind": "PRODUCES_FOR",
+      "why": "Mineral Deposit gives steel, which can pay for Commercial District (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Mineral Deposit"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Commercial District"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 42,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "AI Central"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Commercial District"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mineral Deposit"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "AI Central"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Mineral Deposit"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Commercial District"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Commercial District"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Commercial District. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 1,
+     "productionsLeft": 1,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -42,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 4,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -2,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -38,
+        "steel": 5,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -2,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 4,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -2,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 42,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": "unknown",
+     "complete": false,
+     "unmodeledEffects": [
+      "Commercial District: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Commercial District: victory points depend on cities, nextToThis",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed",
+      "Immigrant City (in play) may react: onTilePlaced",
+      "Mars University (in play) may react: onCardPlayed, onNonCardTagAdded"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "only 1 production phase left in this solo game",
+      "the action of AI Central is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Towing A Comet > Open City",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "terraforming",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Towing A Comet",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 23
+     },
+     {
+      "name": "Open City",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Towing A Comet"
+      ],
+      "cost": 23
+     }
+    ],
+    "links": [
+     {
+      "from": "Solar Wind Power",
+      "to": "Towing A Comet",
+      "kind": "PRODUCES_FOR",
+      "why": "Solar Wind Power gives titanium, which can pay for Towing A Comet (space tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Solar Wind Power"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Open City",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Open City (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Open City"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Towing A Comet",
+      "to": "Open City",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Towing A Comet adds 1 oxygen step; Open City needs 11 more (10 still missing)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Towing A Comet has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.oxygen.value",
+         "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Open City"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Towing A Comet"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "oxygen",
+      "observed": 1,
+      "target": 12,
+      "comparator": ">=",
+      "gap": 10,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.oxygen.value",
+        "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Open City"
+       }
+      ],
+      "card": "Open City"
+     }
+    ],
+    "payments": {
+     "play": 46,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition",
+      "Towing A Comet has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Solar Wind Power"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Towing A Comet"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Open City"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.oxygen.value",
+       "stateFingerprint": "6b72d826eb10eb172b6c97f5381ab2e46ef498ed1210ae65d9068819a14d9029"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Open City"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Towing A Comet"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Open City"
+     },
+     "text": "Is it worth playing Interplanetary Cinematics mainly to meet the requirement of Open City, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 1,
+     "productionsLeft": 1,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -46,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 4,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -41,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": -1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 4,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 46,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 2,
+      "terraformRating": 1,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Towing A Comet: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Open City: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed",
+      "Immigrant City (in play) may react: onTilePlaced",
+      "Mars University (in play) may react: onCardPlayed, onNonCardTagAdded"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "only 1 production phase left in this solo game"
+     ]
+    }
+   }
+  ],
+  "discarded": [],
+  "limitations": [
+   "FEEDS_RESOURCE: adding resources to another card is a target choice; no engine-verified adapter yet",
+   "AMPLIFIES: effects triggered by other cards are card code (e.g. Media Group); no engine-verified adapter yet",
+   "ocean requirements: oceans come from tile placement, which is not modeled",
+   "requirements counting all players' tags are not linked",
+   "temperature/oxygen bonuses of the global tracks (extra heat production, oxygen raising temperature) are not counted",
+   "M€ given by a card is not linked to particular cards (it pays for everything)"
+  ],
+  "warnings": [],
+  "search": {
+   "poolSize": 19,
+   "chainsExamined": 76,
+   "truncated": false,
+   "elapsedMs": 4
+  }
+ }
+}

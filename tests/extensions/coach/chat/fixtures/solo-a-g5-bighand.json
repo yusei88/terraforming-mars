@@ -1,0 +1,4144 @@
+{
+ "id": "solo-a-g5-bighand",
+ "description": "Solo, generation 5, with a very large hand (search limits reached)",
+ "tags": {
+  "mode": "solo",
+  "generation": 5,
+  "phase": "action",
+  "planCount": 9,
+  "goals": [
+   "unlock",
+   "engine"
+  ],
+  "truncated": true,
+  "incompleteForecast": true,
+  "unknownAvailability": false,
+  "legalNow": true
+ },
+ "state": {
+  "schemaVersion": "coach-state/1",
+  "fingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8",
+  "advisoryFingerprint": "f39b8969e2b56498d96ba4d7c47773acb3f410aa71d43ae9ee6168366e9124e1",
+  "stateKey": "a828cee4a178cf2c:u0:s0:a41",
+  "version": {
+   "generation": 5,
+   "phase": "action",
+   "gameAge": 41,
+   "gameStep": 0,
+   "undoCount": 0
+  },
+  "catalogVersion": "96e3a55227c5e380",
+  "capturedAt": "2026-10-15T14:14:50.491Z",
+  "warnings": [],
+  "game": {
+   "name": "Latent Quartz Node",
+   "mode": "solo",
+   "playerCount": 1,
+   "board": "tharsis",
+   "expansions": {
+    "corpera": true,
+    "promo": false,
+    "venus": false,
+    "colonies": false,
+    "prelude": false,
+    "prelude2": false,
+    "turmoil": false,
+    "community": false,
+    "ares": false,
+    "moon": false,
+    "pathfinders": false,
+    "ceo": false,
+    "starwars": false,
+    "underworld": false,
+    "deltaProject": false
+   },
+   "baseGameOnly": true,
+   "options": {
+    "draftVariant": false,
+    "initialDraftVariant": false,
+    "preludeDraftVariant": false,
+    "showOtherPlayersVP": false,
+    "undoOption": false,
+    "soloTR": false,
+    "fastModeOption": false,
+    "randomMA": "No randomization"
+   },
+   "generation": 5,
+   "phase": "action",
+   "lastSoloGeneration": 14,
+   "activePlayer": "blue",
+   "firstPlayer": "blue",
+   "passedPlayers": [],
+   "temperature": {
+    "value": -28,
+    "min": -30,
+    "max": 8,
+    "stepsRemaining": 18
+   },
+   "oxygen": {
+    "value": 0,
+    "min": 0,
+    "max": 14,
+    "stepsRemaining": 14
+   },
+   "oceans": {
+    "value": 0,
+    "min": 0,
+    "max": 9,
+    "stepsRemaining": 9
+   },
+   "isTerraformed": false,
+   "gameOver": false,
+   "decks": {
+    "projectDrawPile": 176,
+    "projectDiscardPile": 19,
+    "corporationDrawPile": 10
+   },
+   "spaces": [],
+   "milestones": [
+    {
+     "name": "Terraformer",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 15,
+       "claimable": false
+      }
+     ],
+     "threshold": 35
+    },
+    {
+     "name": "Mayor",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0,
+       "claimable": false
+      }
+     ],
+     "threshold": 3
+    },
+    {
+     "name": "Gardener",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0,
+       "claimable": false
+      }
+     ],
+     "threshold": 3
+    },
+    {
+     "name": "Builder",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 2,
+       "claimable": false
+      }
+     ],
+     "threshold": 8
+    },
+    {
+     "name": "Planner",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 69,
+       "claimable": true
+      }
+     ],
+     "threshold": 16
+    }
+   ],
+   "awards": [
+    {
+     "name": "Landlord",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      }
+     ]
+    },
+    {
+     "name": "Scientist",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      }
+     ]
+    },
+    {
+     "name": "Banker",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 0
+      }
+     ]
+    },
+    {
+     "name": "Thermalist",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 15
+      }
+     ]
+    },
+    {
+     "name": "Miner",
+     "scores": [
+      {
+       "color": "blue",
+       "score": 22
+      }
+     ]
+    }
+   ],
+   "unsupported": []
+  },
+  "me": {
+   "color": "blue",
+   "name": "player-blue",
+   "isAi": false,
+   "isActive": true,
+   "hasPassed": false,
+   "terraformRating": 15,
+   "victoryPoints": {
+    "status": "known",
+    "value": {
+     "terraformRating": 15,
+     "milestones": 0,
+     "awards": 0,
+     "greenery": 0,
+     "city": 0,
+     "escapeVelocity": 0,
+     "moonHabitats": 0,
+     "moonMines": 0,
+     "moonRoads": 0,
+     "planetaryTracks": 0,
+     "victoryPoints": -1,
+     "total": 14,
+     "detailsCards": [
+      {
+       "cardName": "Energy Tapping",
+       "victoryPoint": -1
+      }
+     ],
+     "detailsMilestones": [],
+     "detailsAwards": [],
+     "detailsPlanetaryTracks": [],
+     "negativeVP": -1
+    }
+   },
+   "resources": {
+    "megacredits": 16,
+    "steel": 22,
+    "titanium": 0,
+    "plants": 0,
+    "energy": 2,
+    "heat": 9
+   },
+   "production": {
+    "megacredits": 0,
+    "steel": 0,
+    "titanium": 0,
+    "plants": 0,
+    "energy": 2,
+    "heat": 4
+   },
+   "steelValue": 2,
+   "titaniumValue": 3,
+   "tags": {
+    "building": 2,
+    "power": 1,
+    "event": 2
+   },
+   "cardsWithoutTags": 0,
+   "cardsInHandCount": 69,
+   "corporations": [
+    "Interplanetary Cinematics"
+   ],
+   "tableau": [
+    {
+     "name": "Interplanetary Cinematics",
+     "inCatalog": true,
+     "calculatedCost": 0,
+     "resources": 0
+    },
+    {
+     "name": "GHG Factories",
+     "inCatalog": true,
+     "calculatedCost": 11,
+     "resources": 0
+    },
+    {
+     "name": "Hired Raiders",
+     "inCatalog": true,
+     "calculatedCost": 1,
+     "resources": 0
+    },
+    {
+     "name": "Energy Tapping",
+     "inCatalog": true,
+     "calculatedCost": 3,
+     "resources": 0
+    },
+    {
+     "name": "Technology Demonstration",
+     "inCatalog": true,
+     "calculatedCost": 5,
+     "resources": 0
+    }
+   ],
+   "actionsUsedThisGeneration": [],
+   "actionsTakenThisRound": 0,
+   "availableBlueCardActionCount": 0,
+   "citiesCount": 0,
+   "cardCost": 3,
+   "protectedResources": {
+    "megacredits": "off",
+    "steel": "off",
+    "titanium": "off",
+    "plants": "off",
+    "energy": "off",
+    "heat": "off"
+   },
+   "protectedProduction": {
+    "megacredits": "off",
+    "steel": "off",
+    "titanium": "off",
+    "plants": "off",
+    "energy": "off",
+    "heat": "off"
+   },
+   "needsToResearch": true,
+   "hand": [
+    {
+     "name": "Small Animals",
+     "inCatalog": true,
+     "calculatedCost": 6
+    },
+    {
+     "name": "Grass",
+     "inCatalog": true,
+     "calculatedCost": 11
+    },
+    {
+     "name": "Decomposers",
+     "inCatalog": true,
+     "calculatedCost": 5
+    },
+    {
+     "name": "Deep Well Heating",
+     "inCatalog": true,
+     "calculatedCost": 13
+    },
+    {
+     "name": "AI Central",
+     "inCatalog": true,
+     "calculatedCost": 21
+    },
+    {
+     "name": "Tundra Farming",
+     "inCatalog": true,
+     "calculatedCost": 16
+    },
+    {
+     "name": "Hackers",
+     "inCatalog": true,
+     "calculatedCost": 3
+    },
+    {
+     "name": "Corporate Stronghold",
+     "inCatalog": true,
+     "calculatedCost": 11
+    },
+    {
+     "name": "Trees",
+     "inCatalog": true,
+     "calculatedCost": 13
+    },
+    {
+     "name": "Lightning Harvest",
+     "inCatalog": true,
+     "calculatedCost": 8
+    },
+    {
+     "name": "Tropical Resort",
+     "inCatalog": true,
+     "calculatedCost": 13
+    },
+    {
+     "name": "Asteroid Mining",
+     "inCatalog": true,
+     "calculatedCost": 30
+    },
+    {
+     "name": "Rad-Chem Factory",
+     "inCatalog": true,
+     "calculatedCost": 8
+    },
+    {
+     "name": "Shuttles",
+     "inCatalog": true,
+     "calculatedCost": 10,
+     "discount": [
+      {
+       "tag": "space",
+       "amount": 2
+      }
+     ]
+    },
+    {
+     "name": "Olympus Conference",
+     "inCatalog": true,
+     "calculatedCost": 10
+    },
+    {
+     "name": "Eos Chasma National Park",
+     "inCatalog": true,
+     "calculatedCost": 16
+    },
+    {
+     "name": "Artificial Photosynthesis",
+     "inCatalog": true,
+     "calculatedCost": 12
+    },
+    {
+     "name": "Subterranean Reservoir",
+     "inCatalog": true,
+     "calculatedCost": 11
+    },
+    {
+     "name": "Insulation",
+     "inCatalog": true,
+     "calculatedCost": 2
+    },
+    {
+     "name": "Satellites",
+     "inCatalog": true,
+     "calculatedCost": 10
+    },
+    {
+     "name": "Bribed Committee",
+     "inCatalog": true,
+     "calculatedCost": 7
+    },
+    {
+     "name": "Dust Seals",
+     "inCatalog": true,
+     "calculatedCost": 2
+    },
+    {
+     "name": "Giant Space Mirror",
+     "inCatalog": true,
+     "calculatedCost": 17
+    },
+    {
+     "name": "Toll Station",
+     "inCatalog": true,
+     "calculatedCost": 12
+    },
+    {
+     "name": "CEO's Favorite Project",
+     "inCatalog": true,
+     "calculatedCost": 1
+    },
+    {
+     "name": "Convoy From Europa",
+     "inCatalog": true,
+     "calculatedCost": 15
+    },
+    {
+     "name": "Viral Enhancers",
+     "inCatalog": true,
+     "calculatedCost": 9
+    },
+    {
+     "name": "Asteroid",
+     "inCatalog": true,
+     "calculatedCost": 14
+    },
+    {
+     "name": "Local Heat Trapping",
+     "inCatalog": true,
+     "calculatedCost": 1
+    },
+    {
+     "name": "Lava Flows",
+     "inCatalog": true,
+     "calculatedCost": 18
+    },
+    {
+     "name": "Cartel",
+     "inCatalog": true,
+     "calculatedCost": 8
+    },
+    {
+     "name": "Protected Habitats",
+     "inCatalog": true,
+     "calculatedCost": 5
+    },
+    {
+     "name": "Aerobraked Ammonia Asteroid",
+     "inCatalog": true,
+     "calculatedCost": 26
+    },
+    {
+     "name": "Plantation",
+     "inCatalog": true,
+     "calculatedCost": 15
+    },
+    {
+     "name": "Ecological Zone",
+     "inCatalog": true,
+     "calculatedCost": 12
+    },
+    {
+     "name": "Import of Advanced GHG",
+     "inCatalog": true,
+     "calculatedCost": 9
+    },
+    {
+     "name": "Imported Hydrogen",
+     "inCatalog": true,
+     "calculatedCost": 16
+    },
+    {
+     "name": "Natural Preserve",
+     "inCatalog": true,
+     "calculatedCost": 9
+    },
+    {
+     "name": "Mining Rights",
+     "inCatalog": true,
+     "calculatedCost": 9
+    },
+    {
+     "name": "Fuel Factory",
+     "inCatalog": true,
+     "calculatedCost": 6
+    },
+    {
+     "name": "Titanium Mine",
+     "inCatalog": true,
+     "calculatedCost": 7
+    },
+    {
+     "name": "Steelworks",
+     "inCatalog": true,
+     "calculatedCost": 15
+    },
+    {
+     "name": "Space Elevator",
+     "inCatalog": true,
+     "calculatedCost": 27
+    },
+    {
+     "name": "Lichen",
+     "inCatalog": true,
+     "calculatedCost": 7
+    },
+    {
+     "name": "Acquired Company",
+     "inCatalog": true,
+     "calculatedCost": 10
+    },
+    {
+     "name": "Mass Converter",
+     "inCatalog": true,
+     "calculatedCost": 8,
+     "discount": [
+      {
+       "tag": "space",
+       "amount": 2,
+       "per": "card"
+      }
+     ]
+    },
+    {
+     "name": "Designed Microorganisms",
+     "inCatalog": true,
+     "calculatedCost": 16
+    },
+    {
+     "name": "Ganymede Colony",
+     "inCatalog": true,
+     "calculatedCost": 20
+    },
+    {
+     "name": "Immigration Shuttles",
+     "inCatalog": true,
+     "calculatedCost": 31
+    },
+    {
+     "name": "Fueled Generators",
+     "inCatalog": true,
+     "calculatedCost": 1
+    },
+    {
+     "name": "Ice Cap Melting",
+     "inCatalog": true,
+     "calculatedCost": 5
+    },
+    {
+     "name": "Research",
+     "inCatalog": true,
+     "calculatedCost": 11
+    },
+    {
+     "name": "Equatorial Magnetizer",
+     "inCatalog": true,
+     "calculatedCost": 11
+    },
+    {
+     "name": "Nuclear Zone",
+     "inCatalog": true,
+     "calculatedCost": 10
+    },
+    {
+     "name": "Wave Power",
+     "inCatalog": true,
+     "calculatedCost": 8
+    },
+    {
+     "name": "Black Polar Dust",
+     "inCatalog": true,
+     "calculatedCost": 15
+    },
+    {
+     "name": "Industrial Microbes",
+     "inCatalog": true,
+     "calculatedCost": 12
+    },
+    {
+     "name": "Mohole Area",
+     "inCatalog": true,
+     "calculatedCost": 20
+    },
+    {
+     "name": "Phobos Space Haven",
+     "inCatalog": true,
+     "calculatedCost": 25
+    },
+    {
+     "name": "Inventors' Guild",
+     "inCatalog": true,
+     "calculatedCost": 9
+    },
+    {
+     "name": "Business Network",
+     "inCatalog": true,
+     "calculatedCost": 4
+    },
+    {
+     "name": "Birds",
+     "inCatalog": true,
+     "calculatedCost": 10
+    },
+    {
+     "name": "Imported GHG",
+     "inCatalog": true,
+     "calculatedCost": 7
+    },
+    {
+     "name": "Development Center",
+     "inCatalog": true,
+     "calculatedCost": 11
+    },
+    {
+     "name": "Vesta Shipyard",
+     "inCatalog": true,
+     "calculatedCost": 15
+    },
+    {
+     "name": "Cloud Seeding",
+     "inCatalog": true,
+     "calculatedCost": 11
+    },
+    {
+     "name": "Release of Inert Gases",
+     "inCatalog": true,
+     "calculatedCost": 14
+    },
+    {
+     "name": "Special Design",
+     "inCatalog": true,
+     "calculatedCost": 4
+    },
+    {
+     "name": "Earth Office",
+     "inCatalog": true,
+     "calculatedCost": 1,
+     "discount": [
+      {
+       "tag": "earth",
+       "amount": 3
+      }
+     ]
+    }
+   ],
+   "preludesInHand": [],
+   "ceosInHand": [],
+   "draftedCards": [],
+   "dealt": {
+    "corporations": [
+     {
+      "name": "Interplanetary Cinematics",
+      "inCatalog": true,
+      "calculatedCost": 0
+     },
+     {
+      "name": "Teractor",
+      "inCatalog": true,
+      "calculatedCost": 0,
+      "discount": [
+       {
+        "tag": "earth",
+        "amount": 3
+       }
+      ]
+     }
+    ],
+    "preludes": [],
+    "projects": [
+     {
+      "name": "Optimal Aerobraking",
+      "inCatalog": true,
+      "calculatedCost": 7
+     },
+     {
+      "name": "Rover Construction",
+      "inCatalog": true,
+      "calculatedCost": 8
+     },
+     {
+      "name": "Tectonic Stress Power",
+      "inCatalog": true,
+      "calculatedCost": 18
+     },
+     {
+      "name": "Urbanized Area",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Noctis Farming",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Solar Power",
+      "inCatalog": true,
+      "calculatedCost": 11
+     },
+     {
+      "name": "Giant Ice Asteroid",
+      "inCatalog": true,
+      "calculatedCost": 36
+     },
+     {
+      "name": "Bushes",
+      "inCatalog": true,
+      "calculatedCost": 10
+     },
+     {
+      "name": "Mine",
+      "inCatalog": true,
+      "calculatedCost": 4
+     },
+     {
+      "name": "Martian Rails",
+      "inCatalog": true,
+      "calculatedCost": 13
+     }
+    ],
+    "ceos": []
+   },
+   "pickedCorporation": [
+    "Interplanetary Cinematics"
+   ],
+   "autopass": false,
+   "canCancelAction": false
+  },
+  "opponents": [],
+  "choices": {
+   "status": "awaiting-input",
+   "root": {
+    "path": "",
+    "inputType": "or",
+    "title": "Take your first action",
+    "buttonLabel": "Take action",
+    "optional": false,
+    "options": [
+     {
+      "path": "0",
+      "inputType": "option",
+      "title": "Convert 8 heat into temperature",
+      "buttonLabel": "Convert heat",
+      "optional": false
+     },
+     {
+      "path": "1",
+      "inputType": "projectCard",
+      "title": "Play project card",
+      "buttonLabel": "Play card",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Deep Well Heating",
+        "inCatalog": true,
+        "calculatedCost": 13,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Hackers",
+        "inCatalog": true,
+        "calculatedCost": 3,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Corporate Stronghold",
+        "inCatalog": true,
+        "calculatedCost": 11,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       }
+      ],
+      "paymentOptions": {
+       "heat": false,
+       "lunaTradeFederationTitanium": false,
+       "plants": false
+      }
+     },
+     {
+      "path": "2",
+      "inputType": "projectCard",
+      "title": "Standard projects",
+      "buttonLabel": "Confirm",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Power Plant:SP",
+        "inCatalog": true,
+        "calculatedCost": 11,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Asteroid:SP",
+        "inCatalog": true,
+        "calculatedCost": 14,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Aquifer",
+        "inCatalog": true,
+        "calculatedCost": 18,
+        "isDisabled": true,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "Greenery",
+        "inCatalog": true,
+        "calculatedCost": 23,
+        "isDisabled": true,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       },
+       {
+        "name": "City",
+        "inCatalog": true,
+        "calculatedCost": 25,
+        "isDisabled": true,
+        "reserveUnits": {
+         "megacredits": 0,
+         "steel": 0,
+         "titanium": 0,
+         "plants": 0,
+         "energy": 0,
+         "heat": 0
+        }
+       }
+      ],
+      "paymentOptions": {
+       "heat": false,
+       "lunaTradeFederationTitanium": false,
+       "plants": false
+      }
+     },
+     {
+      "path": "3",
+      "inputType": "option",
+      "title": "Pass for this generation",
+      "buttonLabel": "Pass",
+      "optional": false,
+      "warnings": [
+       "pass"
+      ]
+     },
+     {
+      "path": "4",
+      "inputType": "card",
+      "title": "Sell patents",
+      "buttonLabel": "Sell",
+      "optional": false,
+      "cards": [
+       {
+        "name": "Small Animals",
+        "inCatalog": true,
+        "calculatedCost": 6
+       },
+       {
+        "name": "Grass",
+        "inCatalog": true,
+        "calculatedCost": 11
+       },
+       {
+        "name": "Decomposers",
+        "inCatalog": true,
+        "calculatedCost": 5
+       },
+       {
+        "name": "Deep Well Heating",
+        "inCatalog": true,
+        "calculatedCost": 13
+       },
+       {
+        "name": "AI Central",
+        "inCatalog": true,
+        "calculatedCost": 21
+       },
+       {
+        "name": "Tundra Farming",
+        "inCatalog": true,
+        "calculatedCost": 16
+       },
+       {
+        "name": "Hackers",
+        "inCatalog": true,
+        "calculatedCost": 3
+       },
+       {
+        "name": "Corporate Stronghold",
+        "inCatalog": true,
+        "calculatedCost": 11
+       },
+       {
+        "name": "Trees",
+        "inCatalog": true,
+        "calculatedCost": 13
+       },
+       {
+        "name": "Lightning Harvest",
+        "inCatalog": true,
+        "calculatedCost": 8
+       },
+       {
+        "name": "Tropical Resort",
+        "inCatalog": true,
+        "calculatedCost": 13
+       },
+       {
+        "name": "Asteroid Mining",
+        "inCatalog": true,
+        "calculatedCost": 30
+       },
+       {
+        "name": "Rad-Chem Factory",
+        "inCatalog": true,
+        "calculatedCost": 8
+       },
+       {
+        "name": "Shuttles",
+        "inCatalog": true,
+        "calculatedCost": 10,
+        "discount": [
+         {
+          "tag": "space",
+          "amount": 2
+         }
+        ]
+       },
+       {
+        "name": "Olympus Conference",
+        "inCatalog": true,
+        "calculatedCost": 10
+       },
+       {
+        "name": "Eos Chasma National Park",
+        "inCatalog": true,
+        "calculatedCost": 16
+       },
+       {
+        "name": "Artificial Photosynthesis",
+        "inCatalog": true,
+        "calculatedCost": 12
+       },
+       {
+        "name": "Subterranean Reservoir",
+        "inCatalog": true,
+        "calculatedCost": 11
+       },
+       {
+        "name": "Insulation",
+        "inCatalog": true,
+        "calculatedCost": 2
+       },
+       {
+        "name": "Satellites",
+        "inCatalog": true,
+        "calculatedCost": 10
+       },
+       {
+        "name": "Bribed Committee",
+        "inCatalog": true,
+        "calculatedCost": 7
+       },
+       {
+        "name": "Dust Seals",
+        "inCatalog": true,
+        "calculatedCost": 2
+       },
+       {
+        "name": "Giant Space Mirror",
+        "inCatalog": true,
+        "calculatedCost": 17
+       },
+       {
+        "name": "Toll Station",
+        "inCatalog": true,
+        "calculatedCost": 12
+       },
+       {
+        "name": "CEO's Favorite Project",
+        "inCatalog": true,
+        "calculatedCost": 1
+       },
+       {
+        "name": "Convoy From Europa",
+        "inCatalog": true,
+        "calculatedCost": 15
+       },
+       {
+        "name": "Viral Enhancers",
+        "inCatalog": true,
+        "calculatedCost": 9
+       },
+       {
+        "name": "Asteroid",
+        "inCatalog": true,
+        "calculatedCost": 14
+       },
+       {
+        "name": "Local Heat Trapping",
+        "inCatalog": true,
+        "calculatedCost": 1
+       },
+       {
+        "name": "Lava Flows",
+        "inCatalog": true,
+        "calculatedCost": 18
+       },
+       {
+        "name": "Cartel",
+        "inCatalog": true,
+        "calculatedCost": 8
+       },
+       {
+        "name": "Protected Habitats",
+        "inCatalog": true,
+        "calculatedCost": 5
+       },
+       {
+        "name": "Aerobraked Ammonia Asteroid",
+        "inCatalog": true,
+        "calculatedCost": 26
+       },
+       {
+        "name": "Plantation",
+        "inCatalog": true,
+        "calculatedCost": 15
+       },
+       {
+        "name": "Ecological Zone",
+        "inCatalog": true,
+        "calculatedCost": 12
+       },
+       {
+        "name": "Import of Advanced GHG",
+        "inCatalog": true,
+        "calculatedCost": 9
+       },
+       {
+        "name": "Imported Hydrogen",
+        "inCatalog": true,
+        "calculatedCost": 16
+       },
+       {
+        "name": "Natural Preserve",
+        "inCatalog": true,
+        "calculatedCost": 9
+       },
+       {
+        "name": "Mining Rights",
+        "inCatalog": true,
+        "calculatedCost": 9
+       },
+       {
+        "name": "Fuel Factory",
+        "inCatalog": true,
+        "calculatedCost": 6
+       },
+       {
+        "name": "Titanium Mine",
+        "inCatalog": true,
+        "calculatedCost": 7
+       },
+       {
+        "name": "Steelworks",
+        "inCatalog": true,
+        "calculatedCost": 15
+       },
+       {
+        "name": "Space Elevator",
+        "inCatalog": true,
+        "calculatedCost": 27
+       },
+       {
+        "name": "Lichen",
+        "inCatalog": true,
+        "calculatedCost": 7
+       },
+       {
+        "name": "Acquired Company",
+        "inCatalog": true,
+        "calculatedCost": 10
+       },
+       {
+        "name": "Mass Converter",
+        "inCatalog": true,
+        "calculatedCost": 8,
+        "discount": [
+         {
+          "tag": "space",
+          "amount": 2,
+          "per": "card"
+         }
+        ]
+       },
+       {
+        "name": "Designed Microorganisms",
+        "inCatalog": true,
+        "calculatedCost": 16
+       },
+       {
+        "name": "Ganymede Colony",
+        "inCatalog": true,
+        "calculatedCost": 20
+       },
+       {
+        "name": "Immigration Shuttles",
+        "inCatalog": true,
+        "calculatedCost": 31
+       },
+       {
+        "name": "Fueled Generators",
+        "inCatalog": true,
+        "calculatedCost": 1
+       },
+       {
+        "name": "Ice Cap Melting",
+        "inCatalog": true,
+        "calculatedCost": 5
+       },
+       {
+        "name": "Research",
+        "inCatalog": true,
+        "calculatedCost": 11
+       },
+       {
+        "name": "Equatorial Magnetizer",
+        "inCatalog": true,
+        "calculatedCost": 11
+       },
+       {
+        "name": "Nuclear Zone",
+        "inCatalog": true,
+        "calculatedCost": 10
+       },
+       {
+        "name": "Wave Power",
+        "inCatalog": true,
+        "calculatedCost": 8
+       },
+       {
+        "name": "Black Polar Dust",
+        "inCatalog": true,
+        "calculatedCost": 15
+       },
+       {
+        "name": "Industrial Microbes",
+        "inCatalog": true,
+        "calculatedCost": 12
+       },
+       {
+        "name": "Mohole Area",
+        "inCatalog": true,
+        "calculatedCost": 20
+       },
+       {
+        "name": "Phobos Space Haven",
+        "inCatalog": true,
+        "calculatedCost": 25
+       },
+       {
+        "name": "Inventors' Guild",
+        "inCatalog": true,
+        "calculatedCost": 9
+       },
+       {
+        "name": "Business Network",
+        "inCatalog": true,
+        "calculatedCost": 4
+       },
+       {
+        "name": "Birds",
+        "inCatalog": true,
+        "calculatedCost": 10
+       },
+       {
+        "name": "Imported GHG",
+        "inCatalog": true,
+        "calculatedCost": 7
+       },
+       {
+        "name": "Development Center",
+        "inCatalog": true,
+        "calculatedCost": 11
+       },
+       {
+        "name": "Vesta Shipyard",
+        "inCatalog": true,
+        "calculatedCost": 15
+       },
+       {
+        "name": "Cloud Seeding",
+        "inCatalog": true,
+        "calculatedCost": 11
+       },
+       {
+        "name": "Release of Inert Gases",
+        "inCatalog": true,
+        "calculatedCost": 14
+       },
+       {
+        "name": "Special Design",
+        "inCatalog": true,
+        "calculatedCost": 4
+       },
+       {
+        "name": "Earth Office",
+        "inCatalog": true,
+        "calculatedCost": 1,
+        "discount": [
+         {
+          "tag": "earth",
+          "amount": 3
+         }
+        ]
+       }
+      ],
+      "min": 1,
+      "max": 9,
+      "selectBlueCardAction": false
+     }
+    ],
+    "initialIndex": 0
+   }
+  }
+ },
+ "analysis": {
+  "schemaVersion": "coach-analysis/1",
+  "source": {
+   "fingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8",
+   "advisoryFingerprint": "f39b8969e2b56498d96ba4d7c47773acb3f410aa71d43ae9ee6168366e9124e1",
+   "catalogVersion": "96e3a55227c5e380",
+   "analysisVersion": "2.0.0",
+   "generatedAt": "2026-10-15T14:14:50.495Z"
+  },
+  "horizonProductionPhases": 3,
+  "coverage": {
+   "supported": 20,
+   "partial": 17,
+   "unsupported": 8,
+   "reasons": [
+    "bespoke-code: 8 cards",
+    "tile-placement: 7 cards",
+    "target-choice: 6 cards",
+    "conditional-cost: 2 cards",
+    "countable: 2 cards",
+    "choice: 1 card"
+   ]
+  },
+  "candidates": [
+   {
+    "id": "Deep Well Heating > Development Center > AI Central",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "terraforming",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Deep Well Heating",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 13
+     },
+     {
+      "name": "Development Center",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating"
+      ],
+      "cost": 11
+     },
+     {
+      "name": "AI Central",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating, Development Center"
+      ],
+      "cost": 21
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Deep Well Heating",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Deep Well Heating (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Development Center (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "AI Central",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for AI Central (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "AI Central"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Deep Well Heating gives energy, which the action of Development Center spends (1)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Deep Well Heating"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.action.spend",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Development Center",
+      "to": "AI Central",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Development Center adds 1 science tag; AI Central needs 3 more (2 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "me.tags.science",
+         "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+        },
+        {
+         "kind": "state",
+         "fieldPath": "me.tags.wild",
+         "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "AI Central"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "tag",
+      "observed": 0,
+      "target": 3,
+      "comparator": ">=",
+      "gap": 2,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "me.tags.science",
+        "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+       },
+       {
+        "kind": "state",
+        "fieldPath": "me.tags.wild",
+        "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "AI Central"
+       }
+      ],
+      "card": "AI Central"
+     }
+    ],
+    "payments": {
+     "play": 45,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "AI Central"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.action.spend",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.tags.science",
+       "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "me.tags.wild",
+       "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "AI Central"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "AI Central"
+     },
+     "text": "Is it worth playing Interplanetary Cinematics mainly to meet the requirement of AI Central, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -45,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -44,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -43,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -42,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 45,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 2,
+      "terraformRating": 1,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of Development Center is not counted (it is optional each generation)",
+      "the action of AI Central is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Deep Well Heating > Development Center",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "terraforming"
+    ],
+    "cards": [
+     {
+      "name": "Deep Well Heating",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 13
+     },
+     {
+      "name": "Development Center",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating"
+      ],
+      "cost": 11
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Deep Well Heating",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Deep Well Heating (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Development Center (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Deep Well Heating gives energy, which the action of Development Center spends (1)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Deep Well Heating"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.action.spend",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 24,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.action.spend",
+       "cardName": "Development Center"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Development Center. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -24,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -23,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -22,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -21,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 24,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 1,
+      "cards": 0
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of Development Center is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Deep Well Heating > Development Center > Eos Chasma National Park",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "terraforming",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Deep Well Heating",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 13
+     },
+     {
+      "name": "Development Center",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating"
+      ],
+      "cost": 11
+     },
+     {
+      "name": "Eos Chasma National Park",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating, Development Center"
+      ],
+      "cost": 16
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Deep Well Heating",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Deep Well Heating (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Development Center (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Eos Chasma National Park",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Eos Chasma National Park (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Eos Chasma National Park"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Deep Well Heating gives energy, which the action of Development Center spends (1)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Deep Well Heating"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.action.spend",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Eos Chasma National Park",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Deep Well Heating adds 1 temperature step; Eos Chasma National Park needs 8 more (7 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Eos Chasma National Park"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "temperature",
+      "observed": -28,
+      "target": -12,
+      "comparator": ">=",
+      "gap": 7,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Eos Chasma National Park"
+       }
+      ],
+      "card": "Eos Chasma National Park"
+     }
+    ],
+    "payments": {
+     "play": 40,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Eos Chasma National Park"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.action.spend",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Eos Chasma National Park"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Deep Well Heating"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Eos Chasma National Park"
+     },
+     "text": "Is it worth playing Interplanetary Cinematics mainly to meet the requirement of Eos Chasma National Park, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -40,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 3,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -37,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 3,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -34,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 3,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -31,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 3,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 40,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 2,
+      "terraformRating": 1,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Eos Chasma National Park: the target card or player is chosen when played",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of Development Center is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Corporate Stronghold",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Corporate Stronghold",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 11
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Corporate Stronghold",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Corporate Stronghold (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Corporate Stronghold"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 11,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Corporate Stronghold"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Corporate Stronghold"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Corporate Stronghold. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -11,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 3,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -8,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 3,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -5,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": -1
+       },
+       "production": {
+        "megacredits": 3,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": -2
+       },
+       "production": {
+        "megacredits": 3,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": -1,
+        "heat": 0
+       },
+       "terraformRating": 0
+      }
+     ],
+     "upfront": {
+      "play": 11,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": -2,
+      "terraformRating": 0,
+      "cards": -2
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Corporate Stronghold: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   },
+   {
+    "id": "Deep Well Heating > Eos Chasma National Park > Development Center",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "terraforming",
+     "scoring"
+    ],
+    "cards": [
+     {
+      "name": "Deep Well Heating",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 13
+     },
+     {
+      "name": "Eos Chasma National Park",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating"
+      ],
+      "cost": 16
+     },
+     {
+      "name": "Development Center",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating, Eos Chasma National Park"
+      ],
+      "cost": 11
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Deep Well Heating",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Deep Well Heating (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Eos Chasma National Park",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Eos Chasma National Park (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Eos Chasma National Park"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Development Center (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Deep Well Heating gives energy, which the action of Development Center spends (1)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Deep Well Heating"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.action.spend",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Eos Chasma National Park",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Deep Well Heating adds 1 temperature step; Eos Chasma National Park needs 8 more (7 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Eos Chasma National Park"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "temperature",
+      "observed": -28,
+      "target": -12,
+      "comparator": ">=",
+      "gap": 7,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Eos Chasma National Park"
+       }
+      ],
+      "card": "Eos Chasma National Park"
+     }
+    ],
+    "payments": {
+     "play": 40,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Eos Chasma National Park"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.action.spend",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Eos Chasma National Park"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Deep Well Heating"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center"
+     },
+     "text": "Is it worth playing Interplanetary Cinematics mainly to meet the requirement of Development Center, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -40,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 3,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -37,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 3,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -34,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 3,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -31,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 3,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 2,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 40,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 2,
+      "terraformRating": 1,
+      "cards": 1
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Eos Chasma National Park: the target card or player is chosen when played",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of Development Center is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Deep Well Heating",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "terraforming"
+    ],
+    "cards": [
+     {
+      "name": "Deep Well Heating",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 13
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Deep Well Heating",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Deep Well Heating (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 13,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Deep Well Heating"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Deep Well Heating"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Deep Well Heating. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -13,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -12,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -11,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -10,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 13,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 1,
+      "cards": 0
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase"
+     ]
+    }
+   },
+   {
+    "id": "Deep Well Heating > Development Center > Grass",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "terraforming"
+    ],
+    "cards": [
+     {
+      "name": "Deep Well Heating",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 13
+     },
+     {
+      "name": "Development Center",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating"
+      ],
+      "cost": 11
+     },
+     {
+      "name": "Grass",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating, Development Center"
+      ],
+      "cost": 11
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Deep Well Heating",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Deep Well Heating (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Development Center (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Deep Well Heating gives energy, which the action of Development Center spends (1)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Deep Well Heating"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.action.spend",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Grass",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Deep Well Heating adds 1 temperature step; Grass needs 6 more (5 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Grass"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "temperature",
+      "observed": -28,
+      "target": -16,
+      "comparator": ">=",
+      "gap": 5,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Grass"
+       }
+      ],
+      "card": "Grass"
+     }
+    ],
+    "payments": {
+     "play": 35,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.action.spend",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Grass"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Deep Well Heating"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Deep Well Heating",
+      "to": "Grass"
+     },
+     "text": "Is it worth playing Deep Well Heating mainly to meet the requirement of Grass, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -35,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 3,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -34,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 4,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -33,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 5,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -32,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 6,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 1,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 35,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 1,
+      "cards": 0
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of Development Center is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Industrial Microbes > Deep Well Heating > Development Center",
+    "goal": "engine",
+    "goals": [
+     "engine",
+     "economy",
+     "terraforming"
+    ],
+    "cards": [
+     {
+      "name": "Industrial Microbes",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "the game does not offer it to play right now"
+      ],
+      "cost": 12
+     },
+     {
+      "name": "Deep Well Heating",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Industrial Microbes"
+      ],
+      "cost": 13
+     },
+     {
+      "name": "Development Center",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Industrial Microbes, Deep Well Heating"
+      ],
+      "cost": 11
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Industrial Microbes",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Industrial Microbes (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Industrial Microbes"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Deep Well Heating",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Deep Well Heating (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Development Center (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Deep Well Heating gives energy, which the action of Development Center spends (1)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Deep Well Heating"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.action.spend",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Industrial Microbes",
+      "to": "Deep Well Heating",
+      "kind": "PRODUCES_FOR",
+      "why": "Industrial Microbes gives steel, which can pay for Deep Well Heating (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Industrial Microbes"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Industrial Microbes",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Industrial Microbes gives steel, which can pay for Development Center (building tag)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Industrial Microbes"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Industrial Microbes",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Industrial Microbes gives energy, which the action of Development Center spends (1)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Industrial Microbes"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.action.spend",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [],
+    "payments": {
+     "play": 36,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Industrial Microbes"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.action.spend",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Industrial Microbes"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Industrial Microbes"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Industrial Microbes"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.action.spend",
+       "cardName": "Development Center"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.engine",
+     "params": {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center"
+     },
+     "text": "Interplanetary Cinematics helps you pay for Development Center. How many more cards will profit from it before the game ends?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -36,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 2,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -35,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 2,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 2,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -34,
+        "steel": 2,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 2,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 2,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -33,
+        "steel": 3,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 2,
+        "heat": 4
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 1,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 2,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 36,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 1,
+      "cards": 0
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of Development Center is not counted (it is optional each generation)"
+     ]
+    }
+   },
+   {
+    "id": "Deep Well Heating > Development Center > Ice Cap Melting",
+    "goal": "unlock",
+    "goals": [
+     "unlock",
+     "engine",
+     "economy",
+     "terraforming"
+    ],
+    "cards": [
+     {
+      "name": "Deep Well Heating",
+      "zone": "hand",
+      "availability": "legal-now",
+      "reasons": [],
+      "cost": 13
+     },
+     {
+      "name": "Development Center",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating"
+      ],
+      "cost": 11
+     },
+     {
+      "name": "Ice Cap Melting",
+      "zone": "hand",
+      "availability": "conditional",
+      "reasons": [
+       "after Deep Well Heating, Development Center"
+      ],
+      "cost": 5
+     }
+    ],
+    "links": [
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Deep Well Heating",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Deep Well Heating (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Interplanetary Cinematics",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Interplanetary Cinematics gives steel, which can pay for Development Center (building tag)",
+      "support": {
+       "level": "conditional",
+       "assumptions": [
+        "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+       ],
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Interplanetary Cinematics"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "tags",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Development Center",
+      "kind": "PRODUCES_FOR",
+      "why": "Deep Well Heating gives energy, which the action of Development Center spends (1)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "catalog",
+         "fieldPath": "effects",
+         "cardName": "Deep Well Heating"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.action.spend",
+         "cardName": "Development Center"
+        }
+       ]
+      }
+     },
+     {
+      "from": "Deep Well Heating",
+      "to": "Ice Cap Melting",
+      "kind": "UNLOCKS",
+      "amount": 1,
+      "completes": false,
+      "requirementIndex": 0,
+      "why": "Deep Well Heating adds 1 temperature step; Ice Cap Melting needs 15 more (14 still missing)",
+      "support": {
+       "level": "verified",
+       "evidence": [
+        {
+         "kind": "state",
+         "fieldPath": "game.temperature.value",
+         "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "requirements[0]",
+         "cardName": "Ice Cap Melting"
+        },
+        {
+         "kind": "catalog",
+         "fieldPath": "effects.onPlay.global",
+         "cardName": "Deep Well Heating"
+        }
+       ]
+      }
+     }
+    ],
+    "blockers": [
+     {
+      "kind": "temperature",
+      "observed": -28,
+      "target": 2,
+      "comparator": ">=",
+      "gap": 14,
+      "status": "unmet",
+      "evidence": [
+       {
+        "kind": "state",
+        "fieldPath": "game.temperature.value",
+        "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+       },
+       {
+        "kind": "catalog",
+        "fieldPath": "requirements[0]",
+        "cardName": "Ice Cap Melting"
+       }
+      ],
+      "card": "Ice Cap Melting"
+     }
+    ],
+    "payments": {
+     "play": 29,
+     "purchase": 0
+    },
+    "support": {
+     "level": "conditional",
+     "assumptions": [
+      "Interplanetary Cinematics has other effects that are not modeled; this effect is read from its card definition"
+     ],
+     "evidence": [
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Interplanetary Cinematics"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "tags",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects",
+       "cardName": "Deep Well Heating"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.action.spend",
+       "cardName": "Development Center"
+      },
+      {
+       "kind": "state",
+       "fieldPath": "game.temperature.value",
+       "stateFingerprint": "a828cee4a178cf2cfb44a3c13c6ea533035fc67ac041c8ad1ab9ace4e623c6b8"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "requirements[0]",
+       "cardName": "Ice Cap Melting"
+      },
+      {
+       "kind": "catalog",
+       "fieldPath": "effects.onPlay.global",
+       "cardName": "Deep Well Heating"
+      }
+     ]
+    },
+    "question": {
+     "key": "plan.unlock",
+     "params": {
+      "from": "Deep Well Heating",
+      "to": "Ice Cap Melting"
+     },
+     "text": "Is it worth playing Deep Well Heating mainly to meet the requirement of Ice Cap Melting, or is there another way to get there?"
+    },
+    "forecast": {
+     "horizonProductionPhases": 3,
+     "productionPhases": 3,
+     "productionsLeft": 10,
+     "deltas": [
+      {
+       "productionIndex": 0,
+       "resources": {
+        "megacredits": -29,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 0,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 1,
+       "resources": {
+        "megacredits": -28,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 2,
+       "resources": {
+        "megacredits": -27,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 1
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      },
+      {
+       "productionIndex": 3,
+       "resources": {
+        "megacredits": -26,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 2
+       },
+       "production": {
+        "megacredits": 0,
+        "steel": 0,
+        "titanium": 0,
+        "plants": 0,
+        "energy": 1,
+        "heat": 0
+       },
+       "terraformRating": 1
+      }
+     ],
+     "upfront": {
+      "play": 29,
+      "purchase": 0
+     },
+     "megacredits": "unknown",
+     "victoryPoints": {
+      "total": 1,
+      "terraformRating": 1,
+      "cards": 0
+     },
+     "complete": false,
+     "unmodeledEffects": [
+      "Ice Cap Melting: a tile is placed: space, bonuses and the global parameter / TR it raises are not modeled",
+      "Interplanetary Cinematics (in play) may react: onCardPlayed"
+     ],
+     "assumptions": [
+      "costs are paid in M€ (steel or titanium could replace part of them)",
+      "the plan is played before the next production phase",
+      "the action of Development Center is not counted (it is optional each generation)"
+     ]
+    }
+   }
+  ],
+  "discarded": [],
+  "limitations": [
+   "FEEDS_RESOURCE: adding resources to another card is a target choice; no engine-verified adapter yet",
+   "AMPLIFIES: effects triggered by other cards are card code (e.g. Media Group); no engine-verified adapter yet",
+   "ocean requirements: oceans come from tile placement, which is not modeled",
+   "requirements counting all players' tags are not linked",
+   "temperature/oxygen bonuses of the global tracks (extra heat production, oxygen raising temperature) are not counted",
+   "M€ given by a card is not linked to particular cards (it pays for everything)"
+  ],
+  "warnings": [
+   "only 40 of the 69 unplayed cards were considered"
+  ],
+  "search": {
+   "poolSize": 40,
+   "chainsExamined": 665,
+   "truncated": true,
+   "elapsedMs": 36
+  }
+ }
+}
