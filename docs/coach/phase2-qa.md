@@ -1,6 +1,6 @@
-# Phase 2 QA（Gate E まで）
+# Phase 2 QA（G0〜Gate F）
 
-環境: g10（Node v24.13.0）。試験はすべて自動テスト（テスト専用ゲーム）。本 PR では実機 UI 試験の対象機能（API・UI）はまだない。
+環境: g10（Node v24.13.0）。P2-01〜23 は自動テスト（テスト専用ゲーム）、P2-24 はブラウザでの実機確認（テスト用ソロゲーム、縦 768×1024・横 1024×768）。
 
 ## 1. シナリオ（P2-01〜P2-24）
 
@@ -29,7 +29,7 @@
 | 21 | 同一局面への連続 API 呼出し | PASS | `gives the same result for the same position and does not change the game`（キャッシュから同じ本文、ゲーム不変） |
 | 22 | 手札・候補多数 | PASS | `stops at its limits with many cards and says so`（208 枚で 40 枚に制限・警告、チェーン上限 10 で停止・警告）。予測込みの実測 p95: 12 枚 2.5 ms、40 枚 38.3 ms、208 枚 67.6 ms |
 | 23 | 終局目前 | PASS | `counts the production phases left in a solo game`、`cuts the horizon at the end of a solo game and says so` |
-| 24 | タブレット横/縦表示 | 未実施 | Gate F |
+| 24 | タブレット横/縦表示 | PASS | 縦・横ともコーチを開いたままアクションシート・下部ナビ・盤面を操作でき、カード売却後に自動更新。候補（目的・カード・可否）と根拠（関係・ブロッカー・予測表・カバレッジ）を日本語で表示（[設計 §11](phase2-design.md)、`evidence/p2f-*`）。計画の「縦は下部・横はサイド」の配置は操作を妨げたため変更 |
 
 ## 2. Gate B のゲート（偽陽性なし）
 
@@ -54,12 +54,26 @@
 
 証跡: `docs/coach/evidence/p2e-live-*.json`（ID なし）。
 
-## 6. 自動試験
+## 6. Gate F（タブレット UI・実機）
+
+| 項目 | 結果 |
+|---|---|
+| 縦 768×1024 | コーチを開いたまま「アクション」→「売却」でカードを売却、コーチが自動更新（M€・手札枚数・カバレッジ） |
+| 横 1024×768 | コーチは右上。アクションシート（世代終了・Undo を含む）・ナビ・盤面を操作可能 |
+| 日本語 | プラン 9 件の局面で、目的・バッジ・カード名・関係・予測表・注記・問いがすべて日本語 |
+| 実機の照合 | テスト用ソロを終局まで 51 手、994 チェック、失敗 0、分析 p95 6.0 ms |
+| LAN 経由（Mac → g10） | 分析 API p95 18.2 ms（30 回） |
+| 見つけて直した事項 | ①下部ドロワーがアクションシートと下部ナビを覆った ②横のサイドドロワーが「世代終了」「Undo」を覆った ③背景の透過で下の文字が透けた → 上部ドロワーに変更、背景を不透明に |
+
+確認はブラウザの表示サイズ指定で行った。実機タブレット（Wi-Fi）での確認は利用者に依頼する（[未対応](phase2-gaps.md)）。
+
+## 7. 自動試験
 
 | 試験 | 結果 |
 |---|---|
 | coach テスト（既存 + G0） | 88 件 |
 | 分析テスト | 69 件（extractFeatures 6、requirements 5、golden 18、synergyGraph 12、candidates 10、forecast 9、engine/API 9） |
-| 合計 | **157 passing / 0 failing**（コーチ全体） |
-| ミューテーション | Gate A 3 件、Gate B 2 件、Gate C 3 件、Gate D 3 件を検出 |
+| 合計（サーバー） | **157 passing / 0 failing**（コーチ全体） |
+| UI テスト（Vitest） | 12 件（`CoachPanel.spec.ts`: パネル 8、文言 4） |
+| ミューテーション | Gate A 3 件、Gate B 2 件、Gate C 3 件、Gate D 3 件、Gate F 3 件を検出 |
 | 全体回帰 | [報告](phase2-report.md) に記載 |

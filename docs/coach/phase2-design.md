@@ -1,11 +1,12 @@
-# Phase 2 設計（実装済み部分）— G0 + Gate A〜E
+# Phase 2 設計 — G0 + Gate A〜F
 
 計画: `TM-COACH-P2`（2026-10-14）。ブランチ `coach/phase2`、起点 `7ee0c64bb`（`main`、内容は `ef8bc6664` と同一）。
 最初の PR（#2、マージ済み）で **G0 修正・効果原子（EffectAtom）と未解析の表現・要件分析・実エンジンとの Golden** を入れた。
 続く PR（#3、マージ済み）で **Gate B: コンボの有向グラフ** を追加（§7）。
 PR #4（マージ済み）で **Gate C: プラン候補の列挙** を追加（§8）。
 PR #5（マージ済み）で **Gate D: 生産フェーズ 0〜3 回の予測** を追加（§9）。
-ブランチ `coach/phase2-gate-e`（起点 `2b8d5abf7`）で **Gate E: `CoachAnalysisV1` と `GET /api/coach/analysis`** を追加（§10）。Gate F は未着手。
+PR #6（マージ済み）で **Gate E: `CoachAnalysisV1` と `GET /api/coach/analysis`** を追加（§10）。
+ブランチ `coach/phase2-gate-f`（起点 `969e918df`）で **Gate F: タブレット最小 UI** を追加（§11）。
 
 関連: [カバレッジ監査](phase2-coverage.md) / [QA](phase2-qa.md) / [未対応](phase2-gaps.md) / [報告](phase2-report.md)
 
@@ -220,6 +221,37 @@ Gate D で見つけた Gate C の不足: 生産を下げるカード（Strip Min
 
 計測条件: g10（GMKtec G10、Node v24.13.0、`npm start`）、同一ホストからの HTTP、各手で状態が変わるため大半はキャッシュ外の計算。手札 208 枚の極端な場合の計算時間は in-process で p95 67.6 ms（§9）。
 
-## 11. 次の段階（未着手）
+## 11. Gate F: タブレット最小 UI
 
-Gate F タブレット最小 UI（`ClientExtension`、UI 文言の 16 言語翻訳）。
+**入口**: `extension.client.ts` の `menuItems` に「Strategy coach」（電球アイコン）を追加し、`component` に `CoachPanel.vue` を登録した。ゲーム本体の画面は変更しない（`ClientExtension` の既存の口だけを使う）。タブレット表示ではゲームメニュー（☰）は「Players」画面にある。
+
+**パネル**（`client/CoachPanel.vue`、Vue 3 `<script setup>`）:
+- 開いている間だけ `GET api/coach/analysis?id=<自分の ID>&horizon=<0..3>` を `no-store` で取得。ID はページの `view.id`（`p` で始まり `thisPlayer` がある場合のみ。観戦者には「プレイヤー専用」と表示し、要求を送らない）。
+- 局面（`gameAge:undoCount:step:phase`）・horizon・開閉が変わると再取得。手番の操作・Undo・相手の行動で自動更新される。
+- 表示: プランごとに目的、「仮定に基づく」バッジ（`support.level` が verified でない場合）、カード（今プレイ可能／後で／確認不可）、関係（DISCOUNTS など）、ブロッカー、生産フェーズごとの資源・TR の表、費用・回収・現在の VP、考えるための問い。最後にカバレッジ（「n / m 枚を完全にモデル化」）と「関係がないとは限らない」の注記。
+- 予測が未完成（`complete: false`）なら合計（回収の判定）を出さない。
+- 失敗時は「現在コーチを利用できません」とだけ表示し、ゲームは継続（API 側の失敗の隔離は §10）。
+
+**文言**（`client/coachText.ts`）: サーバーの英語の自由文（`why`・`text`・理由・前提）は表示しない。構造化された項目（関係の種類・量・`completes`・`playFirst`、ブロッカーの種類、問いの `key`/`params`）から固定の英語テンプレート（`${0}` 形式）を選び、`translateTextWithParams` で翻訳する。カード名はゲームのカード翻訳を使う。テンプレート 39 件を `src/extensions/coach/locales/<lang>/coach.json` に 16 言語で追加（既存の「Scoring」「Playable now」「Close」「Refresh」は既存の翻訳を使用）。`npm run lint:i18n` は全言語 100 %。
+
+**配置**（計画 §9 からの変更）: 計画では「縦は下部ドロワー、横はサイドドロワー」としたが、実機で次の問題を確認したため変更した。
+- ゲーム画面は 1 つの重なり順の文脈（`mb-home`、`z-index: 0`）にあり、ゲームのアクションシート（下から、最大 82 %）・下部ナビゲーションより上か下かを個別に決められない。下部ドロワーはアクションシートとナビを覆い、横のサイドドロワーは「世代終了」「Undo」を覆った（DoD 9 に反する）。
+- 変更後: 縦は上部バーの直下に全幅（最大 40vh）、横（`@mb-landscape` と同じ 900px 以上）は右上（幅 `min(440px, 45vw)`、最大 45vh）。通常のアクションシート（高さ約 31 %）・下部ナビ・盤面の中央が開いたまま使える。カード選択など全画面のシートとは重なるため、その間は「閉じる」で閉じる（内容はスクロール可能）。
+
+### 検証
+
+| 試験 | 方法 | 結果 |
+|---|---|---|
+| 部品試験（Vitest） | `tests/client/extensions/coach/CoachPanel.spec.ts`: 閉じている間は要求なし、メニューから開く、プランの表示（目的・可否・関係・表・回収・VP・カバレッジ・問い）、horizon の変更、局面の変化で再取得、観戦者・非プレイヤー ID には要求しない、失敗表示、閉じる。`coachText` の構造化項目からの文言選択、未完成予測で合計を出さない | 12 件 PASS |
+| ミューテーション | 未完成予測の合計表示、プレイヤー ID の判定、局面での再取得をそれぞれ壊す | 3 件とも検出（ID 判定は最初は見逃し、試験を追加） |
+| 実機・縦 768×1024（g10、テスト用ソロ） | メニュー → 戦略コーチ。コーチを開いたまま「アクション」→「売却」でカードを売る | 操作可能、売却後に自動更新（M€ 12→13、手札 11→10）。[画面](evidence/p2f-portrait-action-sheet.jpg) |
+| 実機・横 1024×768 | 同上 | アクションシート・ナビ・盤面を操作可能。[画面](evidence/p2f-landscape.jpg) |
+| 日本語表示 | 言語を日本語にしてプラン 9 件の局面を表示 | 目的・バッジ・カード名・関係・表・費用・合計なしの注記・VP・問いがすべて日本語。[画面](evidence/p2f-portrait-ja.jpg) |
+| 実機の照合 | `liveCheck.ts --analysis`（テスト用ソロ、終局まで 51 手） | 994 チェック、失敗 0、分析 p95 6.0 ms。[証跡](evidence/p2f-live-solo.json) |
+| LAN 経由の応答 | Mac → g10（192.168.3.25:8081）で分析 API を 30 回 | p50 15.5 ms、p95 18.2 ms、最大 20.9 ms |
+
+利用者のゲームには触れていない（試験はすべて新規のテスト用ゲーム）。
+
+## 12. 次の段階
+
+Phase 3（対話型コーチ）。計画 §13 のとおり、LLM には検証済みの候補・条件・多軸収支・未解析の情報だけを渡す。
