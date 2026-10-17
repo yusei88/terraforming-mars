@@ -119,6 +119,9 @@ const counselError = ref(false);
 const showEvidence = ref(false);
 const aiConsent = ref(readConsent());
 let inFlight: AbortController | undefined;
+/* Only the answer of the latest options request is shown (an older one may arrive later). */
+let optionsRequest = 0;
+let optionsInFlight: AbortController | undefined;
 
 /* The coach works for the player of a player page only (not for spectators). */
 const playerId = computed(() => {
@@ -208,13 +211,21 @@ async function loadOptions(): Promise<void> {
   if (id === undefined) {
     return;
   }
+  const request = ++optionsRequest;
+  optionsInFlight?.abort();
+  const controller = new AbortController();
+  optionsInFlight = controller;
   loading.value = true;
   try {
-    const response = await fetch(`api/coach/options?id=${encodeURIComponent(id)}`, {cache: 'no-store'});
+    const response = await fetch(`api/coach/options?id=${encodeURIComponent(id)}`, {cache: 'no-store', signal: controller.signal});
     if (!response.ok) {
       throw new Error(String(response.status));
     }
-    options.value = await response.json() as CoachChoiceListV1;
+    const list = await response.json() as CoachChoiceListV1;
+    if (request !== optionsRequest) {
+      return;
+    }
+    options.value = list;
     failed.value = false;
     // A choice of an earlier position no longer exists: back to the list (the old review stays marked stale).
     if (selectedId.value !== undefined && selected.value === undefined) {
@@ -223,10 +234,15 @@ async function loadOptions(): Promise<void> {
       comparedId.value = undefined;
       picking.value = false;
     }
-  } catch {
-    failed.value = true;
+  } catch (error) {
+    if (request === optionsRequest && !(error instanceof DOMException && error.name === 'AbortError')) {
+      failed.value = true;
+    }
   } finally {
-    loading.value = false;
+    if (request === optionsRequest) {
+      loading.value = false;
+      optionsInFlight = undefined;
+    }
   }
 }
 

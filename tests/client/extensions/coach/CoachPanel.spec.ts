@@ -188,6 +188,32 @@ describe('CoachPanel (choice-driven)', () => {
     expect(wrapper.find('[data-test=review-strengths]').exists()).is.false;
   });
 
+  it('keeps the latest options when an older answer arrives last', async () => {
+    // The first request (old position) answers only after the second one (new position).
+    let releaseOld: () => void = () => {};
+    const oldAnswer = new Promise<void>((resolve) => releaseOld = resolve);
+    let calls = 0;
+    global.fetch = (async (input: unknown) => {
+      requests.push({url: String(input)});
+      calls++;
+      if (calls === 1) {
+        await oldAnswer;
+        return new Response(JSON.stringify(choiceList({positionToken: 'd'.repeat(32), options: [CARD]})), {status: 200});
+      }
+      return new Response(JSON.stringify(choiceList({positionToken: 'e'.repeat(32), options: [OTHER]})), {status: 200});
+    }) as typeof fetch;
+    coachPanelState.open = true;
+    const wrapper = mount(CoachPanel, {...globalConfig, props: {view: playerView}});
+    await wrapper.setProps({view: {...playerView, game: {...playerView.game, gameAge: 2}} as unknown as ViewModel});
+    await flushPromises();
+    releaseOld();
+    await flushPromises();
+    expect(calls).eq(2);
+    expect(wrapper.find('[data-test=group-now]').text()).contains('Cartel');
+    expect(wrapper.find('[data-test=group-now]').text()).does.not.contain('Earth Office');
+    expect(wrapper.find('[data-test=error]').exists()).is.false;
+  });
+
   it('reloads the options when the server says the position changed (409)', async () => {
     const wrapper = await open();
     counsel = () => ({status: 409, body: {status: 'stale'}});

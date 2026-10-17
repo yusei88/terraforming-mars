@@ -18,6 +18,8 @@ import {newCard} from '../../../../src/server/createCard';
 import {IProjectCard} from '../../../../src/server/cards/IProjectCard';
 import {SelectCard} from '../../../../src/server/inputs/SelectCard';
 import {expectNoSecretIds} from '../coachTestUtils';
+import {FakeGameLoader} from '../../../routes/FakeGameLoader';
+import {Game} from '../../../../src/server/Game';
 
 // P3-CD-1: options (Now / Future) and counsel. Scenario ids from docs/coach/phase3/choice-driven-plan.md §8.
 
@@ -72,7 +74,7 @@ function ok(reply: unknown): ProviderResult {
 
 async function review(player: TestPlayer, option: CoachChoiceOption, extra: Partial<CoachCounselRequest> = {}, settings = OFF, provider?: CoachLLMProvider) {
   const l = list(player, settings);
-  return counsel(player, request(l, option, extra), {settings, provider, limiter: new CounselLimiter()});
+  return counsel(player, request(l, option, extra), {reload: async () => player, settings, provider, limiter: new CounselLimiter()});
 }
 
 describe('coach options (P3-CD-1)', () => {
@@ -275,13 +277,13 @@ describe('coach counsel (P3-CD-1)', () => {
     const {player} = solo();
     const l = list(player);
     const card = find(l, 'project-card');
-    const stale = await counsel(player, request(l, card, {positionToken: '0'.repeat(32)}), {settings: OFF, limiter: new CounselLimiter()});
+    const stale = await counsel(player, request(l, card, {positionToken: '0'.repeat(32)}), {reload: async () => player, settings: OFF, limiter: new CounselLimiter()});
     expect(stale.status).eq(409);
-    const unknown = await counsel(player, request(l, card, {choiceId: 'f'.repeat(16)}), {settings: OFF, limiter: new CounselLimiter()});
+    const unknown = await counsel(player, request(l, card, {choiceId: 'f'.repeat(16)}), {reload: async () => player, settings: OFF, limiter: new CounselLimiter()});
     expect(unknown.status).eq(400);
     const pass = l.options.find((o) => o.kind === 'undo' || o.kind === 'blue-action' || o.kind === 'card-selection');
     if (pass !== undefined) {
-      expect((await counsel(player, request(l, pass), {settings: OFF, limiter: new CounselLimiter()})).status).eq(400);
+      expect((await counsel(player, request(l, pass), {reload: async () => player, settings: OFF, limiter: new CounselLimiter()})).status).eq(400);
     }
   });
 
@@ -322,7 +324,7 @@ describe('coach counsel (P3-CD-1)', () => {
       const provider = new FakeProvider(validAnswer);
       const l = list(player, ON);
       const card = find(l, 'project-card');
-      const body = (await counsel(player, request(l, card, {aiConsent: true}), {settings: ON, provider, limiter: new CounselLimiter()})).body as CoachCounselV1;
+      const body = (await counsel(player, request(l, card, {aiConsent: true}), {reload: async () => player, settings: ON, provider, limiter: new CounselLimiter()})).body as CoachCounselV1;
       expect(body.source).eq('model');
       expect(body.status).eq('ready');
       expect(body.risks[0].text).contains('M€');
@@ -361,8 +363,8 @@ describe('coach counsel (P3-CD-1)', () => {
       const limiter = new CounselLimiter();
       const l = list(player, settings);
       const card = find(l, 'project-card');
-      await counsel(player, request(l, card, {aiConsent: true}), {settings, provider, limiter});
-      const second = (await counsel(player, request(l, card, {aiConsent: true}), {settings, provider, limiter})).body as CoachCounselV1;
+      await counsel(player, request(l, card, {aiConsent: true}), {reload: async () => player, settings, provider, limiter});
+      const second = (await counsel(player, request(l, card, {aiConsent: true}), {reload: async () => player, settings, provider, limiter})).body as CoachCounselV1;
       expect(provider.requests).has.length(1);
       expect(second.ai).deep.include({state: 'failed', category: 'budget'});
     });
@@ -378,6 +380,41 @@ describe('coach counsel (P3-CD-1)', () => {
       expect(body.status).eq('stale');
       expect(body.strengths).is.empty;
       expect(body.facts).is.empty;
+    });
+
+    it('CD17/CD18: an undo that replaces the Game object while the answer is made makes it stale', async () => {
+      const {game, player} = solo();
+      const loader = new FakeGameLoader();
+      await loader.add(game);
+      const before = JSON.stringify(game.serialize());
+      // The player moves on; the request is made for that position.
+      player.megaCredits += 5;
+      player.takeAction();
+      const l = list(player, ON);
+      const card = find(l, 'project-card');
+      // An undo restores an earlier save as a new Game object (with one more undo).
+      const provider = new FakeProvider(async (r) => {
+        const restored = Game.deserialize(JSON.parse(before));
+        restored.undoCount = game.undoCount + 1;
+        await loader.add(restored);
+        return validAnswer(r);
+      });
+      const reload = async () => (await loader.getGame(player.id))?.players.find((p) => p.id === player.id);
+      const body = (await counsel(player, request(l, card, {aiConsent: true}), {reload, settings: ON, provider, limiter: new CounselLimiter()})).body as CoachCounselV1;
+      // The old player object did not change, but it is no longer the game being played.
+      expect(projectStateKeyUnchanged(player, l)).is.true;
+      expect(body.status).eq('stale');
+      expect(body.strengths).is.empty;
+      expect(body.facts).is.empty;
+    });
+
+    it('is stale when the game cannot be loaded any more', async () => {
+      const {player} = solo();
+      const body = (await review(player, find(list(player, ON), 'project-card'), {aiConsent: true}, ON, new FakeProvider(validAnswer))).body as CoachCounselV1;
+      expect(body.status).eq('ready');
+      const l = list(player, ON);
+      const gone = (await counsel(player, request(l, find(l, 'project-card'), {aiConsent: true}), {reload: async () => undefined, settings: ON, provider: new FakeProvider(validAnswer), limiter: new CounselLimiter()})).body as CoachCounselV1;
+      expect(gone.status).eq('stale');
     });
 
     it('checks numbers and card names against the cited facts only', () => {
@@ -401,8 +438,39 @@ describe('coach counsel (P3-CD-1)', () => {
       expect(cite('B は良い', ['F2']).ok).is.true;
       expect(validateCounsel({strengths: [{about: 'B', text: 'x', evidence: ['F2']}], risks: [], outlook: [], question: {text: '?', evidence: ['F1']}}, facts, entry, undefined).ok).is.false;
     });
+
+    it('accepts only facts of the same option (or shared game facts) for a point', () => {
+      const {player} = solo();
+      const built = choiceListFor(player, OFF);
+      const [a, b] = built.list.options.filter((o) => o.kind === 'project-card').map((o) => built.entries.get(o.id));
+      if (a === undefined || b === undefined) {
+        throw new Error('entries');
+      }
+      const facts = [
+        {id: 'F1', about: 'game' as const, kind: 'resources' as const, value: {megacredits: 40}, support: 'verified' as const},
+        {id: 'F2', about: 'A' as const, kind: 'cost' as const, value: {card: a.cardName, cost: 7}, support: 'verified' as const},
+        {id: 'F3', about: 'B' as const, kind: 'cost' as const, value: {card: b.cardName, cost: 9}, support: 'verified' as const},
+      ];
+      const answer = (about: string, evidence: Array<string>, questionEvidence = ['F1']) => validateCounsel(
+        {strengths: [{about, text: 'x', evidence}], risks: [], outlook: [], question: {text: '?', evidence: questionEvidence}}, facts, a, b);
+      expect(answer('A', ['F2']).ok).is.true;
+      expect(answer('A', ['F1', 'F2']).ok).is.true;
+      expect(answer('B', ['F3', 'F1']).ok).is.true;
+      // A fact of A cannot back a point about B, and the other way round.
+      const wrong = answer('B', ['F2']);
+      expect(wrong.ok).is.false;
+      expect(wrong.ok ? [] : wrong.problems.map((p) => p.code)).includes('evidence-of-other-option');
+      expect(answer('A', ['F3']).ok).is.false;
+      // The question may weigh both options.
+      expect(answer('A', ['F2'], ['F2', 'F3']).ok).is.true;
+    });
   });
 });
+
+/** True when the old player object still shows the position the list was made for. */
+function projectStateKeyUnchanged(player: TestPlayer, l: CoachChoiceListV1): boolean {
+  return list(player, ON).positionToken === l.positionToken;
+}
 
 describe('coach counsel route (P3-CD-1)', () => {
   async function post(scaffolding: RouteTestScaffolding, body: string, headers: Record<string, string> = {'content-type': 'application/json', 'sec-fetch-site': 'same-origin'}) {
@@ -435,6 +503,44 @@ describe('coach counsel route (P3-CD-1)', () => {
     const stale = await post(scaffolding, JSON.stringify(request(l, find(l, 'project-card'), {positionToken: 'a'.repeat(32)})));
     expect(stale.statusCode).eq(409);
     expect(JSON.parse(stale.content).status).eq('stale');
+  });
+
+  it('checks the position on the game the GameLoader holds after the answer (undo replaces the Game)', async () => {
+    const {game, player} = solo();
+    const scaffolding = new RouteTestScaffolding(new MockRequest());
+    await scaffolding.ctx.gameLoader.add(game);
+    const before = JSON.stringify(game.serialize());
+    player.megaCredits += 5;
+    player.takeAction();
+    const saved = {...process.env};
+    process.env.COACH_AI_ENABLED = 'true';
+    process.env.COACH_AI_EXTERNAL_ALLOWED = 'true';
+    process.env.OPENAI_API_KEY = 'test-key-not-used';
+    setAiProviderForTesting(new FakeProvider(async (r) => {
+      const restored = Game.deserialize(JSON.parse(before));
+      restored.undoCount = game.undoCount + 1;
+      await scaffolding.ctx.gameLoader.add(restored);
+      const input = r.task?.input as {facts: Array<{id: string}>};
+      return ok({strengths: [], risks: [], outlook: [], question: {text: '?', evidence: [input.facts[0].id]}});
+    }));
+    try {
+      scaffolding.url = `/api/coach/counsel?id=${player.id}`;
+      const l = list(player, ON);
+      const res = await post(scaffolding, JSON.stringify(request(l, find(l, 'project-card'), {aiConsent: true})));
+      expect(res.statusCode).eq(statusCode.ok);
+      const body: CoachCounselV1 = JSON.parse(res.content);
+      expect(body.status).eq('stale');
+      expect(body.strengths).is.empty;
+    } finally {
+      setAiProviderForTesting(undefined);
+      for (const key of ['COACH_AI_ENABLED', 'COACH_AI_EXTERNAL_ALLOWED', 'OPENAI_API_KEY']) {
+        if (saved[key] === undefined) {
+          delete process.env[key];
+        } else {
+          process.env[key] = saved[key];
+        }
+      }
+    }
   });
 
   it('accepts only the documented request fields', () => {

@@ -106,8 +106,21 @@ export type CounselOutcome =
   {status: 409, body: {schemaVersion: typeof COACH_COUNSEL_SCHEMA, status: 'stale', positionToken: string}} |
   {status: 400, body: {error: string}};
 
+export type CounselOptions = {
+  /**
+   * Loads the player from the current game again (through the GameLoader). Used to check the position
+   * once the answer is made: an undo replaces the whole Game object, so the `player` the request started
+   * with may no longer be the game that is played.
+   */
+  reload: () => Promise<IPlayer | undefined>,
+  settings?: AiSettings,
+  provider?: CoachLLMProvider,
+  limiter?: CounselLimiter,
+  abortSignal?: AbortSignal,
+};
+
 /** Facts and coaching for one option of the player's current position. */
-export async function counsel(player: IPlayer, request: CoachCounselRequest, options: {settings?: AiSettings, provider?: CoachLLMProvider, limiter?: CounselLimiter, abortSignal?: AbortSignal} = {}): Promise<CounselOutcome> {
+export async function counsel(player: IPlayer, request: CoachCounselRequest, options: CounselOptions): Promise<CounselOutcome> {
   const settings = options.settings ?? aiSettings();
   const limiter = options.limiter ?? counselLimiter;
   const state = projectCoachState(player);
@@ -157,9 +170,11 @@ export async function counsel(player: IPlayer, request: CoachCounselRequest, opt
     }
   }
 
-  // The game may have moved on while the answer was made: never present it as advice for the new position.
-  const after = projectCoachState(player);
-  if (after.stateKey !== state.stateKey || after.advisoryFingerprint !== state.advisoryFingerprint) {
+  // The game may have moved on (or been replaced by an undo) while the answer was made: load the current
+  // game again and never present the answer as advice for another position.
+  const current = await options.reload();
+  const after = current === undefined ? undefined : projectCoachState(current);
+  if (after === undefined || after.stateKey !== state.stateKey || after.advisoryFingerprint !== state.advisoryFingerprint) {
     return {status: 200, body: {...base, status: 'stale', source: 'none', facts: [], strengths: [], risks: [], outlook: [], question: undefined}};
   }
   return {status: 200, body};

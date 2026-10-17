@@ -8,8 +8,9 @@ import {Coaching} from './templateCoaching';
 // The review of a chosen option by a language model (P3-CD-1). The model receives the chosen option (and
 // the compared one), the facts about them and nothing else, and must tie every point to facts by id.
 // Each point is checked against the facts it names: ids must exist, numbers must be numbers of those
-// facts, card names must be names of those facts or of the options. Any failure discards the whole
-// answer (the caller falls back to the template coaching).
+// facts, card names must be names of those facts or of the options, and a point about A (or B) may only
+// rest on facts of A (or B) and shared game facts. Any failure discards the whole answer (the caller
+// falls back to the template coaching).
 
 export const COUNSEL_INSTRUCTIONS_VERSION = 'coach-counsel-instructions/1';
 
@@ -29,7 +30,7 @@ export function counselInstructions(language: string): string {
     '- Never say an option is the best, optimal or certain, and give no win chances. You cannot act in the game.',
     '- Write card names exactly as in the facts (in English, unchanged). Do not use field names such as complete or legal-now; say it in plain words.',
     `- Write in ${languageName(language)}. Each point is one short sentence (under ${MAX_TEXT} characters). At most ${MAX_POINTS} points per list. Plain text.`,
-    '- "about" says whether a point is about A or B.',
+    '- "about" says whether a point is about A or B. A point about A may only cite facts whose "about" is A or "game"; a point about B, facts about B or "game". The question may cite any fact.',
   ].join('\n');
 }
 
@@ -61,7 +62,7 @@ export function counselInput(a: ChoiceEntry, b: ChoiceEntry | undefined, facts: 
   };
 }
 
-export type CounselProblem = {code: 'shape' | 'unknown-evidence' | 'no-evidence' | 'number-not-in-evidence' | 'card-not-in-evidence' | 'forbidden-claim' | 'too-long' | 'too-many' | 'empty' | 'wrong-about', detail: string};
+export type CounselProblem = {code: 'shape' | 'unknown-evidence' | 'no-evidence' | 'evidence-of-other-option' | 'number-not-in-evidence' | 'card-not-in-evidence' | 'forbidden-claim' | 'too-long' | 'too-many' | 'empty' | 'wrong-about', detail: string};
 
 type RawPoint = {about: string, text: string, evidence: Array<string>};
 
@@ -99,7 +100,11 @@ export function validateCounsel(raw: unknown, facts: ReadonlyArray<CoachFact>, a
   const optionNames = new Set([...a.option.cardNames, ...(b?.option.cardNames ?? [])]);
   const problems: Array<CounselProblem> = [];
 
-  const check = (where: string, p: {about?: string, text: string, evidence: Array<string>}): CoachPoint | undefined => {
+  /**
+   * A point about A may cite facts of A and shared game facts; a point about B, facts of B and game
+   * facts. The question may weigh both options, so it may cite any fact.
+   */
+  const check = (where: string, p: {about?: string, text: string, evidence: Array<string>}, anyOption = false): CoachPoint | undefined => {
     if (p.text.trim() === '') {
       problems.push({code: 'empty', detail: where});
     }
@@ -117,6 +122,8 @@ export function validateCounsel(raw: unknown, facts: ReadonlyArray<CoachFact>, a
       const fact = byId.get(id);
       if (fact === undefined) {
         problems.push({code: 'unknown-evidence', detail: `${where}: ${id}`});
+      } else if (!anyOption && fact.about !== 'game' && fact.about !== (p.about === 'B' ? 'B' : 'A')) {
+        problems.push({code: 'evidence-of-other-option', detail: `${where}: ${id}`});
       } else {
         cited.push(fact);
       }
@@ -160,7 +167,7 @@ export function validateCounsel(raw: unknown, facts: ReadonlyArray<CoachFact>, a
       }
     });
   }
-  const question = check('question', {...(r.question as RawPoint), about: 'A'});
+  const question = check('question', {...(r.question as RawPoint), about: 'A'}, true);
   if (question !== undefined) {
     coaching.question = question;
   }

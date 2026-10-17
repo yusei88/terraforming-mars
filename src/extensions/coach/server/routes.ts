@@ -267,9 +267,12 @@ export class ApiCoachCounsel extends CoachPlayerHandler {
       }
     }
     // The model call is bounded by COACH_AI_TIMEOUT_MS; a closed page does not cancel it (the result is dropped).
+    // The position is checked again on the game the GameLoader holds then (an undo replaces the Game object).
+    const playerId = player.id;
+    const reload = async () => (await ctx.gameLoader.getGame(playerId))?.players.find((p) => p.id === playerId);
     let outcome;
     try {
-      outcome = await counsel(player, request, {settings, limiter: this.limiter});
+      outcome = await counsel(player, request, {reload, settings, limiter: this.limiter});
     } catch (error) {
       console.error('Coach counsel failed', error instanceof Error ? error.name : 'error');
       throw RouteError.internalServerError('coach counsel unavailable');
