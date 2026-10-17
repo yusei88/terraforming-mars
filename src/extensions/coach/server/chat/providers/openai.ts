@@ -1,5 +1,5 @@
 import {CoachLLMProvider, ProviderRequest, ProviderResult, ProviderUsage} from './LLMProvider';
-import {INSTRUCTIONS_VERSION, instructions, REPLY_SCHEMA} from '../instructions';
+import {instructions, REPLY_SCHEMA} from '../instructions';
 
 // OpenAI Responses API (POST /v1/responses) with structured outputs. Uses fetch, no SDK.
 //
@@ -45,16 +45,15 @@ export class OpenAIProvider implements CoachLLMProvider {
   public requestBody(request: ProviderRequest): Record<string, unknown> {
     return {
       model: this.options.model,
-      instructions: instructions(request.mode, request.language),
+      instructions: request.task?.instructions ?? instructions(request.mode, request.language),
       input: [
         ...request.recentConversation.map((turn) => ({role: turn.role, content: turn.text})),
-        {role: 'user', content: JSON.stringify({question: request.question, context: request.context})},
+        {role: 'user', content: JSON.stringify(request.task !== undefined ? request.task.input : {question: request.question, context: request.context})},
       ],
-      text: {format: {type: 'json_schema', name: 'coach_reply', strict: true, schema: REPLY_SCHEMA}},
+      text: {format: {type: 'json_schema', name: request.task?.schemaName ?? 'coach_reply', strict: true, schema: request.task?.schema ?? REPLY_SCHEMA}},
       max_output_tokens: this.options.maxOutputTokens,
       ...(this.options.reasoningEffort === undefined ? {} : {reasoning: {effort: this.options.reasoningEffort}}),
       store: false,
-      metadata: {instructions: INSTRUCTIONS_VERSION},
     };
   }
 

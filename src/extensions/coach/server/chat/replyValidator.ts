@@ -17,7 +17,7 @@ export type ReplyProblem = {
 export type ValidatedReply = {ok: true, reply: CoachModelReply} | {ok: false, problems: ReadonlyArray<ReplyProblem>, reply?: CoachModelReply};
 
 /** Numbers that need no source: counts of plans, cards and production phases the coach talks about. */
-const FREE_NUMBERS = [0, 1, 2, 3];
+export const FREE_NUMBERS = [0, 1, 2, 3];
 
 const FORBIDDEN = [
   /勝率|必勝|最適解|最善手|確実に勝/,
@@ -41,7 +41,8 @@ function normalizeDigits(text: string): string {
   return text.replace(/[０-９]/g, (d) => String.fromCharCode(d.charCodeAt(0) - 0xFEE0)).replace(/[−－]/g, '-');
 }
 
-function collectNumbers(value: unknown, out: Set<number>): void {
+/** Every number in a value (numbers, and digits inside strings). */
+export function collectNumbers(value: unknown, out: Set<number>): void {
   if (typeof value === 'number') {
     out.add(value);
     out.add(Math.abs(value));
@@ -63,6 +64,34 @@ export function numbersIn(message: string, cardNames: Iterable<string>): Array<n
     text = text.split(name).join(' ');
   }
   return [...text.matchAll(/\d+(?:[.,]\d+)?/g)].map((m) => Number(m[0].replace(',', '.')));
+}
+
+/** Catalog card names written in `text` that are not in `known` (names of `known` are removed first). */
+export function foreignCardNames(text: string, known: ReadonlySet<string>): Array<string> {
+  // Names of the context are removed first, so that "Power Plant:SP" does not read as the card "Power Plant".
+  let rest = text;
+  for (const name of [...known].sort((a, b) => b.length - a.length)) {
+    rest = rest.split(name).join(' ');
+  }
+  return SEARCHABLE_CARD_NAMES.filter((name) => !known.has(name) &&
+    new RegExp(`(^|[^A-Za-z])${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^A-Za-z:]|$)`).test(rest));
+}
+
+/** Win chances, optimal moves, guarantees claimed in `text` (a sentence that declines them is fine). */
+export function forbiddenClaims(text: string): Array<string> {
+  const found: Array<string> = [];
+  for (const sentence of text.split(/(?<=[。．.!?！？\n])/)) {
+    if (NEGATION.test(sentence)) {
+      continue;
+    }
+    for (const pattern of FORBIDDEN) {
+      const match = sentence.match(pattern);
+      if (match !== null) {
+        found.push(match[0]);
+      }
+    }
+  }
+  return found;
 }
 
 export function validateReply(raw: unknown, context: CoachLLMContext): ValidatedReply {
@@ -101,15 +130,8 @@ export function validateReply(raw: unknown, context: CoachLLMContext): Validated
       problems.push({code: 'unknown-card', detail: card});
     }
   }
-  // Names of the context are removed first, so that "Power Plant:SP" does not read as the card "Power Plant".
-  let rest = reply.message;
-  for (const name of [...known].sort((a, b) => b.length - a.length)) {
-    rest = rest.split(name).join(' ');
-  }
-  for (const name of SEARCHABLE_CARD_NAMES) {
-    if (!known.has(name) && new RegExp(`(^|[^A-Za-z])${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^A-Za-z:]|$)`).test(rest)) {
-      problems.push({code: 'card-not-in-context', detail: name});
-    }
+  for (const name of foreignCardNames(reply.message, known)) {
+    problems.push({code: 'card-not-in-context', detail: name});
   }
   const allowed = new Set<number>(FREE_NUMBERS);
   collectNumbers(context, allowed);
@@ -118,17 +140,8 @@ export function validateReply(raw: unknown, context: CoachLLMContext): Validated
       problems.push({code: 'number-not-in-context', detail: String(n)});
     }
   }
-  // A sentence that says win chances or optimal moves cannot be given is a correct answer, not a claim.
-  for (const sentence of reply.message.split(/(?<=[。．.!?！？\n])/)) {
-    if (NEGATION.test(sentence)) {
-      continue;
-    }
-    for (const pattern of FORBIDDEN) {
-      const match = sentence.match(pattern);
-      if (match !== null) {
-        problems.push({code: 'forbidden-claim', detail: match[0]});
-      }
-    }
+  for (const claim of forbiddenClaims(reply.message)) {
+    problems.push({code: 'forbidden-claim', detail: claim});
   }
   return problems.length === 0 ? {ok: true, reply} : {ok: false, problems, reply};
 }

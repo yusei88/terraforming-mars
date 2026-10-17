@@ -10,12 +10,17 @@ import {getCatalogJson, catalogVersion} from './cardCatalog';
 import {getCoachTracer} from './coachTrace';
 import {cachedAnalysis} from './analysis/engine';
 import {EVENT_POSITIONS, EventPosition} from '../common/CoachTrace';
+import {readBody} from '@/server/routes/readBody';
+import {choiceListFor, counsel, counselLimiter, CounselLimiter, MAX_COUNSEL_BODY_BYTES, parseCounselRequest} from './counsel/counselService';
+import {aiSettings} from './counsel/aiConfig';
 
 export const COACH_PATHS = {
   STATE: 'api/coach/state',
   CATALOG: 'api/coach/catalog',
   DECISIONS: 'api/coach/decisions',
   ANALYSIS: 'api/coach/analysis',
+  OPTIONS: 'api/coach/options',
+  COUNSEL: 'api/coach/counsel',
 } as const;
 
 /**
@@ -184,5 +189,103 @@ export class ApiCoachDecisions extends CoachPlayerHandler {
       body.historyReadError = error;
     }
     responses.writeJson(res, ctx, body);
+  }
+}
+
+/**
+ * `GET api/coach/options?id=<playerId>`: what the player can choose to have coached now
+ * (CoachChoiceListV1). Read-only.
+ */
+export class ApiCoachOptions extends CoachPlayerHandler {
+  public static readonly INSTANCE = new ApiCoachOptions();
+  private constructor() {
+    super();
+  }
+
+  public override async get(_req: Request, res: Response, ctx: Context): Promise<void> {
+    const player = await this.player(ctx);
+    let list;
+    try {
+      list = choiceListFor(player).list;
+    } catch (error) {
+      console.error('Coach options failed', error);
+      throw RouteError.internalServerError('coach options unavailable');
+    }
+    noStore(res);
+    responses.writeJson(res, ctx, {...list});
+  }
+}
+
+/** True unless the browser says the request comes from another site (CSRF). */
+export function isSameOrigin(req: Request): boolean {
+  const site = req.headers['sec-fetch-site'];
+  if (typeof site === 'string') {
+    return site === 'same-origin' || site === 'none';
+  }
+  const origin = req.headers.origin;
+  if (typeof origin === 'string') {
+    try {
+      return new URL(origin).host === req.headers.host;
+    } catch {
+      return false;
+    }
+  }
+  return true;
+}
+
+/**
+ * `POST api/coach/counsel?id=<playerId>`: facts and coaching about one option of the current position
+ * (CoachCounselV1). JSON body of at most 2 KB, same origin only, one review at a time per player and a
+ * limit per minute. Answers 409 when the position or the option is no longer current. Never changes
+ * the game; a failing model falls back to template coaching.
+ */
+export class ApiCoachCounsel extends CoachPlayerHandler {
+  public static readonly INSTANCE = new ApiCoachCounsel();
+  private constructor(private readonly limiter: CounselLimiter = counselLimiter) {
+    super();
+  }
+
+  public override async post(req: Request, res: Response, ctx: Context): Promise<void> {
+    if (!isSameOrigin(req)) {
+      throw RouteError.forbidden('cross-site request');
+    }
+    if (!String(req.headers['content-type'] ?? '').startsWith('application/json')) {
+      throw RouteError.badRequest('Content-Type must be application/json');
+    }
+    const player = await this.player(ctx);
+    const request = parseCounselRequest(await readBody(req, MAX_COUNSEL_BODY_BYTES));
+    if (typeof request === 'string') {
+      throw RouteError.badRequest(request);
+    }
+    const settings = aiSettings();
+    const key = CounselLimiter.key(player.id);
+    const review = request.mode === 'review';
+    if (review) {
+      const slot = this.limiter.begin(key, settings.perMinute, Date.now());
+      if (slot !== 'ok') {
+        throw RouteError.tooManyRequests(slot === 'busy' ? 'a review is already running' : 'too many reviews');
+      }
+    }
+    // The model call is bounded by COACH_AI_TIMEOUT_MS; a closed page does not cancel it (the result is dropped).
+    // The position is checked again on the game the GameLoader holds then (an undo replaces the Game object).
+    const playerId = player.id;
+    const reload = async () => (await ctx.gameLoader.getGame(playerId))?.players.find((p) => p.id === playerId);
+    let outcome;
+    try {
+      outcome = await counsel(player, request, {reload, settings, limiter: this.limiter});
+    } catch (error) {
+      console.error('Coach counsel failed', error instanceof Error ? error.name : 'error');
+      throw RouteError.internalServerError('coach counsel unavailable');
+    } finally {
+      if (review) {
+        this.limiter.end(key);
+      }
+    }
+    noStore(res);
+    if (outcome.status === 400) {
+      throw RouteError.badRequest(outcome.body.error);
+    }
+    res.statusCode = outcome.status;
+    responses.writeJson(res, ctx, {...outcome.body});
   }
 }

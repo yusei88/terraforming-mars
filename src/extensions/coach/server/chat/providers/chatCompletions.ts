@@ -41,11 +41,11 @@ export class ChatCompletionsProvider implements CoachLLMProvider {
     return {
       model: this.options.model,
       messages: [
-        {role: 'system', content: instructions(request.mode, request.language)},
+        {role: 'system', content: request.task?.instructions ?? instructions(request.mode, request.language)},
         ...request.recentConversation.map((turn) => ({role: turn.role, content: turn.text})),
-        {role: 'user', content: JSON.stringify({question: request.question, context: request.context})},
+        {role: 'user', content: JSON.stringify(request.task !== undefined ? request.task.input : {question: request.question, context: request.context})},
       ],
-      response_format: {type: 'json_schema', json_schema: {name: 'coach_reply', strict: true, schema: REPLY_SCHEMA}},
+      response_format: {type: 'json_schema', json_schema: {name: request.task?.schemaName ?? 'coach_reply', strict: true, schema: request.task?.schema ?? REPLY_SCHEMA}},
       max_completion_tokens: this.options.maxOutputTokens,
       ...(this.options.temperature === undefined ? {} : {temperature: this.options.temperature}),
     };

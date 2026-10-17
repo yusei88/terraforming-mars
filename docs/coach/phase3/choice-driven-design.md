@@ -70,81 +70,114 @@
 - 複数選択と購入は、プレイと混同しない。
 - 入力待ちでないとき（`waiting-for-others` / `resolving` / `game-over`）は、Now を空にする。
 
-## 5. データ契約（P3-CD-1 で型とテストを確定）
+## 5. データ契約（P3-CD-1 で確定）
 
 既存の `CoachStateV1` と `CoachAnalysisV1` は変更しない。新しい版付きの契約を追加する。
+
+**正本は型定義**。この節は、その写しと説明。
+- [`common/CoachChoiceList.ts`](../../../src/extensions/coach/common/CoachChoiceList.ts)
+- [`common/CoachCounsel.ts`](../../../src/extensions/coach/common/CoachCounsel.ts)
 
 ### 5.1 `GET api/coach/options?id=<playerId>` → `CoachChoiceListV1`（`coach-choice-list/1`）
 
 ```ts
+type CoachLabel = {template: string, params: ReadonlyArray<{text: string, card?: boolean}>};  // card: クライアントで翻訳する
 type CoachChoiceOption = {
-  id: string;                       // サーバー生成の不透明 ID（局面トークン＋種類＋入力上の位置＋カード名のハッシュ）
+  id: string;                       // 16 桁の 16 進。局面トークン、種類、入力上の位置、カード名、プラン ID のハッシュ
   group: 'now' | 'future';
-  kind: 'project-card' | 'standard-project' | 'game-option' | 'undo' | 'blue-action' |
-        'card-selection' | 'compound-input' | 'input-not-analysed' | 'strategy-plan';
-  label: {template: string, params: Array<{text: string, card?: boolean}>};  // ゲームの文言（クライアントで翻訳）
-  parentLabel?: {...};              // 入れ子の or の親（例: 賞の資金提供）
-  cardNames: string[];
-  cost?: number;                    // ゲームが計算した費用（カード）
+  kind: 'project-card' | 'standard-project' | 'game-option' | 'undo' | 'blue-action' | 'card-selection' |
+        'compound-input' | 'input-not-analysed' | 'strategy-plan';
+  label: CoachLabel;                // ゲームの文言（Message のテンプレートと引数）
+  parentLabel?: CoachLabel;         // 入れ子の or の題名（例: 賞の資金提供）
+  cardNames: ReadonlyArray<string>;
+  cost?: number;                    // ゲームが計算した費用（Future では払う M€ と購入費の合計）
   planGoal?: PlanGoal;              // Future のみ
   eligibility: 'legal-now' | 'conditional' | 'unknown' | 'not-action';
-  selectableForCoaching: boolean;
-  limitations: string[];            // 理由コード（クライアントで翻訳）
+  selectableForCoaching: boolean;   // project-card / standard-project / game-option / strategy-plan だけが true
+  limitations: ReadonlyArray<string>;  // 理由コード（例: plan-not-one-move, card-selection, no-quantitative-analysis）
 };
 type CoachChoiceListV1 = {
   schemaVersion: 'coach-choice-list/1';
-  positionToken: string;
+  positionToken: string;            // 32 桁の 16 進
   analysisVersion: string;
   stateStatus: 'awaiting-input' | 'waiting-for-others' | 'resolving' | 'game-over';
-  options: CoachChoiceOption[];
-  omitted: Array<{reason: string, count: number}>;   // 例: 今はできない標準プロジェクト
+  options: ReadonlyArray<CoachChoiceOption>;
+  omitted: ReadonlyArray<{reason: string, count: number}>;  // 例: standard-project-not-available
   ai: {available: boolean};         // サーバー設定上 AI が使えるか（同意は別）
-  warnings: string[];
+  warnings: ReadonlyArray<string>;  // 例: search-truncated
 };
 ```
 
 **`positionToken`**
-- 閲覧者、`stateKey`（内容の指紋、Undo の回数、ゲームの手数、ゲームの経過）、`advisoryFingerprint`、分析の版、契約の版から作る SHA-256（先頭 32 桁）。
-- 秘密の ID は含まない。
-- Undo で同じ内容に戻っても、`stateKey` が違うので別のトークンになる。
+- 次を連結した SHA-256 の先頭 32 桁。秘密の ID は含まない。
+  - 閲覧者（プレイヤー ID の SHA-256 の先頭 16 桁）
+  - `stateKey`（内容の指紋、Undo の回数、ゲームの手数、ゲームの経過）
+  - `advisoryFingerprint`
+  - 分析の版
+  - 契約の版
+- Undo で同じ内容に戻っても、`stateKey`（Undo の回数）が違うので別のトークンになる。
 
 **選択肢の ID**: 同じ局面のあいだは安定している。サーバーは毎回一覧を作り直して照合し、ID からゲームの入力を作る経路は持たない。
 
 ### 5.2 `POST api/coach/counsel?id=<playerId>` → `CoachCounselV1`（`coach-counsel/1`）
 
-リクエスト（`Content-Type: application/json`、2 KB まで）:
+**リクエスト**
+- `Content-Type: application/json`、2 KB まで。
+- 次のフィールドだけを受け付け、それ以外があれば 400。
+
+```ts
+type CoachCounselRequest = {
+  schemaVersion: 'coach-counsel-request/1';
+  positionToken: string;              // 32 桁の 16 進
+  choiceId: string;                   // 16 桁の 16 進
+  compareWithChoiceId?: string | null;  // 16 桁の 16 進。choiceId と同じ値は不可
+  mode: 'facts' | 'review';           // facts: 事実だけ（コーチングなし、モデル不使用）。review: 事実とコーチング
+  language: string;                   // 小文字 2 文字（jp, en, …）
+  aiConsent: boolean;                 // 利用者が外部モデルへの送信に同意した
+};
+```
+
+例:
 
 ```json
-{"schemaVersion": "coach-counsel-request/1", "positionToken": "…", "choiceId": "…",
- "compareWithChoiceId": null, "language": "jp", "aiConsent": false}
+{"schemaVersion": "coach-counsel-request/1", "positionToken": "…32 hex…", "choiceId": "…16 hex…",
+ "compareWithChoiceId": null, "mode": "review", "language": "jp", "aiConsent": false}
 ```
 
 **サーバーの処理**
-1. 本人の認可を確認する（既存の `CoachPlayerHandler`）。
-2. 同一オリジンを確認する（`Sec-Fetch-Site`/`Origin`）。
-3. JSON とフィールドの形、長さを検証する。
-4. 同じプレイヤーの同時実行と、毎分の回数を制限する。
-5. 最新の状態から一覧を作り直し、`positionToken` と `choiceId` を照合する。一致しなければ `409`（`status: 'stale'`）を返す。
-6. 選択に関わる**事実カード**を作る。ID は `F1`…。値はゲームと分析だけから取る。
-   - 費用
-   - 支払いに使える資源
-   - 可否
-   - その選択を含むプランの関係
-   - ブロッカー
-   - 予測の差分
-   - 未解析の効果
-7. テンプレートでコーチングを作る（強み、注意点、見通し、問い 1 つ。各点に根拠 ID を付ける）。
-8. AI の 3 条件（§6）が揃っていれば、モデルに事実カードと選択を渡す。返ってきた各主張の根拠 ID と数値を、その根拠の値で検証する。不合格ならテンプレートに戻る（`status: 'fallback'`）。
-9. 返す直前に局面を再確認する。変わっていれば `status: 'stale'` とし、コーチングは返さない。
+1. 同一オリジンを確認する（`Sec-Fetch-Site`、なければ `Origin` と `Host`）。違えば 403。
+2. `Content-Type` を確認する。違えば 400。
+3. 本人の認可を確認する（既存の `CoachPlayerHandler`）。
+4. 本文（2 KB まで）とフィールドを検証する。不正なら 400。
+5. `review` のときだけ、同じプレイヤーの同時実行と毎分の回数を制限する。超えれば 429。
+6. 最新の状態から一覧を作り直す。
+   - `positionToken` が違えば `409`（`{schemaVersion, status: 'stale', positionToken: <現在>}`）。
+   - 一覧にない ID、または検討対象外の ID は 400。
+7. 事実カードを作る（`F1`…）。値はゲームと分析だけから取る。
+8. `facts` ならここで返す。
+9. `review` ならテンプレートでコーチングを作る。
+10. AI の 3 条件（§6）が揃っていればモデルを呼び、各点を検証する（§7）。不合格や失敗ならテンプレートを使う（`status: 'fallback'`）。
+11. 返す直前に、**GameLoader から現在のゲームを取り直して**局面を照合する。
+    - Undo では Game オブジェクトごと置き換わるので、最初に受け取った `player` は使わない。
+    - 変わっていれば `status: 'stale'` とし、事実もコーチングも返さない。
 
 **レスポンス**
 
 ```ts
+type FactSupport = 'verified' | 'conditional' | 'unknown';
+type CoachFact = {
+  id: string;                         // F1, F2, …
+  about: 'A' | 'B' | 'game';          // A: 選んだ選択肢、B: 比較先、game: 両方に共通の局面の事実
+  kind: 'game' | 'resources' | 'cost' | 'plan' | 'link' | 'blocker' | 'forecast' | 'unmodeled' | 'option';
+  value: Readonly<Record<string, unknown>>;
+  support: FactSupport;
+};
 type CoachPoint = {
-  text?: string;                                   // モデルの文（プレイヤーの言語）
-  template?: {key: string, params: Array<{text: string, card?: boolean}>};  // テンプレート（クライアントで翻訳）
-  evidenceIds: string[];                           // 事実カードの ID
-  support: 'verified' | 'conditional' | 'unknown';
+  about: 'A' | 'B';                   // どちらの選択肢についての点か（問いは常に 'A'）
+  text?: string;                      // モデルの文（プレイヤーの言語）
+  template?: CoachLabel;              // テンプレート（クライアントで翻訳）
+  evidenceIds: ReadonlyArray<string>; // 事実カードの ID（about が同じ選択肢か game の事実だけ。問いは両方を引用できる）
+  support: FactSupport;               // 引用した事実のうち最も弱いもの
 };
 type CoachCounselV1 = {
   schemaVersion: 'coach-counsel/1';
@@ -152,11 +185,14 @@ type CoachCounselV1 = {
   selectedChoiceId: string;
   compareWithChoiceId?: string;
   status: 'ready' | 'fallback' | 'stale';
-  source: 'template' | 'model';
-  facts: Array<{id: string, kind: string, choiceId: string, value: unknown, support: 'verified' | 'conditional' | 'unknown'}>;
-  strengths: CoachPoint[]; risks: CoachPoint[]; outlook: CoachPoint[]; question?: CoachPoint;
-  limitations: string[];
-  ai: {state: 'off' | 'no-consent' | 'used' | 'failed', category?: string, elapsedMs?: number};
+  source: 'none' | 'template' | 'model';  // none: facts モード、または stale
+  facts: ReadonlyArray<CoachFact>;
+  strengths: ReadonlyArray<CoachPoint>;
+  risks: ReadonlyArray<CoachPoint>;
+  outlook: ReadonlyArray<CoachPoint>;
+  question?: CoachPoint;
+  limitations: ReadonlyArray<string>;
+  ai: {state: 'off' | 'no-consent' | 'used' | 'failed', category?: string, elapsedMs?: number};  // category: timeout, rate-limit, validation, budget など
 };
 ```
 
@@ -204,8 +240,13 @@ type CoachCounselV1 = {
   - 迎合しない。
   - 最善、勝率、確実を言わない。
   - 予測が未完成のときは、合計を確定と言わない。
+  - A の点には A か `game` の事実を、B の点には B か `game` の事実を引用する。
 - 検証（主張と根拠の組）:
   - 根拠 ID は事実カードに存在すること。
+  - 点の対象（`about`）と、引用した事実の `about` が対応していること。
+    - A についての点は、A の事実か `game` の事実だけを引用できる。B も同様。
+    - A の事実で B の主張を裏付けることはできない（`evidence-of-other-option`）。
+    - 問いは両方の選択肢を比べることがあるため、すべての事実を引用できる。
   - 文中の数値は、その主張が参照する事実の値に含まれること。文脈のどこかにあるだけでは通さない。
   - 文中のカード名は、参照した事実か選択に含まれること。
   - 禁止表現と長さを確認する。

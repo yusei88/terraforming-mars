@@ -1,4 +1,4 @@
-import {CandidatePlan, PlanCard, PlanForecast, PlanGoal, PlanQuestion, RequirementGap, SynergyEdge} from '../common/CoachAnalysis';
+import {CandidatePlan, PlanCard, PlanForecast, PlanGoal, PlanQuestion, RequirementGap, SynergyEdge} from './CoachAnalysis';
 
 // What the coach panel shows, as fixed English templates (`${0}` …) and parameters. Every template is
 // translated (src/extensions/coach/locales); card names are translated by the game's own card texts.

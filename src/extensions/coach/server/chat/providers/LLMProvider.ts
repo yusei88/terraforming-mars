@@ -8,10 +8,16 @@ export type ProviderRequest = {
   /** UI language code of the player (`jp`, `en`, …). */
   language: string,
   question: string,
-  context: CoachLLMContext,
+  /** Context of the free chat (not used with `task`). */
+  context?: CoachLLMContext,
   /** Earlier turns of the same chat, newest last (short). */
   recentConversation: ReadonlyArray<{role: 'user' | 'assistant', text: string}>,
   abortSignal?: AbortSignal,
+  /**
+   * Another task than the free chat (e.g. the review of a chosen option): its own instructions, answer
+   * schema and input. When set, `mode`, `question` and `context` are not sent.
+   */
+  task?: {instructions: string, schemaName: string, schema: Readonly<Record<string, unknown>>, input: unknown},
 };
 
 export type ProviderUsage = {inputTokens?: number, cachedInputTokens?: number, outputTokens?: number, reasoningTokens?: number};
