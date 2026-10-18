@@ -10,6 +10,7 @@ import {newCard} from '../../../../src/server/createCard';
 import {IProjectCard} from '../../../../src/server/cards/IProjectCard';
 import {TestPlayer} from '../../../TestPlayer';
 import {GameId, SpectatorId} from '../../../../src/common/Types';
+import {CardType} from '../../../../src/common/cards/CardType';
 
 // Helpers for the solo coach tests: a traced solo game driven through the same observer the
 // PlayerInput route uses.
@@ -61,6 +62,11 @@ export function setHand(player: IPlayer, cards: ReadonlyArray<CardName>, megacre
   player.cardsInHand.push(...cards.map((name) => newCard(name) as IProjectCard));
   player.megaCredits = megacredits;
   player.takeAction();
+}
+
+/** Removes the corporation from play (a test position without the corporation's own effects). */
+export function withoutCorporation(player: IPlayer) {
+  player.playedCards.set(...player.playedCards.asArray().filter((c) => c.type !== CardType.CORPORATION));
 }
 
 export function optionIndex(player: IPlayer, title: string): number {

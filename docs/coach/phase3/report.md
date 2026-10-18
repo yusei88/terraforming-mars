@@ -95,3 +95,16 @@ Iteration 1 以降は [選択主導型の計画](choice-driven-plan.md) に置�
 | 画面 | パネルに「選択肢 / タイムライン」の切り替えを追加（ソロのみ）。世代ごとの購入、プレイの順番と費用、取り消した行動（折りたたみ）、勝利条件、現在の TR と VP |
 | 翻訳 | 新しい文言 25 件を 16 言語で追加 |
 | ゲーム本体 | 変更なし |
+
+### P3-SOLO-2 — 戦略評価と反実仮想（決定的、LLM なし）
+
+| 項目 | 内容 |
+|---|---|
+| 評価器 | `server/solo/` |
+| A. プレイ順による割引損失（`counterfactual.ts`、CounterfactualEvaluator） | 同じ世代の X → Y について、X の判断時点で Y が出せたか、Y の割引が X に効くか（`costAfterDiscount`、Golden 検証済み）、両方を払えたか（エンジンの支払い規則）、X の条件が崩れないかを確かめる。両方の順序の合計費用を比べる |
+| B. 購入後のプレイ困難（`purchases.ts`） | 購入時点で最大の条件をすでに超えていたもの（二度と出せない）は `verified`。最終世代で条件が未達のものは `conditional`。後でプレイしたカードと、単に未プレイなだけのカードは対象外 |
+| C. 生産投資の回収不足（`payback.ts`） | 残りの生産フェイズが 3 以下のとき、Phase 2 の予測で回収できるかを見る。M€ 生産だけで VP・TR・他の生産がなく、効果がすべて数値化されたときだけ `verified` |
+| 根拠と統合（`evidence.ts`、`evaluator.ts`） | EvidenceBuilder（根拠 `E1`…）、安定 ID、SoloStrategyEvaluator、InterventionCandidate（`verified`、未解析なし、差が M€ 2 以上） |
+| API | `GET api/coach/findings` → `coach-findings/1`。本人のみ、`no-store`、読み取り専用 |
+| 画面 | なし。問いかけは P3-SOLO-3 で、結論を先に見せない設計にする |
+| ゲーム本体 | 変更なし |

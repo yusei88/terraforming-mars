@@ -1,6 +1,6 @@
 # ソロ伴走型コーチ QA
 
-最終更新: P3-SOLO-1（2026-10-18）。設計: [solo-coach-design.md](solo-coach-design.md)。
+最終更新: P3-SOLO-2（2026-10-18）。設計: [solo-coach-design.md](solo-coach-design.md)。
 
 ## 1. P3-SOLO-1 受け入れ条件
 
@@ -37,3 +37,36 @@
 | `npm run test:client` | 1,249 passed |
 | eslint、`lint:i18n`、vue-tsc、`npm run build` | 成功 |
 | `build:test`（テストの型検査）、`lint:css` | 既知の 3 件と 6 件だけ（`main` と同じ） |
+
+## 4. P3-SOLO-2 受け入れ条件
+
+| 条件 | 状態 | 証跡（`tests/extensions/coach/solo/evaluator.spec.ts`） |
+|---|---|---|
+| 合法な代替の順序による割引の差を正しく計算できる | PASS | Sponsors → Earth Office の順に対して、逆順なら 7 → 4 M€（差 3）と計算した。**本体エンジンで逆順に実際にプレイ**して、Sponsors の費用 3、合計 4 M€ を確認（Golden）。実際の順序がよい場合は検知しない |
+| 実行できなかった代替案を正解として扱わない | PASS | 判断時点で出せなかったカードは除外（`later-card-not-playable-then`）。支払いはエンジンの規則（建材は建物タグ、チタンは宇宙タグ、Helion の熱）で、両方を払えるかを確認 |
+| 付随効果を評価できないカードで誤った断定をしない | PASS | M€ 以外の生産（Power Plant）は `conditional`、問いかけの候補にしない。場のカードがプレイに反応する場合（企業 Interplanetary Cinematics）は判定しない |
+| 現在の得点と終了時の予測得点を混同しない | PASS | 評価は M€ の差（この観点だけ）。VP は「今加わる VP」だけを根拠に持ち、終了時の得点は予測しない。タイムラインの得点は現在の値 |
+| 過去の判断を未来の情報で評価しない | PASS | 各判断は、その判断の直前のスナップショットだけで評価する。後から手に入ったカードで、以前のプレイを評価しない |
+| 数値の根拠を説明できる | PASS | 発見ごとに根拠 `E1`…（費用、提示されていたカード、割引、資源、支払いの確認、予測）。どの判断の前後の局面か、カタログか、分析かを記録 |
+| 評価が不十分なときは介入の候補を出さない | PASS | `intervention: true` は、`verified`、未解析の効果なし、差が M€ 2 以上のときだけ。間に他の行動がある、最大の条件がある、最終世代の購入などは `conditional` |
+| 取り消された判断を評価しない | PASS | `series: 'current'` だけを評価 |
+| 非ソロで無効、記録の無効を明示 | PASS | `not-solo`、`disabled` |
+| ゲームの状態が変わらない、ID が安定 | PASS | ルート経由で `serialize()` 不変。同じ履歴なら同じ発見 ID。秘密の ID なし。「最適」「悪手」などの語を使わない |
+
+**ミューテーション**（5 件すべて検出）
+- 判断時点で出せなかったカードを代替案に使う
+- 建材の支払い規則を外す
+- 未達の条件を「不可能」とみなす
+- 付随効果を無視する
+- 取り消された判断を評価する
+
+**実機**（g10、記録を有効にしたテスト用ソロ）: `GET api/coach/findings` は `status: ok`。購入 3 件を評価し、1 件は後でプレイ済み、2 件は問題の根拠なしで、発見は 0 件だった（誤検知なし）。発見が出る局面の実演は、試験の局面（実際のエンジン）で行った。
+
+| 試験（g10） | 結果 |
+|---|---|
+| 新規のサーバー試験 | 15 件 |
+| コーチ全体のサーバー試験 | 229 passing |
+| `npm run test:server` | 7,946 passing / 1 failing（既知の AI 対局タイムアウト） |
+| `npm run test:client` | 1,249 passed / Errors 1（既知の Vitest teardown。不安定） |
+| eslint、`lint:i18n`、vue-tsc、`npm run build` | 成功 |
+| `build:test`、`lint:css` | 既知の 3 件と 6 件だけ |

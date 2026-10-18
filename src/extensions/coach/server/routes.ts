@@ -14,6 +14,7 @@ import {readBody} from '@/server/routes/readBody';
 import {choiceListFor, counsel, counselLimiter, CounselLimiter, MAX_COUNSEL_BODY_BYTES, parseCounselRequest} from './counsel/counselService';
 import {aiSettings} from './counsel/aiConfig';
 import {buildTimeline} from './solo/timeline';
+import {buildFindings} from './solo/evaluator';
 
 export const COACH_PATHS = {
   STATE: 'api/coach/state',
@@ -23,6 +24,7 @@ export const COACH_PATHS = {
   OPTIONS: 'api/coach/options',
   COUNSEL: 'api/coach/counsel',
   TIMELINE: 'api/coach/timeline',
+  FINDINGS: 'api/coach/findings',
 } as const;
 
 /**
@@ -319,5 +321,34 @@ export class ApiCoachTimeline extends CoachPlayerHandler {
     }
     noStore(res);
     responses.writeJson(res, ctx, timeline);
+  }
+}
+
+/**
+ * `GET api/coach/findings?id=<playerId>`: decisions of the player's solo game that could have been better
+ * from one point of view, with evidence (CoachFindingsV1, P3-SOLO-2). Read-only and deterministic.
+ */
+export class ApiCoachFindings extends CoachPlayerHandler {
+  public static readonly INSTANCE = new ApiCoachFindings();
+  private constructor() {
+    super();
+  }
+
+  public override async get(_req: Request, res: Response, ctx: Context): Promise<void> {
+    const player = await this.player(ctx);
+    let findings;
+    try {
+      const state = projectCoachState(player);
+      const tracer = getCoachTracer();
+      findings = buildFindings({
+        tracer, gameId: player.game.id, color: player.color, state,
+        history: () => tracer?.assess(player, state).status ?? 'disabled',
+      });
+    } catch (error) {
+      console.error('Coach findings failed', error);
+      throw RouteError.internalServerError('coach findings unavailable');
+    }
+    noStore(res);
+    responses.writeJson(res, ctx, findings);
   }
 }
