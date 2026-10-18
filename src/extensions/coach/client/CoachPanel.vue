@@ -3,15 +3,98 @@
      (strengths, cautions, outlook, one question). Picking here never plays anything. Under the top bar,
      like Gate F, so the game's action sheet, navigation and undo stay usable. -->
 <template>
+  <CoachWatcher :view="view"/>
   <aside v-if="state.open" class="coach-panel" role="dialog" :aria-label="$t('Strategy coach')">
     <header class="coach-panel__header">
       <h2 class="coach-panel__title" v-i18n>Strategy coach</h2>
-      <button type="button" class="coach-panel__button" data-test="refresh" @click="loadOptions" v-i18n>Refresh</button>
+      <div v-if="isSolo" class="coach-panel__tabs" role="tablist">
+        <button type="button" role="tab" class="coach-panel__tab" :aria-selected="tab === 'choices'" data-test="tab-choices" @click="tab = 'choices'" v-i18n>Choices</button>
+        <button type="button" role="tab" class="coach-panel__tab" :aria-selected="tab === 'timeline'" data-test="tab-timeline" @click="tab = 'timeline'" v-i18n>Timeline</button>
+        <button type="button" role="tab" class="coach-panel__tab" :aria-selected="tab === 'reflect'" data-test="tab-reflect" @click="tab = 'reflect'">{{ $t('Look back') }}<template v-if="unreadCount > 0"> ({{ unreadCount }})</template></button>
+      </div>
+      <button type="button" class="coach-panel__button" data-test="refresh" @click="refresh" v-i18n>Refresh</button>
       <button type="button" class="coach-panel__button" data-test="close" @click="close" v-i18n>Close</button>
     </header>
 
     <div class="coach-panel__body">
       <p v-if="playerId === undefined" class="coach-panel__note" v-i18n>The coach is only for players.</p>
+
+      <!-- Looking back on decisions (solo games, P3-SOLO-3) -->
+      <template v-else-if="tab === 'reflect'">
+        <label class="coach-choice__consent"><input type="checkbox" v-model="solo.watch" data-test="setting-watch" @change="saveSoloState"> <span v-i18n>Watch my decisions and notify me</span></label>
+        <label class="coach-choice__consent"><input type="checkbox" v-model="solo.before" data-test="setting-before" @change="saveSoloState"> <span v-i18n>Also give hints before I act</span></label>
+        <template v-if="solo.reflectionId === undefined">
+          <p v-if="reflectable.length === 0" class="coach-panel__note" data-test="reflect-none" v-i18n>Nothing to look back on yet.</p>
+          <ul class="coach-choices__list">
+            <li v-for="f in reflectable" :key="f.id">
+              <button type="button" class="coach-choice" data-test="reflect-item" @click="startReflection(f.id)">
+                <span class="coach-choice__label">{{ show({template: 'Generation ${0}', params: [{text: String(f.decision.generation)}]}) }} · {{ show(f.actual.summary) }}</span>
+                <span class="coach-choice__meta">{{ $t(solo.handled.includes(f.id) ? 'Looked back' : 'Not looked back yet') }}</span>
+              </button>
+            </li>
+          </ul>
+        </template>
+        <template v-else>
+          <button type="button" class="coach-panel__link" data-test="reflect-back" @click="closeReflection" v-i18n>All decisions to look back on</button>
+          <p v-if="reflection?.status === 'gone'" class="coach-panel__note" data-test="reflect-gone" v-i18n>This decision is no longer part of the game (it was undone).</p>
+          <template v-else-if="reflection !== undefined">
+            <p class="coach-watcher-label"><span class="coach-plan__badge" v-i18n>Looking back</span> {{ reflection.about ? show(reflection.about) : '' }}</p>
+            <ul v-if="reflection.lines !== undefined" class="coach-review__points" data-test="reflect-lines">
+              <li v-for="(line, i) in reflection.lines" :key="i" class="coach-review__point">{{ show(line) }}</li>
+            </ul>
+            <ul v-if="extra !== undefined" class="coach-review__points" data-test="reflect-extra">
+              <li v-for="(line, i) in extra.lines ?? []" :key="i" class="coach-review__point">{{ show(line) }}</li>
+            </ul>
+            <p v-if="reflection.question !== undefined" class="coach-plan__question" data-test="reflect-question">{{ show(reflection.question) }}</p>
+            <div class="coach-choice__actions">
+              <button v-for="o in reflection.options ?? []" :key="o.key" type="button" class="coach-panel__button" data-test="reflect-option" @click="answer(o.key)">{{ show(o.label) }}</button>
+            </div>
+            <div class="coach-choice__actions">
+              <button type="button" class="coach-panel__link" data-test="reflect-hint" @click="extraView('hint')" v-i18n>Show a hint</button>
+              <button type="button" class="coach-panel__link" data-test="reflect-rules" @click="extraView('rules')" v-i18n>Show the rules</button>
+              <button type="button" class="coach-panel__link" data-test="reflect-explain" @click="extraView('explain')" v-i18n>Show the evidence and the alternative</button>
+            </div>
+            <label class="coach-reflect__note">
+              <span v-i18n>Your thoughts (optional, kept on this device)</span>
+              <textarea v-model="note" maxlength="200" rows="2" data-test="reflect-note" @change="saveNote"></textarea>
+            </label>
+          </template>
+        </template>
+      </template>
+
+      <!-- Timeline of the decisions (solo games, P3-SOLO-1) -->
+      <template v-else-if="tab === 'timeline'">
+        <p v-if="timelineFailed" class="coach-panel__note" data-test="timeline-error" v-i18n>The coach is not available right now.</p>
+        <p v-else-if="timeline === undefined" class="coach-panel__note" v-i18n>Loading the analysis</p>
+        <template v-else>
+          <p v-if="timelineStatusNote(timeline) !== undefined" class="coach-panel__note" data-test="timeline-status">{{ $t(timelineStatusNote(timeline) ?? '') }}</p>
+          <template v-else>
+            <p v-if="timeline.history !== 'valid'" class="coach-panel__warning" v-i18n>The history may be incomplete (an undo or restart was detected).</p>
+            <p v-if="victoryLine(timeline) !== undefined" class="coach-panel__note">{{ show(victoryLine(timeline)!) }}</p>
+            <p class="coach-panel__note" data-test="timeline-now">{{ show({template: 'Now: generation ${0}, TR ${1}', params: [{text: String(timeline.now.generation)}, {text: String(timeline.now.terraformRating)}]}) }}<template v-if="timeline.now.victoryPoints !== undefined"> · {{ show({template: 'VP now: ${0}', params: [{text: String(timeline.now.victoryPoints)}]}) }}</template></p>
+            <p v-if="timeline.generations.length === 0" class="coach-panel__note" v-i18n>No decisions recorded yet.</p>
+            <section v-for="g in [...timeline.generations].reverse()" :key="g.generation" class="coach-timeline" data-test="timeline-generation">
+              <h3 class="coach-choices__title">{{ show({template: 'Generation ${0}', params: [{text: String(g.generation)}]}) }}</h3>
+              <ol class="coach-timeline__events">
+                <li v-for="e in g.events" :key="e.id" class="coach-timeline__event" :class="'coach-timeline__event--' + e.kind" data-test="timeline-event">
+                  <span v-if="e.order !== undefined" class="coach-timeline__order">{{ e.order }}</span>
+                  <span>{{ eventLines(e).map(show).join(' · ') }}</span>
+                  <span v-if="!e.verified" class="coach-plan__badge" v-i18n>Not confirmed by the game state</span>
+                  <span v-if="listedCards(e).length > 0" class="coach-timeline__cards">{{ listedCards(e).map((n) => $t(n)).join(', ') }}</span>
+                </li>
+              </ol>
+            </section>
+            <template v-if="timeline.superseded.length > 0">
+              <button type="button" class="coach-panel__link" data-test="timeline-undone" @click="showUndone = !showUndone">{{ showUndone ? $t('Hide undone actions') : show({template: 'Show undone actions (${0})', params: [{text: String(timeline.superseded.length)}]}) }}</button>
+              <ol v-if="showUndone" class="coach-timeline__events coach-timeline__events--undone">
+                <li v-for="e in timeline.superseded" :key="e.id" class="coach-timeline__event">{{ show({template: 'Generation ${0}', params: [{text: String(e.generation)}]}) }}: {{ eventLines(e).map(show).join(' · ') }}</li>
+              </ol>
+            </template>
+            <p v-if="timeline.truncated" class="coach-panel__note" v-i18n>Only the start of a long history is shown.</p>
+          </template>
+        </template>
+      </template>
+
       <p v-else-if="loading && options === undefined" class="coach-panel__note" v-i18n>Loading the analysis</p>
       <p v-else-if="failed" class="coach-panel__note" data-test="error" v-i18n>The coach is not available right now.</p>
 
@@ -101,6 +184,11 @@ import {CoachChoiceListV1, CoachChoiceOption, CoachLabel} from '../common/CoachC
 import {CoachCounselRequest, CoachCounselV1, CoachPoint} from '../common/CoachCounsel';
 import {DisplayLine, goalLabel} from '../common/coachText';
 import {eligibilityLabel, factLines, limitationLabel} from './choiceText';
+import {eventLines, listedCards, timelineStatusNote, victoryLine} from './timelineText';
+import {CoachTimelineV1} from '../common/CoachTimeline';
+import CoachWatcher from './CoachWatcher.vue';
+import {coachSoloState, markHandled, saveSoloState, unreadFindings} from './coachSoloState';
+import {CoachReflectionRequest, CoachReflectionV1, ReflectionView} from '../common/CoachReflection';
 import {coachPanelState} from './coachPanelState';
 import {getPreferences} from '@/client/utils/PreferencesManager';
 
@@ -119,6 +207,24 @@ const counselError = ref(false);
 const showEvidence = ref(false);
 const aiConsent = ref(readConsent());
 let inFlight: AbortController | undefined;
+const solo = coachSoloState;
+/* The timeline and the reflection are for solo games (the server says `not-solo` too). */
+const isSolo = computed(() => (props.view?.players?.length ?? 1) === 1);
+/* The tab is shared with the watcher (a cut-in opens the reflection). */
+const tab = computed({get: () => (isSolo.value ? coachSoloState.tab : 'choices'), set: (value) => coachSoloState.tab = value});
+const unreadCount = computed(() => unreadFindings().length);
+const reflectable = computed(() => (coachSoloState.findings?.findings ?? []).filter((f) => f.intervention));
+const reflection = ref<CoachReflectionV1 | undefined>(undefined);
+const extra = ref<CoachReflectionV1 | undefined>(undefined);
+const answers = ref<Array<string>>([]);
+const note = ref('');
+let reflectionRequest = 0;
+const timeline = ref<CoachTimelineV1 | undefined>(undefined);
+const timelineFailed = ref(false);
+const showUndone = ref(false);
+let timelineRequest = 0;
+
+
 /* Only the answer of the latest options request is shown (an older one may arrive later). */
 let optionsRequest = 0;
 let optionsInFlight: AbortController | undefined;
@@ -246,6 +352,111 @@ async function loadOptions(): Promise<void> {
   }
 }
 
+async function loadTimeline(): Promise<void> {
+  const id = playerId.value;
+  if (id === undefined) {
+    return;
+  }
+  const request = ++timelineRequest;
+  try {
+    const response = await fetch(`api/coach/timeline?id=${encodeURIComponent(id)}`, {cache: 'no-store'});
+    if (!response.ok) {
+      throw new Error(String(response.status));
+    }
+    const body = await response.json() as CoachTimelineV1;
+    if (request === timelineRequest) {
+      timeline.value = body;
+      timelineFailed.value = false;
+    }
+  } catch {
+    if (request === timelineRequest) {
+      timelineFailed.value = true;
+    }
+  }
+}
+
+async function reflectStep(view: ReflectionView): Promise<CoachReflectionV1 | undefined> {
+  const id = playerId.value;
+  const findingId = coachSoloState.reflectionId;
+  if (id === undefined || findingId === undefined) {
+    return undefined;
+  }
+  const body: CoachReflectionRequest = {schemaVersion: 'coach-reflection-request/1', findingId, answers: answers.value, view};
+  try {
+    const response = await fetch(`api/coach/reflection?id=${encodeURIComponent(id)}`, {
+      method: 'POST', cache: 'no-store', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body),
+    });
+    return response.ok ? await response.json() as CoachReflectionV1 : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+async function loadQuestion() {
+  const mine = ++reflectionRequest;
+  const step = await reflectStep('question');
+  if (mine === reflectionRequest && step !== undefined) {
+    reflection.value = step;
+    if (step.gate === 'done' || step.status === 'gone') {
+      markHandled(step.findingId);
+    }
+  }
+}
+
+function startReflection(id: string) {
+  coachSoloState.reflectionId = id;
+}
+
+function closeReflection() {
+  coachSoloState.reflectionId = undefined;
+}
+
+function answer(key: string) {
+  answers.value = [...answers.value, key];
+  extra.value = undefined;
+  void loadQuestion();
+}
+
+async function extraView(view: ReflectionView) {
+  const step = await reflectStep(view);
+  if (step !== undefined) {
+    extra.value = step;
+    if (view === 'explain') {
+      markHandled(step.findingId);
+    }
+  }
+}
+
+function saveNote() {
+  try {
+    localStorage.setItem(`coach.note.${coachSoloState.reflectionId}`, note.value.slice(0, 200));
+  } catch {
+    // Kept for this page only.
+  }
+}
+
+watch(() => coachSoloState.reflectionId, (id) => {
+  reflection.value = undefined;
+  extra.value = undefined;
+  answers.value = [];
+  try {
+    note.value = id === undefined ? '' : localStorage.getItem(`coach.note.${id}`) ?? '';
+  } catch {
+    note.value = '';
+  }
+  if (id !== undefined) {
+    void loadQuestion();
+  }
+}, {immediate: true});
+
+function refresh() {
+  if (tab.value === 'timeline') {
+    void loadTimeline();
+  } else {
+    void loadOptions();
+  }
+}
+
 async function ask(mode: CoachCounselRequest['mode']): Promise<void> {
   const id = playerId.value;
   const list = options.value;
@@ -326,10 +537,40 @@ function close() {
 watch(() => [state.open, position.value, playerId.value], () => {
   if (state.open) {
     void loadOptions();
+    if (tab.value === 'timeline') {
+      void loadTimeline();
+    }
   } else {
     abort();
   }
 }, {immediate: true});
+
+/* The findings for the reflection list (the watcher reads them too while it watches). */
+async function loadFindings(): Promise<void> {
+  const id = playerId.value;
+  if (id === undefined) {
+    return;
+  }
+  try {
+    const response = await fetch(`api/coach/findings?id=${encodeURIComponent(id)}`, {cache: 'no-store'});
+    if (response.ok) {
+      coachSoloState.findings = await response.json();
+    }
+  } catch {
+    // The list stays as it was.
+  }
+}
+
+watch(() => [tab.value, state.open], () => {
+  if (!state.open) {
+    return;
+  }
+  if (tab.value === 'timeline') {
+    void loadTimeline();
+  } else if (tab.value === 'reflect') {
+    void loadFindings();
+  }
+});
 </script>
 
 <style scoped lang="less">
@@ -369,6 +610,65 @@ watch(() => [state.open, position.value, playerId.value], () => {
   gap: 8px;
   padding: 8px 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.coach-panel__tabs {
+  display: flex;
+  gap: 4px;
+}
+.coach-panel__tab {
+  min-height: 36px;
+  padding: 4px 8px;
+  opacity: 0.7;
+}
+.coach-panel__tab[aria-selected="true"] {
+  opacity: 1;
+  font-weight: bold;
+  border-bottom: 2px solid #8fc3ff;
+}
+.coach-reflect__note {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 12px;
+  textarea {
+    width: 100%;
+    color: #eee;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+.coach-plan__question {
+  margin-top: 6px;
+  font-style: italic;
+}
+.coach-timeline__events {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.coach-timeline__event {
+  margin: 3px 0;
+  font-size: 13px;
+}
+.coach-timeline__order {
+  display: inline-block;
+  min-width: 18px;
+  margin-right: 4px;
+  font-size: 11px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 9px;
+}
+.coach-timeline__cards {
+  display: block;
+  margin-left: 22px;
+  font-size: 12px;
+  opacity: 0.85;
+}
+.coach-timeline__events--undone {
+  opacity: 0.6;
+  text-decoration: line-through;
 }
 .coach-panel__title {
   flex: 1;

@@ -79,3 +79,44 @@ Iteration 1 以降は [選択主導型の計画](choice-driven-plan.md) に置�
 | 4. 設計書の契約 | [choice-driven-design.md](choice-driven-design.md) §5 を型定義と一致させた（リクエストの `mode: 'facts' \| 'review'`、事実の `about: 'A' \| 'B' \| 'game'`、点の `about: 'A' \| 'B'`、`status`、`source`、`ai.state`、エラー応答）。§7 に A/B と根拠の対応の検証を追記した |
 
 試験の結果と起点との比較は [QA](choice-driven-qa.md) §3。追加機能はない。
+
+## P3-SOLO — ソロ専用・伴走型コーチ（2026-10-18〜）
+
+設計: [solo-coach-design.md](solo-coach-design.md)。既存の仕組みと不足の対応表、構成、型、P3-SOLO-3/4 の計画を書いた。QA: [solo-qa.md](solo-qa.md)。
+
+### P3-SOLO-1 — 意思決定の履歴とタイムライン
+
+| 項目 | 内容 |
+|---|---|
+| 正規化 | `server/solo/timeline.ts`（DecisionEventNormalizer）。記録済みの決定を、提示された選択肢の木に沿って意味のあるイベントにする（購入、開始時の選択、プレイ、標準プロジェクト、カードのアクション、Sell patents、パス、ターン終了、ゲームの行動、途中の入力、Undo、取り消し）。判断前後のスナップショットで意味を確認し、`verified` に記録する |
+| 系列 | Phase 1.5 の `current` / `superseded` / `unverified` をそのまま使う。世代ごとの行動の順番は、現行系列だけで振る |
+| API | `GET api/coach/timeline` → `coach-timeline/1`。本人のみ、`no-store`、読み取り専用。非ソロ、記録の無効、読み込みの失敗は、それぞれ状態として返す |
+| 追加 | `CoachTracer.statesOf()`: スナップショットを 1 回の読み込みで取り出す |
+| 画面 | パネルに「選択肢 / タイムライン」の切り替えを追加（ソロのみ）。世代ごとの購入、プレイの順番と費用、取り消した行動（折りたたみ）、勝利条件、現在の TR と VP |
+| 翻訳 | 新しい文言 25 件を 16 言語で追加 |
+| ゲーム本体 | 変更なし |
+
+### P3-SOLO-2 — 戦略評価と反実仮想（決定的、LLM なし）
+
+| 項目 | 内容 |
+|---|---|
+| 評価器 | `server/solo/` |
+| A. プレイ順による割引損失（`counterfactual.ts`、CounterfactualEvaluator） | 同じ世代の X → Y について、X の判断時点で Y が出せたか、Y の割引が X に効くか（`costAfterDiscount`、Golden 検証済み）、両方を払えたか（エンジンの支払い規則）、X の条件が崩れないかを確かめる。両方の順序の合計費用を比べる |
+| B. 購入後のプレイ困難（`purchases.ts`） | 購入時点で最大の条件をすでに超えていたもの（二度と出せない）は `verified`。最終世代で条件が未達のものは `conditional`。後でプレイしたカードと、単に未プレイなだけのカードは対象外 |
+| C. 生産投資の回収不足（`payback.ts`） | 残りの生産フェイズが 3 以下のとき、Phase 2 の予測で回収できるかを見る。M€ 生産だけで VP・TR・他の生産がなく、効果がすべて数値化されたときだけ `verified` |
+| 根拠と統合（`evidence.ts`、`evaluator.ts`） | EvidenceBuilder（根拠 `E1`…）、安定 ID、SoloStrategyEvaluator、InterventionCandidate（`verified`、未解析なし、差が M€ 2 以上） |
+| API | `GET api/coach/findings` → `coach-findings/1`。本人のみ、`no-store`、読み取り専用 |
+| 画面 | なし。問いかけは P3-SOLO-3 で、結論を先に見せない設計にする |
+| ゲーム本体 | 変更なし |
+
+### P3-SOLO-3 — 通知と段階的な問い（決定的、LLM なし）
+
+| 項目 | 内容 |
+|---|---|
+| 問いかけ役（`server/solo/questioner.ts`、CoachQuestioner） | 判断の種類、カード、世代だけを受け取る（結論は型の上で受け取れない）。Gate A は理由、Gate B は見落とした観点（A の答えで分岐）、Gate C は根拠を見て再評価、最後に完了。ほかにヒント（結論なし）とルール（確定した一般的な事実） |
+| 振り返り（`server/solo/reflection.ts`） | 発見を探して答えを検証し、問いを返す。Gate C では評価役の根拠を、「解説」では代替案との差と根拠を返す |
+| 行動前のヒント（`server/solo/prospective.ts`） | 今の局面で出せる 2 枚の順序で費用が変わる場合。既定はオフ |
+| API | `POST api/coach/reflection`（`coach-reflection/1`。同一オリジン、JSON、1 KB、読み取り専用）。`GET api/coach/findings?upcoming=1` |
+| 画面 | `CoachWatcher.vue`: 見守り中の指標（世代、未読数）と通知（一度に 1 件、notable だけ、振り返る・あとで・閉じる）。パネルの「振り返り」タブに、設定（見守り、行動前のヒント）、振り返りの一覧、段階的な問い、ヒント、ルール、根拠と代替案、自分の考えのメモ（端末内のみ）を置いた |
+| 翻訳 | 新しい文言 77 件を 16 言語で追加 |
+| ゲーム本体 | 変更なし |
