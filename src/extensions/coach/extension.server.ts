@@ -2,7 +2,7 @@
 // combos, requirements and forecasts (Phase 2), and the coaching of options the player chooses (Phase 3,
 // choice-driven). See docs/coach/.
 import {ServerExtension} from '@/server/extensions/ServerExtension';
-import {ApiCoachAnalysis, ApiCoachCatalog, ApiCoachCounsel, ApiCoachDecisions, ApiCoachOptions, ApiCoachState, COACH_PATHS} from './server/routes';
+import {ApiCoachAnalysis, ApiCoachCatalog, ApiCoachCounsel, ApiCoachDecisions, ApiCoachOptions, ApiCoachFindings, ApiCoachState, ApiCoachTimeline, COACH_PATHS} from './server/routes';
 import {coachTraceObserver} from './server/coachTrace';
 
 export const extension: ServerExtension = {
@@ -14,6 +14,8 @@ export const extension: ServerExtension = {
     [COACH_PATHS.ANALYSIS, ApiCoachAnalysis.INSTANCE],
     [COACH_PATHS.OPTIONS, ApiCoachOptions.INSTANCE],
     [COACH_PATHS.COUNSEL, ApiCoachCounsel.INSTANCE],
+    [COACH_PATHS.TIMELINE, ApiCoachTimeline.INSTANCE],
+    [COACH_PATHS.FINDINGS, ApiCoachFindings.INSTANCE],
   ],
   inputObserver: coachTraceObserver,
 };
