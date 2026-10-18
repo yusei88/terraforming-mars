@@ -15,6 +15,7 @@ import {choiceListFor, counsel, counselLimiter, CounselLimiter, MAX_COUNSEL_BODY
 import {aiSettings} from './counsel/aiConfig';
 import {buildTimeline} from './solo/timeline';
 import {buildFindings} from './solo/evaluator';
+import {parseReflectionRequest, reflect} from './solo/reflection';
 
 export const COACH_PATHS = {
   STATE: 'api/coach/state',
@@ -25,6 +26,7 @@ export const COACH_PATHS = {
   COUNSEL: 'api/coach/counsel',
   TIMELINE: 'api/coach/timeline',
   FINDINGS: 'api/coach/findings',
+  REFLECTION: 'api/coach/reflection',
 } as const;
 
 /**
@@ -343,12 +345,52 @@ export class ApiCoachFindings extends CoachPlayerHandler {
       findings = buildFindings({
         tracer, gameId: player.game.id, color: player.color, state,
         history: () => tracer?.assess(player, state).status ?? 'disabled',
-      });
+      }, {upcoming: ctx.url.searchParams.get('upcoming') === '1'});
     } catch (error) {
       console.error('Coach findings failed', error);
       throw RouteError.internalServerError('coach findings unavailable');
     }
     noStore(res);
     responses.writeJson(res, ctx, findings);
+  }
+}
+
+/**
+ * `POST api/coach/reflection?id=<playerId>`: the next step of a reflection on one finding of the player's
+ * solo game (CoachReflectionV1, P3-SOLO-3): a question (Gate A, B, C), a hint, the rules, or, when the
+ * player asks, the comparison with the alternative. Same origin, JSON, 1 KB. Read-only, deterministic.
+ */
+export class ApiCoachReflection extends CoachPlayerHandler {
+  public static readonly INSTANCE = new ApiCoachReflection();
+  private constructor() {
+    super();
+  }
+
+  public override async post(req: Request, res: Response, ctx: Context): Promise<void> {
+    if (!isSameOrigin(req)) {
+      throw RouteError.forbidden('cross-site request');
+    }
+    if (!String(req.headers['content-type'] ?? '').startsWith('application/json')) {
+      throw RouteError.badRequest('Content-Type must be application/json');
+    }
+    const player = await this.player(ctx);
+    const request = parseReflectionRequest(await readBody(req, 1024));
+    if (typeof request === 'string') {
+      throw RouteError.badRequest(request);
+    }
+    let step;
+    try {
+      const state = projectCoachState(player);
+      const tracer = getCoachTracer();
+      step = reflect(buildFindings({tracer, gameId: player.game.id, color: player.color, state, history: () => 'valid'}), request);
+    } catch (error) {
+      console.error('Coach reflection failed', error instanceof Error ? error.name : 'error');
+      throw RouteError.internalServerError('coach reflection unavailable');
+    }
+    if (typeof step === 'string') {
+      throw RouteError.badRequest(step);
+    }
+    noStore(res);
+    responses.writeJson(res, ctx, step);
   }
 }

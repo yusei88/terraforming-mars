@@ -3,6 +3,7 @@ import {expect} from 'chai';
 import {globalConfig} from '../../components/getLocalVue';
 import CoachPanel from '@/extensions/coach/client/CoachPanel.vue';
 import {coachPanelState} from '@/extensions/coach/client/coachPanelState';
+import {coachSoloState} from '@/extensions/coach/client/coachSoloState';
 import {extension} from '@/extensions/coach/extension.client';
 import {factLines, limitationLabel} from '@/extensions/coach/client/choiceText';
 import {blockerLine, forecastLines, linkLine, questionLine, signed} from '@/extensions/coach/common/coachText';
@@ -69,6 +70,9 @@ describe('CoachPanel (choice-driven)', () => {
       return new Response(JSON.stringify(answer.body), {status: answer.status});
     }) as typeof fetch;
     coachPanelState.open = false;
+    coachSoloState.tab = 'choices';
+    coachSoloState.reflectionId = undefined;
+    coachSoloState.findings = undefined;
     localStorage.removeItem('coach.aiConsent');
   });
 

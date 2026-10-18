@@ -3,9 +3,12 @@
     "Plan: ${0}"
   ],
   "fr": [
+    "G${0}",
+    "Production",
     "Question"
   ],
   "es": [
+    "No",
     "Plan: ${0}"
   ],
   "pl": [
@@ -16,5 +19,8 @@
   ],
   "nb": [
     "Plan: ${0}"
+  ],
+  "it": [
+    "No"
   ]
 }

@@ -6,6 +6,7 @@
 // "mistake": it says that, from this point of view, the alternative was better by a computed amount.
 import {SoloRules} from './CoachTimeline';
 import {CoachLabel} from './CoachChoiceList';
+import {UpcomingHint} from './CoachReflection';
 
 export const COACH_FINDINGS_SCHEMA = 'coach-findings/1';
 
@@ -58,4 +59,6 @@ export type CoachFindingsV1 = {
   findings: ReadonlyArray<CoachFindingV1>,
   /** What was checked, and why some decisions were left out (reason codes with counts). */
   checked: ReadonlyArray<{kind: FindingKind, decisions: number, skipped: ReadonlyArray<{reason: string, count: number}>}>,
+  /** Hints for the position now (only when asked for with `upcoming=1`; P3-SOLO-3). */
+  upcoming?: ReadonlyArray<UpcomingHint>,
 };

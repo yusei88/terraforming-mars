@@ -1,6 +1,6 @@
 # ソロ伴走型コーチ QA
 
-最終更新: P3-SOLO-2（2026-10-18）。設計: [solo-coach-design.md](solo-coach-design.md)。
+最終更新: P3-SOLO-3（2026-10-18）。設計: [solo-coach-design.md](solo-coach-design.md)。
 
 ## 1. P3-SOLO-1 受け入れ条件
 
@@ -70,3 +70,31 @@
 | `npm run test:client` | 1,249 passed / Errors 1（既知の Vitest teardown。不安定） |
 | eslint、`lint:i18n`、vue-tsc、`npm run build` | 成功 |
 | `build:test`、`lint:css` | 既知の 3 件と 6 件だけ |
+
+## 5. P3-SOLO-3 受け入れ条件
+
+| 条件 | 状態 | 証跡 |
+|---|---|---|
+| 通知を無視してもゲームを続けられる | PASS | 通知は画面右上の小さなカードで、ゲームの入力には触れない。取得はゲーム画面の更新（局面の変化）を契機にし、タイマーで繰り返し取りにいかない。取得に失敗しても何も表示しない（`CoachReflection.spec`、サーバーは読み取り専用） |
+| 最初の問いで正解を明かさない | PASS | Gate A の応答に、差額、代替の順序、判定の語が含まれない（`reflection.spec › asks first why…`）。問いかけ役（`questioner.ts`）が受け取るのは、判断の種類、カード、世代だけ（`keeps the questioner apart from the verdict`）。通知の文面も同じ |
+| 回答に応じて次の問いが変わる | PASS | Gate A の 3 つの答えで、Gate B が 3 通りに分かれる（`lets the next question follow the answer`）。選択肢にない答えは 400 |
+| 詳しい解説を希望すれば、検証済みの根拠を出せる | PASS | Gate C で根拠（割引の前後の費用など）を出す。「根拠と代替案を見る」で、代替案との差（合計 7 → 4 M€）と根拠を出す。比較はこの観点だけであることも明記する |
+| 重要でない判断で過度に介入しない | PASS | 通知するのは、`intervention: true` かつ `severity: notable` だけ。`minor` は件数だけに数える。ページを開いた時点ですでにあった発見は通知しない。通知は一度に 1 件で、「あとで」「閉じる」の後は再通知しない |
+| タブレットのゲーム UI を覆いすぎない | PASS | 指標（36px）と通知（最大幅 340px）は右上。実機の DOM で、縦横の各画面（火星、全カード、プレイヤー、ログ）で指標の下に操作要素がないことを確認した。ログ画面と横向きのプレイヤー画面ではずらして配置する |
+| 行動前の介入は設定で | PASS | 既定はオフ。オンにすると、今の局面で出せる 2 枚の順序で費用が変わるときに「順序で費用が変わることがある」とだけ出す。カード名は「どのカード？」を押したときだけ見せる。局面が変われば消す |
+| カットイン中に局面が変わったときの区別 | PASS | 振り返り（過去の判断）には「振り返り」の印と「世代 n：〜しました」を必ず付ける。行動前のヒントは局面ごとの ID で、局面が変われば消す。Undo で判断がなくなると「取り消された」と表示する（`status: 'gone'`） |
+| AI の呼び出しを必要なときに限る | PASS | P3-SOLO-3 は決定的なテンプレートだけで、LLM を呼ばない |
+
+| 試験（g10） | 結果 |
+|---|---|
+| 新規のサーバー試験（`reflection.spec.ts`） | 9 件 |
+| 新規のクライアント試験（`CoachReflection.spec.ts`） | 8 件 |
+| コーチ全体のサーバー試験 | 238 passing |
+| `npm run test:server` | 7,956 passing / 0 failing |
+| `npm run test:client` | 1,257 passed / Errors 1（既知の Vitest teardown、不安定） |
+| eslint、`lint:i18n`、vue-tsc、`npm run build` | 成功 |
+| `build:test`、`lint:css` | 既知の 3 件と 6 件だけ |
+
+**ミューテーション**（3 件すべて検出）: Gate A で根拠を出す、minor でも通知する、ページを開いたときの既存の発見も通知する。
+
+**実機での発見**: ログ画面では、指標がログの絞り込みボタンを、横向きのプレイヤー画面では、プレイヤー表のボタンを覆っていた。画面ごとに位置をずらして解決した。Vue のスコープ付き CSS は `:global(:has(...))` を壊すため、この 2 つの規則はスコープなしの `<style>` に置いた。

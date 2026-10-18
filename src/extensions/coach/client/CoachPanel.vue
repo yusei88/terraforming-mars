@@ -3,12 +3,14 @@
      (strengths, cautions, outlook, one question). Picking here never plays anything. Under the top bar,
      like Gate F, so the game's action sheet, navigation and undo stay usable. -->
 <template>
+  <CoachWatcher :view="view"/>
   <aside v-if="state.open" class="coach-panel" role="dialog" :aria-label="$t('Strategy coach')">
     <header class="coach-panel__header">
       <h2 class="coach-panel__title" v-i18n>Strategy coach</h2>
-      <div v-if="solo" class="coach-panel__tabs" role="tablist">
+      <div v-if="isSolo" class="coach-panel__tabs" role="tablist">
         <button type="button" role="tab" class="coach-panel__tab" :aria-selected="tab === 'choices'" data-test="tab-choices" @click="tab = 'choices'" v-i18n>Choices</button>
         <button type="button" role="tab" class="coach-panel__tab" :aria-selected="tab === 'timeline'" data-test="tab-timeline" @click="tab = 'timeline'" v-i18n>Timeline</button>
+        <button type="button" role="tab" class="coach-panel__tab" :aria-selected="tab === 'reflect'" data-test="tab-reflect" @click="tab = 'reflect'">{{ $t('Look back') }}<template v-if="unreadCount > 0"> ({{ unreadCount }})</template></button>
       </div>
       <button type="button" class="coach-panel__button" data-test="refresh" @click="refresh" v-i18n>Refresh</button>
       <button type="button" class="coach-panel__button" data-test="close" @click="close" v-i18n>Close</button>
@@ -16,6 +18,49 @@
 
     <div class="coach-panel__body">
       <p v-if="playerId === undefined" class="coach-panel__note" v-i18n>The coach is only for players.</p>
+
+      <!-- Looking back on decisions (solo games, P3-SOLO-3) -->
+      <template v-else-if="tab === 'reflect'">
+        <label class="coach-choice__consent"><input type="checkbox" v-model="solo.watch" data-test="setting-watch" @change="saveSoloState"> <span v-i18n>Watch my decisions and notify me</span></label>
+        <label class="coach-choice__consent"><input type="checkbox" v-model="solo.before" data-test="setting-before" @change="saveSoloState"> <span v-i18n>Also give hints before I act</span></label>
+        <template v-if="solo.reflectionId === undefined">
+          <p v-if="reflectable.length === 0" class="coach-panel__note" data-test="reflect-none" v-i18n>Nothing to look back on yet.</p>
+          <ul class="coach-choices__list">
+            <li v-for="f in reflectable" :key="f.id">
+              <button type="button" class="coach-choice" data-test="reflect-item" @click="startReflection(f.id)">
+                <span class="coach-choice__label">{{ show({template: 'Generation ${0}', params: [{text: String(f.decision.generation)}]}) }} · {{ show(f.actual.summary) }}</span>
+                <span class="coach-choice__meta">{{ $t(solo.handled.includes(f.id) ? 'Looked back' : 'Not looked back yet') }}</span>
+              </button>
+            </li>
+          </ul>
+        </template>
+        <template v-else>
+          <button type="button" class="coach-panel__link" data-test="reflect-back" @click="closeReflection" v-i18n>All decisions to look back on</button>
+          <p v-if="reflection?.status === 'gone'" class="coach-panel__note" data-test="reflect-gone" v-i18n>This decision is no longer part of the game (it was undone).</p>
+          <template v-else-if="reflection !== undefined">
+            <p class="coach-watcher-label"><span class="coach-plan__badge" v-i18n>Looking back</span> {{ reflection.about ? show(reflection.about) : '' }}</p>
+            <ul v-if="reflection.lines !== undefined" class="coach-review__points" data-test="reflect-lines">
+              <li v-for="(line, i) in reflection.lines" :key="i" class="coach-review__point">{{ show(line) }}</li>
+            </ul>
+            <ul v-if="extra !== undefined" class="coach-review__points" data-test="reflect-extra">
+              <li v-for="(line, i) in extra.lines ?? []" :key="i" class="coach-review__point">{{ show(line) }}</li>
+            </ul>
+            <p v-if="reflection.question !== undefined" class="coach-plan__question" data-test="reflect-question">{{ show(reflection.question) }}</p>
+            <div class="coach-choice__actions">
+              <button v-for="o in reflection.options ?? []" :key="o.key" type="button" class="coach-panel__button" data-test="reflect-option" @click="answer(o.key)">{{ show(o.label) }}</button>
+            </div>
+            <div class="coach-choice__actions">
+              <button type="button" class="coach-panel__link" data-test="reflect-hint" @click="extraView('hint')" v-i18n>Show a hint</button>
+              <button type="button" class="coach-panel__link" data-test="reflect-rules" @click="extraView('rules')" v-i18n>Show the rules</button>
+              <button type="button" class="coach-panel__link" data-test="reflect-explain" @click="extraView('explain')" v-i18n>Show the evidence and the alternative</button>
+            </div>
+            <label class="coach-reflect__note">
+              <span v-i18n>Your thoughts (optional, kept on this device)</span>
+              <textarea v-model="note" maxlength="200" rows="2" data-test="reflect-note" @change="saveNote"></textarea>
+            </label>
+          </template>
+        </template>
+      </template>
 
       <!-- Timeline of the decisions (solo games, P3-SOLO-1) -->
       <template v-else-if="tab === 'timeline'">
@@ -141,6 +186,9 @@ import {DisplayLine, goalLabel} from '../common/coachText';
 import {eligibilityLabel, factLines, limitationLabel} from './choiceText';
 import {eventLines, listedCards, timelineStatusNote, victoryLine} from './timelineText';
 import {CoachTimelineV1} from '../common/CoachTimeline';
+import CoachWatcher from './CoachWatcher.vue';
+import {coachSoloState, markHandled, saveSoloState, unreadFindings} from './coachSoloState';
+import {CoachReflectionRequest, CoachReflectionV1, ReflectionView} from '../common/CoachReflection';
 import {coachPanelState} from './coachPanelState';
 import {getPreferences} from '@/client/utils/PreferencesManager';
 
@@ -159,14 +207,23 @@ const counselError = ref(false);
 const showEvidence = ref(false);
 const aiConsent = ref(readConsent());
 let inFlight: AbortController | undefined;
-const tab = ref<'choices' | 'timeline'>('choices');
+const solo = coachSoloState;
+/* The timeline and the reflection are for solo games (the server says `not-solo` too). */
+const isSolo = computed(() => (props.view?.players?.length ?? 1) === 1);
+/* The tab is shared with the watcher (a cut-in opens the reflection). */
+const tab = computed({get: () => (isSolo.value ? coachSoloState.tab : 'choices'), set: (value) => coachSoloState.tab = value});
+const unreadCount = computed(() => unreadFindings().length);
+const reflectable = computed(() => (coachSoloState.findings?.findings ?? []).filter((f) => f.intervention));
+const reflection = ref<CoachReflectionV1 | undefined>(undefined);
+const extra = ref<CoachReflectionV1 | undefined>(undefined);
+const answers = ref<Array<string>>([]);
+const note = ref('');
+let reflectionRequest = 0;
 const timeline = ref<CoachTimelineV1 | undefined>(undefined);
 const timelineFailed = ref(false);
 const showUndone = ref(false);
 let timelineRequest = 0;
 
-/* The timeline is for solo games (the server says `not-solo` too). */
-const solo = computed(() => (props.view?.players?.length ?? 1) === 1);
 
 /* Only the answer of the latest options request is shown (an older one may arrive later). */
 let optionsRequest = 0;
@@ -318,6 +375,80 @@ async function loadTimeline(): Promise<void> {
   }
 }
 
+async function reflectStep(view: ReflectionView): Promise<CoachReflectionV1 | undefined> {
+  const id = playerId.value;
+  const findingId = coachSoloState.reflectionId;
+  if (id === undefined || findingId === undefined) {
+    return undefined;
+  }
+  const body: CoachReflectionRequest = {schemaVersion: 'coach-reflection-request/1', findingId, answers: answers.value, view};
+  try {
+    const response = await fetch(`api/coach/reflection?id=${encodeURIComponent(id)}`, {
+      method: 'POST', cache: 'no-store', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body),
+    });
+    return response.ok ? await response.json() as CoachReflectionV1 : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+async function loadQuestion() {
+  const mine = ++reflectionRequest;
+  const step = await reflectStep('question');
+  if (mine === reflectionRequest && step !== undefined) {
+    reflection.value = step;
+    if (step.gate === 'done' || step.status === 'gone') {
+      markHandled(step.findingId);
+    }
+  }
+}
+
+function startReflection(id: string) {
+  coachSoloState.reflectionId = id;
+}
+
+function closeReflection() {
+  coachSoloState.reflectionId = undefined;
+}
+
+function answer(key: string) {
+  answers.value = [...answers.value, key];
+  extra.value = undefined;
+  void loadQuestion();
+}
+
+async function extraView(view: ReflectionView) {
+  const step = await reflectStep(view);
+  if (step !== undefined) {
+    extra.value = step;
+    if (view === 'explain') {
+      markHandled(step.findingId);
+    }
+  }
+}
+
+function saveNote() {
+  try {
+    localStorage.setItem(`coach.note.${coachSoloState.reflectionId}`, note.value.slice(0, 200));
+  } catch {
+    // Kept for this page only.
+  }
+}
+
+watch(() => coachSoloState.reflectionId, (id) => {
+  reflection.value = undefined;
+  extra.value = undefined;
+  answers.value = [];
+  try {
+    note.value = id === undefined ? '' : localStorage.getItem(`coach.note.${id}`) ?? '';
+  } catch {
+    note.value = '';
+  }
+  if (id !== undefined) {
+    void loadQuestion();
+  }
+}, {immediate: true});
+
 function refresh() {
   if (tab.value === 'timeline') {
     void loadTimeline();
@@ -414,9 +545,30 @@ watch(() => [state.open, position.value, playerId.value], () => {
   }
 }, {immediate: true});
 
-watch(tab, (value) => {
-  if (value === 'timeline' && state.open) {
+/* The findings for the reflection list (the watcher reads them too while it watches). */
+async function loadFindings(): Promise<void> {
+  const id = playerId.value;
+  if (id === undefined) {
+    return;
+  }
+  try {
+    const response = await fetch(`api/coach/findings?id=${encodeURIComponent(id)}`, {cache: 'no-store'});
+    if (response.ok) {
+      coachSoloState.findings = await response.json();
+    }
+  } catch {
+    // The list stays as it was.
+  }
+}
+
+watch(() => [tab.value, state.open], () => {
+  if (!state.open) {
+    return;
+  }
+  if (tab.value === 'timeline') {
     void loadTimeline();
+  } else if (tab.value === 'reflect') {
+    void loadFindings();
   }
 });
 </script>
@@ -472,6 +624,23 @@ watch(tab, (value) => {
   opacity: 1;
   font-weight: bold;
   border-bottom: 2px solid #8fc3ff;
+}
+.coach-reflect__note {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 12px;
+  textarea {
+    width: 100%;
+    color: #eee;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+.coach-plan__question {
+  margin-top: 6px;
+  font-style: italic;
 }
 .coach-timeline__events {
   margin: 0;

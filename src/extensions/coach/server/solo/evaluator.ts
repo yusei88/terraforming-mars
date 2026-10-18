@@ -4,6 +4,7 @@ import {EvaluationResult, playOrderFindings} from './counterfactual';
 import {purchaseFindings} from './purchases';
 import {paybackFindings} from './payback';
 import {loadTimeline, soloRules, TimelineSource} from './timeline';
+import {upcomingHints} from './prospective';
 
 // SoloStrategyEvaluator (P3-SOLO-2): runs the evaluators over the current line of play and marks the
 // findings that may become a question to the player (InterventionCandidate). Deterministic, read-only,
@@ -41,13 +42,13 @@ export function evaluate(events: ReadonlyArray<EvaluatedEvent>): Pick<CoachFindi
   return {findings: [...unique.values()].sort((a, b) => a.decision.seq - b.decision.seq), checked};
 }
 
-/** The findings of the player's solo game (GET api/coach/findings). */
-export function buildFindings(source: TimelineSource): CoachFindingsV1 {
+/** The findings of the player's solo game (GET api/coach/findings); `upcoming` adds hints for the position now. */
+export function buildFindings(source: TimelineSource, options: {upcoming?: boolean} = {}): CoachFindingsV1 {
   const loaded = loadTimeline(source);
   const solo = soloRules(source.state);
   const base = {schemaVersion: COACH_FINDINGS_SCHEMA, status: loaded.status, ...(solo === undefined ? {} : {solo})} as const;
   if (loaded.status !== 'ok') {
     return {...base, findings: [], checked: []};
   }
-  return {...base, ...evaluate(loaded.events)};
+  return {...base, ...evaluate(loaded.events), ...(options.upcoming ? {upcoming: upcomingHints(source.state)} : {})};
 }

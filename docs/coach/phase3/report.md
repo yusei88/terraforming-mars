@@ -108,3 +108,15 @@ Iteration 1 以降は [選択主導型の計画](choice-driven-plan.md) に置�
 | API | `GET api/coach/findings` → `coach-findings/1`。本人のみ、`no-store`、読み取り専用 |
 | 画面 | なし。問いかけは P3-SOLO-3 で、結論を先に見せない設計にする |
 | ゲーム本体 | 変更なし |
+
+### P3-SOLO-3 — 通知と段階的な問い（決定的、LLM なし）
+
+| 項目 | 内容 |
+|---|---|
+| 問いかけ役（`server/solo/questioner.ts`、CoachQuestioner） | 判断の種類、カード、世代だけを受け取る（結論は型の上で受け取れない）。Gate A は理由、Gate B は見落とした観点（A の答えで分岐）、Gate C は根拠を見て再評価、最後に完了。ほかにヒント（結論なし）とルール（確定した一般的な事実） |
+| 振り返り（`server/solo/reflection.ts`） | 発見を探して答えを検証し、問いを返す。Gate C では評価役の根拠を、「解説」では代替案との差と根拠を返す |
+| 行動前のヒント（`server/solo/prospective.ts`） | 今の局面で出せる 2 枚の順序で費用が変わる場合。既定はオフ |
+| API | `POST api/coach/reflection`（`coach-reflection/1`。同一オリジン、JSON、1 KB、読み取り専用）。`GET api/coach/findings?upcoming=1` |
+| 画面 | `CoachWatcher.vue`: 見守り中の指標（世代、未読数）と通知（一度に 1 件、notable だけ、振り返る・あとで・閉じる）。パネルの「振り返り」タブに、設定（見守り、行動前のヒント）、振り返りの一覧、段階的な問い、ヒント、ルール、根拠と代替案、自分の考えのメモ（端末内のみ）を置いた |
+| 翻訳 | 新しい文言 77 件を 16 言語で追加 |
+| ゲーム本体 | 変更なし |

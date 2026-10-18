@@ -3,6 +3,7 @@ import {expect} from 'chai';
 import {globalConfig} from '../../components/getLocalVue';
 import CoachPanel from '@/extensions/coach/client/CoachPanel.vue';
 import {coachPanelState} from '@/extensions/coach/client/coachPanelState';
+import {coachSoloState} from '@/extensions/coach/client/coachSoloState';
 import {eventLines} from '@/extensions/coach/client/timelineText';
 import {CoachTimelineV1, TimelineEvent} from '@/extensions/coach/common/CoachTimeline';
 import {ViewModel} from '@/common/models/PlayerModel';
@@ -49,6 +50,9 @@ describe('CoachPanel timeline (P3-SOLO-1)', () => {
       return new Response(JSON.stringify({schemaVersion: 'coach-choice-list/1', positionToken: 'a'.repeat(32), analysisVersion: '2', stateStatus: 'awaiting-input', options: [], omitted: [], ai: {available: false}, warnings: []}), {status: 200});
     }) as typeof fetch;
     coachPanelState.open = false;
+    coachSoloState.tab = 'choices';
+    coachSoloState.reflectionId = undefined;
+    coachSoloState.findings = undefined;
   });
 
   afterEach(() => {
