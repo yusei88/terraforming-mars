@@ -6,12 +6,50 @@
   <aside v-if="state.open" class="coach-panel" role="dialog" :aria-label="$t('Strategy coach')">
     <header class="coach-panel__header">
       <h2 class="coach-panel__title" v-i18n>Strategy coach</h2>
-      <button type="button" class="coach-panel__button" data-test="refresh" @click="loadOptions" v-i18n>Refresh</button>
+      <div v-if="solo" class="coach-panel__tabs" role="tablist">
+        <button type="button" role="tab" class="coach-panel__tab" :aria-selected="tab === 'choices'" data-test="tab-choices" @click="tab = 'choices'" v-i18n>Choices</button>
+        <button type="button" role="tab" class="coach-panel__tab" :aria-selected="tab === 'timeline'" data-test="tab-timeline" @click="tab = 'timeline'" v-i18n>Timeline</button>
+      </div>
+      <button type="button" class="coach-panel__button" data-test="refresh" @click="refresh" v-i18n>Refresh</button>
       <button type="button" class="coach-panel__button" data-test="close" @click="close" v-i18n>Close</button>
     </header>
 
     <div class="coach-panel__body">
       <p v-if="playerId === undefined" class="coach-panel__note" v-i18n>The coach is only for players.</p>
+
+      <!-- Timeline of the decisions (solo games, P3-SOLO-1) -->
+      <template v-else-if="tab === 'timeline'">
+        <p v-if="timelineFailed" class="coach-panel__note" data-test="timeline-error" v-i18n>The coach is not available right now.</p>
+        <p v-else-if="timeline === undefined" class="coach-panel__note" v-i18n>Loading the analysis</p>
+        <template v-else>
+          <p v-if="timelineStatusNote(timeline) !== undefined" class="coach-panel__note" data-test="timeline-status">{{ $t(timelineStatusNote(timeline) ?? '') }}</p>
+          <template v-else>
+            <p v-if="timeline.history !== 'valid'" class="coach-panel__warning" v-i18n>The history may be incomplete (an undo or restart was detected).</p>
+            <p v-if="victoryLine(timeline) !== undefined" class="coach-panel__note">{{ show(victoryLine(timeline)!) }}</p>
+            <p class="coach-panel__note" data-test="timeline-now">{{ show({template: 'Now: generation ${0}, TR ${1}', params: [{text: String(timeline.now.generation)}, {text: String(timeline.now.terraformRating)}]}) }}<template v-if="timeline.now.victoryPoints !== undefined"> · {{ show({template: 'VP now: ${0}', params: [{text: String(timeline.now.victoryPoints)}]}) }}</template></p>
+            <p v-if="timeline.generations.length === 0" class="coach-panel__note" v-i18n>No decisions recorded yet.</p>
+            <section v-for="g in [...timeline.generations].reverse()" :key="g.generation" class="coach-timeline" data-test="timeline-generation">
+              <h3 class="coach-choices__title">{{ show({template: 'Generation ${0}', params: [{text: String(g.generation)}]}) }}</h3>
+              <ol class="coach-timeline__events">
+                <li v-for="e in g.events" :key="e.id" class="coach-timeline__event" :class="'coach-timeline__event--' + e.kind" data-test="timeline-event">
+                  <span v-if="e.order !== undefined" class="coach-timeline__order">{{ e.order }}</span>
+                  <span>{{ eventLines(e).map(show).join(' · ') }}</span>
+                  <span v-if="!e.verified" class="coach-plan__badge" v-i18n>Not confirmed by the game state</span>
+                  <span v-if="listedCards(e).length > 0" class="coach-timeline__cards">{{ listedCards(e).map((n) => $t(n)).join(', ') }}</span>
+                </li>
+              </ol>
+            </section>
+            <template v-if="timeline.superseded.length > 0">
+              <button type="button" class="coach-panel__link" data-test="timeline-undone" @click="showUndone = !showUndone">{{ showUndone ? $t('Hide undone actions') : show({template: 'Show undone actions (${0})', params: [{text: String(timeline.superseded.length)}]}) }}</button>
+              <ol v-if="showUndone" class="coach-timeline__events coach-timeline__events--undone">
+                <li v-for="e in timeline.superseded" :key="e.id" class="coach-timeline__event">{{ show({template: 'Generation ${0}', params: [{text: String(e.generation)}]}) }}: {{ eventLines(e).map(show).join(' · ') }}</li>
+              </ol>
+            </template>
+            <p v-if="timeline.truncated" class="coach-panel__note" v-i18n>Only the start of a long history is shown.</p>
+          </template>
+        </template>
+      </template>
+
       <p v-else-if="loading && options === undefined" class="coach-panel__note" v-i18n>Loading the analysis</p>
       <p v-else-if="failed" class="coach-panel__note" data-test="error" v-i18n>The coach is not available right now.</p>
 
@@ -101,6 +139,8 @@ import {CoachChoiceListV1, CoachChoiceOption, CoachLabel} from '../common/CoachC
 import {CoachCounselRequest, CoachCounselV1, CoachPoint} from '../common/CoachCounsel';
 import {DisplayLine, goalLabel} from '../common/coachText';
 import {eligibilityLabel, factLines, limitationLabel} from './choiceText';
+import {eventLines, listedCards, timelineStatusNote, victoryLine} from './timelineText';
+import {CoachTimelineV1} from '../common/CoachTimeline';
 import {coachPanelState} from './coachPanelState';
 import {getPreferences} from '@/client/utils/PreferencesManager';
 
@@ -119,6 +159,15 @@ const counselError = ref(false);
 const showEvidence = ref(false);
 const aiConsent = ref(readConsent());
 let inFlight: AbortController | undefined;
+const tab = ref<'choices' | 'timeline'>('choices');
+const timeline = ref<CoachTimelineV1 | undefined>(undefined);
+const timelineFailed = ref(false);
+const showUndone = ref(false);
+let timelineRequest = 0;
+
+/* The timeline is for solo games (the server says `not-solo` too). */
+const solo = computed(() => (props.view?.players?.length ?? 1) === 1);
+
 /* Only the answer of the latest options request is shown (an older one may arrive later). */
 let optionsRequest = 0;
 let optionsInFlight: AbortController | undefined;
@@ -246,6 +295,37 @@ async function loadOptions(): Promise<void> {
   }
 }
 
+async function loadTimeline(): Promise<void> {
+  const id = playerId.value;
+  if (id === undefined) {
+    return;
+  }
+  const request = ++timelineRequest;
+  try {
+    const response = await fetch(`api/coach/timeline?id=${encodeURIComponent(id)}`, {cache: 'no-store'});
+    if (!response.ok) {
+      throw new Error(String(response.status));
+    }
+    const body = await response.json() as CoachTimelineV1;
+    if (request === timelineRequest) {
+      timeline.value = body;
+      timelineFailed.value = false;
+    }
+  } catch {
+    if (request === timelineRequest) {
+      timelineFailed.value = true;
+    }
+  }
+}
+
+function refresh() {
+  if (tab.value === 'timeline') {
+    void loadTimeline();
+  } else {
+    void loadOptions();
+  }
+}
+
 async function ask(mode: CoachCounselRequest['mode']): Promise<void> {
   const id = playerId.value;
   const list = options.value;
@@ -326,10 +406,19 @@ function close() {
 watch(() => [state.open, position.value, playerId.value], () => {
   if (state.open) {
     void loadOptions();
+    if (tab.value === 'timeline') {
+      void loadTimeline();
+    }
   } else {
     abort();
   }
 }, {immediate: true});
+
+watch(tab, (value) => {
+  if (value === 'timeline' && state.open) {
+    void loadTimeline();
+  }
+});
 </script>
 
 <style scoped lang="less">
@@ -369,6 +458,48 @@ watch(() => [state.open, position.value, playerId.value], () => {
   gap: 8px;
   padding: 8px 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.coach-panel__tabs {
+  display: flex;
+  gap: 4px;
+}
+.coach-panel__tab {
+  min-height: 36px;
+  padding: 4px 8px;
+  opacity: 0.7;
+}
+.coach-panel__tab[aria-selected="true"] {
+  opacity: 1;
+  font-weight: bold;
+  border-bottom: 2px solid #8fc3ff;
+}
+.coach-timeline__events {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.coach-timeline__event {
+  margin: 3px 0;
+  font-size: 13px;
+}
+.coach-timeline__order {
+  display: inline-block;
+  min-width: 18px;
+  margin-right: 4px;
+  font-size: 11px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 9px;
+}
+.coach-timeline__cards {
+  display: block;
+  margin-left: 22px;
+  font-size: 12px;
+  opacity: 0.85;
+}
+.coach-timeline__events--undone {
+  opacity: 0.6;
+  text-decoration: line-through;
 }
 .coach-panel__title {
   flex: 1;

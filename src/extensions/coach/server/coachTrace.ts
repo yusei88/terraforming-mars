@@ -283,6 +283,25 @@ export class CoachTracer {
   }
 
   /**
+   * All snapshots `color` saw, read once, by `fingerprint:advisoryFingerprint` (and by `fingerprint:` for
+   * the first one with that content). `error` is set when the states could not be read.
+   */
+  public statesOf(gameId: GameId, color: Color): {states: Map<string, CoachStateV1>, error?: string} {
+    const read = this.sink.read(gameId, 'states');
+    const states = new Map<string, CoachStateV1>();
+    for (const record of read.records as Array<Partial<CoachStateRecord>>) {
+      if (record.type !== 'state' || record.color !== color || record.state === undefined || record.fingerprint === undefined) {
+        continue;
+      }
+      states.set(`${record.fingerprint}:${record.advisoryFingerprint ?? ''}`, record.state);
+      if (!states.has(`${record.fingerprint}:`)) {
+        states.set(`${record.fingerprint}:`, record.state);
+      }
+    }
+    return read.error === undefined ? {states} : {states, error: read.error};
+  }
+
+  /**
    * The first snapshot `color` saw with this content (Phase 1 lookup).
    *
    * Content only: the same content can occur at several places in history, so this does not say when.

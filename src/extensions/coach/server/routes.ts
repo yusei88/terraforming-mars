@@ -13,6 +13,7 @@ import {EVENT_POSITIONS, EventPosition} from '../common/CoachTrace';
 import {readBody} from '@/server/routes/readBody';
 import {choiceListFor, counsel, counselLimiter, CounselLimiter, MAX_COUNSEL_BODY_BYTES, parseCounselRequest} from './counsel/counselService';
 import {aiSettings} from './counsel/aiConfig';
+import {buildTimeline} from './solo/timeline';
 
 export const COACH_PATHS = {
   STATE: 'api/coach/state',
@@ -21,6 +22,7 @@ export const COACH_PATHS = {
   ANALYSIS: 'api/coach/analysis',
   OPTIONS: 'api/coach/options',
   COUNSEL: 'api/coach/counsel',
+  TIMELINE: 'api/coach/timeline',
 } as const;
 
 /**
@@ -287,5 +289,35 @@ export class ApiCoachCounsel extends CoachPlayerHandler {
     }
     res.statusCode = outcome.status;
     responses.writeJson(res, ctx, {...outcome.body});
+  }
+}
+
+/**
+ * `GET api/coach/timeline?id=<playerId>`: the player's decisions in a solo game as meaningful events
+ * (CoachTimelineV1, P3-SOLO-1). Read-only. `status` says when there is no history to show (not a solo
+ * game, history off because COACH_TRACE_DIR is not set, history unreadable): never an empty success.
+ */
+export class ApiCoachTimeline extends CoachPlayerHandler {
+  public static readonly INSTANCE = new ApiCoachTimeline();
+  private constructor() {
+    super();
+  }
+
+  public override async get(_req: Request, res: Response, ctx: Context): Promise<void> {
+    const player = await this.player(ctx);
+    let timeline;
+    try {
+      const state = projectCoachState(player);
+      const tracer = getCoachTracer();
+      timeline = buildTimeline({
+        tracer, gameId: player.game.id, color: player.color, state,
+        history: () => tracer?.assess(player, state).status ?? 'disabled',
+      });
+    } catch (error) {
+      console.error('Coach timeline failed', error);
+      throw RouteError.internalServerError('coach timeline unavailable');
+    }
+    noStore(res);
+    responses.writeJson(res, ctx, timeline);
   }
 }

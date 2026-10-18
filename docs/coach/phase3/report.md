@@ -79,3 +79,19 @@ Iteration 1 以降は [選択主導型の計画](choice-driven-plan.md) に置�
 | 4. 設計書の契約 | [choice-driven-design.md](choice-driven-design.md) §5 を型定義と一致させた（リクエストの `mode: 'facts' \| 'review'`、事実の `about: 'A' \| 'B' \| 'game'`、点の `about: 'A' \| 'B'`、`status`、`source`、`ai.state`、エラー応答）。§7 に A/B と根拠の対応の検証を追記した |
 
 試験の結果と起点との比較は [QA](choice-driven-qa.md) §3。追加機能はない。
+
+## P3-SOLO — ソロ専用・伴走型コーチ（2026-10-18〜）
+
+設計: [solo-coach-design.md](solo-coach-design.md)。既存の仕組みと不足の対応表、構成、型、P3-SOLO-3/4 の計画を書いた。QA: [solo-qa.md](solo-qa.md)。
+
+### P3-SOLO-1 — 意思決定の履歴とタイムライン
+
+| 項目 | 内容 |
+|---|---|
+| 正規化 | `server/solo/timeline.ts`（DecisionEventNormalizer）。記録済みの決定を、提示された選択肢の木に沿って意味のあるイベントにする（購入、開始時の選択、プレイ、標準プロジェクト、カードのアクション、Sell patents、パス、ターン終了、ゲームの行動、途中の入力、Undo、取り消し）。判断前後のスナップショットで意味を確認し、`verified` に記録する |
+| 系列 | Phase 1.5 の `current` / `superseded` / `unverified` をそのまま使う。世代ごとの行動の順番は、現行系列だけで振る |
+| API | `GET api/coach/timeline` → `coach-timeline/1`。本人のみ、`no-store`、読み取り専用。非ソロ、記録の無効、読み込みの失敗は、それぞれ状態として返す |
+| 追加 | `CoachTracer.statesOf()`: スナップショットを 1 回の読み込みで取り出す |
+| 画面 | パネルに「選択肢 / タイムライン」の切り替えを追加（ソロのみ）。世代ごとの購入、プレイの順番と費用、取り消した行動（折りたたみ）、勝利条件、現在の TR と VP |
+| 翻訳 | 新しい文言 25 件を 16 言語で追加 |
+| ゲーム本体 | 変更なし |
